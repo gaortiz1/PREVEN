@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="gesso-client" />
+        <module name="gesso-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="gesso-client" target="1.5" />
+      <module name="gesso-web" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
