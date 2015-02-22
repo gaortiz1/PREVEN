@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/gesso-client/gesso-client.iml" filepath="$PROJECT_DIR$/gesso-client/gesso-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/gesso-root.iml" filepath="$PROJECT_DIR$/gesso-root.iml" />
     </modules>
   </component>
