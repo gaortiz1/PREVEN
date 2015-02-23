@@ -10,6 +10,6 @@
 <body>
 	<h1>pagina de prueba gesso</h1>
 	<P>The time on the server is ${serverTime}.</P>
-    <a class="btn btn-primary" href="newPerson" role="button">Link</a>
+    <a class="btn btn-primary" href="login" role="button">Link</a>
 </body>
 </html>
