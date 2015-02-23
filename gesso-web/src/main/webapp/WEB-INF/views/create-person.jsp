@@ -2,33 +2,40 @@
  
  <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
      
- 
+<html>
+<head>
+	<title>gesso</title>
+	<link href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+	<link href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css" rel="stylesheet"/>
+	
+</head>
+<body>
  
 <h2>Person Manager</h2>
 <form:form method="post" action="newPerson" >
- 
-    <table>
-    <tbody><tr>
-        <td><form:label path="firstname">First Name</form:label></td>
-        <td><form:input path="firstname"></form:input></td> 
-    </tr>
-    <tr>
-        <td><form:label path="lastname">Last Name</form:label></td>
-        <td><form:input path="lastname"></form:input></td>
-    </tr>
-    <tr>
-        <td><form:label path="lastname">Email</form:label></td>
-        <td><form:input path="email"></form:input></td>
-    </tr>
-    <tr>
-        <td><form:label path="lastname">Telephone</form:label></td>
-        <td><form:input path="telephone"></form:input></td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <input type="submit" value="Add Contact">
-        </td>
-    </tr>
-</tbody></table>    
+	<div class="form-group">
+    	<form:label path="firstname">First Name</form:label>
+    	<form:input path="firstname" cssClass="form-control"></form:input>
+  	</div>
+  
+  
+  	<div class="form-group">
+    	<form:label path="lastname">Last Name</form:label>
+    	<form:input path="lastname" cssClass="form-control"></form:input>
+  	</div>
+  	
+  	<div class="form-group">
+    	<form:label path="lastname">Email</form:label>
+        <form:input path="email" cssClass="form-control"></form:input>
+  	</div>
+  	
+  	<div class="form-group">
+    	<form:label path="lastname">Telephone</form:label>
+        <form:input path="telephone" cssClass="form-control"></form:input>
+  	</div>
+    
+	<button type="submit" class="btn btn-primary" >Add Contact</button>
      
 </form:form>
+</body>
+</html>
