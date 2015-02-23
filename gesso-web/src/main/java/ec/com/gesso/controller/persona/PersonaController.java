@@ -19,6 +19,6 @@ public class PersonaController {
     @RequestMapping(value = "/newPerson", method = RequestMethod.POST)
     public String aaContact(@ModelAttribute("contact")PersonDto contact, BindingResult result) {
     	System.out.println(contact.getFirstname());
-        return "redirect:newPerson";
+        return "redirect:";
     }
 }
