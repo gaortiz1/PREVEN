@@ -8,6 +8,7 @@
 	<modules>
 		<module>gesso-client</module>
 		<module>gesso-web</module>
+		<module>gesso-security-model</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
