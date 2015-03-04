@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gesso-client/gesso-client.iml" filepath="$PROJECT_DIR$/gesso-client/gesso-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/gesso-root.iml" filepath="$PROJECT_DIR$/gesso-root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gesso-security/gesso-security.iml" filepath="$PROJECT_DIR$/gesso-security/gesso-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/gesso-web/gesso-web.iml" filepath="$PROJECT_DIR$/gesso-web/gesso-web.iml" />
     </modules>
   </component>
 </project>
-

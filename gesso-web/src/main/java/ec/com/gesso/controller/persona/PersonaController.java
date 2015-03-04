@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class PersonaController {
 	@RequestMapping(value="/newPerson", method =RequestMethod.GET )
 	public ModelAndView showContacts() {
-		return new ModelAndView("create-person", "command", new PersonDto());
+		return new ModelAndView("home", "command", new PersonDto());
 	}
     
     @RequestMapping(value = "/newPerson", method = RequestMethod.POST)
