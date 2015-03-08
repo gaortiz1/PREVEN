@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ec.com.gesso.controller.persona.PersonDto;
+
 /**
  * Handles requests for the application home page.
  */
@@ -31,9 +33,8 @@ public class HomeController {
 
 		String formattedDate = dateFormat.format(date);
 
-		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("command", new PersonDto() );
 
-		return "home";
+		return "login";
 	}
-	
 }
