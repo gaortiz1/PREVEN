@@ -13,6 +13,6 @@
 	
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
-	<context:component-scan base-package="ec.com.gesso" />
+	<context:component-scan base-package="ec.com.gesso.security" />
 
 </beans>
