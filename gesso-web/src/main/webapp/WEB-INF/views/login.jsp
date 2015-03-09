@@ -54,8 +54,6 @@
 
                             <div class="col-sm-12 controls">
                                 <button type="submit" class="btn btn-success" >Login</button>
-                                <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
-
                             </div>
                         </div>
 
@@ -84,7 +82,7 @@
                     <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
                 </div>
                 <div class="panel-body" >
-                    <form id="signupform" class="form-horizontal" role="form">
+                    <form:form id="signupform" class="form-horizontal" role="form" action="signUp">
 
                         <div id="signupalert" style="display:none" class="alert alert-danger">
                             <p>Error:</p>
@@ -129,19 +127,10 @@
                         <div class="form-group">
                             <!-- Button -->
                             <div class="col-md-offset-3 col-md-9">
-                                <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
-                                <span style="margin-left:8px;">or</span>
+                                <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
                             </div>
                         </div>
-
-                        <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
-
-                            <div class="col-md-offset-3 col-md-9">
-                                <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
-                            </div>
-
-                        </div>
-                    </form>
+                    </form:form>
                 </div>
             </div>
         </div>
