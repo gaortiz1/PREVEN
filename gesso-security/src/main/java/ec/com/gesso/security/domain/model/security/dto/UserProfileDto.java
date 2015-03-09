@@ -40,7 +40,7 @@ public class UserProfileDto implements Serializable {
     private Collection<UserProfileOptionDto> segUserProfileOptionCollection;
     @JoinColumn(name = "usr_id", referencedColumnName = "usr_id", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private UserDto segUser;
+    private UserDto userDto;
     @JoinColumn(name = "prf_id", referencedColumnName = "prf_id", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private ProfileDto segProfile;
@@ -94,15 +94,15 @@ public class UserProfileDto implements Serializable {
         this.segUserProfileOptionCollection = segUserProfileOptionCollection;
     }
 
-    public UserDto getSegUser() {
-        return segUser;
-    }
+    public UserDto getUserDto() {
+		return userDto;
+	}
 
-    public void setSegUser(UserDto segUser) {
-        this.segUser = segUser;
-    }
+	public void setUserDto(UserDto userDto) {
+		this.userDto = userDto;
+	}
 
-    public ProfileDto getSegProfile() {
+	public ProfileDto getSegProfile() {
         return segProfile;
     }
 

@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -36,10 +37,11 @@ public class UserDto implements Serializable {
     @Basic(optional = false)
     @Column(name = "usr_password")
     private String usrPassword;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "segUser", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userDto", fetch = FetchType.LAZY)
     private Collection<UserProfileDto> segUserProfileCollection;
 
     @OneToOne(mappedBy = "userDto", fetch = FetchType.LAZY)
+//    @Transient
     private Person person;
     
     public UserDto() {
