@@ -1,5 +1,7 @@
 package ec.com.gesso.security.application;
 
+import ec.com.gesso.security.domain.model.security.dto.UserDto;
+
 public interface ISecurityService {
-	public void autenticateUser(String userName, String userPassword);
+	public UserDto autenticateUser(String userName, String userPassword);
 }

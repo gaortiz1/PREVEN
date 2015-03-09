@@ -8,22 +8,18 @@ import ec.com.gesso.security.domain.model.security.dto.UserDto;
 
 public class SecurityRepositoryHibernate extends HibernateRepository implements SecurityRepository{
 
-	public void autenticateUser(String userName, String userPassword) {
+	public UserDto autenticateUser(String userName, String userPassword) {
 
 		Criteria criteria =  null;
 		
-		try {
-			criteria =  getSession().createCriteria(UserDto.class);
-		} catch (Exception e) {
-
-			e.printStackTrace();
-		}
-		
+		criteria =  getSession().createCriteria(UserDto.class);
 		
 		criteria.add(Restrictions.eq("usrNickName", userName));
 		criteria.add(Restrictions.eq("usrPassword", userPassword));
 		
 		UserDto userDto = (UserDto) criteria.uniqueResult();
+		
+		return userDto;
 	}
 
 }

@@ -2,6 +2,7 @@ package ec.com.gesso.security.application.impl;
 
 import ec.com.gesso.security.application.ISecurityService;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
+import ec.com.gesso.security.domain.model.security.dto.UserDto;
 
 public class SecurityServiceImpl implements ISecurityService{
 	private SecurityRepository securityRepository;
@@ -12,8 +13,8 @@ public class SecurityServiceImpl implements ISecurityService{
 	}
 
 
-	public void autenticateUser(String userName, String userPassword) {
-		securityRepository.autenticateUser(userName, userPassword);
+	public UserDto autenticateUser(String userName, String userPassword) {
+		return securityRepository.autenticateUser(userName, userPassword);
 	}
 
 }
