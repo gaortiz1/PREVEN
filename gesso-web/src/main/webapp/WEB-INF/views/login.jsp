@@ -29,13 +29,13 @@
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <form:input id="login-username" path="firstname" cssClass="form-control" placeholder="username or email"></form:input>
+                            <form:input id="login-username" path="userDto.usrNickName" cssClass="form-control" placeholder="username or email"></form:input>
                         </div>
 
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <form:password id="login-password" path="lastname" cssClass="form-control" placeholder="password"></form:password>
+                            <form:password id="login-password" path="userDto.usrPassword" cssClass="form-control" placeholder="password"></form:password>
                         </div>
 
 

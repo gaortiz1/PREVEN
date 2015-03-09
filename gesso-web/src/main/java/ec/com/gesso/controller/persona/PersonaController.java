@@ -8,17 +8,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import ec.com.gesso.security.domain.model.security.dto.Person;
+
 @Controller
 @SessionAttributes
 public class PersonaController {
 	@RequestMapping(value="/newPerson", method =RequestMethod.GET )
 	public ModelAndView showContacts() {
-		return new ModelAndView("home", "command", new PersonDto());
+		return new ModelAndView("home", "command", new Person());
 	}
     
     @RequestMapping(value = "/newPerson", method = RequestMethod.POST)
-    public String aaContact(@ModelAttribute("contact")PersonDto contact, BindingResult result) {
-    	System.out.println(contact.getFirstname());
+    public String aaContact(@ModelAttribute("contact")Person contact, BindingResult result) {
+    	System.out.println(contact.getFirstName());
         return "redirect:";
     }
 }

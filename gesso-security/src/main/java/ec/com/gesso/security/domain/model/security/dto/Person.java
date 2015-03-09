@@ -59,7 +59,7 @@ public class Person implements Serializable {
 
     @JoinColumn(name = "usr_id", referencedColumnName = "usr_id")
     @OneToOne(fetch = FetchType.LAZY)
-    private UserDto segUser;
+    private UserDto userDto;
     
     public Person() {
     }
@@ -140,7 +140,16 @@ public class Person implements Serializable {
         this.catalog = catalog;
     }
 
-    @Override
+    
+    public UserDto getUserDto() {
+		return userDto;
+	}
+
+	public void setUserDto(UserDto userDto) {
+		this.userDto = userDto;
+	}
+
+	@Override
     public int hashCode() {
         int hash = 0;
         hash += (idPerson != null ? idPerson.hashCode() : 0);

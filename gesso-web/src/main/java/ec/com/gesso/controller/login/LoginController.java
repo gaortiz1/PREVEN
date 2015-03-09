@@ -8,26 +8,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import ec.com.gesso.controller.persona.PersonDto;
+import ec.com.gesso.security.domain.model.security.dto.Person;
 
 @Controller
 @SessionAttributes
 public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(){
-		return new ModelAndView("login", "command", new PersonDto());
+		return new ModelAndView("login", "command", new Person());
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@ModelAttribute("contact")PersonDto contact, BindingResult result) {
-    	System.out.println(contact.getFirstname());
+    public String login(@ModelAttribute("contact")Person contact, BindingResult result) {
+    	System.out.println(contact.getUserDto().getUsrNickName());
+    	System.out.println(contact.getUserDto().getUsrPassword());
         return "redirect:newPerson";
     }
 	
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String signup(@ModelAttribute("contact")PersonDto contact, BindingResult result) {
-    	System.out.println(contact.getFirstname());
+    public String signup(@ModelAttribute("contact")Person contact, BindingResult result) {
+    	System.out.println(contact.getFirstName());
         return "redirect:newPerson";
     }
 	
