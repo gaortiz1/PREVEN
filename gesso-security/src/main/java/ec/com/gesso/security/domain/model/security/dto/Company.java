@@ -6,6 +6,7 @@
 package ec.com.gesso.security.domain.model.security.dto;
 
 import java.io.Serializable;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,8 +14,6 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -23,8 +22,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "company")
-@NamedQueries({
-    @NamedQuery(name = "Company.findAll", query = "SELECT c FROM Company c")})
+
 public class Company implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

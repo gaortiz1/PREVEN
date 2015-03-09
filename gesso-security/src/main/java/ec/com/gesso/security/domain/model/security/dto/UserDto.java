@@ -14,8 +14,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -26,8 +24,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "seg_user")
-@NamedQueries({
-    @NamedQuery(name = "SegUser.findAll", query = "SELECT s FROM SegUser s")})
 public class UserDto implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -43,7 +39,7 @@ public class UserDto implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "segUser", fetch = FetchType.LAZY)
     private Collection<UserProfileDto> segUserProfileCollection;
 
-    @OneToOne(mappedBy = "segUser", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "userDto", fetch = FetchType.LAZY)
     private Person person;
     
     public UserDto() {

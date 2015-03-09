@@ -7,6 +7,7 @@ package ec.com.gesso.security.domain.model.security.dto;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,8 +16,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,8 +25,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "seg_user_profile")
-@NamedQueries({
-    @NamedQuery(name = "SegUserProfile.findAll", query = "SELECT s FROM SegUserProfile s")})
+
 public class UserProfileDto implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId

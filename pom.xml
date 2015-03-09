@@ -6,17 +6,24 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>gesso-client</module>
-		<module>gesso-web</module>
-		<module>gesso-security</module>
+<!-- 		<module>gesso-client</module> -->
+<!-- 		<module>gesso-web</module> -->
+<!-- 		<module>gesso-security</module> -->
 	</modules>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-entitymanager</artifactId>
-				<version>3.6.0.Final</version>
+				<version>4.3.8.Final</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>4.3.8.Final</version>
+			</dependency>
+						
 
 			<dependency>
 				<groupId>junit</groupId>
@@ -168,6 +175,13 @@
 				<artifactId>junit</artifactId>
 				<version>4.7</version>
 				<scope>test</scope>
+			</dependency>
+			
+			
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>9.3-1102-jdbc4</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

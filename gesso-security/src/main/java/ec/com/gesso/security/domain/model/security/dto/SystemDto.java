@@ -7,14 +7,13 @@ package ec.com.gesso.security.domain.model.security.dto;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -24,8 +23,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "seg_system")
-@NamedQueries({
-    @NamedQuery(name = "SegSystem.findAll", query = "SELECT s FROM SegSystem s")})
+
 public class SystemDto implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
