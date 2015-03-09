@@ -19,7 +19,14 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String aaContact(@ModelAttribute("contact")PersonDto contact, BindingResult result) {
+    public String login(@ModelAttribute("contact")PersonDto contact, BindingResult result) {
+    	System.out.println(contact.getFirstname());
+        return "redirect:newPerson";
+    }
+	
+	
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+    public String signup(@ModelAttribute("contact")PersonDto contact, BindingResult result) {
     	System.out.println(contact.getFirstname());
         return "redirect:newPerson";
     }
