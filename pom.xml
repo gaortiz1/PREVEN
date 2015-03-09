@@ -6,9 +6,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-<!-- 		<module>gesso-client</module> -->
-<!-- 		<module>gesso-web</module> -->
-<!-- 		<module>gesso-security</module> -->
+ 		<module>gesso-client</module>
+		<module>gesso-web</module>
+		<module>gesso-security</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
