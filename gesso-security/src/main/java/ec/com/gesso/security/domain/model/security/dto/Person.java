@@ -19,6 +19,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 /**
  *
@@ -50,8 +51,9 @@ public class Person implements Serializable {
     @Basic(optional = false)
     @Column(name = "status_person")
     private boolean statusPerson;
-    @JoinColumn(name = "id_catalog", referencedColumnName = "id_catalog")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "id_catalog", referencedColumnName = "id_catalog")
+//    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @Transient
     private Catalog catalog;
 
     @JoinColumn(name = "usr_id", referencedColumnName = "usr_id")

@@ -101,19 +101,19 @@
                         <div class="form-group">
                             <label for="firstname" class="col-md-3 control-label">First Name</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                                <form:input path="firstName" cssClass="form-control" placeholder="First Name"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="col-md-3 control-label">Last Name</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                                <form:input path="lastName" cssClass="form-control" placeholder="Last Name"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-md-3 control-label">Password</label>
                             <div class="col-md-9">
-                                <input type="password" class="form-control" name="passwd" placeholder="Password">
+                                <form:password path="userDto.usrPassword" cssClass="form-control" placeholder="Password"/>
                             </div>
                         </div>
 

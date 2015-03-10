@@ -18,6 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -37,7 +38,8 @@ public class Catalog implements Serializable {
     @Basic(optional = false)
     @Column(name = "status")
     private boolean status;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "catalog", fetch = FetchType.LAZY)
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "catalog", fetch = FetchType.LAZY)
+    @Transient
     private Collection<Person> personCollection;
     @JoinColumn(name = "id_groupcatalog", referencedColumnName = "id_groupcatalog")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
