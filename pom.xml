@@ -9,6 +9,7 @@
  		<module>gesso-client</module>
 		<module>gesso-web</module>
 		<module>gesso-security</module>
+		<module>gesso-ear</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
