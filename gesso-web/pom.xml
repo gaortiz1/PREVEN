@@ -104,6 +104,14 @@
 			<artifactId>gesso-security</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>4.1.5.RELEASE</version>
+		</dependency>
+		
 	</dependencies>
     <build>
         <plugins>
