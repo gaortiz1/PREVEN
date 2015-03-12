@@ -1,5 +1,7 @@
 package ec.com.gesso.controller.administration;
 
+import java.util.Collection;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,21 +20,26 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
 public class UserAdministrationController {
 	@RequestMapping(value = "/user-administration", method = RequestMethod.GET)
 	public ModelAndView userAdministration(){
+		Collection<UserDto> lstCollection =  GessoSecurityFactory.getInstance().getSecurityService().findAllUsers();
 		return new ModelAndView("user-administration", "command", new Person());
 	}
 	
 	@RequestMapping(value = "/user-administration", method = RequestMethod.POST)
     public String userAdministration(@ModelAttribute("contact")Person contact, BindingResult result) {
-    	System.out.println(contact.getUserDto().getUsrNickName());
-    	System.out.println(contact.getUserDto().getUsrPassword());
     	
-    	UserDto userDto =  GessoSecurityFactory.getInstance().getSecurityService().autenticateUser(contact.getUserDto().getUsrNickName(), contact.getUserDto().getUsrPassword());
-    	System.out.println(userDto);
+    	Collection<UserDto> lstCollection =  GessoSecurityFactory.getInstance().getSecurityService().findAllUsers();
     	
-    	if(userDto == null){
+    	if(lstCollection == null){
     		return "redirect:login";
     	}
     	
         return "redirect:newPerson";
     }
+	
+	
+	@RequestMapping(value = "/user-profile", method = RequestMethod.GET)
+	public ModelAndView userProfile(){
+		return new ModelAndView("user-administration", "command", new Person());
+	}
+	
 }
