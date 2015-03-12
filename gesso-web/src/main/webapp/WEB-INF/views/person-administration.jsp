@@ -540,7 +540,7 @@
 								<a href="#">Administration</a>
 							</li>
 							
-							<li class="active">User</li>
+							<li class="active">Person</li>
 						</ul><!-- /.breadcrumb -->
 
 						<!-- #section:basics/content.searchbox -->
