@@ -39,7 +39,7 @@ public class UserAdministrationController {
 	
 	@RequestMapping(value = "/user-profile", method = RequestMethod.GET)
 	public ModelAndView userProfile(){
-		return new ModelAndView("user-administration", "command", new Person());
+		return new ModelAndView("profile", "command", new Person());
 	}
 	
 }
