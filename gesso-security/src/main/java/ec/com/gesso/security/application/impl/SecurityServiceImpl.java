@@ -1,5 +1,7 @@
 package ec.com.gesso.security.application.impl;
 
+import java.util.Collection;
+
 import ec.com.gesso.security.application.ISecurityService;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
 import ec.com.gesso.security.domain.model.security.dto.Person;
@@ -24,6 +26,11 @@ public class SecurityServiceImpl implements ISecurityService{
 	@Override
 	public void persistNewUser(Person person) {
 		securityRepository.persistNewUser(person);
+	}
+
+	@Override
+	public Collection<UserDto> findAllUsers() {
+		return securityRepository.findAllUsers();
 	}
 
 }

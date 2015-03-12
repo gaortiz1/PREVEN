@@ -1,5 +1,7 @@
 package ec.com.gesso.security.application;
 
+import java.util.Collection;
+
 import ec.com.gesso.security.domain.model.security.dto.Person;
 import ec.com.gesso.security.domain.model.security.dto.UserDto;
 
@@ -21,4 +23,7 @@ public interface ISecurityService {
 	 * @param person
 	 */
 	public void persistNewUser(Person person);
+	
+	
+	public Collection<UserDto> findAllUsers();
 }

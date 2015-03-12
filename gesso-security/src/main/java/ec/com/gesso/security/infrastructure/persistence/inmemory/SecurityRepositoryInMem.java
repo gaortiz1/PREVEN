@@ -1,5 +1,6 @@
 package ec.com.gesso.security.infrastructure.persistence.inmemory;
 
+import java.util.Collection;
 import java.util.Map;
 
 import ec.com.gesso.security.domain.model.handling.HandlingEventRepository;
@@ -23,5 +24,10 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 	@Override
 	public void persistNewUser(Person person) {
 		securityDb.put("", person);
+	}
+
+	@Override
+	public Collection<UserDto> findAllUsers() {
+		return null;
 	}
 }

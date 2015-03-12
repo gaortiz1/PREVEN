@@ -1,5 +1,7 @@
 package ec.com.gesso.security.infrastructure.persistence.hibernate;
 
+import java.util.Collection;
+
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
@@ -34,6 +36,14 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 			e.printStackTrace();
 		}
 		
+	}
+
+	@Override
+	public Collection<UserDto> findAllUsers() {
+		Criteria criteria =  null;
+		criteria =  getSession().createCriteria(UserDto.class);
+		
+		return criteria.list();
 	}
 
 }
