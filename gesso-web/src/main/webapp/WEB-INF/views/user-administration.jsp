@@ -648,53 +648,16 @@
 						</div><!-- /.ace-settings-container -->
 
 						<!-- /section:settings.box -->
-						<div class="page-header">
-							<h1>
-								Dashboard
-								<small>
-									<i class="ace-icon fa fa-angle-double-right"></i>
-									overview &amp; stats
-								</small>
-							</h1>
-						</div><!-- /.page-header -->
+						<!-- /.page-header -->
 
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<div class="alert alert-block alert-success">
-									<button type="button" class="close" data-dismiss="alert">
-										<i class="ace-icon fa fa-times"></i>
-									</button>
-
-									<i class="ace-icon fa fa-check green"></i>
-
-									Welcome to
-									<strong class="green">
-										Gesso
-										<small>(v1.0.0)</small>
-									</strong>,
-	the lightweight, feature-rich and easy to use .....
-								</div>
+								
+								
+								
 
 								<div class="hr hr32 hr-dotted"></div>
-
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="widget-box transparent" id="recent-box">
-											<div class="widget-header">
-												<h4 class="widget-title lighter smaller">
-													<i class="ace-icon fa fa-rss orange"></i>RECENT
-												</h4>
-
-												
-											</div>
-
-											
-										</div><!-- /.widget-box -->
-									</div><!-- /.col -->
-
-									
-								</div><!-- /.row -->
 
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->

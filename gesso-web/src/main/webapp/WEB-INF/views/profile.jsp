@@ -718,7 +718,7 @@
 														<a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
 															<i class="ace-icon fa fa-circle light-green"></i>
 															&nbsp;
-															<span class="white">Roberto M. Chasipanta</span>
+															<span class="white">Roberto Chasipanta</span>
 														</a>
 
 														<ul class="align-left dropdown-menu dropdown-caret dropdown-lighter">
