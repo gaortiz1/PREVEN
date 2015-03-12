@@ -329,7 +329,7 @@
 								</li>
 
 								<li class="dropdown-footer">
-									<a href="inbox.html">
+									<a href="#">
 										See all messages
 										<i class="ace-icon fa fa-arrow-right"></i>
 									</a>
