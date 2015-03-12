@@ -246,10 +246,10 @@
 									<ul class="dropdown-menu dropdown-navbar">
 										<li>
 											<a href="#" class="clearfix">
-												<img src="${pageContext.request.contextPath}/resources/assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+												<img src="${pageContext.request.contextPath}/resources/assets/avatars/avatar.png" class="msg-photo" alt="Roberto's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
-														<span class="blue">Alex:</span>
+														<span class="blue">Roberto:</span>
 														Ciao sociis natoque penatibus et auctor ...
 													</span>
 
@@ -707,7 +707,7 @@
 											<div>
 												<!-- #section:pages/profile.picture -->
 												<span class="profile-picture">
-													<img id="avatar" class="editable img-responsive" alt="Alex's Avatar" src="${pageContext.request.contextPath}/resources/assets/avatars/profile-pic.jpg" />
+													<img id="avatar" class="editable img-responsive" alt="Roberto's Avatar" src="${pageContext.request.contextPath}/resources/assets/avatars/profile-pic.jpg" />
 												</span>
 
 												<!-- /section:pages/profile.picture -->
@@ -718,7 +718,7 @@
 														<a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
 															<i class="ace-icon fa fa-circle light-green"></i>
 															&nbsp;
-															<span class="white">Alex M. Doe</span>
+															<span class="white">Roberto M. Chasipanta</span>
 														</a>
 
 														<ul class="align-left dropdown-menu dropdown-caret dropdown-lighter">
@@ -795,7 +795,7 @@
 													<div class="profile-info-name"> Username </div>
 
 													<div class="profile-info-value">
-														<span class="editable" id="username">alexdoe</span>
+														<span class="editable" id="username">maniac787</span>
 													</div>
 												</div>
 
@@ -873,7 +873,7 @@
 													<div class="row">
 														<div class="col-xs-12 col-sm-3 center">
 															<span class="profile-picture">
-																<img class="editable img-responsive" alt="Alex's Avatar" id="avatar2" src="${pageContext.request.contextPath}/resources/assets/avatars/profile-pic.jpg" />
+																<img class="editable img-responsive" alt="Roberto's Avatar" id="avatar2" src="${pageContext.request.contextPath}/resources/assets/avatars/profile-pic.jpg" />
 															</span>
 
 															<div class="space space-4"></div>
@@ -883,7 +883,7 @@
 
 														<div class="col-xs-12 col-sm-9">
 															<h4 class="blue">
-																<span class="middle">Alex M. Doe</span>
+																<span class="middle">Roberto M. Chasipanta</span>
 
 																<span class="label label-purple arrowed-in-right">
 																	<i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
@@ -896,7 +896,7 @@
 																	<div class="profile-info-name"> Username </div>
 
 																	<div class="profile-info-value">
-																		<span>alexdoe</span>
+																		<span>maniac787</span>
 																	</div>
 																</div>
 
@@ -1255,7 +1255,7 @@
 																		<label class="col-sm-4 control-label no-padding-right" for="form-field-username">Username</label>
 
 																		<div class="col-sm-8">
-																			<input class="col-xs-12 col-sm-10" type="text" id="form-field-username" placeholder="Username" value="alexdoe" />
+																			<input class="col-xs-12 col-sm-10" type="text" id="form-field-username" placeholder="Username" value="maniac787" />
 																		</div>
 																	</div>
 
@@ -1265,8 +1265,8 @@
 																		<label class="col-sm-4 control-label no-padding-right" for="form-field-first">Name</label>
 
 																		<div class="col-sm-8">
-																			<input class="input-small" type="text" id="form-field-first" placeholder="First Name" value="Alex" />
-																			<input class="input-small" type="text" id="form-field-last" placeholder="Last Name" value="Doe" />
+																			<input class="input-small" type="text" id="form-field-first" placeholder="First Name" value="Roberto" />
+																			<input class="input-small" type="text" id="form-field-last" placeholder="Last Name" value="Chasipanta" />
 																		</div>
 																	</div>
 																</div>
@@ -1325,7 +1325,7 @@
 
 																<div class="col-sm-9">
 																	<span class="input-icon input-icon-right">
-																		<input type="email" id="form-field-email" value="alexdoe@gmail.com" />
+																		<input type="email" id="form-field-email" value="maniac787@gmail.com" />
 																		<i class="ace-icon fa fa-envelope"></i>
 																	</span>
 																</div>
@@ -1338,7 +1338,7 @@
 
 																<div class="col-sm-9">
 																	<span class="input-icon input-icon-right">
-																		<input type="url" id="form-field-website" value="http://www.alexdoe.com/" />
+																		<input type="url" id="form-field-website" value="http://www.maniac787.com/" />
 																		<i class="ace-icon fa fa-globe"></i>
 																	</span>
 																</div>
@@ -1365,7 +1365,7 @@
 
 																<div class="col-sm-9">
 																	<span class="input-icon">
-																		<input type="text" value="facebook_alexdoe" id="form-field-facebook" />
+																		<input type="text" value="facebook_maniac787" id="form-field-facebook" />
 																		<i class="ace-icon fa fa-facebook blue"></i>
 																	</span>
 																</div>
@@ -1378,7 +1378,7 @@
 
 																<div class="col-sm-9">
 																	<span class="input-icon">
-																		<input type="text" value="twitter_alexdoe" id="form-field-twitter" />
+																		<input type="text" value="twitter_maniac787" id="form-field-twitter" />
 																		<i class="ace-icon fa fa-twitter light-blue"></i>
 																	</span>
 																</div>
@@ -1391,7 +1391,7 @@
 
 																<div class="col-sm-9">
 																	<span class="input-icon">
-																		<input type="text" value="google_alexdoe" id="form-field-gplus" />
+																		<input type="text" value="google_maniac787" id="form-field-gplus" />
 																		<i class="ace-icon fa fa-google-plus red"></i>
 																	</span>
 																</div>
