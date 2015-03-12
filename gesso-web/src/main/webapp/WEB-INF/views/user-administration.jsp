@@ -459,7 +459,7 @@
 							</li>
 							
 							<li class="">
-								<a href="tables.html">
+								<a href="${pageContext.request.contextPath}/company-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Company 
 								</a>
@@ -468,7 +468,7 @@
 							</li>
 
 							<li class="">
-								<a href="jqgrid.html">
+								<a href="${pageContext.request.contextPath}/person-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Person
 								</a>
