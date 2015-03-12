@@ -429,7 +429,7 @@
 				</div><!-- /.sidebar-shortcuts -->
 
 				<ul class="nav nav-list">
-					<li class="active">
+					<li class="">
 						<a href="${pageContext.request.contextPath}/home">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> Dashboard </span>
@@ -449,7 +449,7 @@
 						<b class="arrow"></b>
 
 						<ul class="submenu">
-							<li class="active">
+							<li class="">
 								<a href="${pageContext.request.contextPath}/user-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
 									User
@@ -458,7 +458,7 @@
 								<b class="arrow"></b>
 							</li>
 							
-							<li class="">
+							<li class="active">
 								<a href="${pageContext.request.contextPath}/company-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Company 
