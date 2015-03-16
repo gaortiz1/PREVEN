@@ -23,12 +23,12 @@ public class SecurityServiceImpl implements ISecurityService{
 		return securityRepository.autenticateUser(userName, userPassword);
 	}
 
-	@Override
+//	@Override
 	public void persistNewUser(Person person) {
 		securityRepository.persistNewUser(person);
 	}
 
-	@Override
+//	@Override
 	public Collection<UserDto> findAllUsers() {
 		return securityRepository.findAllUsers();
 	}
