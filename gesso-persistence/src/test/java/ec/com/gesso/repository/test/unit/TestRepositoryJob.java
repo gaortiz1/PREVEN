@@ -23,28 +23,31 @@ public class TestRepositoryJob{
 	public void setUp() throws Exception {
 		this.repositoryProcess = new RepositoryJob();
 		this.repositoryProcess.setRepositoryEntity(repositoryWrapper);
+		this.entity.setId(1L);
+		this.entity.setName(StringUtils.EMPTY);
+		this.entity.setDescription(StringUtils.EMPTY);
 	}
 
 	@Test
 	public void testCreateWithFielsNotNull() {
-		this.entity.setId(1L);
-		this.entity.setName(StringUtils.EMPTY);
-		this.entity.setDescription(StringUtils.EMPTY);
 		this.repositoryProcess.create(entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void testCreateWithFielsNameNull() {
-		this.entity.setId(1L);
-		this.entity.setDescription(StringUtils.EMPTY);
+		this.entity.setName(null);
 		this.repositoryProcess.create(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void testCreateWithFielsDescriptionNull() {
-		this.entity.setId(1L);
-		this.entity.setName(StringUtils.EMPTY);
+		this.entity.setDescription(null);
 		this.repositoryProcess.create(this.entity);
+	}
+	
+	@Test(expected=ValidationEntity.class)
+	public void testCreateWithParameterNull() {
+		this.repositoryProcess.create(null);
 	}
 
 }
