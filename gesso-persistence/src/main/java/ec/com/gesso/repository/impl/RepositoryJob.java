@@ -32,7 +32,17 @@ public class RepositoryJob implements IRepositoryEntity<Job> {
 			throw new ValidationEntity("El campo Description es null");
 		}
 
-		return repositoryEntity.create(job);
+		this.repositoryEntity.create(job);
+
+		if(job.getSubLevels() != null && !job.getSubLevels().isEmpty()) {
+			
+			for(final Job subLevel : job.getSubLevels()) {
+				subLevel.setIdRoot(job.getId());
+				this.create(subLevel);
+			}
+		}
+
+		return job;
 	}
 
 	/**

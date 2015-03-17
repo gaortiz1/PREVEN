@@ -33,8 +33,18 @@ public class RepositorySubProcess implements IRepositoryEntity<SubProcess> {
 		if (null == subProcess.getDescription()) {
 			throw new ValidationEntity("El campo Description es null");
 		}
+		
+		this.repositoryEntity.create(subProcess);
 
-		return repositoryEntity.create(subProcess);
+		if(subProcess.getSubLevels() != null && !subProcess.getSubLevels().isEmpty()) {
+			
+			for(final SubProcess subLevel : subProcess.getSubLevels()) {
+				subLevel.setIdRoot(subProcess.getId());
+				this.create(subLevel);
+			}
+		}
+
+		return subProcess;
 	}
 
 	/**

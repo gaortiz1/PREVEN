@@ -47,12 +47,12 @@ public class Process implements Serializable{
 	
 	@JoinColumn(name = "ID_PROCESS_ROOT", referencedColumnName = "ID_PROCESS_ROOT", insertable=false, updatable=false)
 	@ManyToOne(fetch = FetchType.LAZY)
-	private Process subLevel;
+	private Process levelProcessRoot;
 	
 	@OneToMany(mappedBy="processRoot")
-	private Collection<SubProcess> subprocesses;
+	private Collection<SubProcess> subProcesses;
 	
-	@OneToMany(mappedBy="subLevel")
+	@OneToMany(mappedBy="levelProcessRoot")
 	private Collection<Process> subLevels;
 
 	/**
@@ -126,31 +126,31 @@ public class Process implements Serializable{
 	}
 
 	/**
-	 * @return the subLevel
+	 * @return the levelProcessRoot
 	 */
-	public Process getSubLevel() {
-		return subLevel;
+	public Process getLevelProcessRoot() {
+		return levelProcessRoot;
 	}
 
 	/**
-	 * @param subLevel the subLevel to set
+	 * @param levelProcessRoot the levelProcessRoot to set
 	 */
-	public void setSubLevel(Process subLevel) {
-		this.subLevel = subLevel;
+	public void setLevelProcessRoot(Process levelProcessRoot) {
+		this.levelProcessRoot = levelProcessRoot;
 	}
 
 	/**
-	 * @return the subprocesses
+	 * @return the subProcesses
 	 */
-	public Collection<SubProcess> getSubprocesses() {
-		return subprocesses;
+	public Collection<SubProcess> getSubProcesses() {
+		return subProcesses;
 	}
 
 	/**
-	 * @param subprocesses the subprocesses to set
+	 * @param subProcesses the subProcesses to set
 	 */
-	public void setSubprocesses(Collection<SubProcess> subprocesses) {
-		this.subprocesses = subprocesses;
+	public void setSubProcesses(Collection<SubProcess> subProcesses) {
+		this.subProcesses = subProcesses;
 	}
 
 	/**

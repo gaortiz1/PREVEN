@@ -50,13 +50,13 @@ public class Job implements Serializable{
 	
 	@JoinColumn(name = "ID_JOB_ROOT", referencedColumnName = "ID_JOB_ROOT", insertable=false, updatable=false)
 	@ManyToOne(fetch = FetchType.LAZY)
-	private Job subLevel;
+	private Job levelJobRoot;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "ID_SUBPROCESS", referencedColumnName = "ID_SUBPROCESS", insertable=false, updatable=false)
 	private SubProcess subProcessRoot;
 	
-	@OneToMany(mappedBy="subLevel")
+	@OneToMany(mappedBy="levelJobRoot")
 	private Collection<Job> subLevels;
 
 	/**
@@ -144,17 +144,17 @@ public class Job implements Serializable{
 	}
 
 	/**
-	 * @return the subLevel
+	 * @return the levelJobRoot
 	 */
-	public Job getSubLevel() {
-		return subLevel;
+	public Job getLevelJobRoot() {
+		return levelJobRoot;
 	}
 
 	/**
-	 * @param subLevel the subLevel to set
+	 * @param levelJobRoot the levelJobRoot to set
 	 */
-	public void setSubLevel(Job subLevel) {
-		this.subLevel = subLevel;
+	public void setLevelJobRoot(Job levelJobRoot) {
+		this.levelJobRoot = levelJobRoot;
 	}
 
 	/**

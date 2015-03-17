@@ -50,7 +50,7 @@ public class SubProcess implements Serializable{
 	
 	@JoinColumn(name = "ID_SUBPROCESS_ROOT", referencedColumnName = "ID_SUBPROCESS_ROOT", insertable=false, updatable=false)
 	@ManyToOne(fetch = FetchType.LAZY)
-	private SubProcess subLevel;
+	private SubProcess levelSubProcessRoot;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "ID_PROCESS", referencedColumnName = "ID_PROCESS", insertable=false, updatable=false)
@@ -59,7 +59,7 @@ public class SubProcess implements Serializable{
 	@OneToMany(mappedBy="subProcessRoot")
 	private Collection<Job> jobs;
 	
-	@OneToMany(mappedBy="subLevel")
+	@OneToMany(mappedBy="levelSubProcessRoot")
 	private Collection<SubProcess> subLevels;
 
 	/**
@@ -147,17 +147,17 @@ public class SubProcess implements Serializable{
 	}
 
 	/**
-	 * @return the subLevel
+	 * @return the levelSubProcessRoot
 	 */
-	public SubProcess getSubLevel() {
-		return subLevel;
+	public SubProcess getLevelSubProcessRoot() {
+		return levelSubProcessRoot;
 	}
 
 	/**
-	 * @param subLevel the subLevel to set
+	 * @param levelSubProcessRoot the levelSubProcessRoot to set
 	 */
-	public void setSubLevel(SubProcess subLevel) {
-		this.subLevel = subLevel;
+	public void setLevelSubProcessRoot(SubProcess levelSubProcessRoot) {
+		this.levelSubProcessRoot = levelSubProcessRoot;
 	}
 
 	/**

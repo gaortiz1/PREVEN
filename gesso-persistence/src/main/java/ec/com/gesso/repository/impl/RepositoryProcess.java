@@ -21,20 +21,32 @@ public class RepositoryProcess implements IRepositoryEntity<ec.com.gesso.model.e
 	 */
 	public Process create(final Process process) {
 		
-		if (null == process) {
+		if(null == process) {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}
-		if (null == process.getName()) {
+		if(null == process.getName()) {
 			throw new ValidationEntity("El campo name es null");
 		}
 		
-		if (null == process.getDescription()) {
+		if(null == process.getDescription()) {
 			throw new ValidationEntity("El campo Description es null");
 		}
 		
 		process.setStatus(Boolean.TRUE);
+		
+		this.repositoryEntity.create(process);
+		
+		if(process.getSubLevels() != null && !process.getSubLevels().isEmpty()) {
+			
+			for(final Process subLevel : process.getSubLevels()) {
+				subLevel.setIdRoot(process.getId());
+				this.create(subLevel);
+			}
+		}
+		
+		
 
-		return repositoryEntity.create(process);
+		return process;
 	}
 
 	/**
