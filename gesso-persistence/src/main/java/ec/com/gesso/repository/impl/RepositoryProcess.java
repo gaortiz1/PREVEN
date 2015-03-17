@@ -33,20 +33,8 @@ public class RepositoryProcess implements IRepositoryEntity<ec.com.gesso.model.e
 		}
 		
 		process.setStatus(Boolean.TRUE);
-		
-		this.repositoryEntity.create(process);
-		
-		if(process.getSubLevels() != null && !process.getSubLevels().isEmpty()) {
-			
-			for(final Process subLevel : process.getSubLevels()) {
-				subLevel.setIdRoot(process.getId());
-				this.create(subLevel);
-			}
-		}
-		
-		
 
-		return process;
+		return this.repositoryEntity.create(process);
 	}
 
 	/**
@@ -55,5 +43,5 @@ public class RepositoryProcess implements IRepositoryEntity<ec.com.gesso.model.e
 	public void setRepositoryEntity(IRepositoryEntity<Process> repositoryEntity) {
 		this.repositoryEntity = repositoryEntity;
 	}
-
+	
 }

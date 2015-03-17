@@ -62,7 +62,12 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>ec.com.gesso</groupId>
+			<artifactId>gesso-persistence</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+  </dependencies>
 
 	<build>
 		<plugins>
