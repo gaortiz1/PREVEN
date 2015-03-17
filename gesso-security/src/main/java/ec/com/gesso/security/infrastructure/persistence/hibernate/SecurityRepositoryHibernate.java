@@ -25,7 +25,7 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		return userDto;
 	}
 
-	@Override
+//	@Override
 	public void persistNewUser(Person person) {
 		try {
 			
@@ -38,7 +38,7 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		
 	}
 
-	@Override
+//	@Override
 	public Collection<UserDto> findAllUsers() {
 		Criteria criteria =  null;
 		criteria =  getSession().createCriteria(UserDto.class);
