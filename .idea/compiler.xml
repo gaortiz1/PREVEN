@@ -23,6 +23,9 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="gesso-client" />
+        <module name="gesso-ear" />
+        <module name="gesso-model" />
+        <module name="gesso-persistence" />
         <module name="gesso-security" />
         <module name="gesso-security-model" />
         <module name="gesso-web" />
@@ -30,6 +33,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="gesso-client" target="1.7" />
+      <module name="gesso-model" target="1.5" />
+      <module name="gesso-persistence" target="1.5" />
       <module name="gesso-security" target="1.5" />
       <module name="gesso-web" target="1.6" />
     </bytecodeTargetLevel>

@@ -4,6 +4,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="javaeeApplication" url="file://$PROJECT_DIR$/gesso-ear" />
     <file type="web" url="file://$PROJECT_DIR$/gesso-web" />
   </component>
   <component name="IdProvider" IDEtalkID="A2C6ACE85A52633BD7BD303831A3E28D" />
