@@ -1,5 +1,6 @@
 <%-- <jsp:forward page="Contact"></jsp:forward> --%>
 <%@ page session="false"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -68,7 +69,8 @@
 					<a href="#" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
-							Gesso Admin
+							
+							<spring:message code="gesso.admin"></spring:message>
 						</small>
 					</a>
 
