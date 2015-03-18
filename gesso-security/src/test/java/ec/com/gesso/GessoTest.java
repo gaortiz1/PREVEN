@@ -5,6 +5,8 @@ import java.util.Date;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import ec.com.gesso.security.domain.model.security.dto.Catalog;
+import ec.com.gesso.security.domain.model.security.dto.GroupCatalog;
 import ec.com.gesso.security.domain.model.security.dto.Person;
 import ec.com.gesso.security.domain.model.security.dto.UserDto;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
@@ -16,11 +18,13 @@ public class GessoTest {
 		GessoSecurityFactory.getInstance().getSecurityService().autenticateUser("", "");
 	}
 	
-	@Ignore
+	@Test
 	public void sigInUser(){
-		Person person = new Person(1L, "prueba", "prueba", new Date(), true);
+		Person person = new Person("prueba", "prueba", new Date(), true);
+		person.setIdCatalog(1);
 		
-		person.setUserDto(new UserDto(2, "pruebas", "qwe123"));
+		
+		person.setUserDto(new UserDto("pruebas", "qwe123"));
 		
 		
 		GessoSecurityFactory.getInstance().getSecurityService().persistNewUser(person);

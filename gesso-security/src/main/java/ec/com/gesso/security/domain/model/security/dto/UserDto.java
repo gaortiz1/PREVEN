@@ -32,7 +32,7 @@ public class UserDto implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "usr_id")
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curso_seq")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_new_user")
     @SequenceGenerator(name="seq_new_user", sequenceName="seq_new_user", allocationSize = 1)
     private Integer usrId;
     @Basic(optional = false)
@@ -57,6 +57,11 @@ public class UserDto implements Serializable {
 
     public UserDto(Integer usrId, String usrNickName, String usrPassword) {
         this.usrId = usrId;
+        this.usrNickName = usrNickName;
+        this.usrPassword = usrPassword;
+    }
+    
+    public UserDto(String usrNickName, String usrPassword) {
         this.usrNickName = usrNickName;
         this.usrPassword = usrPassword;
     }

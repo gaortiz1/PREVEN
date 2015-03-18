@@ -12,9 +12,12 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,15 +27,21 @@ import javax.persistence.Transient;
  *
  * @author roberto
  */
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "person")
 
 public class Person implements Serializable {
-    private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @Column(name = "id_person")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_new_person")
+    @SequenceGenerator(name="seq_new_person", sequenceName="seq_new_person", allocationSize = 1)
     private Long idPerson;
+    
+    @Column(name = "id_catalog")
+    private Integer idCatalog;
+    
     @Basic(optional = false)
     @Column(name = "first_name")
     private String firstName;
@@ -68,6 +77,13 @@ public class Person implements Serializable {
 
     public Person(Long idPerson, String firstName, String lastName, Date dateOfBirth, boolean statusPerson) {
         this.idPerson = idPerson;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.statusPerson = statusPerson;
+    }
+    
+    public Person(String firstName, String lastName, Date dateOfBirth, boolean statusPerson) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -167,7 +183,15 @@ public class Person implements Serializable {
         return true;
     }
 
-    @Override
+    public Integer getIdCatalog() {
+		return idCatalog;
+	}
+
+	public void setIdCatalog(Integer idCatalog) {
+		this.idCatalog = idCatalog;
+	}
+
+	@Override
     public String toString() {
         return "ec.com.gesso.security.domain.model.security.dto.Person[ idPerson=" + idPerson + " ]";
     }
