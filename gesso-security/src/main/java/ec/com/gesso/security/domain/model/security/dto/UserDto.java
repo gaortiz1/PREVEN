@@ -13,11 +13,13 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /**
  *
@@ -30,6 +32,8 @@ public class UserDto implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "usr_id")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curso_seq")
+    @SequenceGenerator(name="seq_new_user", sequenceName="seq_new_user", allocationSize = 1)
     private Integer usrId;
     @Basic(optional = false)
     @Column(name = "usr_nick_name")

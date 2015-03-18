@@ -655,14 +655,14 @@
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 								
-								<table id="membersTable" class="simpletablestyle">
+								<table id="membersTable" class="table table-striped table-bordered table-hover">
 				                    <thead>
 				                        <tr>
 				                            <th>Nick</th>
 				                            <th>Name</th>
 				                            <th>Email</th>
 				                            <th>Phone #</th>
-				                            <th>REST URL</th>
+				                            <th>Editar</th>
 				                        </tr>
 				                    </thead>
 				                    <tbody>
@@ -670,9 +670,9 @@
 				                            <tr>
 				                                <td>${member.usrNickName}</td>
 				                                <td>${member.person.firstName}</td>
-				                                <td>${member.usrPassword}</td>
-				                                <td>${member.usrPassword}</td>
-				                                <td>s</td>
+				                                <td>${member.person.lastName}</td>
+				                                <td>${member.person.dateOfBirth}</td>
+				                                <td><a href="#">Editar</a></td>
 				                            </tr>
 				                        </c:forEach>
 				                    </tbody>
