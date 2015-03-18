@@ -75,14 +75,14 @@ public class UserDto implements Serializable {
     }
 
     public String getUsrNickName() {
-        return usrNickName;
-    }
+		return usrNickName;
+	}
 
-    public void setUsrNickName(String usrNickName) {
-        this.usrNickName = usrNickName;
-    }
+	public void setUsrNickName(String usrNickName) {
+		this.usrNickName = usrNickName;
+	}
 
-    public String getUsrPassword() {
+	public String getUsrPassword() {
         return usrPassword;
     }
 

@@ -89,29 +89,27 @@
                             <span></span>
                         </div>
 
-
-
                         <div class="form-group">
-                            <label for="email" class="col-md-3 control-label">Email</label>
+                            <label for="firstName" class="col-md-3 control-label"><spring:message code="page.label.email"/></label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="email" placeholder="Email Address">
+                                <form:input path="userDto.usrNickName" cssClass="form-control" placeholder="Email Address"/>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="firstname" class="col-md-3 control-label">First Name</label>
+                            <label for="firstname" class="col-md-3 control-label"><spring:message code="page.label.firstName"/></label>
                             <div class="col-md-9">
                                 <form:input path="firstName" cssClass="form-control" placeholder="First Name"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                            <label for="lastname" class="col-md-3 control-label"><spring:message code="page.label.lastName"/></label>
                             <div class="col-md-9">
                                 <form:input path="lastName" cssClass="form-control" placeholder="Last Name"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="password" class="col-md-3 control-label">Password</label>
+                            <label for="password" class="col-md-3 control-label"><spring:message code="page.label.password"/></label>
                             <div class="col-md-9">
                                 <form:password path="userDto.usrPassword" cssClass="form-control" placeholder="Password"/>
                             </div>

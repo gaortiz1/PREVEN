@@ -1,5 +1,6 @@
 <%-- <jsp:forward page="Contact"></jsp:forward> --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page session="false"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -658,11 +659,11 @@
 								<table id="membersTable" class="table table-striped table-bordered table-hover">
 				                    <thead>
 				                        <tr>
-				                            <th>Nick</th>
-				                            <th>Name</th>
-				                            <th>Email</th>
-				                            <th>Phone #</th>
-				                            <th>Editar</th>
+				                            <th><spring:message code="page.label.username"/> </th>
+				                            <th><spring:message code="page.label.firstName"/></th>
+				                            <th><spring:message code="page.label.lastName"/></th>
+				                            <th><spring:message code="page.label.dateofbirth"/></th>
+				                            <th><spring:message code="gobal.label.edit"/></th>
 				                        </tr>
 				                    </thead>
 				                    <tbody>

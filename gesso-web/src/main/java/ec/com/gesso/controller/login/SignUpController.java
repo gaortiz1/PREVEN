@@ -1,5 +1,7 @@
 package ec.com.gesso.controller.login;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,6 +28,8 @@ public class SignUpController {
     
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
     public String signUp(@ModelAttribute("contact")Person person, BindingResult result) {
+    	person.setIdCatalog(1);
+    	person.setDateOfBirth(new Date());
     	GessoSecurityFactory.getInstance().getSecurityService().persistNewUser(person);
     	
         return "redirect:login";
