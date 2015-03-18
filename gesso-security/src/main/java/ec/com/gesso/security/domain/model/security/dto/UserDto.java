@@ -113,5 +113,13 @@ public class UserDto implements Serializable {
     public String toString() {
         return "ec.com.gesso.security.domain.model.security.dto.SegUser[ usrId=" + usrId + " ]";
     }
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
     
 }

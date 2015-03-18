@@ -3,6 +3,7 @@ package ec.com.gesso.controller.administration;
 import java.util.Collection;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +20,12 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
 @SessionAttributes
 public class UserAdministrationController {
 	@RequestMapping(value = "/user-administration", method = RequestMethod.GET)
-	public ModelAndView userAdministration(){
+	public void userAdministration(Model model){
 		Collection<UserDto> lstCollection =  GessoSecurityFactory.getInstance().getSecurityService().findAllUsers();
-		return new ModelAndView("user-administration", "command", new Person());
+		
+		model.addAttribute("members", lstCollection);
+		
+//		return new ModelAndView("user-administration", "command", lstCollection);
 	}
 	
 	@RequestMapping(value = "/user-administration", method = RequestMethod.POST)

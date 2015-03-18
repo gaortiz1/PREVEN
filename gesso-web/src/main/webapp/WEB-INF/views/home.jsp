@@ -454,7 +454,7 @@
 							<li class="">
 								<a href="${pageContext.request.contextPath}/user-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
-									User
+									<spring:message code="menu.label.user"/>
 								</a>
 
 								<b class="arrow"></b>
@@ -463,7 +463,7 @@
 							<li class="">
 								<a href="${pageContext.request.contextPath}/company-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Company 
+									<spring:message code="menu.label.compay"/>
 								</a>
 
 								<b class="arrow"></b>
@@ -472,7 +472,7 @@
 							<li class="">
 								<a href="${pageContext.request.contextPath}/person-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Person
+									<spring:message code="menu.label.person"/>
 								</a>
 
 								<b class="arrow"></b>

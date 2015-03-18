@@ -1,4 +1,5 @@
 <%-- <jsp:forward page="Contact"></jsp:forward> --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -654,7 +655,28 @@
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 								
-								
+								<table id="membersTable" class="simpletablestyle">
+				                    <thead>
+				                        <tr>
+				                            <th>Nick</th>
+				                            <th>Name</th>
+				                            <th>Email</th>
+				                            <th>Phone #</th>
+				                            <th>REST URL</th>
+				                        </tr>
+				                    </thead>
+				                    <tbody>
+				                        <c:forEach items="${members}" var="member">
+				                            <tr>
+				                                <td>${member.usrNickName}</td>
+				                                <td>${member.person.firstName}</td>
+				                                <td>${member.usrPassword}</td>
+				                                <td>${member.usrPassword}</td>
+				                                <td>s</td>
+				                            </tr>
+				                        </c:forEach>
+				                    </tbody>
+				                </table>
 								
 
 								<div class="hr hr32 hr-dotted"></div>

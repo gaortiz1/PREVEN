@@ -3,6 +3,7 @@ package ec.com.gesso.security.infrastructure.persistence.hibernate;
 import java.util.Collection;
 
 import org.hibernate.Criteria;
+import org.hibernate.FetchMode;
 import org.hibernate.criterion.Restrictions;
 
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
@@ -41,7 +42,9 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 //	@Override
 	public Collection<UserDto> findAllUsers() {
 		Criteria criteria =  null;
-		criteria =  getSession().createCriteria(UserDto.class);
+		criteria = getSession().createCriteria(UserDto.class);
+		criteria.createAlias("person", "personA");
+		criteria.setFetchMode("personA", FetchMode.JOIN);
 		
 		return criteria.list();
 	}
