@@ -18,7 +18,7 @@ public class GessoTest {
 		GessoSecurityFactory.getInstance().getSecurityService().autenticateUser("", "");
 	}
 	
-	@Test
+	@Ignore
 	public void sigInUser(){
 		Person person = new Person("prueba", "prueba", new Date(), true);
 		person.setIdCatalog(1);
