@@ -6,7 +6,7 @@
 <head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Form Elements - Ace Admin</title>
+		<title>Gesso Admin</title>
 
 		<meta name="description" content="Common form elements and layouts" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -210,9 +210,9 @@
 							</li>
 
 							<li>
-								<a href="#">Forms</a>
+								<a href="#"><spring:message  code="menu.label.administration"/> </a>
 							</li>
-							<li class="active">Form Elements</li>
+							<li class="active">Person</li>
 						</ul><!-- /.breadcrumb -->
 
 						<!-- #section:basics/content.searchbox -->
