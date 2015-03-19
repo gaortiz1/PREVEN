@@ -344,10 +344,6 @@
 				                        </c:forEach>
 				                    </tbody>
 				                </table>
-								
-								
-								
-								
 
 								<div id="modal-form" class="modal" tabindex="-1">
 									<div class="modal-dialog">
@@ -417,7 +413,6 @@
 										</div>
 									</div>
 								</div>
-								
 
 								<div class="hr hr32 hr-dotted"></div>
 
