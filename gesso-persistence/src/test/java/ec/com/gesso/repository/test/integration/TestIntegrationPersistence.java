@@ -32,7 +32,7 @@ public class TestIntegrationPersistence {
 		Process process = new Process();
 		process.setDescription(StringUtils.EMPTY);
 		process.setName(StringUtils.EMPTY);
-		//repositoryProcess.create(process);
+		repositoryProcess.create(process);
 	}
 
 }
