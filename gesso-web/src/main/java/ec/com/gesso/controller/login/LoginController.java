@@ -1,5 +1,7 @@
 package ec.com.gesso.controller.login;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,7 +15,7 @@ import ec.com.gesso.security.domain.model.security.dto.UserDto;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 @Controller
-@SessionAttributes
+@SessionAttributes()
 public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(){
@@ -21,10 +23,12 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@ModelAttribute("contact")Person contact, BindingResult result) {
+    public String login(@ModelAttribute("contact")Person contact, BindingResult result, HttpSession session) {
     	
     	UserDto userDto =  GessoSecurityFactory.getInstance().getSecurityService().autenticateUser(contact.getUserDto().getUsrNickName(), contact.getUserDto().getUsrPassword());
     	
+    	session.setAttribute("logedUser" , userDto);
+        
     	if(userDto == null){
     		return "redirect:login";
     	}

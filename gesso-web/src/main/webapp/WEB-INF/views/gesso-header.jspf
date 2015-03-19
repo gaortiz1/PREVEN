@@ -297,7 +297,7 @@
 								<img class="nav-user-photo" src="${pageContext.request.contextPath}/resources/assets/avatars/user.jpg" alt="Roberto's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Roberto
+									${sessionScope.logedUser.person.firstName}
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>

@@ -1,7 +1,7 @@
 <%-- <jsp:forward page="Contact"></jsp:forward> --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>

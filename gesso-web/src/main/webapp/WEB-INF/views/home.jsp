@@ -1,5 +1,5 @@
 <%-- <jsp:forward page="Contact"></jsp:forward> --%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">

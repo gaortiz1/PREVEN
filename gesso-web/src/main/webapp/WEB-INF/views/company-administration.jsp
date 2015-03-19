@@ -1,5 +1,5 @@
 <%-- <jsp:forward page="Contact"></jsp:forward> --%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
