@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import ec.com.gesso.security.domain.model.security.dto.Person;
-import ec.com.gesso.security.domain.model.security.dto.UserDto;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 @Controller
 @SessionAttributes
@@ -20,16 +19,9 @@ public class PersonAdministrationController {
 	}
 	
 	@RequestMapping(value = "/person-administration", method = RequestMethod.POST)
-    public String userAdministration(@ModelAttribute("contact")Person contact, BindingResult result) {
-    	System.out.println(contact.getUserDto().getUsrNickName());
-    	System.out.println(contact.getUserDto().getUsrPassword());
+    public String userAdministration(@ModelAttribute("contact")Person person, BindingResult result) {
     	
-    	UserDto userDto =  GessoSecurityFactory.getInstance().getSecurityService().autenticateUser(contact.getUserDto().getUsrNickName(), contact.getUserDto().getUsrPassword());
-    	System.out.println(userDto);
-    	
-    	if(userDto == null){
-    		return "redirect:login";
-    	}
+    	GessoSecurityFactory.getInstance().getSecurityService().persistPerson(person);
     	
         return "redirect:newPerson";
     }

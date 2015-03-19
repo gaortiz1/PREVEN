@@ -59,6 +59,10 @@ public class Person implements Serializable {
     @Basic(optional = false)
     @Column(name = "status_person")
     private boolean statusPerson;
+    @Column(name = "per_document_number")
+    private String documentNumber;
+    
+    
 //    @JoinColumn(name = "id_catalog", referencedColumnName = "id_catalog")
 //    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @Transient
@@ -195,5 +199,13 @@ public class Person implements Serializable {
     public String toString() {
         return "ec.com.gesso.security.domain.model.security.dto.Person[ idPerson=" + idPerson + " ]";
     }
+
+	public String getDocumentNumber() {
+		return documentNumber;
+	}
+
+	public void setDocumentNumber(String documentNumber) {
+		this.documentNumber = documentNumber;
+	}
     
 }

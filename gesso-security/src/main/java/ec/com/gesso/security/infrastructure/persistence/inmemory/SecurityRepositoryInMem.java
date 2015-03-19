@@ -30,4 +30,8 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 	public Collection<UserDto> findAllUsers() {
 		return null;
 	}
+	
+	public void persistPerson(Person person) {
+		
+	}
 }

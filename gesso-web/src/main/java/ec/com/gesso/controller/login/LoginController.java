@@ -22,11 +22,8 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute("contact")Person contact, BindingResult result) {
-    	System.out.println(contact.getUserDto().getUsrNickName());
-    	System.out.println(contact.getUserDto().getUsrPassword());
     	
     	UserDto userDto =  GessoSecurityFactory.getInstance().getSecurityService().autenticateUser(contact.getUserDto().getUsrNickName(), contact.getUserDto().getUsrPassword());
-    	System.out.println(userDto);
     	
     	if(userDto == null){
     		return "redirect:login";

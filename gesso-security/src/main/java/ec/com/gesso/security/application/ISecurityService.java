@@ -24,6 +24,8 @@ public interface ISecurityService {
 	 */
 	public void persistNewUser(Person person);
 	
+	public void persistPerson(Person person);
+	
 	
 	public Collection<UserDto> findAllUsers();
 }

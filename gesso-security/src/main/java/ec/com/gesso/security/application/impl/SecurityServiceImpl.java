@@ -33,4 +33,8 @@ public class SecurityServiceImpl implements ISecurityService{
 		return securityRepository.findAllUsers();
 	}
 
+	public void persistPerson(Person person) {
+		securityRepository.persistPerson(person);
+	}
+
 }

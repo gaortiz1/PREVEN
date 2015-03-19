@@ -16,4 +16,6 @@ public interface SecurityRepository {
 	public void persistNewUser(Person person);
 	
 	public Collection<UserDto> findAllUsers();
+	
+	public void persistPerson(Person person);
 }
