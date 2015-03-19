@@ -337,11 +337,86 @@
 				                                <td>${member.person.firstName}</td>
 				                                <td>${member.person.lastName}</td>
 				                                <td>${member.person.dateOfBirth}</td>
-				                                <td><a href="#">Editar</a></td>
+				                                <td>
+													<a href="#modal-form" role="button" class="blue" data-toggle="modal"> Edit </a>
+				                                </td>
 				                            </tr>
 				                        </c:forEach>
 				                    </tbody>
 				                </table>
+								
+								
+								
+								
+
+								<div id="modal-form" class="modal" tabindex="-1">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="blue bigger">Please fill the following form fields</h4>
+											</div>
+
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-xs-12 col-sm-5">
+														<div class="space"></div>
+
+														<input type="file" />
+													</div>
+
+													<div class="col-xs-12 col-sm-7">
+														<div class="form-group">
+															<label for="form-field-select-3">Location</label>
+
+															<div>
+																<select class="chosen-select" data-placeholder="Choose a Country...">
+																	<option value="">&nbsp;</option>
+																	<option value="AL">Alabama</option>
+																	<option value="AK">Alaska</option>
+																	<option value="AZ">Arizona</option>
+																</select>
+															</div>
+														</div>
+
+														<div class="space-4"></div>
+
+														<div class="form-group">
+															<label for="form-field-username">Username</label>
+
+															<div>
+																<input type="text" id="form-field-username" placeholder="Username" value="alexdoe" />
+															</div>
+														</div>
+
+														<div class="space-4"></div>
+
+														<div class="form-group">
+															<label for="form-field-first">Name</label>
+
+															<div>
+																<input type="text" id="form-field-first" placeholder="First Name" value="Alex" />
+																<input type="text" id="form-field-last" placeholder="Last Name" value="Doe" />
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="modal-footer">
+												<button class="btn btn-sm" data-dismiss="modal">
+													<i class="ace-icon fa fa-times"></i>
+													Cancel
+												</button>
+
+												<button class="btn btn-sm btn-primary">
+													<i class="ace-icon fa fa-check"></i>
+													Save
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
 								
 
 								<div class="hr hr32 hr-dotted"></div>
