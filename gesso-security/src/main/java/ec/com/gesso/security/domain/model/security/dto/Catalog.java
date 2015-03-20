@@ -40,10 +40,7 @@ public class Catalog implements Serializable {
     @Basic(optional = false)
     @Column(name = "status")
     private boolean status;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "catalog", fetch = FetchType.LAZY)
-    private Collection<Phone> phoneCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "catalog", fetch = FetchType.LAZY)
-    private Collection<Person> personCollection;
+    
     @JoinColumn(name = "id_groupcatalog", referencedColumnName = "id_groupcatalog")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private GroupCatalog groupCatalog;
@@ -83,22 +80,6 @@ public class Catalog implements Serializable {
 
     public void setStatus(boolean status) {
         this.status = status;
-    }
-
-    public Collection<Phone> getPhoneCollection() {
-        return phoneCollection;
-    }
-
-    public void setPhoneCollection(Collection<Phone> phoneCollection) {
-        this.phoneCollection = phoneCollection;
-    }
-
-    public Collection<Person> getPersonCollection() {
-        return personCollection;
-    }
-
-    public void setPersonCollection(Collection<Person> personCollection) {
-        this.personCollection = personCollection;
     }
 
     public GroupCatalog getGroupCatalog() {
