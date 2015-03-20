@@ -6,9 +6,11 @@
 package ec.com.gesso.security.domain.model.security.dto;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,12 +18,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 /**
  *
@@ -61,17 +64,23 @@ public class Person implements Serializable {
     private boolean statusPerson;
     @Column(name = "per_document_number")
     private String documentNumber;
-    
-    
-//    @JoinColumn(name = "id_catalog", referencedColumnName = "id_catalog")
-//    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @Transient
-    private Catalog catalog;
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
+    private Collection<CurriculumVitae> curriculumVitaeCollection;
     @JoinColumn(name = "usr_id", referencedColumnName = "usr_id")
     @OneToOne(fetch = FetchType.LAZY)
     private UserDto userDto;
-    
+    @JoinColumn(name = "id_catalog", referencedColumnName = "id_catalog")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private Catalog catalog;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
+    private Collection<Title> titleCollection;
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
+    private Collection<Document> documentCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
+    private Collection<Disability> disabilityCollection;
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
+    private Collection<ContactData> contactDataCollection;
+
     public Person() {
     }
 
@@ -150,6 +159,30 @@ public class Person implements Serializable {
         this.statusPerson = statusPerson;
     }
 
+    public String getDocumentNumber() {
+		return documentNumber;
+	}
+
+	public void setDocumentNumber(String documentNumber) {
+		this.documentNumber = documentNumber;
+	}
+
+    public Collection<CurriculumVitae> getCurriculumVitaeCollection() {
+        return curriculumVitaeCollection;
+    }
+
+    public void setCurriculumVitaeCollection(Collection<CurriculumVitae> curriculumVitaeCollection) {
+        this.curriculumVitaeCollection = curriculumVitaeCollection;
+    }
+
+    public UserDto getUserDto() {
+		return userDto;
+	}
+
+	public void setUserDto(UserDto userDto) {
+		this.userDto = userDto;
+	}
+
     public Catalog getCatalog() {
         return catalog;
     }
@@ -158,13 +191,44 @@ public class Person implements Serializable {
         this.catalog = catalog;
     }
 
-    
-    public UserDto getUserDto() {
-		return userDto;
+    public Collection<Title> getTitleCollection() {
+        return titleCollection;
+    }
+
+    public void setTitleCollection(Collection<Title> titleCollection) {
+        this.titleCollection = titleCollection;
+    }
+
+    public Collection<Document> getDocumentCollection() {
+        return documentCollection;
+    }
+
+    public void setDocumentCollection(Collection<Document> documentCollection) {
+        this.documentCollection = documentCollection;
+    }
+
+    public Collection<Disability> getDisabilityCollection() {
+        return disabilityCollection;
+    }
+
+    public void setDisabilityCollection(Collection<Disability> disabilityCollection) {
+        this.disabilityCollection = disabilityCollection;
+    }
+
+    public Collection<ContactData> getContactDataCollection() {
+        return contactDataCollection;
+    }
+
+    public void setContactDataCollection(Collection<ContactData> contactDataCollection) {
+        this.contactDataCollection = contactDataCollection;
+    }
+
+    public Integer getIdCatalog() {
+		return idCatalog;
 	}
 
-	public void setUserDto(UserDto userDto) {
-		this.userDto = userDto;
+	public void setIdCatalog(Integer idCatalog) {
+		this.idCatalog = idCatalog;
 	}
 
 	@Override
@@ -187,25 +251,9 @@ public class Person implements Serializable {
         return true;
     }
 
-    public Integer getIdCatalog() {
-		return idCatalog;
-	}
-
-	public void setIdCatalog(Integer idCatalog) {
-		this.idCatalog = idCatalog;
-	}
-
-	@Override
+    @Override
     public String toString() {
         return "ec.com.gesso.security.domain.model.security.dto.Person[ idPerson=" + idPerson + " ]";
     }
-
-	public String getDocumentNumber() {
-		return documentNumber;
-	}
-
-	public void setDocumentNumber(String documentNumber) {
-		this.documentNumber = documentNumber;
-	}
     
 }

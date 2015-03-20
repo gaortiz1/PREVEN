@@ -7,16 +7,18 @@ package ec.com.gesso.security.domain.model.security.dto;
 
 import java.io.Serializable;
 import java.util.Collection;
-
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /**
  *
@@ -24,6 +26,8 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "catalog")
+@NamedQueries({
+    @NamedQuery(name = "Catalog.findAll", query = "SELECT c FROM Catalog c")})
 public class Catalog implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -36,8 +40,9 @@ public class Catalog implements Serializable {
     @Basic(optional = false)
     @Column(name = "status")
     private boolean status;
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "catalog", fetch = FetchType.LAZY)
-    @Transient
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "catalog", fetch = FetchType.LAZY)
+    private Collection<Phone> phoneCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "catalog", fetch = FetchType.LAZY)
     private Collection<Person> personCollection;
     @JoinColumn(name = "id_groupcatalog", referencedColumnName = "id_groupcatalog")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
@@ -78,6 +83,14 @@ public class Catalog implements Serializable {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public Collection<Phone> getPhoneCollection() {
+        return phoneCollection;
+    }
+
+    public void setPhoneCollection(Collection<Phone> phoneCollection) {
+        this.phoneCollection = phoneCollection;
     }
 
     public Collection<Person> getPersonCollection() {
