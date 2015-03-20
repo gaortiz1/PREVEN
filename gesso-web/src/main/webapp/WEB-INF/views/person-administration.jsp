@@ -345,7 +345,9 @@
 											<form:input path="secondLastName" placeholder="Last name" />
 										</div>
 									</div>
-
+									
+									<form:errors path="documentNumber" cssClass="error" element="div" />
+									<div id="username.errors" class="error">username is required!</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <spring:message code="page.label.documentNumber"/> </label>
 										<div class="col-sm-9">
@@ -439,7 +441,7 @@
 
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="button">
+											<button class="btn btn-info" type="submit">
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												Submit
 											</button>

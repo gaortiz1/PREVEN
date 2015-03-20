@@ -36,9 +36,9 @@ public class PersonAdministrationController {
 		levelVulnerability.put("DIS", "DISCAPACITADO");
 		levelVulnerability.put("TED", "3RA EDAD");
 		
-		
+		Person person = new Person();
         
-		ModelAndView modelAndView = new ModelAndView("person-administration", "command", new Person() );
+		ModelAndView modelAndView = new ModelAndView("person-administration", "command", person);
 		modelAndView.addObject("country", country);
 		modelAndView.addObject("sex", sex);
 		modelAndView.addObject("levelVulnerability",levelVulnerability);
@@ -48,8 +48,12 @@ public class PersonAdministrationController {
 	
 	@RequestMapping(value = "/person-administration", method = RequestMethod.POST)
     public String userAdministration(@ModelAttribute("contact")Person person, BindingResult result) {
+    	try {
+    		GessoSecurityFactory.getInstance().getSecurityService().persistPerson(person);	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     	
-    	GessoSecurityFactory.getInstance().getSecurityService().persistPerson(person);
     	
         return "redirect:newPerson";
     }

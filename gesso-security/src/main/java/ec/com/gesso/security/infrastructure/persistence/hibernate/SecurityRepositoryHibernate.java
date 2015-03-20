@@ -50,7 +50,7 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 	}
 
 	public void persistPerson(Person person) {
-		getSession().persist(person.getUserDto());
+//		getSession().persist(person.getUserDto());
 		getSession().persist(person);
 		getSession().flush();
 	}
