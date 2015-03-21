@@ -28,7 +28,7 @@ public class SignUpController {
     
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
     public String signUp(@ModelAttribute("contact")Person person, BindingResult result) {
-    	person.setIdCatalog(1);
+    	person.setIdSexCatalog(1);
     	person.setDateOfBirth(new Date());
     	GessoSecurityFactory.getInstance().getSecurityService().persistNewUser(person);
     	

@@ -394,14 +394,18 @@
 										<div class="col-sm-9">
 											<div class="radio">
 													<label>
-														<input name="form-field-radio" type="radio" class="ace" />
+<!-- 														<input name="form-field-radio" type="radio" class="ace" /> -->
+														<form:radiobutton path="idSexCatalog" value="M" cssClass="ace"/>
 														<span class="lbl">Male</span>
+														 
+														
 													</label>
 												</div>
 
 												<div class="radio">
 													<label>
-														<input name="form-field-radio" type="radio" class="ace" />
+<!-- 														<input name="form-field-radio" type="radio" class="ace" /> -->
+														<form:radiobutton path="idSexCatalog" value="F" cssClass="ace"/>
 														<span class="lbl">Female</span>
 													</label>
 												</div>
@@ -412,7 +416,7 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.disability"/></label>
 										<div class="col-xs-3">
 											<label>
-												<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
+												<form:checkbox path="disability" cssClass="ace ace-switch ace-switch-6"/>
 												<span class="lbl"></span>
 											</label>
 										</div>
@@ -421,7 +425,7 @@
 									<div class="form-group">
 										<label for="form-field-select-3" class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.level.vulnerability"/></label>
 										<div class="col-sm-9">
-											<form:select path="documentNumber" items="${levelVulnerability}" cssClass="chosen-select form-control" data-placeholder="Choose a country..."/>
+											<form:select path="idCatalogVulnerability" items="${levelVulnerability}" cssClass="chosen-select form-control" data-placeholder="Choose a vulnerability..."/>
 										</div>
 									</div>
 									
@@ -432,12 +436,32 @@
 										
 										<div class="col-xs-3">
 											<label>
-												<input name="switch-field-1" class="ace ace-switch" type="checkbox" />
+												<form:checkbox path="lactationPeriod" cssClass="ace ace-switch"/>
 												<span class="lbl"></span>
 											</label>
 										</div>
 									</div>
 									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <spring:message code="page.label.local.phone"/> </label>
+										<div class="col-sm-9">
+											<form:input path="personalLocalPhone" placeholder="Document number" />
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <spring:message code="page.label.mobil.phone"/> </label>
+										<div class="col-sm-9">
+											<form:input path="personalMobilPhone" placeholder="Document number" />
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <spring:message code="page.label.email"/> </label>
+										<div class="col-sm-9">
+											<form:input path="personalEmail" placeholder="Document number" />
+										</div>
+									</div>
 
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">

@@ -21,7 +21,7 @@ public class GessoTest {
 	@Ignore
 	public void sigInUser(){
 		Person person = new Person("prueba", "prueba", new Date(), true);
-		person.setIdCatalog(1);
+		person.setIdSexCatalog(1);
 		
 		
 		person.setUserDto(new UserDto("pruebas", "qwe123"));

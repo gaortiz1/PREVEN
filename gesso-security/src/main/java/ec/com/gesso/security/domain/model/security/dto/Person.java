@@ -25,10 +25,15 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 /**
  *
  * @author roberto
+ */
+/**
+ * @author roberto
+ *
  */
 @SuppressWarnings("serial")
 @Entity
@@ -43,7 +48,21 @@ public class Person implements Serializable {
     private Long idPerson;
     
     @Column(name = "id_catalog")
-    private Integer idCatalog;
+    private Integer idSexCatalog;
+    
+//    @Column(name = "id_catalog_vulnerability")
+    @Transient
+    private Integer idCatalogVulnerability;
+    
+    @Transient
+    private Integer lactationPeriod;
+    @Transient
+    private String personalLocalPhone;
+    @Transient
+    private String personalMobilPhone;
+    
+    @Transient
+    private String personalEmail;
     
     @Basic(optional = false)
     @Column(name = "first_name")
@@ -64,14 +83,20 @@ public class Person implements Serializable {
     private boolean statusPerson;
     @Column(name = "per_document_number")
     private String documentNumber;
+    @Transient
+    private boolean disability;
+    @Transient
+    private Integer percentageDisability;
+    
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
     private Collection<CurriculumVitae> curriculumVitaeCollection;
     @JoinColumn(name = "usr_id", referencedColumnName = "usr_id")
     @OneToOne(fetch = FetchType.LAZY)
     private UserDto userDto;
-    @JoinColumn(name = "id_catalog", referencedColumnName = "id_catalog")
+    @JoinColumn(name = "id_catalog", referencedColumnName = "id_catalog", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Catalog catalog;
+    private Catalog sexCatalogDto;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
     private Collection<Title> titleCollection;
     @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
@@ -183,15 +208,15 @@ public class Person implements Serializable {
 		this.userDto = userDto;
 	}
 
-    public Catalog getCatalog() {
-        return catalog;
-    }
+    public Catalog getSexCatalogDto() {
+		return sexCatalogDto;
+	}
 
-    public void setCatalog(Catalog catalog) {
-        this.catalog = catalog;
-    }
+	public void setSexCatalogDto(Catalog sexCatalogDto) {
+		this.sexCatalogDto = sexCatalogDto;
+	}
 
-    public Collection<Title> getTitleCollection() {
+	public Collection<Title> getTitleCollection() {
         return titleCollection;
     }
 
@@ -223,12 +248,69 @@ public class Person implements Serializable {
         this.contactDataCollection = contactDataCollection;
     }
 
-    public Integer getIdCatalog() {
-		return idCatalog;
+	public Integer getIdSexCatalog() {
+		return idSexCatalog;
 	}
 
-	public void setIdCatalog(Integer idCatalog) {
-		this.idCatalog = idCatalog;
+	public void setIdSexCatalog(Integer idSexCatalog) {
+		this.idSexCatalog = idSexCatalog;
+	}
+
+	public boolean isDisability() {
+		return disability;
+	}
+
+	public void setDisability(boolean disability) {
+		this.disability = disability;
+	}
+
+	public Integer getPercentageDisability() {
+		return percentageDisability;
+	}
+
+	public void setPercentageDisability(Integer percentageDisability) {
+		this.percentageDisability = percentageDisability;
+	}
+
+	
+	public Integer getIdCatalogVulnerability() {
+		return idCatalogVulnerability;
+	}
+
+	public void setIdCatalogVulnerability(Integer idCatalogVulnerability) {
+		this.idCatalogVulnerability = idCatalogVulnerability;
+	}
+
+	public Integer getLactationPeriod() {
+		return lactationPeriod;
+	}
+
+	public void setLactationPeriod(Integer lactationPeriod) {
+		this.lactationPeriod = lactationPeriod;
+	}
+
+	public String getPersonalLocalPhone() {
+		return personalLocalPhone;
+	}
+
+	public void setPersonalLocalPhone(String personalLocalPhone) {
+		this.personalLocalPhone = personalLocalPhone;
+	}
+
+	public String getPersonalMobilPhone() {
+		return personalMobilPhone;
+	}
+
+	public void setPersonalMobilPhone(String personalMobilPhone) {
+		this.personalMobilPhone = personalMobilPhone;
+	}
+
+	public String getPersonalEmail() {
+		return personalEmail;
+	}
+
+	public void setPersonalEmail(String personalEmail) {
+		this.personalEmail = personalEmail;
 	}
 
 	@Override
