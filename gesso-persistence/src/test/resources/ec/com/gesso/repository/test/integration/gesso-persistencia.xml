@@ -22,7 +22,11 @@
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSourceSpring" />
 
-		<property name="packagesToScan" value="ec.com.gesso.model.entity" />
+		<property name="packagesToScan" >
+			<list>
+		        <value>ec.com.gesso.model.entity</value>
+		    </list>
+		</property>
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>

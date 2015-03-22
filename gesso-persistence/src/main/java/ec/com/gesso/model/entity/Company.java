@@ -7,146 +7,259 @@ package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
  *
- * @author roberto
+ * @author Gabriel
  */
 @Entity
 @Table(name = "company")
-@NamedQueries({
-    @NamedQuery(name = "Company.findAll", query = "SELECT c FROM Company c")})
 public class Company implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_id_company")
+    @SequenceGenerator(name="seq_id_company", sequenceName="seq_id_company", allocationSize = 1)
     @Column(name = "id_company")
-    private Long idCompany;
+    private Long id;
+    
+    @Column(name = "ID_TYPE_COMPANY")
+    private String idTypeCompany;
+    
+    @Column(name = "ID_PRODUCTIVE_SECTOR")
+    private String idProductiveSector;
+    
     @Basic(optional = false)
     @Column(name = "name_company")
-    private String nameCompany;
+    private String name;
+    
     @Basic(optional = false)
     @Column(name = "state_company")
-    private boolean stateCompany;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", fetch = FetchType.LAZY)
+    private boolean state;
+    
+    @JoinColumn(name = "ID_PRODUCTIVE_SECTOR", referencedColumnName = "id_catalog", insertable=false, updatable=false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private Catalog catalogSectorProductivo;
+    
+    @JoinColumn(name = "ID_TYPE_COMPANY", referencedColumnName = "id_catalog", insertable=false, updatable=false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private Catalog typeCompany;
+    
+    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private Collection<Subcompany> subcompanyCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "company1", fetch = FetchType.LAZY)
+    
+    @OneToMany( mappedBy = "company1", fetch = FetchType.LAZY)
     private Collection<Subcompany> subcompanyCollection1;
+    
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private Collection<ActivityEconomicCompany> activityEconomicCompanyCollection;
+    
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private Collection<Document> documentCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", fetch = FetchType.LAZY)
+    
+    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private Collection<ScheduleWork> scheduleWorkCollection;
-    @JoinColumn(name = "id_typecompany", referencedColumnName = "id_typecompany")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private TypeCompany typeCompany;
+    
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private Collection<ContactData> contactDataCollection;
 
-    public Company() {
-    }
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
 
-    public Company(Long idCompany) {
-        this.idCompany = idCompany;
-    }
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Company(Long idCompany, String nameCompany, boolean stateCompany) {
-        this.idCompany = idCompany;
-        this.nameCompany = nameCompany;
-        this.stateCompany = stateCompany;
-    }
+	/**
+	 * @return the idTypeCompany
+	 */
+	public String getIdTypeCompany() {
+		return idTypeCompany;
+	}
 
-    public Long getIdCompany() {
-        return idCompany;
-    }
+	/**
+	 * @param idTypeCompany the idTypeCompany to set
+	 */
+	public void setIdTypeCompany(String idTypeCompany) {
+		this.idTypeCompany = idTypeCompany;
+	}
 
-    public void setIdCompany(Long idCompany) {
-        this.idCompany = idCompany;
-    }
+	/**
+	 * @return the idProductiveSector
+	 */
+	public String getIdProductiveSector() {
+		return idProductiveSector;
+	}
 
-    public String getNameCompany() {
-        return nameCompany;
-    }
+	/**
+	 * @param idProductiveSector the idProductiveSector to set
+	 */
+	public void setIdProductiveSector(String idProductiveSector) {
+		this.idProductiveSector = idProductiveSector;
+	}
 
-    public void setNameCompany(String nameCompany) {
-        this.nameCompany = nameCompany;
-    }
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
 
-    public boolean getStateCompany() {
-        return stateCompany;
-    }
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setStateCompany(boolean stateCompany) {
-        this.stateCompany = stateCompany;
-    }
+	/**
+	 * @return the state
+	 */
+	public boolean isState() {
+		return state;
+	}
 
-    public Collection<Subcompany> getSubcompanyCollection() {
-        return subcompanyCollection;
-    }
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(boolean state) {
+		this.state = state;
+	}
 
-    public void setSubcompanyCollection(Collection<Subcompany> subcompanyCollection) {
-        this.subcompanyCollection = subcompanyCollection;
-    }
+	/**
+	 * @return the catalogSectorProductivo
+	 */
+	public Catalog getCatalogSectorProductivo() {
+		return catalogSectorProductivo;
+	}
 
-    public Collection<Subcompany> getSubcompanyCollection1() {
-        return subcompanyCollection1;
-    }
+	/**
+	 * @param catalogSectorProductivo the catalogSectorProductivo to set
+	 */
+	public void setCatalogSectorProductivo(Catalog catalogSectorProductivo) {
+		this.catalogSectorProductivo = catalogSectorProductivo;
+	}
 
-    public void setSubcompanyCollection1(Collection<Subcompany> subcompanyCollection1) {
-        this.subcompanyCollection1 = subcompanyCollection1;
-    }
+	/**
+	 * @return the subcompanyCollection
+	 */
+	public Collection<Subcompany> getSubcompanyCollection() {
+		return subcompanyCollection;
+	}
 
-    public Collection<ActivityEconomicCompany> getActivityEconomicCompanyCollection() {
-        return activityEconomicCompanyCollection;
-    }
+	/**
+	 * @param subcompanyCollection the subcompanyCollection to set
+	 */
+	public void setSubcompanyCollection(Collection<Subcompany> subcompanyCollection) {
+		this.subcompanyCollection = subcompanyCollection;
+	}
 
-    public void setActivityEconomicCompanyCollection(Collection<ActivityEconomicCompany> activityEconomicCompanyCollection) {
-        this.activityEconomicCompanyCollection = activityEconomicCompanyCollection;
-    }
+	/**
+	 * @return the subcompanyCollection1
+	 */
+	public Collection<Subcompany> getSubcompanyCollection1() {
+		return subcompanyCollection1;
+	}
 
-    public Collection<Document> getDocumentCollection() {
-        return documentCollection;
-    }
+	/**
+	 * @param subcompanyCollection1 the subcompanyCollection1 to set
+	 */
+	public void setSubcompanyCollection1(
+			Collection<Subcompany> subcompanyCollection1) {
+		this.subcompanyCollection1 = subcompanyCollection1;
+	}
 
-    public void setDocumentCollection(Collection<Document> documentCollection) {
-        this.documentCollection = documentCollection;
-    }
+	/**
+	 * @return the activityEconomicCompanyCollection
+	 */
+	public Collection<ActivityEconomicCompany> getActivityEconomicCompanyCollection() {
+		return activityEconomicCompanyCollection;
+	}
 
-    public Collection<ScheduleWork> getScheduleWorkCollection() {
-        return scheduleWorkCollection;
-    }
+	/**
+	 * @param activityEconomicCompanyCollection the activityEconomicCompanyCollection to set
+	 */
+	public void setActivityEconomicCompanyCollection(
+			Collection<ActivityEconomicCompany> activityEconomicCompanyCollection) {
+		this.activityEconomicCompanyCollection = activityEconomicCompanyCollection;
+	}
 
-    public void setScheduleWorkCollection(Collection<ScheduleWork> scheduleWorkCollection) {
-        this.scheduleWorkCollection = scheduleWorkCollection;
-    }
+	/**
+	 * @return the documentCollection
+	 */
+	public Collection<Document> getDocumentCollection() {
+		return documentCollection;
+	}
 
-    public TypeCompany getTypeCompany() {
-        return typeCompany;
-    }
+	/**
+	 * @param documentCollection the documentCollection to set
+	 */
+	public void setDocumentCollection(Collection<Document> documentCollection) {
+		this.documentCollection = documentCollection;
+	}
 
-    public void setTypeCompany(TypeCompany typeCompany) {
-        this.typeCompany = typeCompany;
-    }
+	/**
+	 * @return the scheduleWorkCollection
+	 */
+	public Collection<ScheduleWork> getScheduleWorkCollection() {
+		return scheduleWorkCollection;
+	}
 
-    public Collection<ContactData> getContactDataCollection() {
-        return contactDataCollection;
-    }
+	/**
+	 * @param scheduleWorkCollection the scheduleWorkCollection to set
+	 */
+	public void setScheduleWorkCollection(
+			Collection<ScheduleWork> scheduleWorkCollection) {
+		this.scheduleWorkCollection = scheduleWorkCollection;
+	}
 
-    public void setContactDataCollection(Collection<ContactData> contactDataCollection) {
-        this.contactDataCollection = contactDataCollection;
-    }
-    
+	/**
+	 * @return the typeCompany
+	 */
+	public Catalog getTypeCompany() {
+		return typeCompany;
+	}
+
+	/**
+	 * @param typeCompany the typeCompany to set
+	 */
+	public void setTypeCompany(Catalog typeCompany) {
+		this.typeCompany = typeCompany;
+	}
+
+	/**
+	 * @return the contactDataCollection
+	 */
+	public Collection<ContactData> getContactDataCollection() {
+		return contactDataCollection;
+	}
+
+	/**
+	 * @param contactDataCollection the contactDataCollection to set
+	 */
+	public void setContactDataCollection(
+			Collection<ContactData> contactDataCollection) {
+		this.contactDataCollection = contactDataCollection;
+	}
 }

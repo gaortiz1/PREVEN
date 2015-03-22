@@ -7,96 +7,113 @@ package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
  *
- * @author roberto
+ * @author Gabriel
  */
 @Entity
 @Table(name = "schedule_work")
-@NamedQueries({
-    @NamedQuery(name = "ScheduleWork.findAll", query = "SELECT s FROM ScheduleWork s")})
 public class ScheduleWork implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @EmbeddedId
-    protected ScheduleWorkPK scheduleWorkPK;
+    protected ScheduleWorkPK idScheduleWork;
+    
     @Basic(optional = false)
     @Column(name = "state_company_schedule_work")
-    private boolean stateCompanyScheduleWork;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "scheduleWork", fetch = FetchType.LAZY)
+    private Boolean state;
+    
+    
+    @OneToMany(mappedBy = "scheduleWork", fetch = FetchType.LAZY)
     private Collection<LaborContract> laborContractCollection;
+    
     @JoinColumn(name = "id_company", referencedColumnName = "id_company", insertable = false, updatable = false)
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Company company;
-    @JoinColumn(name = "id_business_hour", referencedColumnName = "id_business_hour", insertable = false, updatable = false)
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private BusinessHour businessHour;
+    
+    @JoinColumn(name = "id_business_hour", referencedColumnName = "id_catalog", insertable = false, updatable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Catalog businessHour;
 
-    public ScheduleWork() {
-    }
+	/**
+	 * @return the idScheduleWork
+	 */
+	public ScheduleWorkPK getIdScheduleWork() {
+		return idScheduleWork;
+	}
 
-    public ScheduleWork(ScheduleWorkPK scheduleWorkPK) {
-        this.scheduleWorkPK = scheduleWorkPK;
-    }
+	/**
+	 * @param idScheduleWork the idScheduleWork to set
+	 */
+	public void setIdScheduleWork(ScheduleWorkPK idScheduleWork) {
+		this.idScheduleWork = idScheduleWork;
+	}
 
-    public ScheduleWork(ScheduleWorkPK scheduleWorkPK, boolean stateCompanyScheduleWork) {
-        this.scheduleWorkPK = scheduleWorkPK;
-        this.stateCompanyScheduleWork = stateCompanyScheduleWork;
-    }
+	/**
+	 * @return the state
+	 */
+	public Boolean getState() {
+		return state;
+	}
 
-    public ScheduleWork(long idCompany, int idBusinessHour) {
-        this.scheduleWorkPK = new ScheduleWorkPK(idCompany, idBusinessHour);
-    }
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(Boolean state) {
+		this.state = state;
+	}
 
-    public ScheduleWorkPK getScheduleWorkPK() {
-        return scheduleWorkPK;
-    }
+	/**
+	 * @return the laborContractCollection
+	 */
+	public Collection<LaborContract> getLaborContractCollection() {
+		return laborContractCollection;
+	}
 
-    public void setScheduleWorkPK(ScheduleWorkPK scheduleWorkPK) {
-        this.scheduleWorkPK = scheduleWorkPK;
-    }
+	/**
+	 * @param laborContractCollection the laborContractCollection to set
+	 */
+	public void setLaborContractCollection(
+			Collection<LaborContract> laborContractCollection) {
+		this.laborContractCollection = laborContractCollection;
+	}
 
-    public boolean getStateCompanyScheduleWork() {
-        return stateCompanyScheduleWork;
-    }
+	/**
+	 * @return the company
+	 */
+	public Company getCompany() {
+		return company;
+	}
 
-    public void setStateCompanyScheduleWork(boolean stateCompanyScheduleWork) {
-        this.stateCompanyScheduleWork = stateCompanyScheduleWork;
-    }
+	/**
+	 * @param company the company to set
+	 */
+	public void setCompany(Company company) {
+		this.company = company;
+	}
 
-    public Collection<LaborContract> getLaborContractCollection() {
-        return laborContractCollection;
-    }
+	/**
+	 * @return the businessHour
+	 */
+	public Catalog getBusinessHour() {
+		return businessHour;
+	}
 
-    public void setLaborContractCollection(Collection<LaborContract> laborContractCollection) {
-        this.laborContractCollection = laborContractCollection;
-    }
-
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public BusinessHour getBusinessHour() {
-        return businessHour;
-    }
-
-    public void setBusinessHour(BusinessHour businessHour) {
-        this.businessHour = businessHour;
-    }
+	/**
+	 * @param businessHour the businessHour to set
+	 */
+	public void setBusinessHour(Catalog businessHour) {
+		this.businessHour = businessHour;
+	}
 }

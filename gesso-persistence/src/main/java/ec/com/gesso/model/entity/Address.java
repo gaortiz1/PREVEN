@@ -7,14 +7,16 @@ package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -23,66 +25,82 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "address")
-@NamedQueries({
-    @NamedQuery(name = "Address.findAll", query = "SELECT a FROM Address a")})
 public class Address implements Serializable {
-    private static final long serialVersionUID = 1L;
+    
+	private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
     @Column(name = "id_address")
-    private Long idAddress;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_id_address")
+    @SequenceGenerator(name="seq_id_address", sequenceName="seq_id_address", allocationSize = 1)
+    private Long id;
+    
     @Basic(optional = false)
     @Column(name = "name_address")
     private String nameAddress;
+    
     @Basic(optional = false)
-    @Column(name = "status_address")
-    private boolean statusAddress;
+    @Column(name = "STATE_ADDRESS")
+    private Boolean state;
+    
     @OneToMany(mappedBy = "address", fetch = FetchType.LAZY)
     private Collection<ContactData> contactDataCollection;
 
-    public Address() {
-    }
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
 
-    public Address(Long idAddress) {
-        this.idAddress = idAddress;
-    }
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Address(Long idAddress, String nameAddress, boolean statusAddress) {
-        this.idAddress = idAddress;
-        this.nameAddress = nameAddress;
-        this.statusAddress = statusAddress;
-    }
+	/**
+	 * @return the nameAddress
+	 */
+	public String getNameAddress() {
+		return nameAddress;
+	}
 
-    public Long getIdAddress() {
-        return idAddress;
-    }
+	/**
+	 * @param nameAddress the nameAddress to set
+	 */
+	public void setNameAddress(String nameAddress) {
+		this.nameAddress = nameAddress;
+	}
 
-    public void setIdAddress(Long idAddress) {
-        this.idAddress = idAddress;
-    }
+	/**
+	 * @return the state
+	 */
+	public Boolean getState() {
+		return state;
+	}
 
-    public String getNameAddress() {
-        return nameAddress;
-    }
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(Boolean state) {
+		this.state = state;
+	}
 
-    public void setNameAddress(String nameAddress) {
-        this.nameAddress = nameAddress;
-    }
+	/**
+	 * @return the contactDataCollection
+	 */
+	public Collection<ContactData> getContactDataCollection() {
+		return contactDataCollection;
+	}
 
-    public boolean getStatusAddress() {
-        return statusAddress;
-    }
-
-    public void setStatusAddress(boolean statusAddress) {
-        this.statusAddress = statusAddress;
-    }
-
-    public Collection<ContactData> getContactDataCollection() {
-        return contactDataCollection;
-    }
-
-    public void setContactDataCollection(Collection<ContactData> contactDataCollection) {
-        this.contactDataCollection = contactDataCollection;
-    }
-    
+	/**
+	 * @param contactDataCollection the contactDataCollection to set
+	 */
+	public void setContactDataCollection(
+			Collection<ContactData> contactDataCollection) {
+		this.contactDataCollection = contactDataCollection;
+	}
 }

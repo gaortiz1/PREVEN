@@ -34,8 +34,8 @@ public class Process implements Serializable{
 	@Id
 	@Basic(optional = false)
 	@Column(name = "ID_PROCESS")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="sequence_id_process")
-    @SequenceGenerator(name="sequence_id_process", sequenceName="sequence_id_process", allocationSize = 1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_id_process")
+    @SequenceGenerator(name="seq_id_process", sequenceName="seq_id_process", allocationSize = 1)
 	private Long id;
 	
 	@Column(name = "ID_PROCESS_ROOT")

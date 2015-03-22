@@ -28,63 +28,94 @@ import javax.persistence.Table;
     @NamedQuery(name = "Catalog.findAll", query = "SELECT c FROM Catalog c")})
 public class Catalog implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
     @Column(name = "id_catalog")
-    private Long idCatalog;
+    private String id;
+    
+    @Column(name = "id_groupcatalog")
+    private String idGroupcatalog;
+    
     @Basic(optional = false)
     @Column(name = "name_catalog")
-    private String nameCatalog;
-    @Basic(optional = false)
-    @Column(name = "status")
-    private boolean status;
+    private String name;
     
-    @JoinColumn(name = "id_groupcatalog", referencedColumnName = "id_groupcatalog")
+    @Basic(optional = false)
+    @Column(name = "STATUS_CATALOG")
+    private Boolean state;
+    
+    @JoinColumn(name = "id_groupcatalog", referencedColumnName = "id_groupcatalog", insertable=false, updatable=false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private GroupCatalog groupCatalog;
 
-    public Catalog() {
-    }
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
 
-    public Catalog(Long idCatalog) {
-        this.idCatalog = idCatalog;
-    }
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    public Catalog(Long idCatalog, String nameCatalog, boolean status) {
-        this.idCatalog = idCatalog;
-        this.nameCatalog = nameCatalog;
-        this.status = status;
-    }
+	/**
+	 * @return the idGroupcatalog
+	 */
+	public String getIdGroupcatalog() {
+		return idGroupcatalog;
+	}
 
-    public Long getIdCatalog() {
-        return idCatalog;
-    }
+	/**
+	 * @param idGroupcatalog the idGroupcatalog to set
+	 */
+	public void setIdGroupcatalog(String idGroupcatalog) {
+		this.idGroupcatalog = idGroupcatalog;
+	}
 
-    public void setIdCatalog(Long idCatalog) {
-        this.idCatalog = idCatalog;
-    }
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
 
-    public String getNameCatalog() {
-        return nameCatalog;
-    }
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setNameCatalog(String nameCatalog) {
-        this.nameCatalog = nameCatalog;
-    }
+	/**
+	 * @return the state
+	 */
+	public Boolean getState() {
+		return state;
+	}
 
-    public boolean getStatus() {
-        return status;
-    }
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(Boolean state) {
+		this.state = state;
+	}
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
+	/**
+	 * @return the groupCatalog
+	 */
+	public GroupCatalog getGroupCatalog() {
+		return groupCatalog;
+	}
 
-    public GroupCatalog getGroupCatalog() {
-        return groupCatalog;
-    }
-
-    public void setGroupCatalog(GroupCatalog groupCatalog) {
-        this.groupCatalog = groupCatalog;
-    }
+	/**
+	 * @param groupCatalog the groupCatalog to set
+	 */
+	public void setGroupCatalog(GroupCatalog groupCatalog) {
+		this.groupCatalog = groupCatalog;
+	}
 }

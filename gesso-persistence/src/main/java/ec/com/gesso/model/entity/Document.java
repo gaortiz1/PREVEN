@@ -1,111 +1,168 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * 
  */
 package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
+
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
+ * @author Gabriel
  *
- * @author roberto
  */
 @Entity
-@Table(name = "document")
-@NamedQueries({
-    @NamedQuery(name = "Document.findAll", query = "SELECT d FROM Document d")})
+@Table(name = "DOCUMENT")
 public class Document implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @Column(name = "id_type_docuement")
-    private Integer idTypeDocuement;
-    @Basic(optional = false)
-    @Column(name = "value_document")
-    private String valueDocument;
-    @Basic(optional = false)
-    @Column(name = "state_document")
-    private boolean stateDocument;
-    @JoinColumn(name = "id_type_docuement", referencedColumnName = "id_type_docuement", insertable = false, updatable = false)
-    @OneToOne(optional = false, fetch = FetchType.LAZY)
-    private TypeDocument typeDocument;
-    @JoinColumn(name = "id_person", referencedColumnName = "id_person")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Person person;
-    @JoinColumn(name = "id_company", referencedColumnName = "id_company")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Company company;
 
-    public Document() {
-    }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@EmbeddedId
+	protected DocumentPK idDocument;
+	
+	@Column(name = "ID_COMPANY")
+    private Long idCompany;
+	
+	@Column(name = "ID_PERSON")
+    private Long idPerson;
+	
+	@Column(name = "VALUE_DOCUMENT")
+    private String value;
+	
+	@Column(name = "STATE_DOCUMENT")
+	private Boolean state;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="ID_COMPANY", referencedColumnName="ID_COMPANY", insertable=false, updatable=false)
+	private Company company;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="ID_PERSON", referencedColumnName="ID_PERSON", insertable=false, updatable=false)
+	private Person person;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="ID_TYPE_DOCUMENT", referencedColumnName="id_catalog", insertable=false, updatable=false)
+	private Catalog typeDocument;
 
-    public Document(Integer idTypeDocuement) {
-        this.idTypeDocuement = idTypeDocuement;
-    }
+	/**
+	 * @return the idDocument
+	 */
+	public DocumentPK getIdDocument() {
+		return idDocument;
+	}
 
-    public Document(Integer idTypeDocuement, String valueDocument, boolean stateDocument) {
-        this.idTypeDocuement = idTypeDocuement;
-        this.valueDocument = valueDocument;
-        this.stateDocument = stateDocument;
-    }
+	/**
+	 * @param idDocument the idDocument to set
+	 */
+	public void setIdDocument(DocumentPK idDocument) {
+		this.idDocument = idDocument;
+	}
 
-    public Integer getIdTypeDocuement() {
-        return idTypeDocuement;
-    }
+	/**
+	 * @return the idCompany
+	 */
+	public Long getIdCompany() {
+		return idCompany;
+	}
 
-    public void setIdTypeDocuement(Integer idTypeDocuement) {
-        this.idTypeDocuement = idTypeDocuement;
-    }
+	/**
+	 * @param idCompany the idCompany to set
+	 */
+	public void setIdCompany(Long idCompany) {
+		this.idCompany = idCompany;
+	}
 
-    public String getValueDocument() {
-        return valueDocument;
-    }
+	/**
+	 * @return the idPerson
+	 */
+	public Long getIdPerson() {
+		return idPerson;
+	}
 
-    public void setValueDocument(String valueDocument) {
-        this.valueDocument = valueDocument;
-    }
+	/**
+	 * @param idPerson the idPerson to set
+	 */
+	public void setIdPerson(Long idPerson) {
+		this.idPerson = idPerson;
+	}
 
-    public boolean getStateDocument() {
-        return stateDocument;
-    }
+	/**
+	 * @return the value
+	 */
+	public String getValue() {
+		return value;
+	}
 
-    public void setStateDocument(boolean stateDocument) {
-        this.stateDocument = stateDocument;
-    }
+	/**
+	 * @param value the value to set
+	 */
+	public void setValue(String value) {
+		this.value = value;
+	}
 
-    public TypeDocument getTypeDocument() {
-        return typeDocument;
-    }
+	/**
+	 * @return the state
+	 */
+	public Boolean getState() {
+		return state;
+	}
 
-    public void setTypeDocument(TypeDocument typeDocument) {
-        this.typeDocument = typeDocument;
-    }
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(Boolean state) {
+		this.state = state;
+	}
 
-    public Person getPerson() {
-        return person;
-    }
+	/**
+	 * @return the company
+	 */
+	public Company getCompany() {
+		return company;
+	}
 
-    public void setPerson(Person person) {
-        this.person = person;
-    }
+	/**
+	 * @param company the company to set
+	 */
+	public void setCompany(Company company) {
+		this.company = company;
+	}
 
-    public Company getCompany() {
-        return company;
-    }
+	/**
+	 * @return the person
+	 */
+	public Person getPerson() {
+		return person;
+	}
 
-    public void setCompany(Company company) {
-        this.company = company;
-    }
+	/**
+	 * @param person the person to set
+	 */
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	/**
+	 * @return the typeDocument
+	 */
+	public Catalog getTypeDocument() {
+		return typeDocument;
+	}
+
+	/**
+	 * @param typeDocument the typeDocument to set
+	 */
+	public void setTypeDocument(Catalog typeDocument) {
+		this.typeDocument = typeDocument;
+	}
+
 }

@@ -6,15 +6,17 @@
 package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -23,66 +25,98 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "activity_economic_company")
-@NamedQueries({
-    @NamedQuery(name = "ActivityEconomicCompany.findAll", query = "SELECT a FROM ActivityEconomicCompany a")})
 public class ActivityEconomicCompany implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
     @Column(name = "id_activity_economic")
-    private Integer idActivityEconomic;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_id_company")
+    @SequenceGenerator(name="seq_id_company", sequenceName="seq_id_company", allocationSize = 1)
+    private Integer id;
+    
+    @Column(name = "id_company")
+    private Long idCompany;
+    
     @Basic(optional = false)
     @Column(name = "name_activity_economic")
-    private String nameActivityEconomic;
+    private String name;
+    
     @Basic(optional = false)
-    @Column(name = "status_activityeconomic")
-    private boolean statusActivityeconomic;
-    @JoinColumn(name = "id_company", referencedColumnName = "id_company")
+    @Column(name = "STATE_ACTIVITYECONOMIC")
+    private Boolean state;
+   
+    @JoinColumn(name = "id_company", referencedColumnName = "id_company", insertable=false, updatable=false)
     @ManyToOne(fetch = FetchType.LAZY)
     private Company company;
 
-    public ActivityEconomicCompany() {
-    }
+	/**
+	 * @return the id
+	 */
+	public Integer getId() {
+		return id;
+	}
 
-    public ActivityEconomicCompany(Integer idActivityEconomic) {
-        this.idActivityEconomic = idActivityEconomic;
-    }
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public ActivityEconomicCompany(Integer idActivityEconomic, String nameActivityEconomic, boolean statusActivityeconomic) {
-        this.idActivityEconomic = idActivityEconomic;
-        this.nameActivityEconomic = nameActivityEconomic;
-        this.statusActivityeconomic = statusActivityeconomic;
-    }
+	/**
+	 * @return the idCompany
+	 */
+	public Long getIdCompany() {
+		return idCompany;
+	}
 
-    public Integer getIdActivityEconomic() {
-        return idActivityEconomic;
-    }
+	/**
+	 * @param idCompany the idCompany to set
+	 */
+	public void setIdCompany(Long idCompany) {
+		this.idCompany = idCompany;
+	}
 
-    public void setIdActivityEconomic(Integer idActivityEconomic) {
-        this.idActivityEconomic = idActivityEconomic;
-    }
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
 
-    public String getNameActivityEconomic() {
-        return nameActivityEconomic;
-    }
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setNameActivityEconomic(String nameActivityEconomic) {
-        this.nameActivityEconomic = nameActivityEconomic;
-    }
+	/**
+	 * @return the state
+	 */
+	public Boolean getState() {
+		return state;
+	}
 
-    public boolean getStatusActivityeconomic() {
-        return statusActivityeconomic;
-    }
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(Boolean state) {
+		this.state = state;
+	}
 
-    public void setStatusActivityeconomic(boolean statusActivityeconomic) {
-        this.statusActivityeconomic = statusActivityeconomic;
-    }
+	/**
+	 * @return the company
+	 */
+	public Company getCompany() {
+		return company;
+	}
 
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
+	/**
+	 * @param company the company to set
+	 */
+	public void setCompany(Company company) {
+		this.company = company;
+	}
 }

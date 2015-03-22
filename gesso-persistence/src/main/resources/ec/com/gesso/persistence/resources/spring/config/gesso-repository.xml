@@ -27,4 +27,52 @@
 		</property>
 	</bean>
 	
+	<bean id="repositoryCompany" class="ec.com.gesso.repository.impl.RepositoryCompany">
+		<property name="repositoryEntity">
+			<ref bean="repositoryWrapper"/>
+		</property>
+	</bean>
+	
+	<bean id="repositoryDocument" class="ec.com.gesso.repository.impl.RepositoryDocument">
+		<property name="repositoryEntity">
+			<ref bean="repositoryWrapper"/>
+		</property>
+	</bean>
+	
+	<bean id="repositoryActivityEconomicCompany" class="ec.com.gesso.repository.impl.RepositoryActivityEconomicCompany">
+		<property name="repositoryEntity">
+			<ref bean="repositoryWrapper"/>
+		</property>
+	</bean>
+	
+	<bean id="repositoryScheduleWork" class="ec.com.gesso.repository.impl.RepositoryScheduleWork">
+		<property name="repositoryEntity">
+			<ref bean="repositoryWrapper"/>
+		</property>
+	</bean>
+	
+	<bean id="repositoryEmail" class="ec.com.gesso.repository.impl.RepositoryEmail">
+		<property name="repositoryEntity">
+			<ref bean="repositoryWrapper"/>
+		</property>
+	</bean>
+	
+	<bean id="repositoryAddress" class="ec.com.gesso.repository.impl.RepositoryAddress">
+		<property name="repositoryEntity">
+			<ref bean="repositoryWrapper"/>
+		</property>
+	</bean>
+	
+	<bean id="repositoryPhone" class="ec.com.gesso.repository.impl.RepositoryPhone">
+		<property name="repositoryEntity">
+			<ref bean="repositoryWrapper"/>
+		</property>
+	</bean>
+	
+	<bean id="repositoryContacData" class="ec.com.gesso.repository.impl.RepositoryContacData">
+		<property name="repositoryEntity">
+			<ref bean="repositoryWrapper"/>
+		</property>
+	</bean>
+	
 </beans>

@@ -7,81 +7,99 @@ package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
  *
- * @author roberto
+ * @author Gabriel
  */
 @Entity
 @Table(name = "email")
-@NamedQueries({
-    @NamedQuery(name = "Email.findAll", query = "SELECT e FROM Email e")})
 public class Email implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_id_email")
+    @SequenceGenerator(name="seq_id_email", sequenceName="seq_id_email", allocationSize = 1)
     @Column(name = "id_email")
-    private Long idEmail;
+    private Long id;
+    
     @Basic(optional = false)
     @Column(name = "emailaddess")
     private String emailaddess;
+    
     @Basic(optional = false)
-    @Column(name = "status_email")
-    private boolean statusEmail;
+    @Column(name = "STATE_EMAIL")
+    private Boolean state;
+    
     @OneToMany(mappedBy = "email", fetch = FetchType.LAZY)
-    private Collection<ContactData> contactDataCollection;
+    private Collection<ContactData> collectionContactData;
 
-    public Email() {
-    }
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
 
-    public Email(Long idEmail) {
-        this.idEmail = idEmail;
-    }
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Email(Long idEmail, String emailaddess, boolean statusEmail) {
-        this.idEmail = idEmail;
-        this.emailaddess = emailaddess;
-        this.statusEmail = statusEmail;
-    }
+	/**
+	 * @return the emailaddess
+	 */
+	public String getEmailaddess() {
+		return emailaddess;
+	}
 
-    public Long getIdEmail() {
-        return idEmail;
-    }
+	/**
+	 * @param emailaddess the emailaddess to set
+	 */
+	public void setEmailaddess(String emailaddess) {
+		this.emailaddess = emailaddess;
+	}
 
-    public void setIdEmail(Long idEmail) {
-        this.idEmail = idEmail;
-    }
+	/**
+	 * @return the state
+	 */
+	public Boolean getState() {
+		return state;
+	}
 
-    public String getEmailaddess() {
-        return emailaddess;
-    }
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(Boolean state) {
+		this.state = state;
+	}
 
-    public void setEmailaddess(String emailaddess) {
-        this.emailaddess = emailaddess;
-    }
+	/**
+	 * @return the collectionContactData
+	 */
+	public Collection<ContactData> getCollectionContactData() {
+		return collectionContactData;
+	}
 
-    public boolean getStatusEmail() {
-        return statusEmail;
-    }
-
-    public void setStatusEmail(boolean statusEmail) {
-        this.statusEmail = statusEmail;
-    }
-
-    public Collection<ContactData> getContactDataCollection() {
-        return contactDataCollection;
-    }
-
-    public void setContactDataCollection(Collection<ContactData> contactDataCollection) {
-        this.contactDataCollection = contactDataCollection;
-    }
+	/**
+	 * @param collectionContactData the collectionContactData to set
+	 */
+	public void setCollectionContactData(
+			Collection<ContactData> collectionContactData) {
+		this.collectionContactData = collectionContactData;
+	}
 }

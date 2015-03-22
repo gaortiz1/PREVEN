@@ -7,8 +7,8 @@ package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,62 +28,77 @@ import javax.persistence.Table;
     @NamedQuery(name = "GroupCatalog.findAll", query = "SELECT g FROM GroupCatalog g")})
 public class GroupCatalog implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
     @Column(name = "id_groupcatalog")
-    private Integer idGroupcatalog;
+    private String id;
+    
     @Basic(optional = false)
     @Column(name = "name_groupcatalog")
-    private String nameGroupcatalog;
+    private String name;
+    
     @Basic(optional = false)
-    @Column(name = "status")
+    @Column(name = "STATUS_GROUP_CATALOG")
     private boolean status;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "groupCatalog", fetch = FetchType.LAZY)
+    
+    @OneToMany(mappedBy = "groupCatalog", fetch = FetchType.LAZY)
     private Collection<Catalog> catalogCollection;
 
-    public GroupCatalog() {
-    }
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
 
-    public GroupCatalog(Integer idGroupcatalog) {
-        this.idGroupcatalog = idGroupcatalog;
-    }
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    public GroupCatalog(Integer idGroupcatalog, String nameGroupcatalog, boolean status) {
-        this.idGroupcatalog = idGroupcatalog;
-        this.nameGroupcatalog = nameGroupcatalog;
-        this.status = status;
-    }
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
 
-    public Integer getIdGroupcatalog() {
-        return idGroupcatalog;
-    }
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setIdGroupcatalog(Integer idGroupcatalog) {
-        this.idGroupcatalog = idGroupcatalog;
-    }
+	/**
+	 * @return the status
+	 */
+	public boolean isStatus() {
+		return status;
+	}
 
-    public String getNameGroupcatalog() {
-        return nameGroupcatalog;
-    }
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 
-    public void setNameGroupcatalog(String nameGroupcatalog) {
-        this.nameGroupcatalog = nameGroupcatalog;
-    }
+	/**
+	 * @return the catalogCollection
+	 */
+	public Collection<Catalog> getCatalogCollection() {
+		return catalogCollection;
+	}
 
-    public boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public Collection<Catalog> getCatalogCollection() {
-        return catalogCollection;
-    }
-
-    public void setCatalogCollection(Collection<Catalog> catalogCollection) {
-        this.catalogCollection = catalogCollection;
-    }
+	/**
+	 * @param catalogCollection the catalogCollection to set
+	 */
+	public void setCatalogCollection(Collection<Catalog> catalogCollection) {
+		this.catalogCollection = catalogCollection;
+	}
     
 }

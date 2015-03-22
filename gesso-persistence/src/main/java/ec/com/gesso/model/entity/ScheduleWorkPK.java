@@ -20,34 +20,40 @@ public class ScheduleWorkPK implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	@Basic(optional = false)
     @Column(name = "id_company")
-    private long idCompany;
+    private Long idCompany;
+	
     @Basic(optional = false)
     @Column(name = "id_business_hour")
-    private int idBusinessHour;
+    private String idBusinessHour;
 
-    public ScheduleWorkPK() {
-    }
+	/**
+	 * @return the idCompany
+	 */
+	public Long getIdCompany() {
+		return idCompany;
+	}
 
-    public ScheduleWorkPK(long idCompany, int idBusinessHour) {
-        this.idCompany = idCompany;
-        this.idBusinessHour = idBusinessHour;
-    }
+	/**
+	 * @param idCompany the idCompany to set
+	 */
+	public void setIdCompany(Long idCompany) {
+		this.idCompany = idCompany;
+	}
 
-    public long getIdCompany() {
-        return idCompany;
-    }
+	/**
+	 * @return the idBusinessHour
+	 */
+	public String getIdBusinessHour() {
+		return idBusinessHour;
+	}
 
-    public void setIdCompany(long idCompany) {
-        this.idCompany = idCompany;
-    }
-
-    public int getIdBusinessHour() {
-        return idBusinessHour;
-    }
-
-    public void setIdBusinessHour(int idBusinessHour) {
-        this.idBusinessHour = idBusinessHour;
-    }
+	/**
+	 * @param idBusinessHour the idBusinessHour to set
+	 */
+	public void setIdBusinessHour(String idBusinessHour) {
+		this.idBusinessHour = idBusinessHour;
+	}
 }

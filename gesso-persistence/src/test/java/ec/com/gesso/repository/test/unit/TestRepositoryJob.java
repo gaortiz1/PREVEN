@@ -4,19 +4,16 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import ec.com.gesso.model.entity.Job;
-import ec.com.gesso.repository.IRepositoryEntity;
 import ec.com.gesso.repository.exception.ValidationEntity;
 import ec.com.gesso.repository.impl.RepositoryJob;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TestRepositoryJob{
+public class TestRepositoryJob extends AbstractTestEntity<Job>{
 	
 	private RepositoryJob repositoryProcess;
-	@Mock private IRepositoryEntity<Job> repositoryWrapper;
 	private final Job entity = new Job();
 
 	@Before

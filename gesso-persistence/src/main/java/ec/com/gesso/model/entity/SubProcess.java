@@ -34,8 +34,8 @@ public class SubProcess implements Serializable{
 	@Id
 	@Basic(optional = false)
 	@Column(name = "ID_SUBPROCESS")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="sequence_id_subprocess")
-    @SequenceGenerator(name="sequence_id_subprocess", sequenceName="sequenceIdSubProcess", allocationSize = 1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_id_subprocess")
+    @SequenceGenerator(name="seq_id_subprocess", sequenceName="seq_id_subprocess", allocationSize = 1)
 	private Long id;
 	
 	@Column(name = "ID_SUBPROCESS_ROOT")

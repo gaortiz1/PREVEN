@@ -7,16 +7,18 @@ package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -25,76 +27,117 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "phone")
-@NamedQueries({
-    @NamedQuery(name = "Phone.findAll", query = "SELECT p FROM Phone p")})
 public class Phone implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_id_phone")
+    @SequenceGenerator(name="seq_id_phone", sequenceName="seq_id_phone", allocationSize = 1)
     @Column(name = "id_phone")
-    private Long idPhone;
+    private Long id;
+    
     @Basic(optional = false)
-    @Column(name = "numeber")
-    private String numeber;
+    @Column(name = "ID_CATALOG_PHONE")
+    private String typePhone;
+    
     @Basic(optional = false)
-    @Column(name = "status_phone")
-    private boolean statusPhone;
-    @JoinColumn(name = "id_catalog_phone", referencedColumnName = "id_catalog")
+    @Column(name = "number")
+    private String number;
+    
+    @Basic(optional = false)
+    @Column(name = "STATE_PHONE")
+    private Boolean state;
+    
+    @JoinColumn(name = "ID_CATALOG_PHONE", referencedColumnName = "id_catalog", insertable=false, updatable=false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Catalog catalog;
+    
     @OneToMany(mappedBy = "phone", fetch = FetchType.LAZY)
     private Collection<ContactData> contactDataCollection;
 
-    public Phone() {
-    }
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
 
-    public Phone(Long idPhone) {
-        this.idPhone = idPhone;
-    }
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Phone(Long idPhone, String numeber, boolean statusPhone) {
-        this.idPhone = idPhone;
-        this.numeber = numeber;
-        this.statusPhone = statusPhone;
-    }
+	/**
+	 * @return the typePhone
+	 */
+	public String getTypePhone() {
+		return typePhone;
+	}
 
-    public Long getIdPhone() {
-        return idPhone;
-    }
+	/**
+	 * @param typePhone the typePhone to set
+	 */
+	public void setTypePhone(String typePhone) {
+		this.typePhone = typePhone;
+	}
 
-    public void setIdPhone(Long idPhone) {
-        this.idPhone = idPhone;
-    }
+	/**
+	 * @return the number
+	 */
+	public String getNumber() {
+		return number;
+	}
 
-    public String getNumeber() {
-        return numeber;
-    }
+	/**
+	 * @param number the number to set
+	 */
+	public void setNumber(String number) {
+		this.number = number;
+	}
 
-    public void setNumeber(String numeber) {
-        this.numeber = numeber;
-    }
+	/**
+	 * @return the state
+	 */
+	public Boolean getState() {
+		return state;
+	}
 
-    public boolean getStatusPhone() {
-        return statusPhone;
-    }
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(Boolean state) {
+		this.state = state;
+	}
 
-    public void setStatusPhone(boolean statusPhone) {
-        this.statusPhone = statusPhone;
-    }
+	/**
+	 * @return the catalog
+	 */
+	public Catalog getCatalog() {
+		return catalog;
+	}
 
-    public Catalog getCatalog() {
-        return catalog;
-    }
+	/**
+	 * @param catalog the catalog to set
+	 */
+	public void setCatalog(Catalog catalog) {
+		this.catalog = catalog;
+	}
 
-    public void setCatalog(Catalog catalog) {
-        this.catalog = catalog;
-    }
+	/**
+	 * @return the contactDataCollection
+	 */
+	public Collection<ContactData> getContactDataCollection() {
+		return contactDataCollection;
+	}
 
-    public Collection<ContactData> getContactDataCollection() {
-        return contactDataCollection;
-    }
-
-    public void setContactDataCollection(Collection<ContactData> contactDataCollection) {
-        this.contactDataCollection = contactDataCollection;
-    }
+	/**
+	 * @param contactDataCollection the contactDataCollection to set
+	 */
+	public void setContactDataCollection(
+			Collection<ContactData> contactDataCollection) {
+		this.contactDataCollection = contactDataCollection;
+	}
 }
