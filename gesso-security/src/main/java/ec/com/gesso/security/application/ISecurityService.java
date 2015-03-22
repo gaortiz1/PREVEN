@@ -2,6 +2,7 @@ package ec.com.gesso.security.application;
 
 import java.util.Collection;
 
+import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.security.domain.model.security.dto.Person;
 import ec.com.gesso.security.domain.model.security.dto.UserDto;
 
@@ -24,7 +25,7 @@ public interface ISecurityService {
 	 */
 	public void persistNewUser(Person person);
 	
-	public void persistPerson(Person person);
+	public void persistPerson(Person person) throws GessoException;
 	
 	
 	public Collection<UserDto> findAllUsers();
