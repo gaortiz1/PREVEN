@@ -12,6 +12,7 @@
 		<module>gesso-ear</module>
 		<module>gesso-model</module>
 		<module>gesso-persistence</module>
+		<module>gesso-application</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
@@ -186,6 +187,7 @@
 				<artifactId>postgresql</artifactId>
 				<version>9.3-1102-jdbc4</version>
 			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 

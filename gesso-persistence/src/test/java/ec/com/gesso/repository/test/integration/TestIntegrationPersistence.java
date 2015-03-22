@@ -1,6 +1,5 @@
 package ec.com.gesso.repository.test.integration;
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +21,7 @@ public class TestIntegrationPersistence {
 	private IRepositoryEntity<Process> repositoryProcess;
 	@Autowired private ApplicationContext applicationContext;
 
+	@SuppressWarnings("unchecked")
 	@Before
 	public void setUp() throws Exception {
 		repositoryProcess = (IRepositoryEntity<Process>) applicationContext.getBean("repositoryProcess");
@@ -30,9 +30,9 @@ public class TestIntegrationPersistence {
 	@Test
 	public void testCreate() {
 		Process process = new Process();
-		process.setDescription(StringUtils.EMPTY);
-		process.setName(StringUtils.EMPTY);
-		//repositoryProcess.create(process);
+		process.setDescription("Process1");
+		process.setName("Process1");
+		repositoryProcess.create(process);
 	}
 
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="serviceProcess" class="ec.com.gesso.application.service.impl.ServiceProcess">
+		<property name="domainProcess">
+			<ref bean="domainProcess"/>
+		</property>
+	</bean>
+	
+	<bean id="gessoTransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory"><ref bean="hibernate4AnnotatedSessionFactory"/></property>
+	</bean>
+	
+</beans>

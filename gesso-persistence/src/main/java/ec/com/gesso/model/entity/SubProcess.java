@@ -7,10 +7,13 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
@@ -31,6 +34,8 @@ public class SubProcess implements Serializable{
 	@Id
 	@Basic(optional = false)
 	@Column(name = "ID_SUBPROCESS")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="sequence_id_subprocess")
+    @SequenceGenerator(name="sequence_id_subprocess", sequenceName="sequenceIdSubProcess", allocationSize = 1)
 	private Long id;
 	
 	@Column(name = "ID_SUBPROCESS_ROOT")

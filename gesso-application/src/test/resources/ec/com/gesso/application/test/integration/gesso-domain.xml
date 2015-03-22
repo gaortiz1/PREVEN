@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="domainProcess" class="ec.com.gesso.domain.impl.DomainProcess">
+		<property name="repositoryProcess">
+			<ref bean="repositoryProcess"/>
+		</property>
+		<property name="domainSubProcess">
+			<ref bean="domainSubProcess"/>
+		</property>
+	</bean>
+	
+	<bean id="domainSubProcess" class="ec.com.gesso.domain.impl.DomainSubProcess">
+		<property name="repositorySubProcess">
+			<ref bean="repositorySubProcess"/>
+		</property>
+		<property name="domainJob">
+			<ref bean="domainJob"/>
+		</property>
+	</bean>
+	
+	<bean id="domainJob" class="ec.com.gesso.domain.impl.DomainJob">
+		<property name="repositoryJob">
+			<ref bean="repositoryJob"/>
+		</property>
+	</bean>
+	
+</beans>
