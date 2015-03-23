@@ -6,7 +6,6 @@
 package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -17,7 +16,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -39,7 +37,10 @@ public class Phone implements Serializable {
     
     @Basic(optional = false)
     @Column(name = "ID_CATALOG_PHONE")
-    private String typePhone;
+    private String idtypePhone;
+    
+    @Column(name = "id_contactdata")
+    private Long idContactData;
     
     @Basic(optional = false)
     @Column(name = "number")
@@ -51,10 +52,11 @@ public class Phone implements Serializable {
     
     @JoinColumn(name = "ID_CATALOG_PHONE", referencedColumnName = "id_catalog", insertable=false, updatable=false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Catalog catalog;
+    private Catalog catalogTypePhone;
     
-    @OneToMany(mappedBy = "phone", fetch = FetchType.LAZY)
-    private Collection<ContactData> contactDataCollection;
+    @JoinColumn(name = "id_contactdata", referencedColumnName = "id_contactdata", insertable=false, updatable=false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private ContactData contactData;
 
 	/**
 	 * @return the id
@@ -71,17 +73,31 @@ public class Phone implements Serializable {
 	}
 
 	/**
-	 * @return the typePhone
+	 * @return the idtypePhone
 	 */
-	public String getTypePhone() {
-		return typePhone;
+	public String getIdtypePhone() {
+		return idtypePhone;
 	}
 
 	/**
-	 * @param typePhone the typePhone to set
+	 * @param idtypePhone the idtypePhone to set
 	 */
-	public void setTypePhone(String typePhone) {
-		this.typePhone = typePhone;
+	public void setIdtypePhone(String idtypePhone) {
+		this.idtypePhone = idtypePhone;
+	}
+
+	/**
+	 * @return the idContactData
+	 */
+	public Long getIdContactData() {
+		return idContactData;
+	}
+
+	/**
+	 * @param idContactData the idContactData to set
+	 */
+	public void setIdContactData(Long idContactData) {
+		this.idContactData = idContactData;
 	}
 
 	/**
@@ -113,31 +129,30 @@ public class Phone implements Serializable {
 	}
 
 	/**
-	 * @return the catalog
+	 * @return the catalogTypePhone
 	 */
-	public Catalog getCatalog() {
-		return catalog;
+	public Catalog getCatalogTypePhone() {
+		return catalogTypePhone;
 	}
 
 	/**
-	 * @param catalog the catalog to set
+	 * @param catalogTypePhone the catalogTypePhone to set
 	 */
-	public void setCatalog(Catalog catalog) {
-		this.catalog = catalog;
+	public void setCatalogTypePhone(Catalog catalogTypePhone) {
+		this.catalogTypePhone = catalogTypePhone;
 	}
 
 	/**
-	 * @return the contactDataCollection
+	 * @return the contactData
 	 */
-	public Collection<ContactData> getContactDataCollection() {
-		return contactDataCollection;
+	public ContactData getContactData() {
+		return contactData;
 	}
 
 	/**
-	 * @param contactDataCollection the contactDataCollection to set
+	 * @param contactData the contactData to set
 	 */
-	public void setContactDataCollection(
-			Collection<ContactData> contactDataCollection) {
-		this.contactDataCollection = contactDataCollection;
+	public void setContactData(ContactData contactData) {
+		this.contactData = contactData;
 	}
 }

@@ -1,6 +1,7 @@
 package ec.com.gesso.repository.test.integration;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.repository.IRepositoryEntity;
 
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
 		"classpath:ec/com/gesso/repository/test/integration/geso-transactions.xml",

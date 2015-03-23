@@ -6,6 +6,7 @@
 package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -16,6 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -36,15 +38,6 @@ public class ContactData implements Serializable {
     @SequenceGenerator(name="seq_id_contact_data", sequenceName="seq_id_contact_data", allocationSize = 1)
     private Long id;
     
-    @Column(name = "id_email")
-    private Long idEmail;
-    
-    @Column(name = "ID_ADDRESS")
-    private Long idAddress;
-    
-    @Column(name = "id_phone")
-    private Long idPhone;
-    
     @Column(name = "id_person")
     private Long idPerson;
     
@@ -54,25 +47,22 @@ public class ContactData implements Serializable {
     @Column(name = "STATE_CONTACTDATA")
     private Boolean state;
     
-    @JoinColumn(name = "id_phone", referencedColumnName = "id_phone", insertable=false, updatable=false)
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Phone phone;
-    
     @JoinColumn(name = "id_person", referencedColumnName = "id_person", insertable=false, updatable=false)
     @ManyToOne(fetch = FetchType.LAZY)
     private Person person;
-    
-    @JoinColumn(name = "id_email", referencedColumnName = "id_email", insertable=false, updatable=false)
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Email email;
     
     @JoinColumn(name = "id_company", referencedColumnName = "id_company", insertable=false, updatable=false)
     @ManyToOne(fetch = FetchType.LAZY)
     private Company company;
     
-    @JoinColumn(name = "id_address", referencedColumnName = "id_address", insertable=false, updatable=false)
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Address address;
+    @OneToMany(mappedBy = "contactData", fetch = FetchType.LAZY)
+    private Collection<Phone> collectionPhones;
+    
+    @OneToMany(mappedBy = "contactData", fetch = FetchType.LAZY)
+    private Collection<Email> collectionEmails;
+    
+    @OneToMany(mappedBy = "contactData", fetch = FetchType.LAZY)
+    private Collection<Address> collectionAddress;
 
 	/**
 	 * @return the id
@@ -86,48 +76,6 @@ public class ContactData implements Serializable {
 	 */
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	/**
-	 * @return the idEmail
-	 */
-	public Long getIdEmail() {
-		return idEmail;
-	}
-
-	/**
-	 * @param idEmail the idEmail to set
-	 */
-	public void setIdEmail(Long idEmail) {
-		this.idEmail = idEmail;
-	}
-
-	/**
-	 * @return the idAddress
-	 */
-	public Long getIdAddress() {
-		return idAddress;
-	}
-
-	/**
-	 * @param idAddress the idAddress to set
-	 */
-	public void setIdAddress(Long idAddress) {
-		this.idAddress = idAddress;
-	}
-
-	/**
-	 * @return the idPhone
-	 */
-	public Long getIdPhone() {
-		return idPhone;
-	}
-
-	/**
-	 * @param idPhone the idPhone to set
-	 */
-	public void setIdPhone(Long idPhone) {
-		this.idPhone = idPhone;
 	}
 
 	/**
@@ -173,20 +121,6 @@ public class ContactData implements Serializable {
 	}
 
 	/**
-	 * @return the phone
-	 */
-	public Phone getPhone() {
-		return phone;
-	}
-
-	/**
-	 * @param phone the phone to set
-	 */
-	public void setPhone(Phone phone) {
-		this.phone = phone;
-	}
-
-	/**
 	 * @return the person
 	 */
 	public Person getPerson() {
@@ -198,20 +132,6 @@ public class ContactData implements Serializable {
 	 */
 	public void setPerson(Person person) {
 		this.person = person;
-	}
-
-	/**
-	 * @return the email
-	 */
-	public Email getEmail() {
-		return email;
-	}
-
-	/**
-	 * @param email the email to set
-	 */
-	public void setEmail(Email email) {
-		this.email = email;
 	}
 
 	/**
@@ -229,16 +149,44 @@ public class ContactData implements Serializable {
 	}
 
 	/**
-	 * @return the address
+	 * @return the collectionPhones
 	 */
-	public Address getAddress() {
-		return address;
+	public Collection<Phone> getCollectionPhones() {
+		return collectionPhones;
 	}
 
 	/**
-	 * @param address the address to set
+	 * @param collectionPhones the collectionPhones to set
 	 */
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setCollectionPhones(Collection<Phone> collectionPhones) {
+		this.collectionPhones = collectionPhones;
+	}
+
+	/**
+	 * @return the collectionEmails
+	 */
+	public Collection<Email> getCollectionEmails() {
+		return collectionEmails;
+	}
+
+	/**
+	 * @param collectionEmails the collectionEmails to set
+	 */
+	public void setCollectionEmails(Collection<Email> collectionEmails) {
+		this.collectionEmails = collectionEmails;
+	}
+
+	/**
+	 * @return the collectionAddress
+	 */
+	public Collection<Address> getCollectionAddress() {
+		return collectionAddress;
+	}
+
+	/**
+	 * @param collectionAddress the collectionAddress to set
+	 */
+	public void setCollectionAddress(Collection<Address> collectionAddress) {
+		this.collectionAddress = collectionAddress;
 	}
 }

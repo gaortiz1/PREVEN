@@ -1,6 +1,7 @@
 package ec.com.gesso.repository.test.integration;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import ec.com.gesso.model.entity.ScheduleWork;
 import ec.com.gesso.model.entity.ScheduleWorkPK;
 import ec.com.gesso.repository.IRepositoryEntity;
 
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
 		"classpath:ec/com/gesso/repository/test/integration/geso-transactions.xml",
@@ -33,7 +35,7 @@ public class TestIntegrationScheduleWork {
 		ScheduleWork scheduleWork = new ScheduleWork();
 		scheduleWork.setIdScheduleWork(new ScheduleWorkPK());
 		scheduleWork.getIdScheduleWork().setIdBusinessHour("J8");
-		scheduleWork.getIdScheduleWork().setIdCompany(2l);
+		scheduleWork.getIdScheduleWork().setIdCompany(1l);
 		repositoryProcess.create(scheduleWork);
 	}
 

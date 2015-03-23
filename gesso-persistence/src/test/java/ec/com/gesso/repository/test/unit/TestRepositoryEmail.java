@@ -20,6 +20,7 @@ public class TestRepositoryEmail extends AbstractTestEntity<Email>{
 		this.repository = new RepositoryEmail();
 		this.repository.setRepositoryEntity(repositoryWrapper);
 		this.entity.setEmailaddess("asdasdsa");
+		this.entity.setIdContactData(1l);
 	}
 
 	@Test

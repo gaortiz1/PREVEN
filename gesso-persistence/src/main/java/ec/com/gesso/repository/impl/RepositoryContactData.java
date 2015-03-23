@@ -11,7 +11,7 @@ import ec.com.gesso.repository.exception.ValidationEntity;
  * @author Gabriel
  *
  */
-public class RepositoryContacData implements IRepositoryEntity<ContactData> {
+public class RepositoryContactData implements IRepositoryEntity<ContactData> {
 
 	private IRepositoryEntity<ContactData> repositoryEntity;
 

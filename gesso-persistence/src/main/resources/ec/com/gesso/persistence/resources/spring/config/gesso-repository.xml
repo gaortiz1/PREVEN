@@ -69,7 +69,7 @@
 		</property>
 	</bean>
 	
-	<bean id="repositoryContacData" class="ec.com.gesso.repository.impl.RepositoryContacData">
+	<bean id="repositoryContactData" class="ec.com.gesso.repository.impl.RepositoryContactData">
 		<property name="repositoryEntity">
 			<ref bean="repositoryWrapper"/>
 		</property>

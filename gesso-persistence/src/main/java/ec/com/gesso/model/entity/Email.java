@@ -6,7 +6,6 @@
 package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -15,7 +14,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -35,6 +35,9 @@ public class Email implements Serializable {
     @Column(name = "id_email")
     private Long id;
     
+    @Column(name = "id_contactdata")
+    private Long idContactData;
+    
     @Basic(optional = false)
     @Column(name = "emailaddess")
     private String emailaddess;
@@ -43,8 +46,9 @@ public class Email implements Serializable {
     @Column(name = "STATE_EMAIL")
     private Boolean state;
     
-    @OneToMany(mappedBy = "email", fetch = FetchType.LAZY)
-    private Collection<ContactData> collectionContactData;
+    @JoinColumn(name = "id_contactdata", referencedColumnName = "id_contactdata", insertable=false, updatable=false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private ContactData contactData;
 
 	/**
 	 * @return the id
@@ -58,6 +62,20 @@ public class Email implements Serializable {
 	 */
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	/**
+	 * @return the idContactData
+	 */
+	public Long getIdContactData() {
+		return idContactData;
+	}
+
+	/**
+	 * @param idContactData the idContactData to set
+	 */
+	public void setIdContactData(Long idContactData) {
+		this.idContactData = idContactData;
 	}
 
 	/**
@@ -89,17 +107,16 @@ public class Email implements Serializable {
 	}
 
 	/**
-	 * @return the collectionContactData
+	 * @return the contactData
 	 */
-	public Collection<ContactData> getCollectionContactData() {
-		return collectionContactData;
+	public ContactData getContactData() {
+		return contactData;
 	}
 
 	/**
-	 * @param collectionContactData the collectionContactData to set
+	 * @param contactData the contactData to set
 	 */
-	public void setCollectionContactData(
-			Collection<ContactData> collectionContactData) {
-		this.collectionContactData = collectionContactData;
+	public void setContactData(ContactData contactData) {
+		this.contactData = contactData;
 	}
 }

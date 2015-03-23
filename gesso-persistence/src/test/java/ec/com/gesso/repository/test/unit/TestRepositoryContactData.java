@@ -6,22 +6,19 @@ import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import ec.com.gesso.model.entity.ContactData;
-import ec.com.gesso.repository.impl.RepositoryContacData;
+import ec.com.gesso.repository.impl.RepositoryContactData;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TestRepositoryContactData extends AbstractTestEntity<ContactData>{
 	
-	private RepositoryContacData repository;
+	private RepositoryContactData repository;
 	private final ContactData entity = new ContactData();
 
 	@Before
 	public void setUp() throws Exception {
-		this.repository = new RepositoryContacData();
+		this.repository = new RepositoryContactData();
 		this.repository.setRepositoryEntity(repositoryWrapper);
-		this.entity.setIdAddress(1l);
 		this.entity.setIdCompany(1l);
-		this.entity.setIdEmail(1l);
-		this.entity.setIdAddress(2l);
 	}
 
 	@Test

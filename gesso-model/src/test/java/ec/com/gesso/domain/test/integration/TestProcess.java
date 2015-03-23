@@ -1,9 +1,8 @@
 package ec.com.gesso.domain.test.integration;
 
-import static org.junit.Assert.fail;
-
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ec.com.gesso.domain.IDomainEntity;
 import ec.com.gesso.model.entity.Process;
 
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
 		"geso-transactions.xml",
@@ -26,6 +26,7 @@ public class TestProcess {
 	@Autowired private ApplicationContext applicationContext;
 	private IDomainEntity<Process> domainProcess;
 
+	@SuppressWarnings("unchecked")
 	@Before
 	public void setUp() throws Exception {
 		domainProcess = (IDomainEntity<Process>) applicationContext.getBean("domainProcess");
@@ -36,7 +37,7 @@ public class TestProcess {
 		Process process = new Process();
 		process.setDescription(StringUtils.EMPTY);
 		process.setName(StringUtils.EMPTY);
-//		domainProcess.create(process);
+		domainProcess.create(process);
 	}
 
 }
