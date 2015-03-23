@@ -384,7 +384,8 @@
 
 										<div class="col-xs-3 col-sm-9">
 											<div class="input-group">
-												<form:input path="dateOfBirth" class="form-control date-picker txt-validate-empty" data-date-format="dd-mm-yyyy"/>
+												<form:input path="dateOfBirth" type="date" class="form-control date-picker txt-validate-empty"/>
+												
 												<span class="input-group-addon">
 													<i class="fa fa-calendar bigger-110"></i>
 												</span>

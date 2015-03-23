@@ -27,6 +27,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 /**
  *
  * @author roberto
@@ -80,6 +83,8 @@ public class Person implements Serializable {
     @Basic(optional = false)
     @Column(name = "date_of_birth")
     @Temporal(TemporalType.DATE)
+//    @DateTimeFormat(iso = ISO.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dateOfBirth;
     @Basic(optional = false)
     @Column(name = "status_person")
