@@ -1,7 +1,8 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-     
+<%@ page session="false" %>
+<c:if test="${!ajaxRequest}">
 <html>
 <head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -52,6 +53,7 @@
 	</head>
 
 	<body class="no-skin">
+</c:if>
 		<!-- #section:basics/navbar.layout -->
 		<%@ include file="gesso-header.jspf" %>
 
@@ -325,7 +327,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form:form cssClass="form-horizontal" role="form" action="person-administration" method="POST">
+								<form:form id="form" cssClass="form-horizontal" role="form" action="person-administration" method="POST">
 									<!-- #section:elements.form -->
 									
 									<div class="form-group">
@@ -371,8 +373,8 @@
 									<div class="form-group">
 										<label for="form-field-select-3" class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.country"/></label>
 										<div class="col-sm-9">
-											<form:select path="documentNumber" cssClass="chosen-select form-control" data-placeholder="Choose a country...">
-												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo2"/>
+											<form:select path="documentNumber" cssClass="chosen-select form-control" data-placeholder="Choose a country..." onchange="cargarCiudades(this)">
+												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo2" onclick=""/>
 											</form:select>
 										</div>
 									</div>
@@ -382,7 +384,7 @@
 
 										<div class="col-xs-3 col-sm-9">
 											<div class="input-group">
-												<input class="form-control date-picker" type="text" data-date-format="dd-mm-yyyy" />
+												<form:input path="dateOfBirth" class="form-control date-picker" data-date-format="dd-mm-yyyy"/>
 												<span class="input-group-addon">
 													<i class="fa fa-calendar bigger-110"></i>
 												</span>
@@ -487,6 +489,18 @@
 									
 								</form:form>
 								
+								<script type="text/javascript">
+									$(document).ready(function() {
+										$("#form").submit(function() {  
+											$.post($(this).attr("action"), $(this).serialize(), function(html) {
+												$("#formsContent").replaceWith(html);
+												$('html, body').animate({ scrollTop: $("#message").offset().top }, 500);
+											});
+											return false;  
+										});			
+									});
+								</script>
+								
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
@@ -539,6 +553,8 @@
 		<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.inputlimiter.1.3.1.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.maskedinput.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap-tag.js"></script>
+		
+		<script src="${pageContext.request.contextPath}/resources/gesso/gesso-ajax.js"></script>
 
 		<!-- ace scripts -->
 		<script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.scroller.js"></script>
@@ -972,5 +988,7 @@
 		<script src="${pageContext.request.contextPath}/resources/docs/assets/js/language/html.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/docs/assets/js/language/css.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/docs/assets/js/language/javascript.js"></script>
+<c:if test="${!ajaxRequest}">	
 	</body>
 </html>
+</c:if>
