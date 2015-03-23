@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
- 		<module>gesso-client</module>
+		<module>gesso-client</module>
 		<module>gesso-web</module>
 		<module>gesso-security</module>
 		<module>gesso-ear</module>
@@ -21,18 +21,30 @@
 				<artifactId>hibernate-entitymanager</artifactId>
 				<version>4.3.8.Final</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-core</artifactId>
 				<version>4.3.8.Final</version>
 			</dependency>
-						
+
 
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.12</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${org.springframework-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${org.springframework-version}</version>
 			</dependency>
 
 			<dependency>
@@ -180,12 +192,31 @@
 				<version>4.7</version>
 				<scope>test</scope>
 			</dependency>
-			
-			
+
+
 			<dependency>
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
 				<version>9.3-1102-jdbc4</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.1</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>1.8.5</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.1-api</artifactId>
+				<version>1.0.0.Final</version>
 			</dependency>
 
 		</dependencies>

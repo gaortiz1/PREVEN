@@ -54,12 +54,11 @@ public class Person implements Serializable {
     @Column(name = "id_catalog")
     private Integer idSexCatalog;
     
-//    @Column(name = "id_catalog_vulnerability")
-    @Transient
+    @Column(name = "id_catalog_vulnerability")
     private Integer idCatalogVulnerability;
     
-    @Transient
-    private Integer lactationPeriod;
+    @Column(name = "lactation_period")
+    private Boolean lactationPeriod;
     @Transient
     private String personalLocalPhone;
     @Transient
@@ -285,11 +284,11 @@ public class Person implements Serializable {
 		this.idCatalogVulnerability = idCatalogVulnerability;
 	}
 
-	public Integer getLactationPeriod() {
+	public Boolean getLactationPeriod() {
 		return lactationPeriod;
 	}
 
-	public void setLactationPeriod(Integer lactationPeriod) {
+	public void setLactationPeriod(Boolean lactationPeriod) {
 		this.lactationPeriod = lactationPeriod;
 	}
 

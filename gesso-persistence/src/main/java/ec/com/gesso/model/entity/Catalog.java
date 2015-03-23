@@ -22,12 +22,12 @@ import javax.persistence.Table;
  *
  * @author roberto
  */
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "catalog")
 @NamedQueries({
     @NamedQuery(name = "Catalog.findAll", query = "SELECT c FROM Catalog c")})
 public class Catalog implements Serializable {
-    private static final long serialVersionUID = 1L;
     
     @Id
     @Basic(optional = false)
@@ -35,14 +35,14 @@ public class Catalog implements Serializable {
     private String id;
     
     @Column(name = "id_groupcatalog")
-    private String idGroupcatalog;
+    private Integer idGroupcatalog;
     
     @Basic(optional = false)
     @Column(name = "name_catalog")
     private String name;
     
     @Basic(optional = false)
-    @Column(name = "STATUS_CATALOG")
+    @Column(name = "status")
     private Boolean state;
     
     @JoinColumn(name = "id_groupcatalog", referencedColumnName = "id_groupcatalog", insertable=false, updatable=false)
@@ -63,17 +63,13 @@ public class Catalog implements Serializable {
 		this.id = id;
 	}
 
-	/**
-	 * @return the idGroupcatalog
-	 */
-	public String getIdGroupcatalog() {
+	
+
+	public Integer getIdGroupcatalog() {
 		return idGroupcatalog;
 	}
 
-	/**
-	 * @param idGroupcatalog the idGroupcatalog to set
-	 */
-	public void setIdGroupcatalog(String idGroupcatalog) {
+	public void setIdGroupcatalog(Integer idGroupcatalog) {
 		this.idGroupcatalog = idGroupcatalog;
 	}
 
@@ -118,4 +114,12 @@ public class Catalog implements Serializable {
 	public void setGroupCatalog(GroupCatalog groupCatalog) {
 		this.groupCatalog = groupCatalog;
 	}
+
+	@Override
+	public String toString() {
+		return "Catalog [id=" + id + ", idGroupcatalog=" + idGroupcatalog
+				+ ", name=" + name + "]";
+	}
+	
+	
 }
