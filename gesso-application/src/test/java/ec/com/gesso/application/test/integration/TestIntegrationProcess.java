@@ -26,6 +26,7 @@ public class TestIntegrationProcess {
 	private IServiceEntity<Process> serviceProcess;
 	@Autowired private ApplicationContext applicationContext;
 
+	@SuppressWarnings("unchecked")
 	@Before
 	public void setUp() throws Exception {
 		this.serviceProcess = (IServiceEntity<Process>) applicationContext.getBean("serviceProcess");

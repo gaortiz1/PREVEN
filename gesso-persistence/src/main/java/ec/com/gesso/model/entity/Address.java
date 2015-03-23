@@ -6,7 +6,6 @@
 package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -17,7 +16,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 

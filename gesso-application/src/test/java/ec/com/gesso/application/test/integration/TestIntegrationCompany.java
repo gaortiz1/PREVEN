@@ -24,6 +24,7 @@ public class TestIntegrationCompany {
 	@Autowired
 	private ApplicationContext applicationContext;
 
+	@SuppressWarnings("unchecked")
 	@Before
 	public void setUp() throws Exception {
 		this.serviceCompany = (IServiceEntity<Company>) applicationContext.getBean("serviceCompany");

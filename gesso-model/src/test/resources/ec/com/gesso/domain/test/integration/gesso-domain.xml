@@ -27,6 +27,12 @@
 		</property>
 	</bean>
 	
+	<bean id="domainDocument" class="ec.com.gesso.domain.impl.DomainDocument">
+		<property name="repositoryDocument">
+			<ref bean="repositoryDocument"/>
+		</property>
+	</bean>
+	
 	<bean id="domainContactData" class="ec.com.gesso.domain.impl.DomainContactData">
 		<property name="repositoryContactData">
 			<ref bean="repositoryContactData"/>
@@ -49,8 +55,8 @@
 		<property name="repositoryActivityEconomicCompany">
 			<ref bean="repositoryActivityEconomicCompany"/>
 		</property>
-		<property name="repositoryDocument">
-			<ref bean="repositoryDocument"/>
+		<property name="domainDocument">
+			<ref bean="domainDocument"/>
 		</property>
 		<property name="repositoryScheduleWork">
 			<ref bean="repositoryScheduleWork"/>

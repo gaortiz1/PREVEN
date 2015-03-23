@@ -8,8 +8,6 @@ import java.util.TreeSet;
 
 import ec.com.gesso.model.entity.Address;
 import ec.com.gesso.model.entity.ContactData;
-import ec.com.gesso.model.entity.Document;
-import ec.com.gesso.model.entity.DocumentPK;
 import ec.com.gesso.model.entity.Email;
 import ec.com.gesso.model.entity.Phone;
 
