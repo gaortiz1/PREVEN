@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import ec.com.gesso.security.domain.model.security.dto.Person;
+import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 @Controller
 @SessionAttributes
