@@ -27,4 +27,37 @@
 		</property>
 	</bean>
 	
+	<bean id="domainContactData" class="ec.com.gesso.domain.impl.DomainContactData">
+		<property name="repositoryContactData">
+			<ref bean="repositoryContactData"/>
+		</property>
+		<property name="repositoryEmail">
+			<ref bean="repositoryEmail"/>
+		</property>
+		<property name="repositoryAddress">
+			<ref bean="repositoryAddress"/>
+		</property>
+		<property name="repositoryPhone">
+			<ref bean="repositoryPhone"/>
+		</property>
+	</bean>
+	
+	<bean id="domainCompany" class="ec.com.gesso.domain.impl.DomainCompany">
+		<property name="repositoryCompany">
+			<ref bean="repositoryCompany"/>
+		</property>
+		<property name="repositoryActivityEconomicCompany">
+			<ref bean="repositoryActivityEconomicCompany"/>
+		</property>
+		<property name="repositoryDocument">
+			<ref bean="repositoryDocument"/>
+		</property>
+		<property name="repositoryScheduleWork">
+			<ref bean="repositoryScheduleWork"/>
+		</property>
+		<property name="domainContactData">
+			<ref bean="domainContactData"/>
+		</property>
+	</bean>
+	
 </beans>

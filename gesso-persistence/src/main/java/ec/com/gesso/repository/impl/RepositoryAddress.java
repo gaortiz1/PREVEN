@@ -24,6 +24,11 @@ public class RepositoryAddress implements IRepositoryEntity<Address> {
 		if (null == address) {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}
+		
+		if (null == address.getIdContactData()) {
+			throw new ValidationEntity("El campo contact data es null");
+		}
+		
 		if (null == address.getNameAddress()) {
 			throw new ValidationEntity("El campo nombre es null");
 		}

@@ -1,6 +1,7 @@
 package ec.com.gesso.repository.test.integration;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ec.com.gesso.model.entity.ContactData;
 import ec.com.gesso.repository.IRepositoryEntity;
 
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
 		"classpath:ec/com/gesso/repository/test/integration/geso-transactions.xml",
@@ -24,16 +26,13 @@ public class TestIntegrationContacData {
 	@SuppressWarnings("unchecked")
 	@Before
 	public void setUp() throws Exception {
-		repositoryAddress = (IRepositoryEntity<ContactData>) applicationContext.getBean("repositoryContacData");
+		repositoryAddress = (IRepositoryEntity<ContactData>) applicationContext.getBean("repositoryContactData");
 	}
 
 	@Test
 	public void testCreate() {
 		ContactData contactData = new ContactData();
-		contactData.setIdAddress(1l);
 		contactData.setIdCompany(1l);
-		contactData.setIdEmail(1l);
-		contactData.setIdAddress(3l);
 		repositoryAddress.create(contactData);
 	}
 

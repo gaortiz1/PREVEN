@@ -25,8 +25,12 @@ public class RepositoryPhone implements IRepositoryEntity<Phone> {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}
 		
-		if (null == phone.getTypePhone()) {
+		if (null == phone.getIdtypePhone()) {
 			throw new ValidationEntity("El campo type phone es null");
+		}
+		
+		if (null == phone.getIdContactData()) {
+			throw new ValidationEntity("El campo contact data es null");
 		}
 		
 		if (null == phone.getNumber()) {

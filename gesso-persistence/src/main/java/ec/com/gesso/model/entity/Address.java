@@ -15,6 +15,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -36,6 +38,9 @@ public class Address implements Serializable {
     @SequenceGenerator(name="seq_id_address", sequenceName="seq_id_address", allocationSize = 1)
     private Long id;
     
+    @Column(name = "id_contactdata")
+    private Long idContactData;
+    
     @Basic(optional = false)
     @Column(name = "name_address")
     private String nameAddress;
@@ -44,8 +49,9 @@ public class Address implements Serializable {
     @Column(name = "STATE_ADDRESS")
     private Boolean state;
     
-    @OneToMany(mappedBy = "address", fetch = FetchType.LAZY)
-    private Collection<ContactData> contactDataCollection;
+    @JoinColumn(name = "id_contactdata", referencedColumnName = "id_contactdata", insertable=false, updatable=false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private ContactData contactData;
 
 	/**
 	 * @return the id
@@ -59,6 +65,20 @@ public class Address implements Serializable {
 	 */
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	/**
+	 * @return the idContactData
+	 */
+	public Long getIdContactData() {
+		return idContactData;
+	}
+
+	/**
+	 * @param idContactData the idContactData to set
+	 */
+	public void setIdContactData(Long idContactData) {
+		this.idContactData = idContactData;
 	}
 
 	/**
@@ -90,17 +110,16 @@ public class Address implements Serializable {
 	}
 
 	/**
-	 * @return the contactDataCollection
+	 * @return the contactData
 	 */
-	public Collection<ContactData> getContactDataCollection() {
-		return contactDataCollection;
+	public ContactData getContactData() {
+		return contactData;
 	}
 
 	/**
-	 * @param contactDataCollection the contactDataCollection to set
+	 * @param contactData the contactData to set
 	 */
-	public void setContactDataCollection(
-			Collection<ContactData> contactDataCollection) {
-		this.contactDataCollection = contactDataCollection;
+	public void setContactData(ContactData contactData) {
+		this.contactData = contactData;
 	}
 }

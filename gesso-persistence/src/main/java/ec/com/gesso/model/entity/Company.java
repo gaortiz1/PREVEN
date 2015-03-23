@@ -200,8 +200,7 @@ public class Company implements Serializable {
 	/**
 	 * @param activityEconomicCompanyCollection the activityEconomicCompanyCollection to set
 	 */
-	public void setActivityEconomicCompanyCollection(
-			Collection<ActivityEconomicCompany> activityEconomicCompanyCollection) {
+	public void setActivityEconomicCompanyCollection(Collection<ActivityEconomicCompany> activityEconomicCompanyCollection) {
 		this.activityEconomicCompanyCollection = activityEconomicCompanyCollection;
 	}
 
