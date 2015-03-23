@@ -371,7 +371,9 @@
 									<div class="form-group">
 										<label for="form-field-select-3" class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.country"/></label>
 										<div class="col-sm-9">
-											<form:select path="documentNumber" items="${country}" cssClass="chosen-select form-control" data-placeholder="Choose a country..."/>
+											<form:select path="documentNumber" cssClass="chosen-select form-control" data-placeholder="Choose a country...">
+												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo2"/>
+											</form:select>
 										</div>
 									</div>
 									
@@ -425,7 +427,9 @@
 									<div class="form-group">
 										<label for="form-field-select-3" class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.level.vulnerability"/></label>
 										<div class="col-sm-9">
-											<form:select path="idCatalogVulnerability" items="${levelVulnerability}" cssClass="chosen-select form-control" data-placeholder="Choose a vulnerability..."/>
+											<form:select path="idCatalogVulnerability" cssClass="chosen-select form-control" data-placeholder="Choose a vulnerability...">
+												<form:options items="${levelVulnerability}" itemLabel="name" itemValue="id"/>
+											</form:select>
 										</div>
 									</div>
 									

@@ -18,7 +18,6 @@ public class LocalizationTest {
 				System.out.println(countryDto);
 			}
 		} catch (GessoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

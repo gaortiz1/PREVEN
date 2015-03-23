@@ -1,5 +1,6 @@
 package ec.com.gesso.controller.administration;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import ec.com.gesso.common.exception.GessoException;
+import ec.com.gesso.model.entity.Catalog;
+import ec.com.gesso.model.entity.CountryDto;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 @Controller
@@ -19,10 +23,13 @@ public class PersonAdministrationController {
 	@RequestMapping(value = "/person-administration", method = RequestMethod.GET)
 	public ModelAndView userAdministration(){
 		
-		Map< String, String > country = new HashMap<String, String>();  
-		country.put("EC", "Ecuador");  
-		country.put("COL", "Colombia");  
-		country.put("URG", "Uruguay");
+		Collection<CountryDto> country = null;
+		try {
+			country = GessoSecurityFactory.getInstance().getLocalizationService().findCountry();
+		} catch (GessoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		Map< String, String > sex = new HashMap<String, String>();  
@@ -30,11 +37,12 @@ public class PersonAdministrationController {
 		sex.put("F", "Female"); 
 		
 		
-		Map< String, String > levelVulnerability = new HashMap<String, String>();
-		levelVulnerability.put("NIN", "NINGUNA");
-		levelVulnerability.put("EMB", "EMBARAZADA");
-		levelVulnerability.put("DIS", "DISCAPACITADO");
-		levelVulnerability.put("TED", "3RA EDAD");
+		Collection<Catalog> levelVulnerability = null;
+		try {
+			levelVulnerability = GessoSecurityFactory.getInstance().getCatalogService().findVulnerabilityCatalog();
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
 		
 		Person person = new Person();
         
