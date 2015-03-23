@@ -21,8 +21,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
@@ -39,16 +39,16 @@ public class Person implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "id_person")
-//    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_new_person")
-//    @SequenceGenerator(name="seq_new_person", sequenceName="seq_new_person", allocationSize = 1)
-    @TableGenerator(
-            name="person_seq", 
-            table="gesso_sequences", 
-            pkColumnName="seq_name", 
-            valueColumnName="seq_number", 
-            pkColumnValue="PER",
-            allocationSize=1)
-    @GeneratedValue(strategy=GenerationType.TABLE, generator="person_seq")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_new_person")
+    @SequenceGenerator(name="seq_new_person", sequenceName="seq_new_person", allocationSize = 1)
+//    @TableGenerator(
+//            name="person_seq", 
+//            table="gesso_sequences", 
+//            pkColumnName="seq_name", 
+//            valueColumnName="seq_number", 
+//            pkColumnValue="PER",
+//            allocationSize=1)
+//    @GeneratedValue(strategy=GenerationType.TABLE, generator="person_seq")
     private Long idPerson;
     
     @Column(name = "id_catalog")
