@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="ear" name="gesso-ear:ear exploded">
+  <artifact type="exploded-ear" name="gesso-ear:ear exploded">
     <output-path>$PROJECT_DIR$/gesso-ear/target/gesso-ear-0.0.1-SNAPSHOT</output-path>
-    <root id="archive" name="gesso-ear_ear exploded.ear">
+    <root id="root">
       <element id="javaee-facet-resources" facet="gesso-ear/javaeeApplication/JavaEE" />
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/gesso-ear/target/MANIFEST.MF" />
