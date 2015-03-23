@@ -349,7 +349,6 @@
 										</div>
 									</div>
 									
-									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <spring:message code="page.label.documentNumber"/> </label>
 										<div class="col-sm-9">
@@ -357,24 +356,11 @@
 										</div>
 									</div>
 
-									<!-- /section:elements.form -->
-									<div class="space-4"></div>
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <spring:message code="page.label.password"/> </label>
-
-										<div class="col-sm-9">
-											<form:password path="userDto.usrPassword" cssClass="col-xs-10 col-sm-5 txt-validate-empty" placeholder="Password" />
-										</div>
-									</div>
-
-									<div class="space-4"></div>
-
 									<div class="form-group">
 										<label for="form-field-select-3" class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.country"/></label>
 										<div class="col-sm-9">
 											<form:select path="paiscodigo" cssClass="chosen-select form-control" data-placeholder="Choose a country..." onchange="cargarCiudades(this)">
-												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo2" onclick=""/>
+												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo" onclick=""/>
 											</form:select>
 										</div>
 									</div>

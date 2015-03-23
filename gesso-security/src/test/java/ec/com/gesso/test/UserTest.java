@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.junit.Test;
 
+import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.UserDto;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
@@ -11,7 +12,12 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
 public class UserTest {
 	@Test
 	public void loginUser(){
-		GessoSecurityFactory.getInstance().getSecurityService().autenticateUser("", "");
+		try {
+			GessoSecurityFactory.getInstance().getSecurityService().autenticateUser("", "");
+		} catch (GessoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 //	@Test
@@ -21,6 +27,11 @@ public class UserTest {
 		
 		person.setUserDto(new UserDto("pruebas", "qwe123"));
 		
-		GessoSecurityFactory.getInstance().getSecurityService().persistNewUser(person);
+		try {
+			GessoSecurityFactory.getInstance().getSecurityService().persistNewUser(person);
+		} catch (GessoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

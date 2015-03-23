@@ -88,7 +88,7 @@ public class Person implements Serializable {
     private Date dateOfBirth;
     @Basic(optional = false)
     @Column(name = "status_person")
-    private boolean statusPerson;
+    private Boolean statusPerson;
     @Column(name = "per_document_number")
     private String documentNumber;
     @Transient
@@ -101,7 +101,7 @@ public class Person implements Serializable {
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
     private Collection<CurriculumVitae> curriculumVitaeCollection;
-    @JoinColumn(name = "usr_id", referencedColumnName = "usr_id")
+    @JoinColumn(name = "usr_id", referencedColumnName = "usr_id", insertable = false, updatable = false)
     @OneToOne(fetch = FetchType.LAZY)
     private UserDto userDto;
     @JoinColumn(name = "id_catalog", referencedColumnName = "id_catalog", insertable = false, updatable = false)
@@ -123,7 +123,7 @@ public class Person implements Serializable {
         this.idPerson = idPerson;
     }
 
-    public Person(Long idPerson, String firstName, String lastName, Date dateOfBirth, boolean statusPerson) {
+    public Person(Long idPerson, String firstName, String lastName, Date dateOfBirth, Boolean statusPerson) {
         this.idPerson = idPerson;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -131,7 +131,7 @@ public class Person implements Serializable {
         this.statusPerson = statusPerson;
     }
     
-    public Person(String firstName, String lastName, Date dateOfBirth, boolean statusPerson) {
+    public Person(String firstName, String lastName, Date dateOfBirth, Boolean statusPerson) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -186,11 +186,11 @@ public class Person implements Serializable {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public boolean getStatusPerson() {
+    public Boolean getStatusPerson() {
         return statusPerson;
     }
 
-    public void setStatusPerson(boolean statusPerson) {
+    public void setStatusPerson(Boolean statusPerson) {
         this.statusPerson = statusPerson;
     }
 
