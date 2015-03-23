@@ -29,3 +29,18 @@ function validateEmptyForm(){
 	});
 	return validForm;
 }
+
+function ejecutarAccion(){
+	$.post( "person-administration", function() {
+		alert( "success" );
+		})
+		.done(function() {
+		alert( "second success" );
+		})
+		.fail(function() {
+		alert( "error" );
+		})
+		.always(function() {
+		alert( "finished" );
+		});
+}

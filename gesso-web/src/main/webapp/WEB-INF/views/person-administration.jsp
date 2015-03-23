@@ -471,7 +471,7 @@
 
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="submit" onclick="validateEmptyForm(); return false;">
+											<button class="btn btn-info" type="submit" onclick="return validateEmptyForm();">
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												Submit
 											</button>
@@ -489,7 +489,16 @@
 									
 								</form:form>
 								
-								
+								<script type="text/javascript">
+									$(document).ready(function() {
+										$("#form").submit(function() {  
+											$.post($(this).attr("action"), $(this).serialize(), function(html) {
+												
+											});
+											return false;  
+										});			
+									});
+								</script>
 								
 							</div><!-- /.col -->
 						</div><!-- /.row -->
