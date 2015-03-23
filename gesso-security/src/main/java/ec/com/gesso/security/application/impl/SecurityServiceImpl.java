@@ -16,21 +16,22 @@ public class SecurityServiceImpl implements ISecurityService{
 	
 	private SecurityRepository securityRepository;
 	
-	public void setSecurityRepository(SecurityRepository securityRepository) {
+	public void setSecurityRepository(SecurityRepository securityRepository){
 		this.securityRepository = securityRepository;
 	}
-
-	public UserDto autenticateUser(String userName, String userPassword) {
+	
+	@Override
+	public UserDto autenticateUser(String userName, String userPassword) throws GessoException{
 		return securityRepository.autenticateUser(userName, userPassword);
 	}
 
 	@Override
-	public void persistNewUser(Person person) {
+	public void persistNewUser(Person person) throws GessoException{
 		securityRepository.persistNewUser(person);
 	}
 
 	@Override
-	public Collection<UserDto> findAllUsers() {
+	public Collection<UserDto> findAllUsers() throws GessoException{
 		return securityRepository.findAllUsers();
 	}
 	

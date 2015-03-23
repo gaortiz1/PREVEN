@@ -6,13 +6,14 @@ import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
 import org.hibernate.criterion.Restrictions;
 
+import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.UserDto;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
 
 public class SecurityRepositoryHibernate extends HibernateRepository implements SecurityRepository{
 
-	public UserDto autenticateUser(String userName, String userPassword) {
+	public UserDto autenticateUser(String userName, String userPassword) throws GessoException{
 
 		Criteria criteria =  null;
 		
@@ -27,7 +28,7 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 	}
 
 //	@Override
-	public void persistNewUser(Person person) {
+	public void persistNewUser(Person person) throws GessoException{
 		try {
 			
 			getSession().persist(person.getUserDto());
@@ -40,7 +41,7 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 	}
 
 //	@Override
-	public Collection<UserDto> findAllUsers() {
+	public Collection<UserDto> findAllUsers() throws GessoException{
 		Criteria criteria =  null;
 		criteria = getSession().createCriteria(UserDto.class);
 		criteria.createAlias("person", "personA");
@@ -49,7 +50,7 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		return criteria.list();
 	}
 
-	public void persistPerson(Person person) {
+	public void persistPerson(Person person) throws GessoException{
 //		getSession().persist(person.getUserDto());
 		getSession().persist(person);
 		getSession().flush();

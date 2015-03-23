@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.UserDto;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
@@ -30,8 +31,11 @@ public class SignUpController {
     public String signUp(@ModelAttribute("contact")Person person, BindingResult result) {
     	person.setIdSexCatalog(1);
     	person.setDateOfBirth(new Date());
-    	GessoSecurityFactory.getInstance().getSecurityService().persistNewUser(person);
-    	
+    	try {
+			GessoSecurityFactory.getInstance().getSecurityService().persistNewUser(person);
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
         return "redirect:login";
     }
 }

@@ -17,16 +17,16 @@ public interface ISecurityService {
 	 * @param userPassword
 	 * @return User loged
 	 */
-	public UserDto autenticateUser(String userName, String userPassword);
+	public UserDto autenticateUser(String userName, String userPassword) throws GessoException;
 	
 	/**
 	 * Create new user with minimal parameters
 	 * @param person
 	 */
-	public void persistNewUser(Person person);
+	public void persistNewUser(Person person) throws GessoException;
 	
 	public void persistPerson(Person person) throws GessoException;
 	
 	
-	public Collection<UserDto> findAllUsers();
+	public Collection<UserDto> findAllUsers() throws GessoException;
 }
