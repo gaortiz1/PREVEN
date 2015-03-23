@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.security.application.ICatalogService;
+import ec.com.gesso.security.domain.model.catagog.ICatalogRepository;
 import ec.com.gesso.security.domain.model.security.dto.Catalog;
 
 /**
@@ -11,20 +12,26 @@ import ec.com.gesso.security.domain.model.security.dto.Catalog;
  *
  */
 public class CatalogServiceImpl implements ICatalogService{
+	
+	private ICatalogRepository catalogRepository;
+
+	public void setCatalogRepository(ICatalogRepository catalogRepository) {
+		this.catalogRepository = catalogRepository;
+	}
 
 	@Override
-	public Collection<Catalog> findCatalogByGroup() throws GessoException {
-		return null;
+	public Collection<Catalog> findCatalogByGroup(Integer idGroupCatalog) throws GessoException {
+		return catalogRepository.findCatalogByGroup(idGroupCatalog);
 	}
 
 	@Override
 	public Collection<Catalog> findSexCatalog() throws GessoException {
-		return null;
+		return catalogRepository.findSexCatalog();
 	}
 
 	@Override
 	public Collection<Catalog> findVulnerabilityCatalog() throws GessoException {
-		return null;
+		return catalogRepository.findVulnerabilityCatalog();
 	}
 
 }

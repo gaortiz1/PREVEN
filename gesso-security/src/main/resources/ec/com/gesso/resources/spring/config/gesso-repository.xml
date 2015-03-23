@@ -8,4 +8,10 @@
 			<ref bean="hibernate4AnnotatedSessionFactory"/>
 		</property>
 	</bean>
+	
+	<bean id="gesso-catalog-repository" class="ec.com.gesso.security.infrastructure.persistence.hibernate.CatalogRepositoryHibernate">
+		<property name="sessionFactory">
+			<ref bean="hibernate4AnnotatedSessionFactory"/>
+		</property>
+	</bean>
 </beans>
