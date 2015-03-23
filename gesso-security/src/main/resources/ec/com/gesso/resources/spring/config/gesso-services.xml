@@ -8,4 +8,10 @@
 			<ref bean="gesso-security-repository"/>
 		</property>
 	</bean>
+	
+	<bean id="gesso-catalog-service" class="ec.com.gesso.security.application.impl.CatalogServiceImpl">
+		<property name="catalogRepository">
+			<ref bean="gesso-catalog-repository"/>
+		</property>
+	</bean>
 </beans>

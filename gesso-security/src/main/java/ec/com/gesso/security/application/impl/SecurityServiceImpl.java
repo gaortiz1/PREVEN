@@ -2,6 +2,7 @@ package ec.com.gesso.security.application.impl;
 
 import java.util.Collection;
 
+import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.security.application.ISecurityService;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
 import ec.com.gesso.security.domain.model.security.dto.Person;
@@ -23,17 +24,18 @@ public class SecurityServiceImpl implements ISecurityService{
 		return securityRepository.autenticateUser(userName, userPassword);
 	}
 
-//	@Override
+	@Override
 	public void persistNewUser(Person person) {
 		securityRepository.persistNewUser(person);
 	}
 
-//	@Override
+	@Override
 	public Collection<UserDto> findAllUsers() {
 		return securityRepository.findAllUsers();
 	}
-
-	public void persistPerson(Person person) {
+	
+	@Override
+	public void persistPerson(Person person) throws GessoException{
 		securityRepository.persistPerson(person);
 	}
 
