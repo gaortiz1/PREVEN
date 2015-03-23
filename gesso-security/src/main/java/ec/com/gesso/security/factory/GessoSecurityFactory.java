@@ -3,8 +3,13 @@ package ec.com.gesso.security.factory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import ec.com.gesso.security.application.ICatalogService;
 import ec.com.gesso.security.application.ISecurityService;
 
+/**
+ * @author roberto
+ *
+ */
 public class GessoSecurityFactory {
 	private static final GessoSecurityFactory GESSO_SECURITY_FACTORY = new GessoSecurityFactory();
 	
@@ -30,5 +35,9 @@ public class GessoSecurityFactory {
 	
 	public ISecurityService getSecurityService(){
 		return context.getBean("gesso-security-service", ISecurityService.class);
+	}
+	
+	public ICatalogService getCatalogService(){
+		return context.getBean("gesso-catalog-service", ICatalogService.class);
 	}
 }
