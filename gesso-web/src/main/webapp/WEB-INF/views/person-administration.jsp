@@ -12,6 +12,7 @@
 		<meta name="description" content="Common form elements and layouts" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/gesso/gesso-styles.css" />
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" />
@@ -334,7 +335,7 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.firstName"/></label>
 
 										<div class="col-sm-9">
-											<form:input path="firstName" placeholder="Name" />
+											<form:input path="firstName" placeholder="Name" cssClass="txt-validate-empty"/>
 											<form:input path="middleName" placeholder="Name" />
 										</div>
 									</div>
@@ -343,17 +344,16 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.lastName"/></label>
 
 										<div class="col-sm-9">
-											<form:input path="lastName" placeholder="Last name" />
+											<form:input path="lastName" placeholder="Last name" cssClass="txt-validate-empty"/>
 											<form:input path="secondLastName" placeholder="Last name" />
 										</div>
 									</div>
 									
-									<form:errors path="documentNumber" cssClass="error" element="div" />
-									<div id="username.errors" class="error">username is required!</div>
+									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <spring:message code="page.label.documentNumber"/> </label>
 										<div class="col-sm-9">
-											<form:input path="documentNumber" placeholder="Document number" />
+											<form:input path="documentNumber" placeholder="Document number" cssClass="txt-validate-empty"/>
 										</div>
 									</div>
 
@@ -364,7 +364,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <spring:message code="page.label.password"/> </label>
 
 										<div class="col-sm-9">
-											<form:password path="userDto.usrPassword" cssClass="col-xs-10 col-sm-5" placeholder="Password"/>
+											<form:password path="userDto.usrPassword" cssClass="col-xs-10 col-sm-5 txt-validate-empty" placeholder="Password" />
 										</div>
 									</div>
 
@@ -384,7 +384,7 @@
 
 										<div class="col-xs-3 col-sm-9">
 											<div class="input-group">
-												<form:input path="dateOfBirth" class="form-control date-picker" data-date-format="dd-mm-yyyy"/>
+												<form:input path="dateOfBirth" class="form-control date-picker txt-validate-empty" data-date-format="dd-mm-yyyy"/>
 												<span class="input-group-addon">
 													<i class="fa fa-calendar bigger-110"></i>
 												</span>
@@ -471,7 +471,7 @@
 
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="submit">
+											<button class="btn btn-info" type="submit" onclick="validateEmptyForm(); return false;">
 												<i class="ace-icon fa fa-check bigger-110"></i>
 												Submit
 											</button>
@@ -489,17 +489,7 @@
 									
 								</form:form>
 								
-								<script type="text/javascript">
-									$(document).ready(function() {
-										$("#form").submit(function() {  
-											$.post($(this).attr("action"), $(this).serialize(), function(html) {
-												$("#formsContent").replaceWith(html);
-												$('html, body').animate({ scrollTop: $("#message").offset().top }, 500);
-											});
-											return false;  
-										});			
-									});
-								</script>
+								
 								
 							</div><!-- /.col -->
 						</div><!-- /.row -->

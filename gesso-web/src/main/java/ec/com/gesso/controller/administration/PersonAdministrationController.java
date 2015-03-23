@@ -96,7 +96,7 @@ public class PersonAdministrationController {
 		}
     	
     	
-        return "redirect:newPerson";
+        return "redirect:person-administration";
     }
 	
 	class CatalogAdapter implements JsonSerializer<Catalog> {
