@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import ec.com.gesso.security.domain.model.security.dto.Person;
-import ec.com.gesso.security.domain.model.security.dto.UserDto;
+import ec.com.gesso.model.entity.Person;
+import ec.com.gesso.model.entity.UserDto;
 
 /**
  * Handles requests for the application home page.
