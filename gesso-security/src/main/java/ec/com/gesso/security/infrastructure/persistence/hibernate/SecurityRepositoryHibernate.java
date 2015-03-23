@@ -6,9 +6,9 @@ import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
 import org.hibernate.criterion.Restrictions;
 
+import ec.com.gesso.model.entity.Person;
+import ec.com.gesso.model.entity.UserDto;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
-import ec.com.gesso.security.domain.model.security.dto.Person;
-import ec.com.gesso.security.domain.model.security.dto.UserDto;
 
 public class SecurityRepositoryHibernate extends HibernateRepository implements SecurityRepository{
 

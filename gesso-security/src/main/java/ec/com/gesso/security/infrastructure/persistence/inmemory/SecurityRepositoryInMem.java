@@ -3,10 +3,10 @@ package ec.com.gesso.security.infrastructure.persistence.inmemory;
 import java.util.Collection;
 import java.util.Map;
 
+import ec.com.gesso.model.entity.Person;
+import ec.com.gesso.model.entity.UserDto;
 import ec.com.gesso.security.domain.model.handling.HandlingEventRepository;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
-import ec.com.gesso.security.domain.model.security.dto.Person;
-import ec.com.gesso.security.domain.model.security.dto.UserDto;
 
 /**
  * @author roberto

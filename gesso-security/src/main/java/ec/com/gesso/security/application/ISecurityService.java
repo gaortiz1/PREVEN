@@ -3,8 +3,8 @@ package ec.com.gesso.security.application;
 import java.util.Collection;
 
 import ec.com.gesso.common.exception.GessoException;
-import ec.com.gesso.security.domain.model.security.dto.Person;
-import ec.com.gesso.security.domain.model.security.dto.UserDto;
+import ec.com.gesso.model.entity.Person;
+import ec.com.gesso.model.entity.UserDto;
 
 /**
  * @author roberto

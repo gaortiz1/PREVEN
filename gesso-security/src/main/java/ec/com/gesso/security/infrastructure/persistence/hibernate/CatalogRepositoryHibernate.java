@@ -5,8 +5,8 @@ import java.util.Collection;
 import org.hibernate.Criteria;
 
 import ec.com.gesso.common.exception.GessoException;
+import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.security.domain.model.catagog.ICatalogRepository;
-import ec.com.gesso.security.domain.model.security.dto.Catalog;
 
 public class CatalogRepositoryHibernate extends HibernateRepository implements ICatalogRepository{
 

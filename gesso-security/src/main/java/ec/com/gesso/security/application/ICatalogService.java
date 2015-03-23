@@ -3,7 +3,7 @@ package ec.com.gesso.security.application;
 import java.util.Collection;
 
 import ec.com.gesso.common.exception.GessoException;
-import ec.com.gesso.security.domain.model.security.dto.Catalog;
+import ec.com.gesso.model.entity.Catalog;
 
 /**
  * @author roberto

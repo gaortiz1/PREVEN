@@ -3,9 +3,9 @@ package ec.com.gesso.security.application.impl;
 import java.util.Collection;
 
 import ec.com.gesso.common.exception.GessoException;
+import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.security.application.ICatalogService;
 import ec.com.gesso.security.domain.model.catagog.ICatalogRepository;
-import ec.com.gesso.security.domain.model.security.dto.Catalog;
 
 /**
  * @author roberto
