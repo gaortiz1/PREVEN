@@ -14,4 +14,12 @@
 			<ref bean="hibernate4AnnotatedSessionFactory"/>
 		</property>
 	</bean>
+	
+	
+	<bean id="gesso-localization-repository" class="ec.com.gesso.security.infrastructure.persistence.hibernate.LocalizationRepositoryHibernate">
+		<property name="sessionFactory">
+			<ref bean="hibernate4AnnotatedSessionFactory"/>
+		</property>
+	</bean>
+	
 </beans>

@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import ec.com.gesso.security.application.ICatalogService;
+import ec.com.gesso.security.application.ILocalizationService;
 import ec.com.gesso.security.application.ISecurityService;
 
 /**
@@ -39,5 +40,9 @@ public class GessoSecurityFactory {
 	
 	public ICatalogService getCatalogService(){
 		return context.getBean("gesso-catalog-service", ICatalogService.class);
+	}
+	
+	public ILocalizationService getLocalizationService(){
+		return context.getBean("gesso-localization-service", ILocalizationService.class);
 	}
 }

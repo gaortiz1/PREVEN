@@ -14,4 +14,10 @@
 			<ref bean="gesso-catalog-repository"/>
 		</property>
 	</bean>
+	
+	<bean id="gesso-localization-service" class="ec.com.gesso.security.application.impl.LocalizationServiceImpl">
+		<property name="localizationRepository">
+			<ref bean="gesso-localization-repository"/>
+		</property>
+	</bean>
 </beans>

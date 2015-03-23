@@ -18,14 +18,7 @@ public class CatalogRepositoryHibernate extends HibernateRepository implements I
 		criteria =  getSession().createCriteria(Catalog.class);
 		criteria.add(Restrictions.eq("idGroupcatalog", idGroupCatalog));
 		
-		Collection<Catalog> lst = null;
-		
-		try {
-			lst = criteria.list();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return lst;
+		return criteria.list();
 	}
 
 	@Override
