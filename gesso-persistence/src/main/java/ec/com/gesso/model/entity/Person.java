@@ -91,6 +91,8 @@ public class Person implements Serializable {
     @Transient
     private Integer percentageDisability;
     
+    private String paiscodigo;
+    
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
     private Collection<CurriculumVitae> curriculumVitaeCollection;
@@ -315,4 +317,13 @@ public class Person implements Serializable {
 	public void setPersonalEmail(String personalEmail) {
 		this.personalEmail = personalEmail;
 	}
+
+	public String getPaiscodigo() {
+		return paiscodigo;
+	}
+
+	public void setPaiscodigo(String paiscodigo) {
+		this.paiscodigo = paiscodigo;
+	}
+	
 }

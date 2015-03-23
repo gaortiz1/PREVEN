@@ -373,7 +373,7 @@
 									<div class="form-group">
 										<label for="form-field-select-3" class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.country"/></label>
 										<div class="col-sm-9">
-											<form:select path="documentNumber" cssClass="chosen-select form-control" data-placeholder="Choose a country..." onchange="cargarCiudades(this)">
+											<form:select path="paiscodigo" cssClass="chosen-select form-control" data-placeholder="Choose a country..." onchange="cargarCiudades(this)">
 												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo2" onclick=""/>
 											</form:select>
 										</div>
