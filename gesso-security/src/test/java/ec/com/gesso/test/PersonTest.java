@@ -3,6 +3,8 @@
  */
 package ec.com.gesso.test;
 
+import java.util.Date;
+
 import org.junit.Test;
 
 import ec.com.gesso.common.exception.GessoException;
@@ -20,6 +22,11 @@ public class PersonTest {
 		person.setFirstName("Roberto");
 		person.setLastName("Chasipanta");
 		person.setDocumentNumber("1717171717");
+		person.setDateOfBirth(new Date());
+		person.setIdSexCatalog(1);
+		
+		
+		
 		
 //		person.setIdSexCatalog(1);
 		try {
