@@ -23,7 +23,7 @@ public class UserTest {
 //	@Test
 	public void sigInUser(){
 		Person person = new Person("prueba", "prueba", new Date(), true);
-		person.setIdSexCatalog(1);
+		person.setIdSexCatalog("M");
 		
 		person.setUserDto(new UserDto("pruebas", "qwe123"));
 		

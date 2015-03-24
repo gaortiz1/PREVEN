@@ -91,8 +91,8 @@ public class PersonAdministrationController {
 	@RequestMapping(value = "/person-administration", method = RequestMethod.POST)
     public String userAdministration(@ModelAttribute("contact")Person person, BindingResult result) {
     	try {
-    		person.setIdSexCatalog("M");
-    		person.setLactationPeriod(true);
+//    		person.setLactationPeriod(Boolean.TRUE);
+    		person.setStatusPerson(Boolean.TRUE);
     		
     		GessoSecurityFactory.getInstance().getSecurityService().persistPerson(person);	
 		} catch (Exception e) {
