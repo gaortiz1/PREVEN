@@ -42,7 +42,7 @@ public class Catalog implements Serializable {
     private String name;
     
     @Basic(optional = false)
-    @Column(name = "status")
+    @Column(name = "status_catalog")
     private Boolean state;
     
     @JoinColumn(name = "id_groupcatalog", referencedColumnName = "id_groupcatalog", insertable=false, updatable=false)

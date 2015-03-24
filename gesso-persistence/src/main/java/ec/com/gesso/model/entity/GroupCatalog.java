@@ -39,7 +39,7 @@ public class GroupCatalog implements Serializable {
     private String name;
     
     @Basic(optional = false)
-    @Column(name = "STATUS")
+    @Column(name = "status_group_catalog")
     private boolean status;
     
     @OneToMany(mappedBy = "groupCatalog", fetch = FetchType.LAZY)
