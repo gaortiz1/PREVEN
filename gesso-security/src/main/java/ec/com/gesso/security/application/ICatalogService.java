@@ -11,7 +11,7 @@ import ec.com.gesso.model.entity.Catalog;
  */
 public interface ICatalogService {
 	
-	public Collection<Catalog> findCatalogByGroup(Integer idGroupCatalog) throws GessoException;
+	public Collection<Catalog> findCatalogByGroup(String idGroupCatalog) throws GessoException;
 	public Collection<Catalog> findSexCatalog() throws GessoException;
 	public Collection<Catalog> findVulnerabilityCatalog() throws GessoException;
 	

@@ -35,7 +35,7 @@ public class Catalog implements Serializable {
     private String id;
     
     @Column(name = "id_groupcatalog")
-    private Integer idGroupcatalog;
+    private String idGroupcatalog;
     
     @Basic(optional = false)
     @Column(name = "name_catalog")
@@ -64,12 +64,11 @@ public class Catalog implements Serializable {
 	}
 
 	
-
-	public Integer getIdGroupcatalog() {
+	public String getIdGroupcatalog() {
 		return idGroupcatalog;
 	}
 
-	public void setIdGroupcatalog(Integer idGroupcatalog) {
+	public void setIdGroupcatalog(String idGroupcatalog) {
 		this.idGroupcatalog = idGroupcatalog;
 	}
 

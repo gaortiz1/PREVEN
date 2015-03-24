@@ -55,10 +55,10 @@ public class Person implements Serializable {
     private Long idPerson;
     
     @Column(name = "id_catalog")
-    private Integer idSexCatalog;
+    private String idSexCatalog;
     
     @Column(name = "id_catalog_vulnerability")
-    private Integer idCatalogVulnerability;
+    private String idCatalogVulnerability;
     
     @Column(name = "lactation_period")
     private Boolean lactationPeriod;
@@ -258,11 +258,13 @@ public class Person implements Serializable {
         this.contactDataCollection = contactDataCollection;
     }
 
-	public Integer getIdSexCatalog() {
+	
+
+	public String getIdSexCatalog() {
 		return idSexCatalog;
 	}
 
-	public void setIdSexCatalog(Integer idSexCatalog) {
+	public void setIdSexCatalog(String idSexCatalog) {
 		this.idSexCatalog = idSexCatalog;
 	}
 
@@ -283,11 +285,11 @@ public class Person implements Serializable {
 	}
 
 	
-	public Integer getIdCatalogVulnerability() {
+	public String getIdCatalogVulnerability() {
 		return idCatalogVulnerability;
 	}
 
-	public void setIdCatalogVulnerability(Integer idCatalogVulnerability) {
+	public void setIdCatalogVulnerability(String idCatalogVulnerability) {
 		this.idCatalogVulnerability = idCatalogVulnerability;
 	}
 

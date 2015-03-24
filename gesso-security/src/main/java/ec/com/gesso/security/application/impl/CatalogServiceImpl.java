@@ -20,7 +20,7 @@ public class CatalogServiceImpl implements ICatalogService{
 	}
 
 	@Override
-	public Collection<Catalog> findCatalogByGroup(Integer idGroupCatalog) throws GessoException {
+	public Collection<Catalog> findCatalogByGroup(String idGroupCatalog) throws GessoException {
 		return catalogRepository.findCatalogByGroup(idGroupCatalog);
 	}
 

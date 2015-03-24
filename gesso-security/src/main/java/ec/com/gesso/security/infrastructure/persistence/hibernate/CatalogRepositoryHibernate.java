@@ -13,7 +13,7 @@ import ec.com.gesso.security.domain.model.catagog.ICatalogRepository;
 public class CatalogRepositoryHibernate extends HibernateRepository implements ICatalogRepository{
 
 	@Override
-	public Collection<Catalog> findCatalogByGroup(Integer idGroupCatalog) throws GessoException {
+	public Collection<Catalog> findCatalogByGroup(String idGroupCatalog) throws GessoException {
 		
 		Criteria criteria =  null;
 		criteria = getSession().createCriteria(Catalog.class);
@@ -26,12 +26,12 @@ public class CatalogRepositoryHibernate extends HibernateRepository implements I
 
 	@Override
 	public Collection<Catalog> findSexCatalog() throws GessoException {
-		return findCatalogByGroup(1);
+		return findCatalogByGroup("SEX");
 	}
 
 	@Override
 	public Collection<Catalog> findVulnerabilityCatalog() throws GessoException {
-		return findCatalogByGroup(2);
+		return findCatalogByGroup("NVUL");
 	}
 
 }

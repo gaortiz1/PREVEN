@@ -26,8 +26,8 @@ public class PersonTest {
 		person.setDocumentNumber("1717171717");
 		person.setDateOfBirth(new Date());
 		person.setLactationPeriod(Boolean.TRUE);
-		Integer catalogoSexo = null;
-		Integer catalogoVulnerabilidad = null;
+		String catalogoSexo = null;
+		String catalogoVulnerabilidad = null;
 		try {
 			catalogoSexo = ((Catalog)CollectionUtils.get(GessoSecurityFactory.getInstance().getCatalogService().findSexCatalog(),0)).getIdGroupcatalog();
 			catalogoVulnerabilidad = ((Catalog)CollectionUtils.get(GessoSecurityFactory.getInstance().getCatalogService().findVulnerabilityCatalog(),0)).getIdGroupcatalog();
