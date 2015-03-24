@@ -57,6 +57,7 @@ public class PersonAdministrationController {
 		}
 		
 		Person person = new Person();
+		person.setStatusPerson(Boolean.TRUE);
         
 		ModelAndView modelAndView = new ModelAndView("person-administration", "command", person);
 		modelAndView.addObject("country", country);
