@@ -1,18 +1,18 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ page session="false" %>
-<c:if test="${!ajaxRequest}">
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Gesso Admin</title>
+		<title>Form Elements - Ace Admin</title>
 
 		<meta name="description" content="Common form elements and layouts" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/gesso/gesso-styles.css" />
+		
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" />
@@ -54,7 +54,6 @@
 	</head>
 
 	<body class="no-skin">
-</c:if>
 		<!-- #section:basics/navbar.layout -->
 		<%@ include file="gesso-header.jspf" %>
 
@@ -183,8 +182,7 @@
 							</li>
 						</ul>
 					</li>
-				</ul>
-				<!-- /.nav-list -->
+				</ul><!-- /.nav-list -->
 
 				<!-- #section:basics/sidebar.layout.minimize -->
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
@@ -213,7 +211,7 @@
 							</li>
 
 							<li>
-								<a href="#"><spring:message  code="menu.label.administration"/> </a>
+								<a href="#">Administration</a>
 							</li>
 							<li class="active">Person</li>
 						</ul><!-- /.breadcrumb -->
@@ -328,7 +326,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form:form id="form" cssClass="form-horizontal" role="form" action="person-administration" method="POST">
+								<form:form class="form-horizontal" role="form">
 									<!-- #section:elements.form -->
 									
 									<div class="form-group">
@@ -340,6 +338,7 @@
 										</div>
 									</div>
 									
+
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.lastName"/></label>
 
@@ -348,17 +347,19 @@
 											<form:input path="secondLastName" placeholder="Last name" />
 										</div>
 									</div>
-									
+
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <spring:message code="page.label.documentNumber"/> </label>
+										<label class="col-sm-3 control-label no-padding-right" > <spring:message code="page.label.documentNumber"/> </label>
 										<div class="col-sm-9">
 											<form:input path="documentNumber" placeholder="Document number" cssClass="txt-validate-empty"/>
 										</div>
 									</div>
 
+									<div class="space-4"></div>
+
 									<div class="form-group">
-										<label for="form-field-select-3" class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.country"/></label>
-										<div class="col-sm-9">
+										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.country"/></label>
+										<div class="col-sm-5">
 											<form:select path="paiscodigo" cssClass="chosen-select form-control" data-placeholder="Choose a country..." onchange="cargarCiudades(this)">
 												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo" onclick=""/>
 											</form:select>
@@ -368,7 +369,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"> <spring:message code="page.label.dateofbirth"/> </label>
 
-										<div class="col-xs-3 col-sm-9">
+										<div class="col-sm-2">
 											<div class="input-group">
 												<form:input path="dateOfBirth" type="date" class="form-control date-picker txt-validate-empty"/>
 												
@@ -378,24 +379,19 @@
 											</div>
 										</div>
 									</div>
-									<div class="space-4"></div>
 									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.sex"/></label>
-										<div class="col-sm-9">
+										<div class="col-sm-2">
 											<div class="radio">
 													<label>
-<!-- 														<input name="form-field-radio" type="radio" class="ace" /> -->
 														<form:radiobutton path="idSexCatalog" value="M" cssClass="ace"/>
 														<span class="lbl">Male</span>
-														 
-														
 													</label>
 												</div>
 
 												<div class="radio">
 													<label>
-<!-- 														<input name="form-field-radio" type="radio" class="ace" /> -->
 														<form:radiobutton path="idSexCatalog" value="F" cssClass="ace"/>
 														<span class="lbl">Female</span>
 													</label>
@@ -405,62 +401,177 @@
 									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.disability"/></label>
+										
 										<div class="col-xs-3">
 											<label>
-												<form:checkbox path="disability" cssClass="ace ace-switch ace-switch-6"/>
+												<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
 												<span class="lbl"></span>
 											</label>
 										</div>
 									</div>
 									
 									<div class="form-group">
-										<label for="form-field-select-3" class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.level.vulnerability"/></label>
-										<div class="col-sm-9">
+										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.level.vulnerability"/></label>
+										<div class="col-sm-5">
 											<form:select path="idCatalogVulnerability" cssClass="chosen-select form-control" data-placeholder="Choose a vulnerability...">
 												<form:options items="${levelVulnerability}" itemLabel="name" itemValue="id"/>
 											</form:select>
 										</div>
 									</div>
-									
-									
-									
+
 									<div class="form-group">
-										<label for="form-field-select-3" class="col-sm-3 control-label no-padding-right">Lactancia</label>
+										<label class="col-sm-3 control-label no-padding-right">Lactancia</label>
 										
 										<div class="col-xs-3">
 											<label>
-												<form:checkbox path="lactationPeriod" cssClass="ace ace-switch"/>
+												<input class="ace ace-switch ace-switch-6" type="checkbox" />
+												<span class="lbl"></span>
+											</label>
+										</div>
+									</div>
+									
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right">Phone</label>
+
+										<div class="col-sm-9">
+											<!-- #section:elements.form.input-icon -->
+											<span class="input-icon">
+												<input class="input-mask-phone" type="text" />
+												<i class="ace-icon fa fa-phone"></i>
+											</span>
+
+											<span class="input-icon">
+												<input class="input-mask-phone" type="text" />
+												<i class="ace-icon fa fa-phone"></i>
+											</span>
+										</div>
+									</div>
+
+
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-6">Email</label>
+
+										<div class="col-sm-9">
+											<input data-rel="tooltip" type="text" id="form-field-6" placeholder="Tooltip on hover" title="Hello Tooltip!" data-placement="bottom" />
+											<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="More details." title="Popover on hover">?</span>
+										</div>
+									</div>
+									
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right"> Fecha ingreso al puesto </label>
+
+										<div class="col-sm-2">
+											<div class="input-group">
+												<form:input path="dateJobStart" type="date" class="form-control date-picker txt-validate-empty"/>
+												
+												<span class="input-group-addon">
+													<i class="fa fa-calendar bigger-110"></i>
+												</span>
+											</div>
+										</div>
+									</div>
+									
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right">Formacion</label>
+										<div class="col-sm-2">
+											<div class="radio">
+													<label>
+														<form:radiobutton path="idEducaionLevelCatalog" value="PRI" cssClass="ace"/>
+														<span class="lbl">Primaria</span>
+													</label>
+												</div>
+
+												<div class="radio">
+													<label>
+														<form:radiobutton path="idEducaionLevelCatalog" value="SEC" cssClass="ace"/>
+														<span class="lbl">Secundaria</span>
+													</label>
+												</div>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right">Profesion/ocupacion</label>
+										<div class="col-sm-5">
+											<form:select path="paiscodigo" cssClass="chosen-select form-control" data-placeholder="Choose a prefesion...">
+												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo" onclick=""/>
+											</form:select>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" >Deatallar actividades de trabajo</label>
+										<div class="col-sm-9">
+											<form:textarea path="workReview" cssClass="form-control limited" maxlength="250"/>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" > Empresa anterior </label>
+										<div class="col-sm-9">
+											<form:input path="lastCompany" cssClass="txt-validate-empty"/>
+										</div>
+									</div>
+									
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right">Accidentes laborales</label>
+										
+										<div class="col-xs-3">
+											<label>
+												<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
 												<span class="lbl"></span>
 											</label>
 										</div>
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <spring:message code="page.label.local.phone"/> </label>
+										<label class="col-sm-3 control-label no-padding-right" > Descripcion breve </label>
 										<div class="col-sm-9">
-											<form:input path="personalLocalPhone" placeholder="Document number" />
+											<form:textarea path="occupationalAccidentDetail" cssClass="form-control limited" maxlength="250"/>
+										</div>
+									</div>
+									
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" > Descripcion capacitacion seguridad</label>
+										<div class="col-sm-9">
+											<form:textarea path="securityTrainingDetail" cssClass="form-control limited" maxlength="250"/>
+										</div>
+									</div>
+									
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right">Trabaja en unidad de seguridad</label>
+										
+										<div class="col-xs-3">
+											<label>
+												<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
+												<span class="lbl"></span>
+											</label>
 										</div>
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <spring:message code="page.label.mobil.phone"/> </label>
-										<div class="col-sm-9">
-											<form:input path="personalMobilPhone" placeholder="Document number" />
+										<label class="col-sm-3 control-label no-padding-right">Es miebro de comite de seguridad</label>
+										
+										<div class="col-xs-3">
+											<label>
+												<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
+												<span class="lbl"></span>
+											</label>
 										</div>
 									</div>
 									
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <spring:message code="page.label.email"/> </label>
-										<div class="col-sm-9">
-											<form:input path="personalEmail" placeholder="Document number" />
-										</div>
-									</div>
 
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
 											<button class="btn btn-info" type="submit" onclick="return validateEmptyForm();">
 												<i class="ace-icon fa fa-check bigger-110"></i>
-												Submit
+												Submit 2
 											</button>
 
 											&nbsp; &nbsp; &nbsp;
@@ -473,7 +584,6 @@
 
 									<div class="hr hr-24"></div>
 
-									
 								</form:form>
 								
 								<script type="text/javascript">
@@ -486,14 +596,116 @@
 										});			
 									});
 								</script>
-								
+
+								<div class="hr hr-18 dotted hr-double"></div>
+
+								<h4 class="pink">
+									<i class="ace-icon fa fa-hand-o-right green"></i>
+									<a href="#modal-form" role="button" class="blue" data-toggle="modal"> Form Inside a Modal Box </a>
+								</h4>
+
+								<div class="hr hr-18 dotted hr-double"></div>
+
+								<div id="modal-form" class="modal" tabindex="-1">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="blue bigger">Please fill the following form fields</h4>
+											</div>
+
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-xs-12 col-sm-5">
+														<div class="space"></div>
+
+														<input type="file" />
+													</div>
+
+													<div class="col-xs-12 col-sm-7">
+														<div class="form-group">
+															<label for="form-field-select-3">Location</label>
+
+															<div>
+																<select class="chosen-select" data-placeholder="Choose a Country...">
+																	<option value="">&nbsp;</option>
+																	<option value="AL">Alabama</option>
+																</select>
+															</div>
+														</div>
+
+														<div class="space-4"></div>
+
+														<div class="form-group">
+															<label for="form-field-username">Username</label>
+
+															<div>
+																<input type="text" id="form-field-username" placeholder="Username" value="alexdoe" />
+															</div>
+														</div>
+
+														<div class="space-4"></div>
+
+														<div class="form-group">
+															<label for="form-field-first">Name</label>
+
+															<div>
+																<input type="text" id="form-field-first" placeholder="First Name" value="Alex" />
+																<input type="text" id="form-field-last" placeholder="Last Name" value="Doe" />
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="modal-footer">
+												<button class="btn btn-sm" data-dismiss="modal">
+													<i class="ace-icon fa fa-times"></i>
+													Cancel
+												</button>
+
+												<button class="btn btn-sm btn-primary">
+													<i class="ace-icon fa fa-check"></i>
+													Save
+												</button>
+											</div>
+										</div>
+									</div>
+								</div><!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
 				</div>
 			</div><!-- /.main-content -->
 
-			<%@ include file="gesso-footer-content.jspf" %>
+			<div class="footer">
+				<div class="footer-inner">
+					<!-- #section:basics/footer -->
+					<div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Ace</span>
+							Application &copy; 2013-2014
+						</span>
+
+						&nbsp; &nbsp;
+						<span class="action-buttons">
+							<a href="#">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							</a>
+						</span>
+					</div>
+
+					<!-- /section:basics/footer -->
+				</div>
+			</div>
 
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
@@ -541,7 +753,7 @@
 		<script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap-tag.js"></script>
 		
 		<script src="${pageContext.request.contextPath}/resources/gesso/gesso-ajax.js"></script>
-
+		
 		<!-- ace scripts -->
 		<script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.scroller.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.colorpicker.js"></script>
@@ -974,7 +1186,5 @@
 		<script src="${pageContext.request.contextPath}/resources/docs/assets/js/language/html.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/docs/assets/js/language/css.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/docs/assets/js/language/javascript.js"></script>
-<c:if test="${!ajaxRequest}">	
 	</body>
 </html>
-</c:if>

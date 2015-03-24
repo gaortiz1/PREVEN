@@ -95,7 +95,33 @@ public class Person implements Serializable {
     @Transient
     private Integer percentageDisability;
     
+    @Transient
+    private Boolean occupationalAccident;
+    
+    @Transient
+    private String occupationalAccidentDetail;
+    
+    
+    @Transient
+    private String securityTrainingDetail;
+    
     private String paiscodigo;
+    
+    @Temporal(TemporalType.DATE)
+//    @DateTimeFormat(iso = ISO.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Transient
+    private Date dateJobStart;
+    
+    @Transient
+    private String idEducaionLevelCatalog;
+    
+    @Transient
+    private String workReview;
+    
+    @Transient
+    private String lastCompany;
+    
     
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
@@ -331,5 +357,62 @@ public class Person implements Serializable {
 	public void setPaiscodigo(String paiscodigo) {
 		this.paiscodigo = paiscodigo;
 	}
+
+	public Date getDateJobStart() {
+		return dateJobStart;
+	}
+
+	public void setDateJobStart(Date dateJobStart) {
+		this.dateJobStart = dateJobStart;
+	}
+
+	public String getIdEducaionLevelCatalog() {
+		return idEducaionLevelCatalog;
+	}
+
+	public void setIdEducaionLevelCatalog(String idEducaionLevelCatalog) {
+		this.idEducaionLevelCatalog = idEducaionLevelCatalog;
+	}
+
+	public String getWorkReview() {
+		return workReview;
+	}
+
+	public void setWorkReview(String workReview) {
+		this.workReview = workReview;
+	}
+
+	public String getLastCompany() {
+		return lastCompany;
+	}
+
+	public void setLastCompany(String lastCompany) {
+		this.lastCompany = lastCompany;
+	}
+
+	public Boolean getOccupationalAccident() {
+		return occupationalAccident;
+	}
+
+	public void setOccupationalAccident(Boolean occupationalAccident) {
+		this.occupationalAccident = occupationalAccident;
+	}
+
+	public String getOccupationalAccidentDetail() {
+		return occupationalAccidentDetail;
+	}
+
+	public void setOccupationalAccidentDetail(String occupationalAccidentDetail) {
+		this.occupationalAccidentDetail = occupationalAccidentDetail;
+	}
+
+	public String getSecurityTrainingDetail() {
+		return securityTrainingDetail;
+	}
+
+	public void setSecurityTrainingDetail(String securityTrainingDetail) {
+		this.securityTrainingDetail = securityTrainingDetail;
+	}
+
 	
 }
