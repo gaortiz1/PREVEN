@@ -69,6 +69,9 @@ public class Person implements Serializable {
     @Transient
     private String personalEmail;
     
+    @Transient
+    private String idCodeProfesion;
+    
     @Basic(optional = false)
     @Column(name = "first_name")
     private String firstName;
@@ -79,7 +82,7 @@ public class Person implements Serializable {
     private String lastName;
     @Column(name = "second_last_name")
     private String secondLastName;
-    @Basic(optional = false)
+//    @Basic(optional = false)
     @Column(name = "date_of_birth")
     @Temporal(TemporalType.DATE)
 //    @DateTimeFormat(iso = ISO.DATE)
@@ -122,7 +125,11 @@ public class Person implements Serializable {
     @Transient
     private String lastCompany;
     
+    @Transient
+    private Boolean securityUnitMember;
     
+    @Transient
+    private Boolean securityCommitteeMember;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
     private Collection<CurriculumVitae> curriculumVitaeCollection;
@@ -412,6 +419,30 @@ public class Person implements Serializable {
 
 	public void setSecurityTrainingDetail(String securityTrainingDetail) {
 		this.securityTrainingDetail = securityTrainingDetail;
+	}
+
+	public String getIdCodeProfesion() {
+		return idCodeProfesion;
+	}
+
+	public void setIdCodeProfesion(String idCodeProfesion) {
+		this.idCodeProfesion = idCodeProfesion;
+	}
+
+	public Boolean getSecurityUnitMember() {
+		return securityUnitMember;
+	}
+
+	public void setSecurityUnitMember(Boolean securityUnitMember) {
+		this.securityUnitMember = securityUnitMember;
+	}
+
+	public Boolean getSecurityCommitteeMember() {
+		return securityCommitteeMember;
+	}
+
+	public void setSecurityCommitteeMember(Boolean securityCommitteeMember) {
+		this.securityCommitteeMember = securityCommitteeMember;
 	}
 
 	

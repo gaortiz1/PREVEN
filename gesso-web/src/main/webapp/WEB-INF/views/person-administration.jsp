@@ -333,8 +333,8 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.firstName"/></label>
 
 										<div class="col-sm-9">
-											<form:input path="firstName" placeholder="Name" cssClass="txt-validate-empty"/>
-											<form:input path="middleName" placeholder="Name" />
+											<form:input path="firstName" placeholder="Primer nombre" cssClass="txt-validate-empty"/>
+											<form:input path="middleName" placeholder="Segundo nombre" />
 										</div>
 									</div>
 									
@@ -343,15 +343,15 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.lastName"/></label>
 
 										<div class="col-sm-9">
-											<form:input path="lastName" placeholder="Last name" cssClass="txt-validate-empty"/>
-											<form:input path="secondLastName" placeholder="Last name" />
+											<form:input path="lastName" placeholder="Primer apellido" cssClass="txt-validate-empty"/>
+											<form:input path="secondLastName" placeholder="Segundo apellido" />
 										</div>
 									</div>
 
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" > <spring:message code="page.label.documentNumber"/> </label>
 										<div class="col-sm-9">
-											<form:input path="documentNumber" placeholder="Document number" cssClass="txt-validate-empty"/>
+											<form:input path="documentNumber" placeholder="17XXXXXXX30" cssClass="txt-validate-empty"/>
 										</div>
 									</div>
 
@@ -386,14 +386,14 @@
 											<div class="radio">
 													<label>
 														<form:radiobutton path="idSexCatalog" value="M" cssClass="ace"/>
-														<span class="lbl">Male</span>
+														<span class="lbl"><spring:message code="page.label.sex.male"/> </span>
 													</label>
 												</div>
 
 												<div class="radio">
 													<label>
 														<form:radiobutton path="idSexCatalog" value="F" cssClass="ace"/>
-														<span class="lbl">Female</span>
+														<span class="lbl"><spring:message code="page.label.sex.female"/></span>
 													</label>
 												</div>
 										</div>
@@ -404,7 +404,7 @@
 										
 										<div class="col-xs-3">
 											<label>
-												<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
+												<input name="disability" class="ace ace-switch ace-switch-6" type="checkbox" />
 												<span class="lbl"></span>
 											</label>
 										</div>
@@ -420,11 +420,11 @@
 									</div>
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right">Lactancia</label>
+										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.lactation"/></label>
 										
 										<div class="col-xs-3">
 											<label>
-												<input class="ace ace-switch ace-switch-6" type="checkbox" />
+												<input name="lactationPeriod" class="ace ace-switch ace-switch-6" type="checkbox" />
 												<span class="lbl"></span>
 											</label>
 										</div>
@@ -437,12 +437,12 @@
 										<div class="col-sm-9">
 											<!-- #section:elements.form.input-icon -->
 											<span class="input-icon">
-												<input class="input-mask-phone" type="text" />
+												<form:input path="personalLocalPhone" cssClass="input-mask-phone"/>
 												<i class="ace-icon fa fa-phone"></i>
 											</span>
 
 											<span class="input-icon">
-												<input class="input-mask-phone" type="text" />
+												<form:input path="personalMobilPhone" cssClass="input-mask-phone"/>
 												<i class="ace-icon fa fa-phone"></i>
 											</span>
 										</div>
@@ -450,11 +450,11 @@
 
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-6">Email</label>
+										<label class="col-sm-3 control-label no-padding-right">Email</label>
 
 										<div class="col-sm-9">
-											<input data-rel="tooltip" type="text" id="form-field-6" placeholder="Tooltip on hover" title="Hello Tooltip!" data-placement="bottom" />
-											<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="More details." title="Popover on hover">?</span>
+											<form:input path="personalEmail" data-rel="tooltip" placeholder="Tooltip on hover" title="Email principal" data-placement="bottom"/>
+											<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="Este sera el mail al cual se notificaran las novedades" title="Email principal">?</span>
 										</div>
 									</div>
 									
@@ -496,7 +496,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right">Profesion/ocupacion</label>
 										<div class="col-sm-5">
-											<form:select path="paiscodigo" cssClass="chosen-select form-control" data-placeholder="Choose a prefesion...">
+											<form:select path="idCodeProfesion" cssClass="chosen-select form-control" data-placeholder="Choose a prefesion...">
 												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo" onclick=""/>
 											</form:select>
 										</div>
@@ -522,7 +522,7 @@
 										
 										<div class="col-xs-3">
 											<label>
-												<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
+												<input name="occupationalAccident" class="ace ace-switch ace-switch-6" type="checkbox" />
 												<span class="lbl"></span>
 											</label>
 										</div>
@@ -549,7 +549,7 @@
 										
 										<div class="col-xs-3">
 											<label>
-												<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
+												<input name="securityUnitMember" class="ace ace-switch ace-switch-6" type="checkbox" />
 												<span class="lbl"></span>
 											</label>
 										</div>
@@ -560,7 +560,7 @@
 										
 										<div class="col-xs-3">
 											<label>
-												<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
+												<input name="securityCommitteeMember" class="ace ace-switch ace-switch-6" type="checkbox" />
 												<span class="lbl"></span>
 											</label>
 										</div>
@@ -571,13 +571,13 @@
 										<div class="col-md-offset-3 col-md-9">
 											<button class="btn btn-info" type="submit" onclick="return validateEmptyForm();">
 												<i class="ace-icon fa fa-check bigger-110"></i>
-												Submit 2
+												<spring:message code="gobal.label.save"/>
 											</button>
 
 											&nbsp; &nbsp; &nbsp;
 											<button class="btn" type="reset">
 												<i class="ace-icon fa fa-undo bigger-110"></i>
-												Reset
+												<spring:message code="gobal.label.reset"/>
 											</button>
 										</div>
 									</div>
