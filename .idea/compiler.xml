@@ -33,9 +33,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="gesso-application" target="1.5" />
       <module name="gesso-client" target="1.7" />
+      <module name="gesso-ear" target="1.5" />
       <module name="gesso-model" target="1.5" />
       <module name="gesso-persistence" target="1.5" />
+      <module name="gesso-root" target="1.5" />
       <module name="gesso-security" target="1.5" />
       <module name="gesso-web" target="1.6" />
     </bytecodeTargetLevel>
