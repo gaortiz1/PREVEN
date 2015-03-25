@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70aac63a-e815-443d-9717-abe5a57ce1f7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-docs/gesso-er/gesso-security-logic.pdb" afterPath="$PROJECT_DIR$/gesso-docs/gesso-er/gesso-security-logic.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -48,8 +45,8 @@
       <file leaf-file-name="PersonTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gesso-security/src/test/java/ec/com/gesso/test/PersonTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3888889" vertical-offset="169" max-vertical-offset="816">
-              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.21717171" vertical-offset="169" max-vertical-offset="816">
+              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -897,7 +894,7 @@
       <workItem from="1426491943817" duration="620000" />
       <workItem from="1426690842005" duration="2487000" />
       <workItem from="1427077838305" duration="864000" />
-      <workItem from="1427293806620" duration="228000" />
+      <workItem from="1427293806620" duration="283000" />
     </task>
     <task id="LOCAL-00001" summary="ceacion carpeta de documentos">
       <created>1424749837951</created>
@@ -953,11 +950,17 @@
       <option name="project" value="LOCAL" />
       <updated>1427294035360</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="actualizacion proyecto">
+      <created>1427294128962</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1427294128962</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31789000" />
+    <option name="totallyTimeSpent" value="31844000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1434,8 +1437,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gesso-security/src/test/java/ec/com/gesso/test/PersonTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3888889" vertical-offset="169" max-vertical-offset="816">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.21717171" vertical-offset="169" max-vertical-offset="816">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
           <folding />
         </state>
       </provider>
