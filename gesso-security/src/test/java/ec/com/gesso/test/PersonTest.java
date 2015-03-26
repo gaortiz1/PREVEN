@@ -6,6 +6,7 @@ package ec.com.gesso.test;
 import java.util.Date;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ec.com.gesso.common.exception.GessoException;
@@ -18,7 +19,7 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
  *
  */
 public class PersonTest {
-	@Test
+	@Ignore
 	public void crearPersona(){
 		Person person = new Person();
 		person.setFirstName("mujer");
