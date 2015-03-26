@@ -32,6 +32,8 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
 @Controller
 @SessionAttributes
 public class PersonAdministrationController {
+	
+	
 	@RequestMapping(value = "/person-administration", method = RequestMethod.GET)
 	public ModelAndView userAdministration(){
 		

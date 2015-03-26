@@ -10,7 +10,7 @@ import ec.com.gesso.model.entity.UserDto;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 public class UserTest {
-	@Test
+	@Test()
 	public void loginUser(){
 		try {
 			GessoSecurityFactory.getInstance().getSecurityService().autenticateUser("", "");
