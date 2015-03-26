@@ -2,6 +2,7 @@ package ec.com.gesso.test;
 
 import java.util.Date;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ec.com.gesso.common.exception.GessoException;
@@ -20,7 +21,7 @@ public class UserTest {
 		}
 	}
 	
-//	@Test
+	@Ignore
 	public void sigInUser(){
 		Person person = new Person("prueba", "prueba", new Date(), true);
 		person.setIdSexCatalog("M");
