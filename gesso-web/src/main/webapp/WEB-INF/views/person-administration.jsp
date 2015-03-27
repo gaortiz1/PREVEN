@@ -220,9 +220,9 @@
 							</li>
 
 							<li>
-								<a href="#">Administration</a>
+								<a href="#"><spring:message code="menu.label.administration"/></a>
 							</li>
-							<li class="active">Person</li>
+							<li class="active"><spring:message code="menu.label.person"/></li>
 						</ul><!-- /.breadcrumb -->
 
 						<!-- #section:basics/content.searchbox -->
