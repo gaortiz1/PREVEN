@@ -123,7 +123,12 @@ public class ProcessAdministration {
 	        		
 	        		subProcesoJsonObject.addProperty("id", subProcess.getId());
 	        		subProcesoJsonObject.addProperty("text", subProcess.getName());
-	        		subProcesoJsonObject.addProperty("type", "folder");
+	        		if(CollectionUtils.isEmpty(subProcess.getJobs())){
+	        			subProcesoJsonObject.addProperty("type", "item");
+	    	        }else{
+	    	        	subProcesoJsonObject.addProperty("type", "folder");
+	    	        }
+	        		
 	        		
 	        		if(CollectionUtils.isNotEmpty(subProcess.getJobs())){
 	        			JsonObject jobJsonObject = new JsonObject();
