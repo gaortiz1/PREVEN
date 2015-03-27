@@ -483,13 +483,10 @@
 		
 		function loadProcessDataAjax(data, textStatus, jQxhr){
 			var tree_data = data;
-			tree_data[0]['additionalParameters'] = {
-					'children' : {
-						'cars' : {text: 'GERENCIA', type: 'folder'},
-						'motorcycles' : {text: 'ADMINISTRACION', type: 'folder'},
-						'boats' : {text: 'BODEGA', type: 'folder'}
-					}
-				}
+
+			
+			
+			
 			var dataSource1 = function(options, callback){
 				var $data = null
 				if(!("text" in options) && !("type" in options)){
@@ -529,7 +526,7 @@
 				url: "load-sub-process/"+selectResult,
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
-				success: loadProcessDataAjax,
+				
 	          	error: function( jqXhr, textStatus, errorThrown ){
 		          	console.log( errorThrown );
 	          	}
@@ -550,7 +547,7 @@
 			.on('deselected.fu.tree', function(e) {
 			})
 			.on('opened.fu.tree', function(e, result) {
-				cargarSubProcesos(result.id);
+				
 			})
 			.on('closed.fu.tree', function(e) {
 			});

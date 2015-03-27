@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
@@ -46,11 +47,11 @@ public class ProcessAdministration {
 		}
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
-	    Gson gson = gsonBuilder.registerTypeAdapter(Process.class, new ProcessAdapter()).create();
+//	    Gson gson = gsonBuilder.registerTypeAdapter(Process.class, new ProcessAdapter()).create();
 	    
-    	String string = gson.toJson(lstProcess);
+//    	String string = gson.toJson(lstProcess);
 		
-		System.out.println(string);
+//		System.out.println(string);
         modelAndView.addObject("lstProcess", lstProcess);
         return modelAndView;
     }
@@ -58,6 +59,7 @@ public class ProcessAdministration {
     @RequestMapping(value = "/load-process", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
     public String loadProcess(Model model) {
+    	
 		
 		Collection<Process> levelVulnerability = null;
 		try {
@@ -68,8 +70,9 @@ public class ProcessAdministration {
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
 	    Gson gson = gsonBuilder.registerTypeAdapter(Process.class, new ProcessAdapter()).create();
-	    
-    	return gson.toJson(levelVulnerability);
+	    String valor = gson.toJson(levelVulnerability); 
+	    System.out.println(valor);
+    	return valor;
     }
     
     
@@ -85,23 +88,41 @@ public class ProcessAdministration {
 		}
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
-	    Gson gson = gsonBuilder.registerTypeAdapter(Process.class, new ProcessAdapter()).create();
+	    Gson gson = gsonBuilder.registerTypeAdapter(SubProcess.class, new ProcessAdapter()).create();
 	    
-    	return gson.toJson(levelVulnerability);
+	    String valor = gson.toJson(levelVulnerability); 
+    	return valor;
     }
     
     class ProcessAdapter implements JsonSerializer<Process> {
 
 		@Override
-		public JsonElement serialize(Process arg0, Type arg1, JsonSerializationContext arg2) {
-			JsonObject jsonObject = new JsonObject();
-	        jsonObject.addProperty("text", arg0.getName());
-	        jsonObject.addProperty("type", "folder");
-	        jsonObject.addProperty("id", arg0.getId());
-	        JsonObject jsonObjectw = new JsonObject();
-	        jsonObjectw.add(arg0.getName(), jsonObject);
+		public JsonElement serialize(Process process, Type arg1, JsonSerializationContext arg2) {
+			JsonObject processJsonObject = new JsonObject();
+	        processJsonObject.addProperty("text", process.getName());
+	        processJsonObject.addProperty("type", "folder");
+	        processJsonObject.addProperty("id", process.getId());
 	        
-	        return jsonObject; 
+	        
+	        JsonArray jsonSlices=new JsonArray();
+	        if(process.getSubProcesses() != null){
+	        	
+	        	for(SubProcess subProcess: process.getSubProcesses()){
+	        		JsonObject subProcesoJsonObject = new JsonObject();
+	        		subProcesoJsonObject.addProperty("text", subProcess.getName());
+	        		subProcesoJsonObject.addProperty("type", "folder");
+	        		subProcesoJsonObject.addProperty("id", subProcess.getId());
+	        		
+	        		jsonSlices.add(subProcesoJsonObject);
+	        	}
+	        }
+	        
+	        JsonObject jsonObjectAdditionalParameters = new JsonObject();
+	        jsonObjectAdditionalParameters.add("children", jsonSlices);
+	        
+	        
+	        processJsonObject.add("additionalParameters", jsonObjectAdditionalParameters);
+	        return processJsonObject; 
 		}
 	}
 }
