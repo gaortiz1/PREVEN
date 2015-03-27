@@ -369,6 +369,31 @@
 									</div>
 									
 									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.company.type.company"/></label>
+										<div class="col-sm-5">
+											<form:select path="typesCompanies" cssClass="chosen-select form-control" data-placeholder="Seleccione tipo compañia..." required="required">
+												<form:options items="${typesCompanies}" itemLabel="name" itemValue="id" />
+											</form:select>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.company.sector.productor"/></label>
+										<div class="col-sm-5">
+											<form:select path="typeProductiveSector" cssClass="chosen-select form-control" data-placeholder="Seleccione sector productivo..." required="required">
+												<form:options items="${productivesSector}" itemLabel="name" itemValue="id" />
+											</form:select>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.company.work.hours"/></label>
+										<div class="col-sm-5">
+											<form:checkboxes items="${worksHours}" path="schedulesWork" itemLabel="name" itemValue="id" delimiter=" "/>
+										</div>
+									</div>
+									
+									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.local.phone" /></label>
 
 										<div class="col-sm-9">
@@ -384,7 +409,7 @@
 
 										<div class="col-sm-9">
 											<span class="input-icon">
-												<form:input path="celular" cssClass="input-mask-phone" required="required"/>
+												<form:input path="celular" cssClass="input-mask-phone"/>
 												<i class="ace-icon fa fa-phone"></i>
 											</span>
 										</div>
