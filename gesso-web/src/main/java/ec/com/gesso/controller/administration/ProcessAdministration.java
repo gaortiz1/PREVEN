@@ -23,6 +23,7 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
 import ec.com.gesso.common.exception.GessoException;
+import ec.com.gesso.model.entity.Job;
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.model.entity.SubProcess;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
@@ -110,24 +111,46 @@ public class ProcessAdministration {
 	        
 	        processJsonObject.addProperty("id", process.getId());
 	        
-	        JsonArray jsonSlices=new JsonArray();
+	        JsonArray jsonSubprocesSlices = new JsonArray();
+	        JsonArray jsonJobSlices = new JsonArray();
+	        JsonObject jsonObjectAdditionalParametersSubProcess = new JsonObject();
+	        JsonObject jsonObjectAdditionalParametersJob = new JsonObject();
+	        
 	        if(process.getSubProcesses() != null){
 	        	
 	        	for(SubProcess subProcess: process.getSubProcesses()){
 	        		JsonObject subProcesoJsonObject = new JsonObject();
+	        		
+	        		subProcesoJsonObject.addProperty("id", subProcess.getId());
 	        		subProcesoJsonObject.addProperty("text", subProcess.getName());
 	        		subProcesoJsonObject.addProperty("type", "folder");
-	        		subProcesoJsonObject.addProperty("id", subProcess.getId());
 	        		
-	        		jsonSlices.add(subProcesoJsonObject);
+	        		if(CollectionUtils.isNotEmpty(subProcess.getJobs())){
+	        			JsonObject jobJsonObject = new JsonObject();
+	        			for(Job job: subProcess.getJobs()){
+	        				jobJsonObject.addProperty("id", job.getId());
+	        				jobJsonObject.addProperty("text", job.getName());
+	        				jobJsonObject.addProperty("type", "item");
+	        				jsonJobSlices.add(jobJsonObject);
+	        			}
+	        			jsonObjectAdditionalParametersJob.add("children", jsonJobSlices);
+	        			subProcesoJsonObject.add("additionalParameters", jsonObjectAdditionalParametersJob);
+	        		}
+	        		
+	        		jsonSubprocesSlices.add(subProcesoJsonObject);
 	        	}
 	        }
 	        
-	        JsonObject jsonObjectAdditionalParameters = new JsonObject();
-	        jsonObjectAdditionalParameters.add("children", jsonSlices);
 	        
-	        processJsonObject.add("additionalParameters", jsonObjectAdditionalParameters);
+	        jsonObjectAdditionalParametersSubProcess.add("children", jsonSubprocesSlices);
+	        
+	        processJsonObject.add("additionalParameters", jsonObjectAdditionalParametersSubProcess);
 	        return processJsonObject; 
+		}
+		
+		
+		private JsonArray loadSubProcess(){
+			return null;
 		}
 	}
 }
