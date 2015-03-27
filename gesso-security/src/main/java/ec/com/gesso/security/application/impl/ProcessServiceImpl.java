@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Process;
+import ec.com.gesso.model.entity.SubProcess;
 import ec.com.gesso.security.application.IProcessService;
 import ec.com.gesso.security.domain.model.process.IProcessRepository;
 
@@ -21,5 +22,10 @@ public class ProcessServiceImpl implements IProcessService{
 	@Override
 	public Collection<Process> findProcess() throws GessoException {
 		return processRepository.findProcess();
+	}
+
+	@Override
+	public Collection<SubProcess> findSubProcess(Long idProcess) throws GessoException {
+		return processRepository.findSubProcess(idProcess);
 	}
 }
