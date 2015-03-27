@@ -20,4 +20,10 @@
 			<ref bean="gesso-localization-repository"/>
 		</property>
 	</bean>
+	
+	<bean id="gesso-process-service" class="ec.com.gesso.security.application.impl.ProcessServiceImpl">
+		<property name="processRepository">
+			<ref bean="gesso-process-repository"/>
+		</property>
+	</bean>
 </beans>

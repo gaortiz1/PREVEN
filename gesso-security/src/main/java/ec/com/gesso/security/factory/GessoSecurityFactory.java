@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import ec.com.gesso.security.application.ICatalogService;
 import ec.com.gesso.security.application.ILocalizationService;
+import ec.com.gesso.security.application.IProcessService;
 import ec.com.gesso.security.application.ISecurityService;
 
 /**
@@ -44,5 +45,9 @@ public class GessoSecurityFactory {
 	
 	public ILocalizationService getLocalizationService(){
 		return context.getBean("gesso-localization-service", ILocalizationService.class);
+	}
+	
+	public IProcessService getProcessService(){
+		return context.getBean("gesso-process-service", IProcessService.class);
 	}
 }

@@ -337,8 +337,32 @@
             <!-- PAGE CONTENT BEGINS -->
             <form:form class="form-horizontal" role="form">
               <!-- #section:elements.form -->
-
-
+              
+              
+              <table id="membersTable" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th><spring:message code="page.label.username"/> </th>
+                            <th><spring:message code="page.label.firstName"/></th>
+                            <th><spring:message code="page.label.lastName"/></th>
+                            <th><spring:message code="page.label.dateofbirth"/></th>
+                            <th><spring:message code="gobal.label.edit"/></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach items="${members}" var="member">
+                            <tr>
+                                <td>${member.usrNickName}</td>
+                                <td>${member.person.firstName}</td>
+                                <td>${member.person.lastName}</td>
+                                <td>${member.person.dateOfBirth}</td>
+                                <td>
+									<a href="#modal-form" role="button" class="blue" data-toggle="modal"> Edit </a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
 
 
               <div class="clearfix form-actions">

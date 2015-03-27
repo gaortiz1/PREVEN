@@ -22,4 +22,9 @@
 		</property>
 	</bean>
 	
+	<bean id="gesso-process-repository" class="ec.com.gesso.security.infrastructure.persistence.hibernate.ProcessRepositoryHibernate">
+		<property name="sessionFactory">
+			<ref bean="hibernate4AnnotatedSessionFactory"/>
+		</property>
+	</bean>
 </beans>
