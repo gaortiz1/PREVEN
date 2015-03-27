@@ -3,6 +3,7 @@ package ec.com.gesso.controller.administration;
 import java.lang.reflect.Type;
 import java.util.Collection;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,11 +41,11 @@ public class ProcessAdministration {
         ModelAndView modelAndView = new ModelAndView("process-administration", "command", process);
 
         Collection<Process> lstProcess = null;
-		try {
-			lstProcess = GessoSecurityFactory.getInstance().getProcessService().findProcess();
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			lstProcess = GessoSecurityFactory.getInstance().getProcessService().findProcess();
+//		} catch (GessoException e) {
+//			e.printStackTrace();
+//		}
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
 //	    Gson gson = gsonBuilder.registerTypeAdapter(Process.class, new ProcessAdapter()).create();
@@ -100,9 +101,14 @@ public class ProcessAdministration {
 		public JsonElement serialize(Process process, Type arg1, JsonSerializationContext arg2) {
 			JsonObject processJsonObject = new JsonObject();
 	        processJsonObject.addProperty("text", process.getName());
-	        processJsonObject.addProperty("type", "folder");
-	        processJsonObject.addProperty("id", process.getId());
 	        
+	        if(CollectionUtils.isEmpty(process.getSubProcesses())){
+	        	processJsonObject.addProperty("type", "item");
+	        }else{
+	        	processJsonObject.addProperty("type", "folder");
+	        }
+	        
+	        processJsonObject.addProperty("id", process.getId());
 	        
 	        JsonArray jsonSlices=new JsonArray();
 	        if(process.getSubProcesses() != null){
@@ -119,7 +125,6 @@ public class ProcessAdministration {
 	        
 	        JsonObject jsonObjectAdditionalParameters = new JsonObject();
 	        jsonObjectAdditionalParameters.add("children", jsonSlices);
-	        
 	        
 	        processJsonObject.add("additionalParameters", jsonObjectAdditionalParameters);
 	        return processJsonObject; 

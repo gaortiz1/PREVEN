@@ -23,7 +23,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "SUBPROCESS")
+@Table(name = "JOB")
 public class Job implements Serializable{
 	
 	/**

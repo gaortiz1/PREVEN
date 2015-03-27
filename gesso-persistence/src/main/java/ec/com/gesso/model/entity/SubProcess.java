@@ -16,6 +16,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 
 /**
  * 
@@ -61,6 +64,8 @@ public class SubProcess implements Serializable{
 	@JoinColumn(name = "ID_PROCESS", referencedColumnName = "ID_PROCESS", insertable=false, updatable=false)
 	private Process processRoot;
 	
+//	@JoinColumn(name="ID_SUBPROCESS")
+	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(mappedBy="subProcessRoot")
 	private Collection<Job> jobs;
 	
