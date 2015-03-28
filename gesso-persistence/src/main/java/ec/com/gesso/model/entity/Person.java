@@ -61,15 +61,16 @@ public class Person implements Serializable {
     
     @Column(name = "lactation_period")
     private Boolean lactationPeriod;
-    @Transient
+    
+    @Column(name = "personal_local_phone")
     private String personalLocalPhone;
-    @Transient
+    @Column(name = "personal_mobil_phone")
     private String personalMobilPhone;
     
-    @Transient
+    @Column(name = "personal_email")
     private String personalEmail;
     
-    @Transient
+    @Column(name = "id_code_profesion")
     private String idCodeProfesion;
     
     @Basic(optional = false)
@@ -93,19 +94,23 @@ public class Person implements Serializable {
     private Boolean statusPerson;
     @Column(name = "per_document_number")
     private String documentNumber;
-    @Transient
+    
+    @Column(name = "disability")
     private boolean disability;
-    @Transient
+    
+    
+    @Column(name = "percentage_disability")
     private Integer percentageDisability;
     
-    @Transient
+    @Column(name = "occupational_accident")
     private Boolean occupationalAccident;
     
-    @Transient
+    @Column(name = "occupational_accident_detail")
     private String occupationalAccidentDetail;
     
     
-    @Transient
+    
+    @Column(name = "security_training_detail")
     private String securityTrainingDetail;
     
     private String paiscodigo;
@@ -116,19 +121,19 @@ public class Person implements Serializable {
     @Transient
     private Date dateJobStart;
     
-    @Transient
+    @Column(name = "id_catalog_education")
     private String idEducaionLevelCatalog;
     
-    @Transient
+    @Column(name = "work_review")
     private String workReview;
     
     @Transient
     private String lastCompany;
     
-    @Transient
+    @Column(name = "security_unit_member")
     private Boolean securityUnitMember;
     
-    @Transient
+    @Column(name = "security_committee_member")
     private Boolean securityCommitteeMember;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
