@@ -46,7 +46,8 @@ public class Person implements Serializable {
     @SequenceGenerator(name="seq_new_person", sequenceName="seq_new_person", allocationSize = 1)
     private Long idPerson;
     
-    @Column(name = "ID_GEOPOLITICAL_DIVISION")
+//    @Column(name = "ID_GEOPOLITICAL_DIVISION")
+    @Transient
 	private Long idDivgeoPol;
     
     @Column(name = "id_catalog")

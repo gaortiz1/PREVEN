@@ -32,6 +32,12 @@ public class PersonAdministrationController {
 	
 	@RequestMapping(value = "/person-administration", method = RequestMethod.GET)
 	public ModelAndView userAdministration(){
+		Collection<CountryDto> country = null;
+		try {
+			country = GessoSecurityFactory.getInstance().getLocalizationService().findCountry();
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
 		
 		Collection<Catalog> levelVulnerability = null;
 		try {
@@ -47,9 +53,6 @@ public class PersonAdministrationController {
 			e.printStackTrace();
 		}
 		
-		
-		
-		
 		Collection<Process> lstProcess = null;
 		try {
 			lstProcess = GessoSecurityFactory.getInstance().getProcessService().findProcess();
@@ -62,7 +65,7 @@ public class PersonAdministrationController {
 		person.setStatusPerson(Boolean.TRUE);
         
 		ModelAndView modelAndView = new ModelAndView("person-administration", "command", person);
-//		modelAndView.addObject("country", country);
+		modelAndView.addObject("country", country);
 		modelAndView.addObject("levelVulnerability",levelVulnerability);
 		modelAndView.addObject("lstProfesion",lstProfesion);
 		modelAndView.addObject("lstProcess",lstProcess);

@@ -47,18 +47,18 @@ public class CompanyAdministrationController {
 			e.printStackTrace();
 		}
 		
-		Collection<GeopoliticalDivision> geopoliticalDivisions =  null;
-		try {
-			geopoliticalDivisions = GessoSecurityFactory.getInstance().getGeopoloticalDivisionService().findAllGeopoliticalDivisionRoot();
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
+//		Collection<GeopoliticalDivision> geopoliticalDivisions =  null;
+//		try {
+//			geopoliticalDivisions = GessoSecurityFactory.getInstance().getGeopoloticalDivisionService().findAllGeopoliticalDivisionRoot();
+//		} catch (GessoException e) {
+//			e.printStackTrace();
+//		}
 		
 		final ModelAndView modelAndView = new ModelAndView("company-administration", "command", new CompanyModel());
 		modelAndView.addObject("typesCompanies", typesCompanies);
 		modelAndView.addObject("worksHours", worksHours);
 		modelAndView.addObject("productivesSector", productivesSector);
-		modelAndView.addObject("geopoliticalDivisions", geopoliticalDivisions);
+//		modelAndView.addObject("geopoliticalDivisions", geopoliticalDivisions);
 		return modelAndView;
 	}
 	

@@ -27,10 +27,6 @@
 		</property>
 	</bean>
 	
-	<bean id="gesso-geopol-service" class="ec.com.gesso.security.application.impl.GeopoliticalDivisionServiceImpl">
-		<property name="divisionRepository">
-			<ref bean="gesso-geopol-repository"/>
-		</property>
-	</bean>
+	
 	
 </beans>
