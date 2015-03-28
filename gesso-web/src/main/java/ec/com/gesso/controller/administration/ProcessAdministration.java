@@ -76,19 +76,31 @@ public class ProcessAdministration {
 			e1.printStackTrace();
 		}
         
-        try {
-			processView.setLstProcess(GessoSecurityFactory.getInstance().getProcessService().findProcess());
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
-        modelAndView.addObject("lstProcess", processView.getLstProcess());
+        
+        modelAndView.addObject("lstProcess", loadProcess());
         return modelAndView;
     }
+    
+    private Collection<Process> loadProcess(){
+    	try {
+    		return GessoSecurityFactory.getInstance().getProcessService().findProcess();
+    	} catch (GessoException e) {
+    		e.printStackTrace();
+    	}
+    	
+    	return null;
+    } 
     
     @RequestMapping(value = "/new-job", method = RequestMethod.POST)
     public ModelAndView newJob(@ModelAttribute("contact")ProcessView processView, BindingResult result){
         ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
-
+        try {
+			GessoSecurityFactory.getInstance().getProcessService().persisNewJob(processView.getJob());
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+        
+        modelAndView.addObject("lstProcess", loadProcess());
         return modelAndView;
     }
     
@@ -124,7 +136,7 @@ public class ProcessAdministration {
 		}
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
-	    Gson gson = gsonBuilder.registerTypeAdapter(SubProcess.class, new ProcessAdapter()).create();
+	    Gson gson = gsonBuilder.registerTypeAdapter(SubProcess.class, new SubProcessAdapter()).create();
 	    
 	    String valor = gson.toJson(levelVulnerability); 
     	return valor;
@@ -188,8 +200,23 @@ public class ProcessAdministration {
 		}
 		
 		
-		private JsonArray loadSubProcess(){
-			return null;
+		
+	}
+    
+    
+    
+    class SubProcessAdapter implements JsonSerializer<SubProcess> {
+
+		@Override
+		public JsonElement serialize(SubProcess subProcess, Type arg1, JsonSerializationContext arg2) {
+			JsonObject processJsonObject = new JsonObject();
+			processJsonObject.addProperty("id", subProcess.getId());
+	        processJsonObject.addProperty("text", subProcess.getName());
+	        
+	        return processJsonObject; 
 		}
+		
+		
+		
 	}
 }

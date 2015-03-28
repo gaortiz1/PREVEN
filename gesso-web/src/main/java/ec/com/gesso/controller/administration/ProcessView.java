@@ -10,6 +10,8 @@ public class ProcessView {
 	private Process process ;
 	private Collection<Process> lstProcess;
 	
+	private Long idProcesFormJob;
+	
 	private SubProcess subProcess;
 	private Job job;
 	
@@ -47,7 +49,12 @@ public class ProcessView {
 		this.lstProcess = lstProcess;
 	}
 
-	
-	
+	public Long getIdProcesFormJob() {
+		return idProcesFormJob;
+	}
+
+	public void setIdProcesFormJob(Long idProcesFormJob) {
+		this.idProcesFormJob = idProcesFormJob;
+	}
 	
 }

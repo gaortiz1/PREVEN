@@ -86,7 +86,7 @@ public class ProcessRepositoryHibernate extends HibernateRepository implements I
 	@Override
 	public void persisNewJob(Job job) throws GessoException {
 		try {
-			
+			job.setStatus(Boolean.TRUE);
 			getSession().persist(job);
 			getSession().flush();
 		} catch (Exception e) {

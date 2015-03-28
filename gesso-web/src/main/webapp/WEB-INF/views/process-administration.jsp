@@ -391,7 +391,7 @@
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal">&times;</button>
 												<h4 class="blue bigger">
-													<spring:message code="page.label.update.password.status"/>
+													<spring:message code="page.label.new.process"/>
 												</h4>
 											</div>
 											
@@ -456,7 +456,7 @@
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal">&times;</button>
 												<h4 class="blue bigger">
-													<spring:message code="page.label.update.password.status"/>
+													<spring:message code="page.label.new.subprocess"/>
 												</h4>
 											</div>
 											
@@ -518,6 +518,101 @@
 										</div>
 									</div>
 								</div>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								<div id="modal-form-job" class="modal" tabindex="-1">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="blue bigger">
+													<spring:message code="page.label.new.job"/>
+												</h4>
+											</div>
+											
+											<form:form action="new-job" method="POST">
+												<div class="modal-body">
+													<div class="row">
+														<div class="col-xs-12 col-sm-7">
+														
+														
+															
+															
+															<div class="form-group">
+																<label for="form-field-first">
+																	<spring:message code="menu.label.process"/>
+																</label>
+																
+																<div>
+																	<form:select path="idProcesFormJob" cssClass="chosen-select form-control" data-placeholder="Seleccionar proceso" onchange="cargarSubProcesos(this, event)">
+																		<form:options items="${lstProcess}" itemLabel="name" itemValue="id" />
+																	</form:select>
+																</div>
+															</div>
+															
+															<div class="form-group">
+																<label for="form-field-first">
+																	<spring:message code="menu.label.process"/>
+																</label>
+																
+																<div>
+																	<select id="job.idSubProcess" name="job.idSubProcess" class="chosen-select form-control job-subprocess-selector" data-placeholder="Seleccionar sub-proceso" required="required">
+																		
+																	</select>
+																</div>
+															</div>
+															
+															<div class="form-group">
+																<label for="form-field-first">
+																	<spring:message code="page.label.name"/>
+																</label>
+																
+																<div>
+																	<form:input path="job.name" placeholder ="Nombre proceso" required="required"/>
+																	
+																</div>
+															</div>
+															
+															<div class="form-group">
+																<label for="form-field-first">
+																	<spring:message code="page.label.description" />
+																</label>
+																
+																<div>
+																	<form:input path="job.description" required="required"/>
+																</div>
+															</div>
+															
+														</div>
+													</div>
+												</div>
+												
+												<div class="modal-footer">
+													<button class="btn btn-sm" data-dismiss="modal">
+														<i class="ace-icon fa fa-times"></i>
+														Cancel
+													</button>
+	
+													<button class="btn btn-sm btn-primary" type="submit">
+														<i class="ace-icon fa fa-check"></i>
+														Save
+													</button>
+												</div>
+											</form:form>
+											
+										</div>
+									</div>
+								</div>
 								<!-- /section:plugins/fuelux.treeview -->
 								<script type="text/javascript">
 									var $assets = "${pageContext.request.contextPath}/resources/assets";//this will be used in fuelux.tree-sampledata.js
@@ -535,8 +630,8 @@
 					<!-- #section:basics/footer -->
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
+							<span class="blue bolder">Gesso</span>
+							Application &copy; 2015
 						</span>
 
 						&nbsp; &nbsp;
@@ -612,6 +707,7 @@
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
 
+		
 		function cargarProcesos(){
 			$.ajax({
 				method: "GET",
@@ -664,15 +760,27 @@
 		}
 
 
-		function cargarSubProcesos(selectResult){
+		function cargarSubProcesos(element, event){
+
+			var selectResult=0;
+			$(element).find("option:selected").each(function(indice, elemento) {
+				selectResult= $(elemento).val();
+			});
+			
 			$.ajax({
 				method: "GET",
 				url: "load-sub-process/"+selectResult,
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
-				
+				success:function( data, textStatus, errorThrown ){
+					$(".job-subprocess-selector").find('option').remove();
+					$.each( data, function( i, item ) {
+						$(".job-subprocess-selector").append($("<option></option>").attr("value",item.id).text(item.text)); 
+				   	});
+		          	
+	          	},
 	          	error: function( jqXhr, textStatus, errorThrown ){
-		          	console.log( errorThrown );
+		          	alert( errorThrown );
 	          	}
 			});
 		}
@@ -699,7 +807,9 @@
 			
 		});
 		</script>
-
+		
+		
+		
 		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/ace.onpage-help.css" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/docs/assets/js/themes/sunburst.css" />
