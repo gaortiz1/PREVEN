@@ -342,7 +342,7 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.firstName"/></label>
 
 										<div class="col-sm-9">
-											<form:input path="firstName" placeholder="Primer nombre" cssClass="txt-validate-empty" required="required"/>
+											<form:input path="firstName" placeholder="Primer nombre" cssClass="txt-validate-empty" />
 											<form:input path="middleName" placeholder="Segundo nombre" />
 										</div>
 									</div>
@@ -488,7 +488,7 @@
 										</label>
 										
 										<div class="col-sm-5">
-											<select id="idSubProcess" name="idSubProcess" class="chosen-select form-control job-subprocess-selector" data-placeholder="Seleccionar sub-proceso" required="required">
+											<select id="idSubProcess" name="idSubProcess" class="chosen-select form-control job-subprocess-selector" data-placeholder="Seleccionar sub-proceso" >
 												
 											</select>
 										</div>
