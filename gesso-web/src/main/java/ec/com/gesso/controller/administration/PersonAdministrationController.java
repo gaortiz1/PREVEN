@@ -65,6 +65,8 @@ public class PersonAdministrationController {
 		ModelAndView modelAndView = new ModelAndView("person-administration", "command", person);
 		modelAndView.addObject("country", country);
 		modelAndView.addObject("levelVulnerability",levelVulnerability);
+		modelAndView.addObject("lstProfesion",lstProfesion);
+		
 	        
 		return modelAndView;
 	}

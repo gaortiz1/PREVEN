@@ -510,7 +510,7 @@
 										<label class="col-sm-3 control-label no-padding-right">Profesion/ocupacion</label>
 										<div class="col-sm-5">
 											<form:select path="idCodeProfesion" cssClass="chosen-select form-control" data-placeholder="Choose a prefesion...">
-												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo" onclick=""/>
+												<form:options items="${lstProfesion}" itemLabel="name" itemValue="id" onclick=""/>
 											</form:select>
 										</div>
 									</div>
