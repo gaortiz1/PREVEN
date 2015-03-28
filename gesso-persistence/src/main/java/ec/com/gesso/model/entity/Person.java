@@ -139,7 +139,8 @@ public class Person implements Serializable {
     
     @Transient
     private Long idSubProcess;
-    @Transient
+    
+    @Column(name = "id_job")
     private Long idJob;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
