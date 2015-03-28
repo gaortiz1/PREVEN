@@ -106,7 +106,7 @@
 			      <li class="active open">
 			        <a href="#" class="dropdown-toggle">
 			          <i class="menu-icon fa fa-list"></i>
-			          <span class="menu-text"> Administration </span>
+			          <span class="menu-text"> <spring:message code="menu.label.administration"/> </span>
 			
 			          <b class="arrow fa fa-angle-down"></b>
 			        </a>
@@ -126,7 +126,7 @@
 			          <li class="">
 			            <a href="${pageContext.request.contextPath}/company-administration">
 			              <i class="menu-icon fa fa-caret-right"></i>
-			              <spring:message code="menu.label.compay"/>
+			              <spring:message code="menu.label.company"/>
 			            </a>
 			
 			            <b class="arrow"></b>

@@ -115,7 +115,7 @@
 					<li class="active open">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Administration </span>
+							<span class="menu-text"> <spring:message code="menu.label.administration"/> </span>
 
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
@@ -126,7 +126,7 @@
 							<li class="">
 								<a href="${pageContext.request.contextPath}/user-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
-									User
+									<spring:message code="menu.label.user"/>
 								</a>
 
 								<b class="arrow"></b>
@@ -135,7 +135,7 @@
 							<li class="">
 								<a href="${pageContext.request.contextPath}/company-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Company 
+									<spring:message code="menu.label.company"/> 
 								</a>
 
 								<b class="arrow"></b>
@@ -144,7 +144,7 @@
 							<li class="active">
 								<a href="${pageContext.request.contextPath}/person-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Person
+									<spring:message code="menu.label.person"/>
 								</a>
 
 								<b class="arrow"></b>
