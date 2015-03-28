@@ -43,15 +43,10 @@ public class Person implements Serializable {
     @Column(name = "id_person")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_new_person")
     @SequenceGenerator(name="seq_new_person", sequenceName="seq_new_person", allocationSize = 1)
-//    @TableGenerator(
-//            name="person_seq", 
-//            table="gesso_sequences", 
-//            pkColumnName="seq_name", 
-//            valueColumnName="seq_number", 
-//            pkColumnValue="PER",
-//            allocationSize=1)
-//    @GeneratedValue(strategy=GenerationType.TABLE, generator="person_seq")
     private Long idPerson;
+    
+    @Column(name = "ID_GEOPOLITICAL_DIVISION")
+	private Long idDivgeoPol;
     
     @Column(name = "id_catalog")
     private String idSexCatalog;
@@ -65,6 +60,8 @@ public class Person implements Serializable {
     private String personalLocalPhone;
     @Transient
     private String personalMobilPhone;
+    
+
     
     @Transient
     private String personalEmail;
@@ -178,7 +175,21 @@ public class Person implements Serializable {
         this.idPerson = idPerson;
     }
 
-    public String getFirstName() {
+    /**
+	 * @return the idDivgeoPol
+	 */
+	public Long getIdDivgeoPol() {
+		return idDivgeoPol;
+	}
+
+	/**
+	 * @param idDivgeoPol the idDivgeoPol to set
+	 */
+	public void setIdDivgeoPol(Long idDivgeoPol) {
+		this.idDivgeoPol = idDivgeoPol;
+	}
+
+	public String getFirstName() {
         return firstName;
     }
 

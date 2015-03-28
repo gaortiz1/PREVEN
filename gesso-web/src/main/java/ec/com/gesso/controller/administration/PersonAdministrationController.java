@@ -2,8 +2,6 @@ package ec.com.gesso.controller.administration;
 
 import java.lang.reflect.Type;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -27,6 +25,7 @@ import com.google.gson.JsonSerializer;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.CountryDto;
+import ec.com.gesso.model.entity.GeopoliticalDivision;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 @Controller
@@ -36,13 +35,6 @@ public class PersonAdministrationController {
 	
 	@RequestMapping(value = "/person-administration", method = RequestMethod.GET)
 	public ModelAndView userAdministration(){
-		
-		Collection<CountryDto> country = null;
-		try {
-			country = GessoSecurityFactory.getInstance().getLocalizationService().findCountry();
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
 		
 		Collection<Catalog> levelVulnerability = null;
 		try {
@@ -58,13 +50,21 @@ public class PersonAdministrationController {
 			e.printStackTrace();
 		}
 		
+		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = null;
+		try {
+			collectionGeopoliticalDivisions = GessoSecurityFactory.getInstance().getGeopoloticalDivisionService().findAllGeopoliticalDivisionRoot();
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		
 		
 		Person person = new Person();
 		person.setStatusPerson(Boolean.TRUE);
         
 		ModelAndView modelAndView = new ModelAndView("person-administration", "command", person);
-		modelAndView.addObject("country", country);
+//		modelAndView.addObject("country", country);
 		modelAndView.addObject("levelVulnerability",levelVulnerability);
+		modelAndView.addObject("collectionGeopoliticalDivisions", collectionGeopoliticalDivisions);
 	        
 		return modelAndView;
 	}

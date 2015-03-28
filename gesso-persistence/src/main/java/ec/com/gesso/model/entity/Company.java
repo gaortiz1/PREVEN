@@ -43,6 +43,9 @@ public class Company implements Serializable {
     @Column(name = "ID_PRODUCTIVE_SECTOR")
     private String idProductiveSector;
     
+    @Column(name = "ID_GEOPOLITICAL_DIVISION")
+	private Long idDivgeoPol;
+    
     @Basic(optional = false)
     @Column(name = "name_company")
     private String name;
@@ -120,6 +123,20 @@ public class Company implements Serializable {
 	}
 
 	/**
+	 * @return the idDivgeoPol
+	 */
+	public Long getIdDivgeoPol() {
+		return idDivgeoPol;
+	}
+
+	/**
+	 * @param idDivgeoPol the idDivgeoPol to set
+	 */
+	public void setIdDivgeoPol(Long idDivgeoPol) {
+		this.idDivgeoPol = idDivgeoPol;
+	}
+
+	/**
 	 * @return the name
 	 */
 	public String getName() {
@@ -162,6 +179,20 @@ public class Company implements Serializable {
 	}
 
 	/**
+	 * @return the typeCompany
+	 */
+	public Catalog getTypeCompany() {
+		return typeCompany;
+	}
+
+	/**
+	 * @param typeCompany the typeCompany to set
+	 */
+	public void setTypeCompany(Catalog typeCompany) {
+		this.typeCompany = typeCompany;
+	}
+
+	/**
 	 * @return the subcompanyCollection
 	 */
 	public Collection<Subcompany> getSubcompanyCollection() {
@@ -200,7 +231,8 @@ public class Company implements Serializable {
 	/**
 	 * @param activityEconomicCompanyCollection the activityEconomicCompanyCollection to set
 	 */
-	public void setActivityEconomicCompanyCollection(Collection<ActivityEconomicCompany> activityEconomicCompanyCollection) {
+	public void setActivityEconomicCompanyCollection(
+			Collection<ActivityEconomicCompany> activityEconomicCompanyCollection) {
 		this.activityEconomicCompanyCollection = activityEconomicCompanyCollection;
 	}
 
@@ -231,20 +263,6 @@ public class Company implements Serializable {
 	public void setScheduleWorkCollection(
 			Collection<ScheduleWork> scheduleWorkCollection) {
 		this.scheduleWorkCollection = scheduleWorkCollection;
-	}
-
-	/**
-	 * @return the typeCompany
-	 */
-	public Catalog getTypeCompany() {
-		return typeCompany;
-	}
-
-	/**
-	 * @param typeCompany the typeCompany to set
-	 */
-	public void setTypeCompany(Catalog typeCompany) {
-		this.typeCompany = typeCompany;
 	}
 
 	/**
