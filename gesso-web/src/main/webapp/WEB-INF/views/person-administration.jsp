@@ -502,7 +502,7 @@
 									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right">
-											Trabajo
+											Puesto de trabajo
 										</label>
 										
 										<div class="col-sm-5">
