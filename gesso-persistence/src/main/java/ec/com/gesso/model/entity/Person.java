@@ -96,7 +96,7 @@ public class Person implements Serializable {
     private String documentNumber;
     
     @Column(name = "disability")
-    private boolean disability;
+    private Boolean disability;
     
     
     @Column(name = "percentage_disability")
@@ -305,11 +305,13 @@ public class Person implements Serializable {
 		this.idSexCatalog = idSexCatalog;
 	}
 
-	public boolean isDisability() {
+
+
+	public Boolean getDisability() {
 		return disability;
 	}
 
-	public void setDisability(boolean disability) {
+	public void setDisability(Boolean disability) {
 		this.disability = disability;
 	}
 
