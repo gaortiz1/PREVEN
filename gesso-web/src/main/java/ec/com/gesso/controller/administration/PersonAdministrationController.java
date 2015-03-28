@@ -64,7 +64,12 @@ public class PersonAdministrationController {
 		ModelAndView modelAndView = new ModelAndView("person-administration", "command", person);
 //		modelAndView.addObject("country", country);
 		modelAndView.addObject("levelVulnerability",levelVulnerability);
+<<<<<<< HEAD
 		modelAndView.addObject("collectionGeopoliticalDivisions", collectionGeopoliticalDivisions);
+=======
+		modelAndView.addObject("lstProfesion",lstProfesion);
+		
+>>>>>>> 09d6654495ff16cfbf01aadd55dbdc3033c81986
 	        
 		return modelAndView;
 	}
