@@ -24,9 +24,8 @@ public interface ISecurityService {
 	 * @param person
 	 */
 	public void persistNewUser(Person person) throws GessoException;
-	
 	public void persistPerson(Person person) throws GessoException;
-	
-	
+	public void persistUser(UserDto userDto) throws GessoException;
 	public Collection<UserDto> findAllUsers() throws GessoException;
+	public UserDto findUserById(Integer usrId) throws GessoException;
 }

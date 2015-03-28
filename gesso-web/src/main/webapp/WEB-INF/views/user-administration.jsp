@@ -53,6 +53,22 @@
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
 				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+
+
+
+				function editarUsuario(objUser){						
+					$.ajax({
+						method: "GET",
+						url: "user-administration-edit/"+objUser,
+						success: function( ){
+							$('#modal-form').modal('show')
+			          	},
+			          	error: function(  ){
+				          	alert( 'error');
+			          	}
+					});
+					
+				}
 			</script>
 
 			<!-- #section:basics/sidebar -->
@@ -347,7 +363,7 @@
 				                                <td>${member.person.lastName}</td>
 				                                <td>${member.person.dateOfBirth}</td>
 				                                <td>
-													<a href="#modal-form" role="button" class="blue" data-toggle="modal"> Edit </a>
+													<a href="#modal-form" role="button" class="blue" onclick="editarUsuario(${member.usrId})"> Edit </a>
 				                                </td>
 				                            </tr>
 				                        </c:forEach>
@@ -364,25 +380,7 @@
 
 											<div class="modal-body">
 												<div class="row">
-													<div class="col-xs-12 col-sm-5">
-														<div class="space"></div>
-
-														<input type="file" />
-													</div>
-
 													<div class="col-xs-12 col-sm-7">
-														<div class="form-group">
-															<label for="form-field-select-3">Location</label>
-
-															<div>
-																<select class="chosen-select" data-placeholder="Choose a Country...">
-																	<option value="">&nbsp;</option>
-																	<option value="AL">Alabama</option>
-																	<option value="AK">Alaska</option>
-																	<option value="AZ">Arizona</option>
-																</select>
-															</div>
-														</div>
 
 														<div class="space-4"></div>
 
@@ -397,11 +395,27 @@
 														<div class="space-4"></div>
 
 														<div class="form-group">
-															<label for="form-field-first">Name</label>
-
+															<label for="form-field-first">
+																<spring:message code="page.label.password"></spring:message>
+															</label>
+															
 															<div>
-																<input type="text" id="form-field-first" placeholder="First Name" value="Alex" />
-																<input type="text" id="form-field-last" placeholder="Last Name" value="Doe" />
+																<input type="text"  placeholder="First Name" value="Alex" />
+																
+															</div>
+														</div>
+														
+														<div class="form-group">
+															<label for="form-field-first">
+																<spring:message code="page.label.status"></spring:message>
+															</label>
+															
+															<div>
+																<label>
+																	<input name="lactationPeriod" class="ace ace-switch ace-switch-6" type="checkbox" />
+																	<span class="lbl"></span>
+																</label>
+																
 															</div>
 														</div>
 													</div>

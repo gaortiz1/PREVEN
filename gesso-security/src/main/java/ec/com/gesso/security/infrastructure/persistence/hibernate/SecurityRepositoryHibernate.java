@@ -51,9 +51,26 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 	}
 
 	public void persistPerson(Person person) throws GessoException{
-//		getSession().persist(person.getUserDto());
 		getSession().persist(person);
 		getSession().flush();
+	}
+
+	@Override
+	public void persistUser(UserDto userDto) throws GessoException {
+		getSession().persist(userDto);
+		getSession().flush();
+	}
+
+	@Override
+	public UserDto findUserById(Integer usrId) throws GessoException {
+		Criteria criteria =  null;
+		
+		criteria =  getSession().createCriteria(UserDto.class);
+		
+		criteria.add(Restrictions.eq("usrId", usrId));
+		
+		UserDto userDto = (UserDto) criteria.uniqueResult();
+		return userDto;
 	}
 
 }

@@ -13,10 +13,9 @@ import ec.com.gesso.model.entity.UserDto;
 public interface SecurityRepository {
 	
 	public UserDto autenticateUser(String username, String password) throws GessoException;
-
 	public void persistNewUser(Person person) throws GessoException;
-	
+	public void persistUser(UserDto userDto) throws GessoException;
 	public Collection<UserDto> findAllUsers() throws GessoException;
-	
 	public void persistPerson(Person person) throws GessoException;
+	public UserDto findUserById(Integer usrId) throws GessoException;
 }

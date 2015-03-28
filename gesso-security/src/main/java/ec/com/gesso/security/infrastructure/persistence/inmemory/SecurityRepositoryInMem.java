@@ -3,6 +3,7 @@ package ec.com.gesso.security.infrastructure.persistence.inmemory;
 import java.util.Collection;
 import java.util.Map;
 
+import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.UserDto;
 import ec.com.gesso.security.domain.model.handling.HandlingEventRepository;
@@ -33,5 +34,17 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 	
 	public void persistPerson(Person person) {
 		
+	}
+
+	@Override
+	public void persistUser(UserDto userDto) throws GessoException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public UserDto findUserById(Integer usrId) throws GessoException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
