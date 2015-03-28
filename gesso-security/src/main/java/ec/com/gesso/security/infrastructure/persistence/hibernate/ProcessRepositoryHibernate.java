@@ -56,4 +56,43 @@ public class ProcessRepositoryHibernate extends HibernateRepository implements I
 		return criteria.list();
 	}
 
+	@Override
+	public void persisNewProcess(Process process)
+			throws GessoException {
+		
+		try {
+			process.setStatus(Boolean.TRUE);
+			getSession().persist(process);
+			getSession().flush();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new GessoException(e.getCause());
+		}
+	}
+
+	@Override
+	public void persisNewSubProcess(SubProcess subProcess)
+			throws GessoException {
+		try {
+			
+			getSession().persist(subProcess);
+			getSession().flush();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new GessoException(e.getCause());
+		}
+	}
+
+	@Override
+	public void persisNewJob(Job job) throws GessoException {
+		try {
+			
+			getSession().persist(job);
+			getSession().flush();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new GessoException(e.getCause());
+		}
+	}
+
 }

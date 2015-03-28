@@ -390,7 +390,7 @@
 															</label>
 															
 															<div>
-																<input type="text"  placeholder="Nueva clave" value="${userDto.usrNickName}" />
+																<input type="text"  placeholder="Nueva clave" name="${userDto.usrNickName}" />
 																
 															</div>
 														</div>

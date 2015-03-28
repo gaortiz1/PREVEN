@@ -7,6 +7,8 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,6 +28,7 @@ import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Job;
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.model.entity.SubProcess;
+import ec.com.gesso.model.entity.UserDto;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 /**
@@ -37,24 +40,43 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
 public class ProcessAdministration {
 
     @RequestMapping(value = "/process-administration", method = RequestMethod.GET)
-    public ModelAndView userAdministration(){
-        ec.com.gesso.model.entity.Process process = new Process();
-        ModelAndView modelAndView = new ModelAndView("process-administration", "command", process);
+    public ModelAndView processAdministration(){
+    	ProcessView processView = new ProcessView();
+    	try {
+			processView.setLstProcesses(GessoSecurityFactory.getInstance().getProcessService().findProcess());
+		} catch (GessoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+        ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
+        return modelAndView;
+    }
+    
+    @RequestMapping(value = "/new-process", method = RequestMethod.POST)
+    public ModelAndView newProcess(@ModelAttribute("contact")ProcessView processView, BindingResult result){
+    	
+        ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
+        
+        try {
+			GessoSecurityFactory.getInstance().getProcessService().persisNewProcess(processView.getProcess());
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+        return modelAndView;
+    }
+    
+    @RequestMapping(value = "/new-subprocess", method = RequestMethod.POST)
+    public ModelAndView newSubProcess(@ModelAttribute("contact")ProcessView processView, BindingResult result){
+        ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
 
-        Collection<Process> lstProcess = null;
-//		try {
-//			lstProcess = GessoSecurityFactory.getInstance().getProcessService().findProcess();
-//		} catch (GessoException e) {
-//			e.printStackTrace();
-//		}
-		
-		GsonBuilder gsonBuilder = new GsonBuilder();
-//	    Gson gson = gsonBuilder.registerTypeAdapter(Process.class, new ProcessAdapter()).create();
-	    
-//    	String string = gson.toJson(lstProcess);
-		
-//		System.out.println(string);
-        modelAndView.addObject("lstProcess", lstProcess);
+        return modelAndView;
+    }
+    
+    @RequestMapping(value = "/new-job", method = RequestMethod.POST)
+    public ModelAndView newJob(@ModelAttribute("contact")ProcessView processView, BindingResult result){
+        ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
+
         return modelAndView;
     }
     

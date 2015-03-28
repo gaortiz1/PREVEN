@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page session="true"%>
@@ -357,17 +358,17 @@
 												</div>
 												
 												
-												<button class="btn btn-white btn-info btn-bold">
+												<button class="btn btn-white btn-info btn-round" onclick="$('#modal-form-process').modal('show')">
 													<i class="ace-icon fa fa-cogs bigger-120 blue"></i>
 													<spring:message code="page.label.new.process"/>
 												</button>
 	
-												<button class="btn btn-white btn-warning btn-bold">
+												<button class="btn btn-white btn-warning btn-round" onclick="$('#modal-form-subprocess').modal('show')">
 													<i class="ace-icon fa fa-cogs bigger-120 orange"></i>
 													<spring:message code="page.label.new.subprocess"/>
 												</button>
 	
-												<button class="btn btn-white btn-default btn-round">
+												<button class="btn btn-white btn-default btn-round" onclick="$('#modal-form-job').modal('show')">
 													<i class="ace-icon fa fa-cogs red2"></i>
 													<spring:message code="page.label.new.job"/>
 												</button>
@@ -378,6 +379,82 @@
 									
 								</div>
 
+
+
+
+
+
+
+								<div id="modal-form-process" class="modal" tabindex="-1">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="blue bigger">
+													<spring:message code="page.label.update.password.status"/>
+												</h4>
+											</div>
+											
+											<form:form action="new-process" method="POST">
+												<div class="modal-body">
+													<div class="row">
+														<div class="col-xs-12 col-sm-7">
+	
+															<div class="form-group">
+																<label for="form-field-first">
+																	<spring:message code="page.label.name"/>
+																</label>
+																
+																<div>
+																	<form:input path="process.name" placeholder ="Nombre proceso"/>
+																	
+																</div>
+															</div>
+															
+															<div class="form-group">
+																<label for="form-field-first">
+																	<spring:message code="page.label.description"/>
+																</label>
+																
+																<div>
+																	<form:input path="process.description"/>
+																	
+																</div>
+															</div>
+															
+															<div class="form-group">
+																<label for="form-field-first">
+																	<spring:message code="page.label.status"></spring:message>
+																</label>
+																
+																<div>
+																	<label>
+																		<input name="lactationPeriod" class="ace ace-switch ace-switch-6" type="checkbox" />
+																		<span class="lbl"></span>
+																	</label>
+																	
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<div class="modal-footer">
+													<button class="btn btn-sm" data-dismiss="modal">
+														<i class="ace-icon fa fa-times"></i>
+														Cancel
+													</button>
+	
+													<button class="btn btn-sm btn-primary" type="submit">
+														<i class="ace-icon fa fa-check"></i>
+														Save
+													</button>
+												</div>
+											</form:form>
+											
+										</div>
+									</div>
+								</div>
 								<!-- /section:plugins/fuelux.treeview -->
 								<script type="text/javascript">
 									var $assets = "${pageContext.request.contextPath}/resources/assets";//this will be used in fuelux.tree-sampledata.js
