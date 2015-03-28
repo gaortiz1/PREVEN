@@ -140,6 +140,14 @@
 
 								<b class="arrow"></b>
 							</li>
+							<li class="">
+					            <a href="${pageContext.request.contextPath}/process-administration">
+					              <i class="menu-icon fa fa-caret-right"></i>
+					              <spring:message code="menu.label.process"/>
+					            </a>
+					
+					            <b class="arrow"></b>
+					          </li>
 						</ul>
 					</li>
 

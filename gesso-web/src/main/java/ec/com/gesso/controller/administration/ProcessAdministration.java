@@ -28,7 +28,6 @@ import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Job;
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.model.entity.SubProcess;
-import ec.com.gesso.model.entity.UserDto;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 /**
@@ -43,13 +42,14 @@ public class ProcessAdministration {
     public ModelAndView processAdministration(){
     	ProcessView processView = new ProcessView();
     	try {
-			processView.setLstProcesses(GessoSecurityFactory.getInstance().getProcessService().findProcess());
+			processView.setLstProcess(GessoSecurityFactory.getInstance().getProcessService().findProcess());
 		} catch (GessoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	
         ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
+        modelAndView.addObject("lstProcess", processView.getLstProcess());
         return modelAndView;
     }
     
@@ -69,7 +69,19 @@ public class ProcessAdministration {
     @RequestMapping(value = "/new-subprocess", method = RequestMethod.POST)
     public ModelAndView newSubProcess(@ModelAttribute("contact")ProcessView processView, BindingResult result){
         ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
-
+        
+        try {
+			GessoSecurityFactory.getInstance().getProcessService().persisNewSubProcess(processView.getSubProcess());
+		} catch (GessoException e1) {
+			e1.printStackTrace();
+		}
+        
+        try {
+			processView.setLstProcess(GessoSecurityFactory.getInstance().getProcessService().findProcess());
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+        modelAndView.addObject("lstProcess", processView.getLstProcess());
         return modelAndView;
     }
     

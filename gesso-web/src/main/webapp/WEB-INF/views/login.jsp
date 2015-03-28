@@ -17,8 +17,8 @@
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info" >
                 <div class="panel-heading">
-                    <div class="panel-title">Sign In</div>
-                    <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+                    <div class="panel-title">Ingresar</div>
+                    <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#"></a></div>
                 </div>
 
                 <div style="padding-top:30px" class="panel-body" >
@@ -29,13 +29,13 @@
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <form:input id="login-username" path="userDto.usrNickName" cssClass="form-control" placeholder="username or email"></form:input>
+                            <form:input id="login-username" path="userDto.usrNickName" cssClass="form-control" placeholder="username or email" required="required"></form:input>
                         </div>
 
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <form:password id="login-password" path="userDto.usrPassword" cssClass="form-control" placeholder="password"></form:password>
+                            <form:password id="login-password" path="userDto.usrPassword" cssClass="form-control" placeholder="password" required="required"></form:password>
                         </div>
 
 
@@ -43,7 +43,7 @@
                         <div class="input-group">
                             <div class="checkbox">
                                 <label>
-                                    <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                                   
                                 </label>
                             </div>
                         </div>
@@ -92,26 +92,26 @@
                         <div class="form-group">
                             <label for="firstName" class="col-md-3 control-label"><spring:message code="page.label.email"/></label>
                             <div class="col-md-9">
-                                <form:input path="userDto.usrNickName" cssClass="form-control" placeholder="Email Address"/>
+                                <form:input path="userDto.usrNickName" cssClass="form-control" placeholder="Nombre de usuario" required="required"/>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="firstname" class="col-md-3 control-label"><spring:message code="page.label.firstName"/></label>
                             <div class="col-md-9">
-                                <form:input path="firstName" cssClass="form-control" placeholder="First Name"/>
+                                <form:input path="firstName" cssClass="form-control" placeholder="Nombre" required="required"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="col-md-3 control-label"><spring:message code="page.label.lastName"/></label>
                             <div class="col-md-9">
-                                <form:input path="lastName" cssClass="form-control" placeholder="Last Name"/>
+                                <form:input path="lastName" cssClass="form-control" placeholder="Apellido" required="required"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-md-3 control-label"><spring:message code="page.label.password"/></label>
                             <div class="col-md-9">
-                                <form:password path="userDto.usrPassword" cssClass="form-control" placeholder="Password"/>
+                                <form:password path="userDto.usrPassword" cssClass="form-control" placeholder="Clave" required="required"/>
                             </div>
                         </div>
 

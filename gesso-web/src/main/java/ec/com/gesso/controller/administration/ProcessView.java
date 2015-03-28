@@ -8,7 +8,7 @@ import ec.com.gesso.model.entity.SubProcess;
 
 public class ProcessView {
 	private Process process ;
-	private Collection<Process> lstProcesses;
+	private Collection<Process> lstProcess;
 	
 	private SubProcess subProcess;
 	private Job job;
@@ -39,13 +39,15 @@ public class ProcessView {
 		this.job = job;
 	}
 
-	public Collection<Process> getLstProcesses() {
-		return lstProcesses;
+	public Collection<Process> getLstProcess() {
+		return lstProcess;
 	}
 
-	public void setLstProcesses(Collection<Process> lstProcesses) {
-		this.lstProcesses = lstProcesses;
+	public void setLstProcess(Collection<Process> lstProcess) {
+		this.lstProcess = lstProcess;
 	}
+
+	
 	
 	
 }

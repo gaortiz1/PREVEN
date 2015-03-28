@@ -74,7 +74,7 @@ public class ProcessRepositoryHibernate extends HibernateRepository implements I
 	public void persisNewSubProcess(SubProcess subProcess)
 			throws GessoException {
 		try {
-			
+			subProcess.setStatus(Boolean.TRUE);
 			getSession().persist(subProcess);
 			getSession().flush();
 		} catch (Exception e) {
