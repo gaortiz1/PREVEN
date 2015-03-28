@@ -46,9 +46,10 @@ public class CompanyAdministrationController {
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
-		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = null;
+		
+		Collection<GeopoliticalDivision> geopoliticalDivisions =  null;
 		try {
-			collectionGeopoliticalDivisions = GessoSecurityFactory.getInstance().getGeopoloticalDivisionService().findAllGeopoliticalDivisionRoot();
+			geopoliticalDivisions = GessoSecurityFactory.getInstance().getGeopoloticalDivisionService().findAllGeopoliticalDivisionRoot();
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
@@ -57,7 +58,7 @@ public class CompanyAdministrationController {
 		modelAndView.addObject("typesCompanies", typesCompanies);
 		modelAndView.addObject("worksHours", worksHours);
 		modelAndView.addObject("productivesSector", productivesSector);
-		modelAndView.addObject("collectionGeopoliticalDivisions", collectionGeopoliticalDivisions);
+		modelAndView.addObject("geopoliticalDivisions", geopoliticalDivisions);
 		return modelAndView;
 	}
 	
@@ -70,7 +71,6 @@ public class CompanyAdministrationController {
     				.addDocument("RUC", companyModel.getRuc())
     				.addActivityEconomic(companyModel.getActividadComercialPrincipal())
     				.addActivityEconomic(companyModel.getActividadComercialSecuandaria())
-    				.addGeopolDivision(companyModel.getIdGeoPolDiv())
     				.addTypeCompany(companyModel.getTypesCompanies())
     				.addProductiveSector(companyModel.getTypeProductiveSector())
     				.addAddress(companyModel.getDireccion())

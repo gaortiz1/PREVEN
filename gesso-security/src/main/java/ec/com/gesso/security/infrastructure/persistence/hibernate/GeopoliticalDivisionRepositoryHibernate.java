@@ -15,7 +15,6 @@ public class GeopoliticalDivisionRepositoryHibernate extends HibernateRepository
 	public Collection<GeopoliticalDivision> findGeopoliticalDivision(Long idGeopoliticalDivision) throws GessoException {
 		Criteria criteria =  null;
 		criteria = getSession().createCriteria(GeopoliticalDivision.class);
-		criteria.createAlias("groupCatalog", "groupCatalogA");
 		criteria.add(Restrictions.eq("id", idGeopoliticalDivision));
 		criteria.add(Restrictions.isNull("idRoot"));
 		return criteria.list();
@@ -25,7 +24,6 @@ public class GeopoliticalDivisionRepositoryHibernate extends HibernateRepository
 	public Collection<GeopoliticalDivision> findRoorGeopoliticalDivision(Long idRootGeopoliticalDivision) throws GessoException {
 		Criteria criteria =  null;
 		criteria = getSession().createCriteria(GeopoliticalDivision.class);
-		criteria.createAlias("groupCatalog", "groupCatalogA");
 		criteria.add(Restrictions.eq("idRoot", idRootGeopoliticalDivision));
 		
 		return criteria.list();
@@ -35,7 +33,6 @@ public class GeopoliticalDivisionRepositoryHibernate extends HibernateRepository
 	public Collection<GeopoliticalDivision> findAllGeopoliticalDivisionRoot() throws GessoException {
 		Criteria criteria =  null;
 		criteria = getSession().createCriteria(GeopoliticalDivision.class);
-		criteria.createAlias("groupCatalog", "groupCatalogA");
 		criteria.add(Restrictions.isNull("idRoot"));
 		return criteria.list();
 	}

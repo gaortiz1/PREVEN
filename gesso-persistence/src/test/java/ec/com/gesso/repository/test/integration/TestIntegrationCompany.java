@@ -35,7 +35,6 @@ public class TestIntegrationCompany {
 		company.setName("Company");
 		company.setIdProductiveSector("MR");
 		company.setIdTypeCompany("PEQ");
-		company.setIdDivgeoPol(1l);
 		repositoryProcess.create(company);
 	}
 
