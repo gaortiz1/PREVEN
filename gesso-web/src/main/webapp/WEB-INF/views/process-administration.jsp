@@ -345,33 +345,37 @@
 										</div>
 									</div>
 
-									<div class="col-sm-4">
+									<div class="col-sm-8">
 										<div class="widget-box widget-color-green2">
 											<div class="widget-header">
-												<h4 class="widget-title lighter smaller">Browse Files</h4>
+												<h4 class="widget-title lighter smaller">Administrar procesos</h4>
 											</div>
 
 											<div class="widget-body">
 												<div class="widget-main padding-8">
 													<ul id="tree2"></ul>
 												</div>
+												
+												
+												<button class="btn btn-white btn-info btn-bold">
+													<i class="ace-icon fa fa-cogs bigger-120 blue"></i>
+													<spring:message code="page.label.new.process"/>
+												</button>
+	
+												<button class="btn btn-white btn-warning btn-bold">
+													<i class="ace-icon fa fa-cogs bigger-120 orange"></i>
+													<spring:message code="page.label.new.subprocess"/>
+												</button>
+	
+												<button class="btn btn-white btn-default btn-round">
+													<i class="ace-icon fa fa-cogs red2"></i>
+													<spring:message code="page.label.new.job"/>
+												</button>
 											</div>
 										</div>
 									</div>
 									
-									<div class="col-sm-4">
-										<div class="widget-box widget-color-green2">
-											<div class="widget-header">
-												<h4 class="widget-title lighter smaller">Browse Files</h4>
-											</div>
-
-											<div class="widget-body">
-												<div class="widget-main padding-8">
-													<ul id="tree2"></ul>
-												</div>
-											</div>
-										</div>
-									</div>
+									
 								</div>
 
 								<!-- /section:plugins/fuelux.treeview -->

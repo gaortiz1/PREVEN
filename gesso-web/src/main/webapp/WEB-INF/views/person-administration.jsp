@@ -369,7 +369,11 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.country"/></label>
 										<div class="col-sm-5">
-											<form:select path="paiscodigo" cssClass="chosen-select form-control" data-placeholder="Choose a country..." onchange="cargarCiudades(this)">
+<%-- 											<form:select path="paiscodigo" cssClass="chosen-select form-control" data-placeholder="Choose a country..." onchange="cargarCiudades(this)"> --%>
+<%-- 												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo" onclick=""/> --%>
+<%-- 											</form:select> --%>
+											
+											<form:select path="paiscodigo" cssClass="chosen-select form-control" data-placeholder="Choose a country..." >
 												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo" onclick=""/>
 											</form:select>
 										</div>
