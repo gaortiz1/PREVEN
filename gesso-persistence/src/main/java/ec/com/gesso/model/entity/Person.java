@@ -136,6 +136,15 @@ public class Person implements Serializable {
     @Column(name = "security_committee_member")
     private Boolean securityCommitteeMember;
     
+    
+    @Transient
+    private Long idProcess;
+    
+    @Transient
+    private Long idSubProcess;
+    @Transient
+    private Long idJob;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person", fetch = FetchType.LAZY)
     private Collection<CurriculumVitae> curriculumVitaeCollection;
     @JoinColumn(name = "usr_id", referencedColumnName = "usr_id", insertable = false, updatable = false)
@@ -450,6 +459,30 @@ public class Person implements Serializable {
 
 	public void setSecurityCommitteeMember(Boolean securityCommitteeMember) {
 		this.securityCommitteeMember = securityCommitteeMember;
+	}
+
+	public Long getIdProcess() {
+		return idProcess;
+	}
+
+	public void setIdProcess(Long idProcess) {
+		this.idProcess = idProcess;
+	}
+
+	public Long getIdSubProcess() {
+		return idSubProcess;
+	}
+
+	public void setIdSubProcess(Long idSubProcess) {
+		this.idSubProcess = idSubProcess;
+	}
+
+	public Long getIdJob() {
+		return idJob;
+	}
+
+	public void setIdJob(Long idJob) {
+		this.idJob = idJob;
 	}
 
 	

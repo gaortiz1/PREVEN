@@ -1,6 +1,5 @@
 package ec.com.gesso.controller.administration;
 
-import java.lang.reflect.Type;
 import java.util.Collection;
 
 import org.springframework.http.MediaType;
@@ -17,16 +16,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
 
 import ec.com.gesso.common.exception.GessoException;
+import ec.com.gesso.controller.serializer.CatalogAdapter;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.CountryDto;
 import ec.com.gesso.model.entity.Person;
+import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
+
 @Controller
 @SessionAttributes
 public class PersonAdministrationController {
@@ -57,6 +55,14 @@ public class PersonAdministrationController {
 		}
 		
 		
+		Collection<Process> lstProcess = null;
+		try {
+			lstProcess = GessoSecurityFactory.getInstance().getProcessService().findProcess();
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		
+		
 		Person person = new Person();
 		person.setStatusPerson(Boolean.TRUE);
         
@@ -64,6 +70,7 @@ public class PersonAdministrationController {
 		modelAndView.addObject("country", country);
 		modelAndView.addObject("levelVulnerability",levelVulnerability);
 		modelAndView.addObject("lstProfesion",lstProfesion);
+		modelAndView.addObject("lstProcess",lstProcess);
 		
 	        
 		return modelAndView;
@@ -105,16 +112,7 @@ public class PersonAdministrationController {
         return "redirect:person-administration";
     }
 	
-	class CatalogAdapter implements JsonSerializer<Catalog> {
-
-		@Override
-		public JsonElement serialize(Catalog arg0, Type arg1, JsonSerializationContext arg2) {
-			JsonObject jsonObject = new JsonObject();
-	        jsonObject.addProperty("catalog_id", arg0.getId());
-	        jsonObject.addProperty("catalog_name", arg0.getName());
-	        return jsonObject; 
-		}
-	}
+	
 }
 
 

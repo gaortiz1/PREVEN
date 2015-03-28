@@ -373,7 +373,7 @@
 <%-- 												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo" onclick=""/> --%>
 <%-- 											</form:select> --%>
 											
-											<form:select path="paiscodigo" cssClass="chosen-select form-control" data-placeholder="Choose a country..." >
+											<form:select path="paiscodigo" cssClass="chosen-select form-control" data-placeholder="Seleccionar nacionalidad..." >
 												<form:options items="${country}" itemLabel="paisnombrelocal" itemValue="paiscodigo" onclick=""/>
 											</form:select>
 										</div>
@@ -473,6 +473,28 @@
 									
 									
 									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right"><spring:message code="menu.label.process"/></label>
+										<div class="col-sm-5">
+											<form:select path="idProcess" cssClass="chosen-select form-control" data-placeholder="Seleccionar proceso..." onchange="cargarSubProcesos(this, event)">
+												<form:options items="${lstProcess}" itemLabel="name" itemValue="id" />
+											</form:select>
+										</div>
+									</div>
+									
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right">
+											Sub proceso
+										</label>
+										
+										<div class="col-sm-5">
+											<select id="idSubProcess" name="idSubProcess" class="chosen-select form-control job-subprocess-selector" data-placeholder="Seleccionar sub-proceso" required="required">
+												
+											</select>
+										</div>
+									</div>
+									
+									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"> Fecha ingreso al puesto </label>
 
 										<div class="col-sm-2">
@@ -509,7 +531,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right">Profesion/ocupacion</label>
 										<div class="col-sm-5">
-											<form:select path="idCodeProfesion" cssClass="chosen-select form-control" data-placeholder="Choose a prefesion...">
+											<form:select path="idCodeProfesion" cssClass="chosen-select form-control" data-placeholder="Seleccionar prefesion...">
 												<form:options items="${lstProfesion}" itemLabel="name" itemValue="id" onclick=""/>
 											</form:select>
 										</div>
@@ -1185,6 +1207,31 @@
 				});
 			
 			});
+
+			function cargarSubProcesos(element, event){
+alert('a');
+				var selectResult=0;
+				$(element).find("option:selected").each(function(indice, elemento) {
+					selectResult= $(elemento).val();
+				});
+				
+				$.ajax({
+					method: "GET",
+					url: "load-sub-process/"+selectResult,
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success:function( data, textStatus, errorThrown ){
+						$(".job-subprocess-selector").find('option').remove();
+						$.each( data, function( i, item ) {
+							$(".job-subprocess-selector").append($("<option></option>").attr("value",item.id).text(item.text)); 
+					   	});
+			          	
+		          	},
+		          	error: function( jqXhr, textStatus, errorThrown ){
+			          	alert( errorThrown );
+		          	}
+				});
+			}
 		</script>
 
 		<!-- the following scripts are used in demo only for onpage help and you don't need them -->

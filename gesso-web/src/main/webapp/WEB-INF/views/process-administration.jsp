@@ -561,7 +561,7 @@
 															</div>
 															
 															<div class="form-group">
-																<label for="form-field-first">
+																<label>
 																	<spring:message code="menu.label.process"/>
 																</label>
 																
