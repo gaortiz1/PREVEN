@@ -126,29 +126,38 @@
 							<li class="">
 								<a href="${pageContext.request.contextPath}/user-administration">
 									<i class="menu-icon fa fa-caret-right"></i>
-									User
+									<spring:message code="menu.label.user"/>
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							
+							<li class="active">
+								<a href="${pageContext.request.contextPath}/company-administration">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<spring:message code="menu.label.company"/> 
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="${pageContext.request.contextPath}/person-administration">
+									<i class="menu-icon fa fa-caret-right"></i>
+									<spring:message code="menu.label.person"/>
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 							
 							<li class="">
-								<a href="${pageContext.request.contextPath}/company-administration">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Company 
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="active">
-								<a href="${pageContext.request.contextPath}/person-administration">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Person
-								</a>
-
-								<b class="arrow"></b>
-							</li>
+					            <a href="${pageContext.request.contextPath}/process-administration">
+					              <i class="menu-icon fa fa-caret-right"></i>
+					              <spring:message code="menu.label.process"/>
+					            </a>
+					
+					            <b class="arrow"></b>
+					          </li>
 						</ul>
 					</li>
 
@@ -458,8 +467,8 @@
 					<!-- #section:basics/footer -->
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
+							<span class="blue bolder">Gesso</span>
+							Application &copy; 2015
 						</span>
 
 						&nbsp; &nbsp;

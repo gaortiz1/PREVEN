@@ -46,4 +46,10 @@ public class ProcessServiceImpl implements IProcessService{
 	public void persisNewJob(Job job) throws GessoException {
 		processRepository.persisNewJob(job);
 	}
+
+	@Override
+	public Collection<Job> findJobs(Long idSubProcess) throws GessoException {
+		// TODO Auto-generated method stub
+		return processRepository.findJobs(idSubProcess);
+	}
 }

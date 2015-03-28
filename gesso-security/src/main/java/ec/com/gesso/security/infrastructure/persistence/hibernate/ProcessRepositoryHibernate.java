@@ -36,7 +36,8 @@ public class ProcessRepositoryHibernate extends HibernateRepository implements I
 		return lst;
 	}
 	
-	private Collection<Job> findJobs(Long idSubProcess){
+	@Override
+	public Collection<Job> findJobs(Long idSubProcess){
 		Criteria criteria =  null;
 		criteria =  getSession().createCriteria(Job.class);
 		criteria.add(Restrictions.eq("idSubProcess", idSubProcess));

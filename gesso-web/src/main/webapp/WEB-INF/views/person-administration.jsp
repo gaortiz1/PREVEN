@@ -445,7 +445,9 @@
 									
 
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right">Phone</label>
+										<label class="col-sm-3 control-label no-padding-right">
+											<spring:message code="page.label.phone"/>
+										</label>
 
 										<div class="col-sm-9">
 											<!-- #section:elements.form.input-icon -->
@@ -466,7 +468,7 @@
 										<label class="col-sm-3 control-label no-padding-right">Email</label>
 
 										<div class="col-sm-9">
-											<form:input path="personalEmail" data-rel="tooltip" placeholder="Tooltip on hover" title="Email principal" data-placement="bottom"/>
+											<form:input path="personalEmail" data-rel="tooltip" placeholder="ejemplo@gmail.com" title="Email principal" data-placement="bottom"/>
 											<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="Este sera el mail al cual se notificaran las novedades" title="Email principal">?</span>
 										</div>
 									</div>
@@ -482,13 +484,29 @@
 									</div>
 									
 									
+									
+									
+									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right">
 											Sub proceso
 										</label>
 										
 										<div class="col-sm-5">
-											<select id="idSubProcess" name="idSubProcess" class="chosen-select form-control job-subprocess-selector" data-placeholder="Seleccionar sub-proceso" >
+											<select id="idJob" name="idJob" class="form-control person-subprocess-selector" data-placeholder="Seleccionar sub-proceso" onchange="cargarTrabajos(this, event)">
+												
+											</select>
+										</div>
+									</div>
+									
+									
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right">
+											Trabajo
+										</label>
+										
+										<div class="col-sm-5">
+											<select id="idSubProcess" name="idSubProcess" class="form-control person-jobs-selector" data-placeholder="Seleccionar sub-proceso" >
 												
 											</select>
 										</div>
@@ -510,7 +528,9 @@
 									
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right">Formacion</label>
+										<label class="col-sm-3 control-label no-padding-right">
+											<spring:message code="page.label.formacion"/>
+										</label>
 										<div class="col-sm-2">
 											<div class="radio">
 													<label>
@@ -634,10 +654,7 @@
 
 								<div class="hr hr-18 dotted hr-double"></div>
 
-								<h4 class="pink">
-									<i class="ace-icon fa fa-hand-o-right green"></i>
-									<a href="#modal-form" role="button" class="blue" data-toggle="modal"> Form Inside a Modal Box </a>
-								</h4>
+								
 
 								<div class="hr hr-18 dotted hr-double"></div>
 
@@ -718,8 +735,8 @@
 					<!-- #section:basics/footer -->
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
+							<span class="blue bolder">Gesso</span>
+							Application &copy; 2015
 						</span>
 
 						&nbsp; &nbsp;
@@ -1208,8 +1225,8 @@
 			
 			});
 
-			function cargarSubProcesos(element, event){
-alert('a');
+
+			function cargarTrabajos(element, event){
 				var selectResult=0;
 				$(element).find("option:selected").each(function(indice, elemento) {
 					selectResult= $(elemento).val();
@@ -1217,13 +1234,42 @@ alert('a');
 				
 				$.ajax({
 					method: "GET",
-					url: "load-sub-process/"+selectResult,
+					url: "person-load-jobs/"+selectResult,
 					contentType: "application/json; charset=utf-8",
 					dataType: "json",
 					success:function( data, textStatus, errorThrown ){
-						$(".job-subprocess-selector").find('option').remove();
+						$(".person-jobs-selector").find('option').remove();
 						$.each( data, function( i, item ) {
-							$(".job-subprocess-selector").append($("<option></option>").attr("value",item.id).text(item.text)); 
+							
+							$(".person-jobs-selector").append($("<option></option>").attr("value",item.id).text(item.text));
+							 
+					   	});
+			          	
+		          	},
+		          	error: function( jqXhr, textStatus, errorThrown ){
+			          	alert( errorThrown );
+		          	}
+				});
+			}
+			
+			function cargarSubProcesos(element, event){
+
+				var selectResult=0;
+				$(element).find("option:selected").each(function(indice, elemento) {
+					selectResult= $(elemento).val();
+				});
+				
+				$.ajax({
+					method: "GET",
+					url: "person-load-sub-process/"+selectResult,
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success:function( data, textStatus, errorThrown ){
+						$(".person-subprocess-selector").find('option').remove();
+						$.each( data, function( i, item ) {
+							
+							$(".person-subprocess-selector").append($("<option></option>").attr("value",item.id).text(item.text));
+							 
 					   	});
 			          	
 		          	},

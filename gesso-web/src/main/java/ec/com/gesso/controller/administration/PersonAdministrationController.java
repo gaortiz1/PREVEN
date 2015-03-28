@@ -19,10 +19,14 @@ import com.google.gson.GsonBuilder;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.controller.serializer.CatalogAdapter;
+import ec.com.gesso.controller.serializer.JobAdapter;
+import ec.com.gesso.controller.serializer.SubProcessAdapter;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.CountryDto;
+import ec.com.gesso.model.entity.Job;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.Process;
+import ec.com.gesso.model.entity.SubProcess;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 @Controller
@@ -109,6 +113,44 @@ public class PersonAdministrationController {
     	
         return "redirect:person-administration";
     }
+	
+	@RequestMapping(value = "/person-load-sub-process/{idProcess}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+    public String loadSubProcess(@PathVariable Long idProcess, Model model) {
+		
+		Collection<SubProcess> levelVulnerability = null;
+		try {
+			levelVulnerability = GessoSecurityFactory.getInstance().getProcessService().findSubProcess(idProcess);
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		
+		GsonBuilder gsonBuilder = new GsonBuilder();
+	    Gson gson = gsonBuilder.registerTypeAdapter(SubProcess.class, new SubProcessAdapter()).create();
+	    
+	    String valor = gson.toJson(levelVulnerability); 
+    	return valor;
+    }
+	
+	
+	@RequestMapping(value = "/person-load-jobs/{idSubProcess}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+    public String loadJobs(@PathVariable Long idSubProcess, Model model) {
+		
+		Collection<Job> levelVulnerability = null;
+		try {
+			levelVulnerability = GessoSecurityFactory.getInstance().getProcessService().findJobs(idSubProcess);
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		
+		GsonBuilder gsonBuilder = new GsonBuilder();
+	    Gson gson = gsonBuilder.registerTypeAdapter(Job.class, new JobAdapter()).create();
+	    
+	    String valor = gson.toJson(levelVulnerability); 
+    	return valor;
+    }
+	
 	
 	
 }

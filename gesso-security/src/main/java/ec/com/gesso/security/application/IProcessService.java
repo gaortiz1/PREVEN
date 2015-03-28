@@ -19,6 +19,7 @@ public interface IProcessService {
 	 */
 	public Collection<Process> findProcess() throws GessoException;
 	public Collection<SubProcess> findSubProcess(Long idProcess) throws GessoException;
+	public Collection<Job> findJobs(Long idSubProcess) throws GessoException;
 	
 	public void persisNewProcess(Process process) throws GessoException;
 	public void persisNewSubProcess(SubProcess subProcess) throws GessoException;
