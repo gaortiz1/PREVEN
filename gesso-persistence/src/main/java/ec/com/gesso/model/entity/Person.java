@@ -32,6 +32,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 /**
  *
  * @author roberto
+ * pruebas
  */
 @SuppressWarnings("serial")
 @Entity
