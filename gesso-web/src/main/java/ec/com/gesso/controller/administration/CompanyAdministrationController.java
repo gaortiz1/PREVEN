@@ -16,6 +16,7 @@ import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.CompanyModel;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.Company;
+import ec.com.gesso.model.entity.GeopoliticalDivision;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 @Controller
@@ -45,11 +46,18 @@ public class CompanyAdministrationController {
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
+		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = null;
+		try {
+			collectionGeopoliticalDivisions = GessoSecurityFactory.getInstance().getGeopoloticalDivisionService().findAllGeopoliticalDivisionRoot();
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
 		
 		final ModelAndView modelAndView = new ModelAndView("company-administration", "command", new CompanyModel());
 		modelAndView.addObject("typesCompanies", typesCompanies);
 		modelAndView.addObject("worksHours", worksHours);
 		modelAndView.addObject("productivesSector", productivesSector);
+		modelAndView.addObject("collectionGeopoliticalDivisions", collectionGeopoliticalDivisions);
 		return modelAndView;
 	}
 	
@@ -62,6 +70,7 @@ public class CompanyAdministrationController {
     				.addDocument("RUC", companyModel.getRuc())
     				.addActivityEconomic(companyModel.getActividadComercialPrincipal())
     				.addActivityEconomic(companyModel.getActividadComercialSecuandaria())
+    				.addGeopolDivision(companyModel.getIdGeoPolDiv())
     				.addTypeCompany(companyModel.getTypesCompanies())
     				.addProductiveSector(companyModel.getTypeProductiveSector())
     				.addAddress(companyModel.getDireccion())

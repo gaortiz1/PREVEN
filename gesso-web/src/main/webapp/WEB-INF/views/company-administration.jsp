@@ -405,6 +405,16 @@
 									</div>
 									
 									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.country"/></label>
+										<div class="col-sm-5">
+											
+											<form:select path="idGeoPolDiv" cssClass="chosen-select form-control" data-placeholder="Choose a country..." >
+												<form:options items="${collectionGeopoliticalDivisions}" itemLabel="name" itemValue="id" onclick=""/>
+											</form:select>
+										</div>
+									</div>
+									
+									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.mobil.phone" /></label>
 
 										<div class="col-sm-9">

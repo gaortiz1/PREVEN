@@ -28,6 +28,7 @@ public class CompanyModel implements Serializable {
 	private String celular;
 	private String direccion;
 	private String email;
+	private Long idGeoPolDiv;
 	
 	private String[] schedulesWork;
 
@@ -212,6 +213,20 @@ public class CompanyModel implements Serializable {
 	 */
 	public void setSchedulesWork(String[] schedulesWork) {
 		this.schedulesWork = schedulesWork;
+	}
+
+	/**
+	 * @return the idGeoPolDiv
+	 */
+	public Long getIdGeoPolDiv() {
+		return idGeoPolDiv;
+	}
+
+	/**
+	 * @param idGeoPolDiv the idGeoPolDiv to set
+	 */
+	public void setIdGeoPolDiv(Long idGeoPolDiv) {
+		this.idGeoPolDiv = idGeoPolDiv;
 	}
 	
 }

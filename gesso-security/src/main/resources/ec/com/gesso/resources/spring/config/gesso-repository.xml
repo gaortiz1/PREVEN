@@ -27,4 +27,10 @@
 			<ref bean="hibernate4AnnotatedSessionFactory"/>
 		</property>
 	</bean>
+	
+	<bean id="gesso-geopol-repository" class="ec.com.gesso.security.infrastructure.persistence.hibernate.GeopoliticalDivisionRepositoryHibernate">
+		<property name="sessionFactory">
+			<ref bean="hibernate4AnnotatedSessionFactory"/>
+		</property>
+	</bean>
 </beans>

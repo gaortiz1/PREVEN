@@ -48,3 +48,8 @@ increment 1
 start 1
 cycle;
 
+create sequence seq_id_div_geo_pol
+increment 1
+start 1
+cycle;
+
