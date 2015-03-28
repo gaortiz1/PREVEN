@@ -41,9 +41,13 @@ public class UserAdministrationController {
 	@RequestMapping(value = "/user-administration-edit/{idUser}", method = RequestMethod.GET)
 	@ResponseBody
 	public String userAdministrationEdit(@PathVariable Integer idUser, Model model){
-		
-		UserDto userDto = GessoSecurityFactory.getInstance().getSecurityService().findUserById(usrId);
-		ModelAndView modelAndView = new ModelAndView();
+		UserDto userDto = null;
+		try {
+			userDto = GessoSecurityFactory.getInstance().getSecurityService().findUserById(idUser);
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		model.addAttribute("userDto", userDto);
 		
 
 		return "{message:ok}";
