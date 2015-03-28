@@ -27,7 +27,7 @@ import javax.persistence.Table;
 public class Process implements Serializable{
 	
 	/**
-	 * 
+	 * asdasd
 	 */
 	private static final long serialVersionUID = 1L;
 	
