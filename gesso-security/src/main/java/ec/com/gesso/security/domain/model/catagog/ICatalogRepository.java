@@ -13,4 +13,5 @@ public interface ICatalogRepository {
 	public Collection<Catalog> findCatalogByGroup(String idGroupCatalog) throws GessoException;
 	public Collection<Catalog> findSexCatalog() throws GessoException;
 	public Collection<Catalog> findVulnerabilityCatalog() throws GessoException;
+	public Collection<Catalog> findProfesionCatalog() throws GessoException;
 }

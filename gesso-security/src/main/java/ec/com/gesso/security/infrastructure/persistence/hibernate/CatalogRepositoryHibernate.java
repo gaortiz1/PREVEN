@@ -34,4 +34,9 @@ public class CatalogRepositoryHibernate extends HibernateRepository implements I
 		return findCatalogByGroup("NVUL");
 	}
 
+	@Override
+	public Collection<Catalog> findProfesionCatalog() throws GessoException {
+		return findCatalogByGroup("PRO");
+	}
+
 }

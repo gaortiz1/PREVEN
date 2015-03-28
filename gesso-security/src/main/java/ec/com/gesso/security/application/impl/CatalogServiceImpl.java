@@ -34,4 +34,9 @@ public class CatalogServiceImpl implements ICatalogService{
 		return catalogRepository.findVulnerabilityCatalog();
 	}
 
+	@Override
+	public Collection<Catalog> findProfesionCatalog() throws GessoException {
+		return catalogRepository.findProfesionCatalog();
+	}
+
 }

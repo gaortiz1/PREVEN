@@ -41,15 +41,8 @@ public class PersonAdministrationController {
 		try {
 			country = GessoSecurityFactory.getInstance().getLocalizationService().findCountry();
 		} catch (GessoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		Map< String, String > sex = new HashMap<String, String>();  
-		sex.put("M", "Male");
-		sex.put("F", "Female"); 
-		
 		
 		Collection<Catalog> levelVulnerability = null;
 		try {
@@ -58,12 +51,19 @@ public class PersonAdministrationController {
 			e.printStackTrace();
 		}
 		
+		Collection<Catalog> lstProfesion = null;
+		try {
+			lstProfesion = GessoSecurityFactory.getInstance().getCatalogService().findProfesionCatalog();
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		
+		
 		Person person = new Person();
 		person.setStatusPerson(Boolean.TRUE);
         
 		ModelAndView modelAndView = new ModelAndView("person-administration", "command", person);
 		modelAndView.addObject("country", country);
-		modelAndView.addObject("sex", sex);
 		modelAndView.addObject("levelVulnerability",levelVulnerability);
 	        
 		return modelAndView;

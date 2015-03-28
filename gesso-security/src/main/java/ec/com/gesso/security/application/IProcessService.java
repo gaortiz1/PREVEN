@@ -9,13 +9,22 @@ import ec.com.gesso.model.entity.SubProcess;
 
 /**
  * @author roberto
+ * pruebas friki
  *
  */
 public interface IProcessService {
+	/**
+	 * @return
+	 * @throws GessoException
+	 */
 	public Collection<Process> findProcess() throws GessoException;
 	public Collection<SubProcess> findSubProcess(Long idProcess) throws GessoException;
 	
 	public void persisNewProcess(Process process) throws GessoException;
 	public void persisNewSubProcess(SubProcess subProcess) throws GessoException;
+	/**
+	 * @param job
+	 * @throws GessoException
+	 */
 	public void persisNewJob(Job job) throws GessoException;
 }
