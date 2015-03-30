@@ -1,11 +1,12 @@
 package ec.com.gesso.repository.test.integration;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.repository.IRepositoryEntity;
-
+@Ignore
 public class TestIntegrationProcess extends AbstractPersistenceIntegration {
 	
 	private IRepositoryEntity<Process> repositoryProcess;

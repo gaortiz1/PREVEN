@@ -1,11 +1,12 @@
 package ec.com.gesso.repository.test.integration;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import ec.com.gesso.model.entity.ContactData;
 import ec.com.gesso.repository.IRepositoryEntity;
-
+@Ignore
 public class TestIntegrationContacData extends AbstractPersistenceIntegration {
 	
 	private IRepositoryEntity<ContactData> repositoryAddress;
