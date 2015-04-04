@@ -502,7 +502,7 @@
 									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right">
-											Puesto de trabajo
+											<spring:message code="page.label.job.placement"></spring:message>
 										</label>
 										
 										<div class="col-sm-5">
@@ -513,7 +513,9 @@
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right"> Fecha ingreso al puesto </label>
+										<label class="col-sm-3 control-label no-padding-right"> 
+											<spring:message code="page.label.date.placement.start"></spring:message>
+										</label>
 
 										<div class="col-sm-2">
 											<div class="input-group">
@@ -549,7 +551,9 @@
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right">Profesion/ocupacion</label>
+										<label class="col-sm-3 control-label no-padding-right">
+											<spring:message code="page.label.profession.occupation"></spring:message>
+										</label>
 										<div class="col-sm-5">
 											<form:select path="idCodeProfesion" cssClass="chosen-select form-control" data-placeholder="Seleccionar prefesion...">
 												<form:options items="${lstProfesion}" itemLabel="name" itemValue="id" onclick=""/>
@@ -558,14 +562,18 @@
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" >Deatallar actividades de trabajo</label>
+										<label class="col-sm-3 control-label no-padding-right" >
+											<spring:message code="page.label.deatail.work.activities"></spring:message>
+										</label>
 										<div class="col-sm-9">
 											<form:textarea path="workReview" cssClass="form-control limited" maxlength="250"/>
 										</div>
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" > Empresa anterior </label>
+										<label class="col-sm-3 control-label no-padding-right" >
+											<spring:message code="page.label.last.company"></spring:message> 
+										</label>
 										<div class="col-sm-9">
 											<form:input path="lastCompany" cssClass="txt-validate-empty"/>
 										</div>
@@ -584,7 +592,9 @@
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" > Descripcion breve </label>
+										<label class="col-sm-3 control-label no-padding-right" >
+											<spring:message code="page.label.brief.description"></spring:message>
+										</label>
 										<div class="col-sm-9">
 											<form:textarea path="occupationalAccidentDetail" cssClass="form-control limited" maxlength="250"/>
 										</div>
@@ -600,7 +610,9 @@
 									
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right">Trabaja en unidad de seguridad</label>
+										<label class="col-sm-3 control-label no-padding-right">
+											<spring:message code="page.label.work.security.unit"></spring:message>
+										</label>
 										
 										<div class="col-xs-3">
 											<label>
@@ -611,7 +623,9 @@
 									</div>
 									
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right">Es miebro de comite de seguridad</label>
+										<label class="col-sm-3 control-label no-padding-right">
+											<spring:message code="page.label.work.security.committee.member"></spring:message>
+										</label>
 										
 										<div class="col-xs-3">
 											<label>
