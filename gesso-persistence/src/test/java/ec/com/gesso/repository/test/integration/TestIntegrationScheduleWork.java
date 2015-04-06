@@ -8,7 +8,7 @@ import ec.com.gesso.model.entity.ScheduleWork;
 import ec.com.gesso.model.entity.ScheduleWorkPK;
 import ec.com.gesso.repository.IRepositoryEntity;
 @Ignore
-public class TestIntegrationScheduleWork extends AbstractPersistenceIntegration {
+public class TestIntegrationScheduleWork extends AbstractRepositoryIntegration {
 
 	private IRepositoryEntity<ScheduleWork> repositoryProcess;
 

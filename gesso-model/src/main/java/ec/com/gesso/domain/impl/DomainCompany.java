@@ -6,6 +6,7 @@ package ec.com.gesso.domain.impl;
 import java.util.Collection;
 
 import ec.com.gesso.domain.IDomainEntity;
+import ec.com.gesso.domain.validator.impl.ValidatorCompany;
 import ec.com.gesso.model.entity.ActivityEconomicCompany;
 import ec.com.gesso.model.entity.Company;
 import ec.com.gesso.model.entity.ContactData;
@@ -30,6 +31,9 @@ public class DomainCompany implements IDomainEntity<Company> {
 	 * @see ec.com.gesso.domain.IDomainEntity#create(java.io.Serializable)
 	 */
 	public Company create(final Company company) {
+		
+		ValidatorCompany validatorCompany = new ValidatorCompany();
+		validatorCompany.validate(company);
 		
 		this.repositoryCompany.create(company);
 		

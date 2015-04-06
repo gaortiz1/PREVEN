@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="repositoryWrapper" class="ec.com.gesso.repository.impl.RepositoryWrapper">
+	<bean id="repositoryWrapper" class="ec.com.gesso.repository.impl.RepositoryWrapperHibernate">
 		<constructor-arg index="0">
 			<ref bean="hibernate4AnnotatedSessionFactory" />
 		</constructor-arg>

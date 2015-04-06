@@ -8,7 +8,7 @@ import ec.com.gesso.model.entity.Company;
 import ec.com.gesso.repository.IRepositoryEntity;
 
 @Ignore
-public class TestIntegrationCompany extends AbstractPersistenceIntegration {
+public class TestIntegrationCompany extends AbstractRepositoryIntegration {
 
 	private IRepositoryEntity<Company> repositoryProcess;
 

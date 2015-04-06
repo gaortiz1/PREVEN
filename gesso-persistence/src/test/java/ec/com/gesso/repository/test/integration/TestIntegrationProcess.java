@@ -7,7 +7,7 @@ import org.junit.Test;
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.repository.IRepositoryEntity;
 @Ignore
-public class TestIntegrationProcess extends AbstractPersistenceIntegration {
+public class TestIntegrationProcess extends AbstractRepositoryIntegration {
 	
 	private IRepositoryEntity<Process> repositoryProcess;
 

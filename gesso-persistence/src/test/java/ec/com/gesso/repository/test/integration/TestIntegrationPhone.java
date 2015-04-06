@@ -7,7 +7,7 @@ import org.junit.Test;
 import ec.com.gesso.model.entity.Phone;
 import ec.com.gesso.repository.IRepositoryEntity;
 @Ignore
-public class TestIntegrationPhone extends AbstractPersistenceIntegration {
+public class TestIntegrationPhone extends AbstractRepositoryIntegration {
 	
 	private IRepositoryEntity<Phone> repositoryPhone;
 

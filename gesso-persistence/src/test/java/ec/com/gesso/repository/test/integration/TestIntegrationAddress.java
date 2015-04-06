@@ -8,7 +8,7 @@ import ec.com.gesso.model.entity.Address;
 import ec.com.gesso.repository.IRepositoryEntity;
 
 @Ignore
-public class TestIntegrationAddress extends AbstractPersistenceIntegration {
+public class TestIntegrationAddress extends AbstractRepositoryIntegration {
 	
 	private IRepositoryEntity<Address> repositoryAddress;
 

@@ -7,7 +7,7 @@ package ec.com.gesso.repository.exception;
  * @author Gabriel
  *
  */
-public class ValidationEntity extends RuntimeException{
+public class ValidationEntity extends GessoRepositoryException{
 	
 	/**
 	 * 
