@@ -8,33 +8,37 @@ import ec.com.gesso.model.entity.Address;
 import ec.com.gesso.model.entity.ContactData;
 import ec.com.gesso.model.entity.Email;
 import ec.com.gesso.model.entity.Phone;
-import ec.com.gesso.repository.IRepositoryEntity;
 import ec.com.gesso.repository.exception.ValidationEntity;
 
 /**
  * @author Gabriel
  *
  */
-public class DomainContactData implements IDomainEntity<ContactData> {
+public class DomainContactData extends BaseDomainEntity<ContactData> {
 	
-	private IRepositoryEntity<ContactData> repositoryContactData;
-	private IRepositoryEntity<Email> repositoryEmail;
-	private IRepositoryEntity<Address> repositoryAddress;
-	private IRepositoryEntity<Phone> repositoryPhone;
+	private IDomainEntity<Email> domainEmail;
+	private IDomainEntity<Address> domainAddress;
+	private IDomainEntity<Phone> domainPhone;
 
-	public ContactData create(ContactData contactData) {
+	public ContactData create(final ContactData contactData) {
+		
+		if (null == contactData) {
+			throw new ValidationEntity("No se puede insert un valor null");
+		}
 		
 		if(contactData.getIdPerson() == null && contactData.getIdCompany() == null){
 			throw new ValidationEntity("El dato de contaco debe tener a una persona o una empresa");
 		}
 		
-		this.repositoryContactData.create(contactData);
+		contactData.setState(Boolean.TRUE);
+		
+		this.repositoryEntity.create(contactData);
 		
 		if(contactData.getCollectionEmails() != null){
 			
 			for (final Email email : contactData.getCollectionEmails()){
 				email.setIdContactData(contactData.getId());
-				this.repositoryEmail.create(email);
+				this.domainEmail.create(email);
 			}
 			
 		}
@@ -43,7 +47,7 @@ public class DomainContactData implements IDomainEntity<ContactData> {
 			
 			for (final Address address : contactData.getCollectionAddress()){
 				address.setIdContactData(contactData.getId());
-				this.repositoryAddress.create(address);
+				this.domainAddress.create(address);
 			}
 		}
 		
@@ -51,7 +55,7 @@ public class DomainContactData implements IDomainEntity<ContactData> {
 			
 			for (final Phone phone: contactData.getCollectionPhones()) {
 				phone.setIdContactData(contactData.getId());
-				this.repositoryPhone.create(phone);
+				this.domainPhone.create(phone);
 			}
 		}
 		
@@ -59,30 +63,23 @@ public class DomainContactData implements IDomainEntity<ContactData> {
 	}
 
 	/**
-	 * @param repositoryContactData the repositoryContactData to set
+	 * @param domainEmail the domainEmail to set
 	 */
-	public void setRepositoryContactData(IRepositoryEntity<ContactData> repositoryContactData) {
-		this.repositoryContactData = repositoryContactData;
+	public final void setDomainEmail(final IDomainEntity<Email> domainEmail) {
+		this.domainEmail = domainEmail;
 	}
 
 	/**
-	 * @param repositoryEmail the repositoryEmail to set
+	 * @param domainAddress the domainAddress to set
 	 */
-	public void setRepositoryEmail(IRepositoryEntity<Email> repositoryEmail) {
-		this.repositoryEmail = repositoryEmail;
+	public final void setDomainAddress(final IDomainEntity<Address> domainAddress) {
+		this.domainAddress = domainAddress;
 	}
 
 	/**
-	 * @param repositoryAddress the repositoryAddress to set
+	 * @param domainPhone the domainPhone to set
 	 */
-	public void setRepositoryAddress(IRepositoryEntity<Address> repositoryAddress) {
-		this.repositoryAddress = repositoryAddress;
-	}
-
-	/**
-	 * @param repositoryPhone the repositoryPhone to set
-	 */
-	public void setRepositoryPhone(IRepositoryEntity<Phone> repositoryPhone) {
-		this.repositoryPhone = repositoryPhone;
+	public final void setDomainPhone(final IDomainEntity<Phone> domainPhone) {
+		this.domainPhone = domainPhone;
 	}
 }

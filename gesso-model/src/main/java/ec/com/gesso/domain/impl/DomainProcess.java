@@ -6,20 +6,32 @@ package ec.com.gesso.domain.impl;
 import ec.com.gesso.domain.IDomainEntity;
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.model.entity.SubProcess;
-import ec.com.gesso.repository.IRepositoryEntity;
+import ec.com.gesso.repository.exception.ValidationEntity;
 
 /**
  * @author Gabriel
  *
  */
-public class DomainProcess implements IDomainEntity<Process> {
+public class DomainProcess extends BaseDomainEntity<Process> {
 	
-	private IRepositoryEntity<Process> repositoryProcess;
 	private IDomainEntity<SubProcess> domainSubProcess;
 
-	public Process create(Process process) {
+	public Process create(final Process process) {
 		
-		this.repositoryProcess.create(process);
+		if(null == process) {
+			throw new ValidationEntity("No se puede insert un valor null");
+		}
+		if(null == process.getName()) {
+			throw new ValidationEntity("El campo name es null");
+		}
+		
+		if(null == process.getDescription()) {
+			throw new ValidationEntity("El campo Description es null");
+		}
+		
+		process.setStatus(Boolean.TRUE);
+		
+		this.repositoryEntity.create(process);
 		
 		if(process.getSubLevels() != null && !process.getSubLevels().isEmpty()) {
 			
@@ -41,16 +53,9 @@ public class DomainProcess implements IDomainEntity<Process> {
 	}
 
 	/**
-	 * @param repositoryProcess the repositoryProcess to set
-	 */
-	public void setRepositoryProcess(IRepositoryEntity<Process> repositoryProcess) {
-		this.repositoryProcess = repositoryProcess;
-	}
-
-	/**
 	 * @param domainSubProcess the domainSubProcess to set
 	 */
-	public void setDomainSubProcess(IDomainEntity<SubProcess> domainSubProcess) {
+	public void setDomainSubProcess(final IDomainEntity<SubProcess> domainSubProcess) {
 		this.domainSubProcess = domainSubProcess;
 	}
 

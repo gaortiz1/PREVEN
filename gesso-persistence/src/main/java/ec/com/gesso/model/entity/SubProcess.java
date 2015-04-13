@@ -54,7 +54,7 @@ public class SubProcess implements Serializable{
 	private String description;
 	
 	@Column(name = "STATUS_SUBPROCESS")
-	private Boolean status; 
+	private Boolean state; 
 	
 	@JoinColumn(name = "ID_SUBPROCESS_ROOT", referencedColumnName = "ID_SUBPROCESS_ROOT", insertable=false, updatable=false)
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -143,17 +143,17 @@ public class SubProcess implements Serializable{
 	}
 
 	/**
-	 * @return the status
+	 * @return the state
 	 */
-	public Boolean getStatus() {
-		return status;
+	public Boolean getState() {
+		return state;
 	}
 
 	/**
-	 * @param status the status to set
+	 * @param state the state to set
 	 */
-	public void setStatus(Boolean status) {
-		this.status = status;
+	public void setState(Boolean state) {
+		this.state = state;
 	}
 
 	/**

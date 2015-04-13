@@ -3,67 +3,62 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<bean id="domainProcess" class="ec.com.gesso.domain.impl.DomainProcess">
-		<property name="repositoryProcess">
-			<ref bean="repositoryProcess"/>
+	<bean id="baseDomainEntity" class="ec.com.gesso.domain.impl.BaseDomainEntity" abstract="true">
+		<property name="repositoryEntity">
+			<ref bean="repositoryWrapperHibernate"/>
 		</property>
+	</bean>
+	
+	<bean id="domainActivityEconomicCompany" class="ec.com.gesso.domain.impl.DomainActivityEconomicCompany" parent="baseDomainEntity" />
+	
+	<bean id="domainAddress" class="ec.com.gesso.domain.impl.DomainAddress" parent="baseDomainEntity" />
+	
+	<bean id="domainCompany" class="ec.com.gesso.domain.impl.DomainCompany" parent="baseDomainEntity">
+		<property name="domainActivityEconomicCompany">
+			<ref bean="domainActivityEconomicCompany"/>
+		</property>
+		<property name="domainScheduleWork">
+			<ref bean="domainScheduleWork"/>
+		</property>
+		<property name="domainContactData">
+			<ref bean="domainContactData"/>
+		</property>
+		<property name="domainDocument">
+			<ref bean="domainDocument"/>
+		</property>
+	</bean>
+	
+	<bean id="domainContactData" class="ec.com.gesso.domain.impl.DomainContactData" parent="baseDomainEntity">
+		<property name="domainEmail">
+			<ref bean="domainEmail"/>
+		</property>
+		<property name="domainAddress">
+			<ref bean="domainAddress"/>
+		</property>
+		<property name="domainPhone">
+			<ref bean="domainPhone"/>
+		</property>
+	</bean>
+	
+	<bean id="domainDocument" class="ec.com.gesso.domain.impl.DomainDocument" parent="baseDomainEntity"/>
+	
+	<bean id="domainEmail" class="ec.com.gesso.domain.impl.DomainEmail" parent="baseDomainEntity"/>
+	
+	<bean id="domainJob" class="ec.com.gesso.domain.impl.DomainJob" parent="baseDomainEntity"/>
+	
+	<bean id="domainPhone" class="ec.com.gesso.domain.impl.DomainPhone" parent="baseDomainEntity"/>
+	
+	<bean id="domainProcess" class="ec.com.gesso.domain.impl.DomainProcess" parent="baseDomainEntity">
 		<property name="domainSubProcess">
 			<ref bean="domainSubProcess"/>
 		</property>
 	</bean>
 	
-	<bean id="domainSubProcess" class="ec.com.gesso.domain.impl.DomainSubProcess">
-		<property name="repositorySubProcess">
-			<ref bean="repositorySubProcess"/>
-		</property>
+	<bean id="domainScheduleWork" class="ec.com.gesso.domain.impl.DomainScheduleWork" parent="baseDomainEntity"/>
+	
+	<bean id="domainSubProcess" class="ec.com.gesso.domain.impl.DomainSubProcess" parent="baseDomainEntity">
 		<property name="domainJob">
 			<ref bean="domainJob"/>
 		</property>
 	</bean>
-	
-	<bean id="domainJob" class="ec.com.gesso.domain.impl.DomainJob">
-		<property name="repositoryJob">
-			<ref bean="repositoryJob"/>
-		</property>
-	</bean>
-	
-	<bean id="domainDocument" class="ec.com.gesso.domain.impl.DomainDocument">
-		<property name="repositoryDocument">
-			<ref bean="repositoryDocument"/>
-		</property>
-	</bean>
-	
-	<bean id="domainContactData" class="ec.com.gesso.domain.impl.DomainContactData">
-		<property name="repositoryContactData">
-			<ref bean="repositoryContactData"/>
-		</property>
-		<property name="repositoryEmail">
-			<ref bean="repositoryEmail"/>
-		</property>
-		<property name="repositoryAddress">
-			<ref bean="repositoryAddress"/>
-		</property>
-		<property name="repositoryPhone">
-			<ref bean="repositoryPhone"/>
-		</property>
-	</bean>
-	
-	<bean id="domainCompany" class="ec.com.gesso.domain.impl.DomainCompany">
-		<property name="repositoryCompany">
-			<ref bean="repositoryCompany"/>
-		</property>
-		<property name="repositoryActivityEconomicCompany">
-			<ref bean="repositoryActivityEconomicCompany"/>
-		</property>
-		<property name="domainDocument">
-			<ref bean="domainDocument"/>
-		</property>
-		<property name="repositoryScheduleWork">
-			<ref bean="repositoryScheduleWork"/>
-		</property>
-		<property name="domainContactData">
-			<ref bean="domainContactData"/>
-		</property>
-	</bean>
-	
 </beans>

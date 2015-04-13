@@ -6,23 +6,21 @@ package ec.com.gesso.domain.impl;
 import java.util.Collection;
 
 import ec.com.gesso.domain.IDomainEntity;
-import ec.com.gesso.domain.validator.impl.ValidatorCompany;
 import ec.com.gesso.model.entity.ActivityEconomicCompany;
 import ec.com.gesso.model.entity.Company;
 import ec.com.gesso.model.entity.ContactData;
 import ec.com.gesso.model.entity.Document;
 import ec.com.gesso.model.entity.ScheduleWork;
-import ec.com.gesso.repository.IRepositoryEntity;
+import ec.com.gesso.repository.exception.ValidationEntity;
 
 /**
  * @author Gabriel
  *
  */
-public class DomainCompany implements IDomainEntity<Company> {
+public class DomainCompany extends BaseDomainEntity<Company> {
 	
-	private IRepositoryEntity<Company> repositoryCompany;
-	private IRepositoryEntity<ActivityEconomicCompany> repositoryActivityEconomicCompany;
-	private IRepositoryEntity<ScheduleWork> repositoryScheduleWork;
+	private IDomainEntity<ActivityEconomicCompany> domainActivityEconomicCompany;
+	private IDomainEntity<ScheduleWork> domainScheduleWork;
 	private IDomainEntity<ContactData> domainContactData;
 	private IDomainEntity<Document> domainDocument;
 
@@ -32,10 +30,24 @@ public class DomainCompany implements IDomainEntity<Company> {
 	 */
 	public Company create(final Company company) {
 		
-		ValidatorCompany validatorCompany = new ValidatorCompany();
-		validatorCompany.validate(company);
+		if (null == company) {
+			throw new ValidationEntity("No se puede insert un valor null");
+		}
+		if (null == company.getName()) {
+			throw new ValidationEntity("El campo name es null");
+		}
 		
-		this.repositoryCompany.create(company);
+		if (null == company.getIdTypeCompany()) {
+			throw new ValidationEntity("El campo TypeCompany es null");
+		}
+		
+		if (null == company.getIdProductiveSector()) {
+			throw new ValidationEntity("El campo ProductiveSector es null");
+		}
+		
+		company.setState(Boolean.TRUE);
+		
+		this.repositoryEntity.create(company);
 		
 		this.createCollectionDocument(company.getDocumentCollection(), company.getId());
 		
@@ -65,7 +77,7 @@ public class DomainCompany implements IDomainEntity<Company> {
 					scheduleWork.getIdScheduleWork().setIdCompany(idCompany);
 				}
 				
-				this.repositoryScheduleWork.create(scheduleWork);
+				this.domainScheduleWork.create(scheduleWork);
 			}
 		}
 	}
@@ -74,7 +86,7 @@ public class DomainCompany implements IDomainEntity<Company> {
 		if(collectionActivityEconomicCompany != null) {
 			for(final ActivityEconomicCompany activityEconomicCompany : collectionActivityEconomicCompany){
 				activityEconomicCompany.setIdCompany(idCompany);
-				this.repositoryActivityEconomicCompany.create(activityEconomicCompany);	
+				this.domainActivityEconomicCompany.create(activityEconomicCompany);	
 			}
 		}
 	}
@@ -90,37 +102,30 @@ public class DomainCompany implements IDomainEntity<Company> {
 	}
 
 	/**
-	 * @param repositoryCompany the repositoryCompany to set
+	 * @param domainActivityEconomicCompany the domainActivityEconomicCompany to set
 	 */
-	public void setRepositoryCompany(IRepositoryEntity<Company> repositoryCompany) {
-		this.repositoryCompany = repositoryCompany;
+	public final void setDomainActivityEconomicCompany(final IDomainEntity<ActivityEconomicCompany> domainActivityEconomicCompany) {
+		this.domainActivityEconomicCompany = domainActivityEconomicCompany;
 	}
 
 	/**
-	 * @param repositoryActivityEconomicCompany the repositoryActivityEconomicCompany to set
+	 * @param domainScheduleWork the domainScheduleWork to set
 	 */
-	public void setRepositoryActivityEconomicCompany(IRepositoryEntity<ActivityEconomicCompany> repositoryActivityEconomicCompany) {
-		this.repositoryActivityEconomicCompany = repositoryActivityEconomicCompany;
-	}
-
-	/**
-	 * @param domainDocument the domainDocument to set
-	 */
-	public void setDomainDocument(IDomainEntity<Document> domainDocument) {
-		this.domainDocument = domainDocument;
-	}
-
-	/**
-	 * @param repositoryScheduleWork the repositoryScheduleWork to set
-	 */
-	public void setRepositoryScheduleWork(IRepositoryEntity<ScheduleWork> repositoryScheduleWork) {
-		this.repositoryScheduleWork = repositoryScheduleWork;
+	public final void setDomainScheduleWork(final IDomainEntity<ScheduleWork> domainScheduleWork) {
+		this.domainScheduleWork = domainScheduleWork;
 	}
 
 	/**
 	 * @param domainContactData the domainContactData to set
 	 */
-	public void setDomainContactData(IDomainEntity<ContactData> domainContactData) {
+	public final void setDomainContactData(final IDomainEntity<ContactData> domainContactData) {
 		this.domainContactData = domainContactData;
+	}
+
+	/**
+	 * @param domainDocument the domainDocument to set
+	 */
+	public final void setDomainDocument(final IDomainEntity<Document> domainDocument) {
+		this.domainDocument = domainDocument;
 	}
 }

@@ -20,7 +20,7 @@ public class TestRepositoryWrapperHibernate extends AbstractRepositoryIntegratio
 	
 	@Before
 	public void setUp() throws Exception {
-		this.repository = (IRepositoryEntity) applicationContext.getBean("repositoryWrapper");
+		this.repository = (IRepositoryEntity) applicationContext.getBean("repositoryWrapperHibernate");
 	}
 	
 	@Test(expected=GessoRepositoryException.class)

@@ -3,21 +3,31 @@
  */
 package ec.com.gesso.domain.impl;
 
-import ec.com.gesso.domain.IDomainEntity;
 import ec.com.gesso.model.entity.Job;
-import ec.com.gesso.repository.IRepositoryEntity;
+import ec.com.gesso.repository.exception.ValidationEntity;
 
 /**
  * @author Gabriel
  *
  */
-public class DomainJob implements IDomainEntity<Job> {
-	
-	private IRepositoryEntity<Job> repositoryJob;
+public class DomainJob extends BaseDomainEntity<Job> {
 
 	public Job create(final Job job) {
 		
-		this.repositoryJob.create(job);
+		if (null == job) {
+			throw new ValidationEntity("No se puede insert un valor null");
+		}
+		if (null == job.getName()) {
+			throw new ValidationEntity("El campo name es null");
+		}
+		
+		if (null == job.getDescription()) {
+			throw new ValidationEntity("El campo Description es null");
+		}
+		
+		job.setState(Boolean.TRUE);
+		
+		this.repositoryEntity.create(job);
 		
 		if(job.getSubLevels() != null && !job.getSubLevels().isEmpty()) {
 			
@@ -28,12 +38,4 @@ public class DomainJob implements IDomainEntity<Job> {
 		}
 		return job;
 	}
-
-	/**
-	 * @param repositoryJob the repositoryJob to set
-	 */
-	public void setRepositoryJob(IRepositoryEntity<Job> repositoryJob) {
-		this.repositoryJob = repositoryJob;
-	}
-
 }
