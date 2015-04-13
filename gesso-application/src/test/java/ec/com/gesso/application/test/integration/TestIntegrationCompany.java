@@ -12,19 +12,18 @@ public class TestIntegrationCompany extends AbstractApplicationIntegration {
 
 	private IServiceEntity<Company> serviceCompany;
 	private CompanyBuilder companyBuilder = new CompanyBuilder();
+	private Company company;
 
 	@SuppressWarnings("unchecked")
 	@Before
 	public void setUp() throws Exception {
 		this.serviceCompany = (IServiceEntity<Company>) applicationContext.getBean("serviceCompany");
-	}
-
-	@Test
-	public void testCreateCompany() {
-		final Company company = companyBuilder.createNameCompany("empresa abc")
+		company = companyBuilder.createNameCompany("empresa abc")
 				.addDocument("RUC", "1717189235001")
 				.addDocument("RUC", "1717189235001")
-				.addActivityEconomic("nada").addActivityEconomic("nada 2")
+				.addActivityEconomic("nada")
+				.addActivityEconomic("nada 2")
+				.addGeopoliticalDivision(1l)
 				.addTypeCompany("MICRO")
 				.addScheduleWork("J8")
 				.addScheduleWork("JC")
@@ -36,26 +35,15 @@ public class TestIntegrationCompany extends AbstractApplicationIntegration {
 				.addPhone("0999090909", "CEL")
 				.addPhone("123213", "TEL")
 				.build();
+	}
+
+	@Test
+	public void testCreateCompany() {
 		this.serviceCompany.create(company);
 	}
 	
 	@Test
 	public void testCreateCompanyWithFactory() {
-		final Company company = companyBuilder.createNameCompany("empresa abc")
-				.addDocument("RUC", "1717189235001")
-				.addDocument("RUC", "1717189235001")
-				.addActivityEconomic("nada").addActivityEconomic("nada 2")
-				.addTypeCompany("MICRO")
-				.addScheduleWork("J8")
-				.addScheduleWork("JC")
-				.addProductiveSector("BR")
-				.addAddress("calle abc")
-				.addAddress("calle 2")
-				.addEmail("asd")
-				.addEmail("dasdas")
-				.addPhone("0999090909", "CEL")
-				.addPhone("123213", "TEL")
-				.build();
 		GessoFactory.getInstance().getServiceCompany().create(company);
 	}
 }

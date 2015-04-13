@@ -26,6 +26,7 @@ public class CompanyBuilder {
 	private String nombreComapny;
 	private String typeCompany;
 	private String typeProductiveSector;
+	private Long idGeopoliticalDivision;
 	private Set<String> namesActivityEconomicCompany = new TreeSet<String>();
 	private Set<String> idsBusinessHour = new TreeSet<String>();
 	private Map<String, String> documents = new HashMap<String, String>();
@@ -45,6 +46,11 @@ public class CompanyBuilder {
 
 	public CompanyBuilder addTypeCompany(String typeCompany) {
 		this.typeCompany = typeCompany;
+		return this;
+	}
+	
+	public CompanyBuilder addGeopoliticalDivision(Long idGeopoliticalDivision) {
+		this.idGeopoliticalDivision = idGeopoliticalDivision;
 		return this;
 	}
 
@@ -82,7 +88,8 @@ public class CompanyBuilder {
 		final Company company = new Company();
 		company.setName(this.nombreComapny);
 		company.setIdTypeCompany(this.typeCompany);
-		company.setIdProductiveSector(typeProductiveSector);
+		company.setIdProductiveSector(this.typeProductiveSector);
+		company.setIdGeopoliticalDivision(this.idGeopoliticalDivision);
 		
 		if(!this.namesActivityEconomicCompany.isEmpty()){
 			company.setActivityEconomicCompanyCollection(new ArrayList<ActivityEconomicCompany>());

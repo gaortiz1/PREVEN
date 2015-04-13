@@ -43,6 +43,9 @@ public class Company implements Serializable {
     @Column(name = "ID_PRODUCTIVE_SECTOR")
     private String idProductiveSector;
     
+    @Column(name = "ID_GEOPOLITICAL_DIVISION")
+	private Long idGeopoliticalDivision;
+    
     @Basic(optional = false)
     @Column(name = "name_company")
     private String name;
@@ -58,6 +61,10 @@ public class Company implements Serializable {
     @JoinColumn(name = "ID_TYPE_COMPANY", referencedColumnName = "id_catalog", insertable=false, updatable=false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Catalog typeCompany;
+    
+    @JoinColumn(name = "ID_GEOPOLITICAL_DIVISION", referencedColumnName = "ID_GEOPOLITICAL_DIVISION", insertable=false, updatable=false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private GeopoliticalDivision geopoliticalDivision;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private Collection<Subcompany> subcompanyCollection;
@@ -120,6 +127,20 @@ public class Company implements Serializable {
 	}
 
 	/**
+	 * @return the idGeopoliticalDivision
+	 */
+	public Long getIdGeopoliticalDivision() {
+		return idGeopoliticalDivision;
+	}
+
+	/**
+	 * @param idGeopoliticalDivision the idGeopoliticalDivision to set
+	 */
+	public void setIdGeopoliticalDivision(Long idGeopoliticalDivision) {
+		this.idGeopoliticalDivision = idGeopoliticalDivision;
+	}
+
+	/**
 	 * @return the name
 	 */
 	public String getName() {
@@ -162,6 +183,34 @@ public class Company implements Serializable {
 	}
 
 	/**
+	 * @return the typeCompany
+	 */
+	public Catalog getTypeCompany() {
+		return typeCompany;
+	}
+
+	/**
+	 * @param typeCompany the typeCompany to set
+	 */
+	public void setTypeCompany(Catalog typeCompany) {
+		this.typeCompany = typeCompany;
+	}
+
+	/**
+	 * @return the geopoliticalDivision
+	 */
+	public GeopoliticalDivision getGeopoliticalDivision() {
+		return geopoliticalDivision;
+	}
+
+	/**
+	 * @param geopoliticalDivision the geopoliticalDivision to set
+	 */
+	public void setGeopoliticalDivision(GeopoliticalDivision geopoliticalDivision) {
+		this.geopoliticalDivision = geopoliticalDivision;
+	}
+
+	/**
 	 * @return the subcompanyCollection
 	 */
 	public Collection<Subcompany> getSubcompanyCollection() {
@@ -200,7 +249,8 @@ public class Company implements Serializable {
 	/**
 	 * @param activityEconomicCompanyCollection the activityEconomicCompanyCollection to set
 	 */
-	public void setActivityEconomicCompanyCollection(Collection<ActivityEconomicCompany> activityEconomicCompanyCollection) {
+	public void setActivityEconomicCompanyCollection(
+			Collection<ActivityEconomicCompany> activityEconomicCompanyCollection) {
 		this.activityEconomicCompanyCollection = activityEconomicCompanyCollection;
 	}
 
@@ -231,20 +281,6 @@ public class Company implements Serializable {
 	public void setScheduleWorkCollection(
 			Collection<ScheduleWork> scheduleWorkCollection) {
 		this.scheduleWorkCollection = scheduleWorkCollection;
-	}
-
-	/**
-	 * @return the typeCompany
-	 */
-	public Catalog getTypeCompany() {
-		return typeCompany;
-	}
-
-	/**
-	 * @param typeCompany the typeCompany to set
-	 */
-	public void setTypeCompany(Catalog typeCompany) {
-		this.typeCompany = typeCompany;
 	}
 
 	/**
