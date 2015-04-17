@@ -1,4 +1,4 @@
-package ec.com.gesso.controller.serializer;
+package ec.com.gesso.json.serializer;
 
 import java.lang.reflect.Type;
 
@@ -13,7 +13,7 @@ import ec.com.gesso.model.entity.Catalog;
  * @author roberto
  *
  */
-public class CatalogAdapter implements JsonSerializer<Catalog> {
+public class CatalogSerializer implements JsonSerializer<Catalog> {
 
 	@Override
 	public JsonElement serialize(Catalog arg0, Type arg1, JsonSerializationContext arg2) {

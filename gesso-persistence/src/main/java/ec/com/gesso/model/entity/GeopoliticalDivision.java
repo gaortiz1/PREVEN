@@ -48,7 +48,7 @@ public class GeopoliticalDivision implements Serializable {
 	@Column(name = "STATE_GEOPOLITICAL_DIVISION")
 	private Boolean state;
 	
-	@JoinColumn(name = "ID_ROOT_GEOPOLITICAL_DIVISION", referencedColumnName = "ID_ROOT_GEOPOLITICAL_DIVISION", insertable=false, updatable=false)
+	@JoinColumn(name = "ID_ROOT_GEOPOLITICAL_DIVISION", referencedColumnName = "ID_GEOPOLITICAL_DIVISION", insertable=false, updatable=false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
 	private GeopoliticalDivision geopoliticalDivisionRoot;
 	

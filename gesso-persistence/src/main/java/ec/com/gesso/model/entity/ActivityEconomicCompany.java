@@ -31,8 +31,8 @@ public class ActivityEconomicCompany implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "id_activity_economic")
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_id_company")
-    @SequenceGenerator(name="seq_id_company", sequenceName="seq_id_company", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_id_activity_economic")
+    @SequenceGenerator(name="seq_id_activity_economic", sequenceName="seq_id_activity_economic", allocationSize = 1)
     private Integer id;
     
     @Column(name = "id_company")

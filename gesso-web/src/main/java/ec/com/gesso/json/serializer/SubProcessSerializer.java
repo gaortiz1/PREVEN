@@ -1,4 +1,4 @@
-package ec.com.gesso.controller.serializer;
+package ec.com.gesso.json.serializer;
 
 import java.lang.reflect.Type;
 
@@ -13,7 +13,7 @@ import ec.com.gesso.model.entity.SubProcess;
  * @author roberto
  *
  */
-public class SubProcessAdapter implements JsonSerializer<SubProcess> {
+public class SubProcessSerializer implements JsonSerializer<SubProcess> {
 
 	@Override
 	public JsonElement serialize(SubProcess subProcess, Type arg1, JsonSerializationContext arg2) {
