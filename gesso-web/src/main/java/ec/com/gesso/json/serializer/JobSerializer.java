@@ -1,4 +1,4 @@
-package ec.com.gesso.controller.serializer;
+package ec.com.gesso.json.serializer;
 
 import java.lang.reflect.Type;
 
@@ -9,14 +9,13 @@ import com.google.gson.JsonSerializer;
 
 import ec.com.gesso.model.entity.Job;
 
-public class JobAdapter implements JsonSerializer<Job>{
+public class JobSerializer implements JsonSerializer<Job>{
 
 	@Override
 	public JsonElement serialize(Job src, Type typeOfSrc, JsonSerializationContext context) {
-		JsonObject processJsonObject = new JsonObject();
+		final JsonObject processJsonObject = new JsonObject();
 		processJsonObject.addProperty("id", src.getId());
         processJsonObject.addProperty("text", src.getName());
-        
         return processJsonObject; 
 	}
 

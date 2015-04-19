@@ -18,8 +18,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import ec.com.gesso.common.exception.GessoException;
-import ec.com.gesso.controller.serializer.ProcessAdapter;
-import ec.com.gesso.controller.serializer.SubProcessAdapter;
+import ec.com.gesso.json.serializer.ProcessSerializer;
+import ec.com.gesso.json.serializer.SubProcessSerializer;
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.model.entity.SubProcess;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
@@ -111,7 +111,7 @@ public class ProcessAdministration {
 		}
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
-	    Gson gson = gsonBuilder.registerTypeAdapter(Process.class, new ProcessAdapter()).create();
+	    Gson gson = gsonBuilder.registerTypeAdapter(Process.class, new ProcessSerializer()).create();
 	    String valor = gson.toJson(levelVulnerability); 
 	    System.out.println(valor);
     	return valor;
@@ -130,7 +130,7 @@ public class ProcessAdministration {
 		}
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
-	    Gson gson = gsonBuilder.registerTypeAdapter(SubProcess.class, new SubProcessAdapter()).create();
+	    Gson gson = gsonBuilder.registerTypeAdapter(SubProcess.class, new SubProcessSerializer()).create();
 	    
 	    String valor = gson.toJson(levelVulnerability); 
     	return valor;

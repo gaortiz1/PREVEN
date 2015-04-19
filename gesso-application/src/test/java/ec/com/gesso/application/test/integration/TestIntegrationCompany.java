@@ -23,7 +23,7 @@ public class TestIntegrationCompany extends AbstractApplicationIntegration {
 				.addDocument("RUC", "1717189235001")
 				.addActivityEconomic("nada")
 				.addActivityEconomic("nada 2")
-				.addGeopoliticalDivision(1l)
+				.addGeopoliticalDivision(8l)
 				.addTypeCompany("MICRO")
 				.addScheduleWork("J8")
 				.addScheduleWork("JC")

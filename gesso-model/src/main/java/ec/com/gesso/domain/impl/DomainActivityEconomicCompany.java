@@ -18,8 +18,13 @@ public class DomainActivityEconomicCompany extends BaseDomainEntity<ActivityEcon
 		if (null == activityEconomicCompany) {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}
+		
 		if (null == activityEconomicCompany.getName()) {
 			throw new ValidationEntity("El campo name es null");
+		}
+		
+		if (null == activityEconomicCompany.getIdCompany()) {
+			throw new ValidationEntity("El campo id company es null");
 		}
 		
 		if (null == activityEconomicCompany.getIdCompany()) {

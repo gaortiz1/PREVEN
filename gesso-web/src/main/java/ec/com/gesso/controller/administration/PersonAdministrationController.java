@@ -18,9 +18,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import ec.com.gesso.common.exception.GessoException;
-import ec.com.gesso.controller.serializer.CatalogAdapter;
-import ec.com.gesso.controller.serializer.JobAdapter;
-import ec.com.gesso.controller.serializer.SubProcessAdapter;
+import ec.com.gesso.json.serializer.CatalogSerializer;
+import ec.com.gesso.json.serializer.JobSerializer;
+import ec.com.gesso.json.serializer.SubProcessSerializer;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.CountryDto;
 import ec.com.gesso.model.entity.Job;
@@ -93,7 +93,7 @@ public class PersonAdministrationController {
 		}
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
-	    Gson gson = gsonBuilder.registerTypeAdapter(Catalog.class, new CatalogAdapter()).create();
+	    Gson gson = gsonBuilder.registerTypeAdapter(Catalog.class, new CatalogSerializer()).create();
 	    
     	return gson.toJson(levelVulnerability);
     }
@@ -126,7 +126,7 @@ public class PersonAdministrationController {
 		}
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
-	    Gson gson = gsonBuilder.registerTypeAdapter(SubProcess.class, new SubProcessAdapter()).create();
+	    Gson gson = gsonBuilder.registerTypeAdapter(SubProcess.class, new SubProcessSerializer()).create();
 	    
 	    String valor = gson.toJson(levelVulnerability); 
     	return valor;
@@ -145,7 +145,7 @@ public class PersonAdministrationController {
 		}
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
-	    Gson gson = gsonBuilder.registerTypeAdapter(Job.class, new JobAdapter()).create();
+	    Gson gson = gsonBuilder.registerTypeAdapter(Job.class, new JobSerializer()).create();
 	    
 	    String valor = gson.toJson(levelVulnerability); 
     	return valor;

@@ -16,7 +16,6 @@ import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.CompanyModel;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.Company;
-import ec.com.gesso.model.entity.GeopoliticalDivision;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 @Controller
