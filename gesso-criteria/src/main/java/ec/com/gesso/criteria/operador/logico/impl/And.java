@@ -5,7 +5,6 @@ package ec.com.gesso.criteria.operador.logico.impl;
 
 import javax.persistence.criteria.CriteriaBuilder;
 
-import ec.com.gesso.criteria.WrapperPredicable;
 import ec.com.gesso.criteria.operador.logico.AbstractTemplateOperadorLogico;
 
 /**
@@ -18,7 +17,7 @@ public final class And extends AbstractTemplateOperadorLogico {
 		super(criteriaBuilderWhere.conjunction());
 	}
 	
-	public static WrapperPredicable andPredicate(final CriteriaBuilder criteriaBuilderWhere) {
+	public static AbstractTemplateOperadorLogico andPredicate(final CriteriaBuilder criteriaBuilderWhere) {
         return new And(criteriaBuilderWhere);
     }
 	

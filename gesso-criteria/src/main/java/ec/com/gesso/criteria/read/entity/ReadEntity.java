@@ -14,7 +14,6 @@ import javax.persistence.metamodel.EntityType;
 
 import org.apache.commons.collections4.CollectionUtils;
 
-import ec.com.gesso.criteria.WrapperPredicable;
 import ec.com.gesso.criteria.entity.attribute.basic.AttributeOneValue;
 import ec.com.gesso.criteria.entity.attribute.decorator.AttributeJoin;
 import ec.com.gesso.criteria.entity.attribute.decorator.AttributeOperadoLogico;
@@ -22,6 +21,7 @@ import ec.com.gesso.criteria.entity.wrapper.EntityReflectWrapper;
 import ec.com.gesso.criteria.from.fetch.enumeration.FetchTypeWrapper;
 import ec.com.gesso.criteria.from.join.enumeration.JoinTypeWrapper;
 import ec.com.gesso.criteria.operador.condicion.enumeration.ComparacionEnum;
+import ec.com.gesso.criteria.operador.logico.AbstractTemplateOperadorLogico;
 import ec.com.gesso.criteria.operador.logico.impl.And;
 
 /**
@@ -96,8 +96,8 @@ public final class ReadEntity<T extends Serializable> implements ReadableEntity 
 		
 	}
 	
-	private AttributeOperadoLogico<AttributeOneValue, ComparacionEnum> buildFieldWithOneValue(String nameAttribute, Object valueAttribute, WrapperPredicable operadorLogico, ComparacionEnum condicion){
-		return new AttributeOperadoLogico<AttributeOneValue, ComparacionEnum>(new AttributeOneValue(nameAttribute, valueAttribute), operadorLogico, condicion);
+	private AttributeOperadoLogico<AttributeOneValue, ComparacionEnum> buildFieldWithOneValue(String nameAttribute, Object valueAttribute, AbstractTemplateOperadorLogico operadorLogico, ComparacionEnum condicion){
+		return new AttributeOperadoLogico<AttributeOneValue, ComparacionEnum>(new AttributeOneValue(nameAttribute, valueAttribute), operadorLogico.getPredicate(), condicion);
 		
 	}
 	

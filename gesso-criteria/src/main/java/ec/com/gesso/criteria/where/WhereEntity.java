@@ -11,8 +11,6 @@ import javax.persistence.criteria.Predicate;
 
 import org.apache.commons.collections4.CollectionUtils;
 
-import ec.com.gesso.criteria.WrapperPredicable;
-import ec.com.gesso.criteria.build.BuilderWrapperPredicable;
 import ec.com.gesso.criteria.entity.attribute.basic.AttributeMultipleValue;
 import ec.com.gesso.criteria.entity.attribute.basic.AttributeNoneValue;
 import ec.com.gesso.criteria.entity.attribute.basic.AttributeOneValue;
@@ -23,6 +21,7 @@ import ec.com.gesso.criteria.operador.condicion.enumeration.InterseccionEnum;
 import ec.com.gesso.criteria.operador.condicion.factory.impl.OperadorMultipleValueFactory;
 import ec.com.gesso.criteria.operador.condicion.factory.impl.OperadorNoneValueFactory;
 import ec.com.gesso.criteria.operador.condicion.factory.impl.OperadorOneValueFactory;
+import ec.com.gesso.criteria.operador.logico.AbstractTemplateOperadorLogico;
 import ec.com.gesso.criteria.operador.logico.impl.And;
 import ec.com.gesso.criteria.read.entity.ReadableEntity;
 
@@ -30,7 +29,7 @@ import ec.com.gesso.criteria.read.entity.ReadableEntity;
  * @author gortiz
  *
  */
-public final class WhereEntity<T extends Serializable> extends AbstractTemplateCriteria implements WrapperPredicable {
+public final class WhereEntity<T extends Serializable> extends AbstractTemplateCriteria {
 	
 	private final ReadableEntity readEntity;
 	
@@ -39,21 +38,19 @@ public final class WhereEntity<T extends Serializable> extends AbstractTemplateC
 		this.readEntity = readEntity;
 	}
 
-	public static <T extends Serializable> WrapperPredicable where(final CriteriaBuilder criteriaBuilderWhere, final Path<?> pathField, final ReadableEntity readEntity) {
+	public static <T extends Serializable> WhereEntity where(final CriteriaBuilder criteriaBuilderWhere, final Path<?> pathField, final ReadableEntity readEntity) {
 		return new WhereEntity<T>(criteriaBuilderWhere, pathField, readEntity);
 	}
 
 	public Predicate getPredicate() {
 		
-		BuilderWrapperPredicable builderOperadorLogico = null;
-		
 		if (CollectionUtils.isNotEmpty(readEntity.getBasicFields())){
 			
-			Predicate predicateField = null;
-			
-			builderOperadorLogico = new BuilderWrapperPredicable(And.andPredicate(criteriaBuilderWhere));
+			AbstractTemplateOperadorLogico wrapperPredicable = And.andPredicate(criteriaBuilderWhere);
 			
 			for (final AttributeOperadoLogico<?, ?> attributeOperadoLogico : readEntity.getBasicFields()) {
+				
+				Predicate predicateField = null;
 				
 				if (attributeOperadoLogico.getAttribute() instanceof AttributeOneValue) {
 					
@@ -77,11 +74,13 @@ public final class WhereEntity<T extends Serializable> extends AbstractTemplateC
 							.getPredicate((AttributeNoneValue) attributeOperadoLogico.getAttribute());
 				}
 				
-				builderOperadorLogico.addCondicion(predicateField);
+				wrapperPredicable.getPredicate().getExpressions().add(predicateField);
 			}
+			
+			return wrapperPredicable.getPredicate();
 		}
 		
-		return builderOperadorLogico != null ? builderOperadorLogico.getPredicate() : null;
+		return null;
 	}
 	
 }
