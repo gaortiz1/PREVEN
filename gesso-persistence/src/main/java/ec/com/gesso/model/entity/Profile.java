@@ -24,7 +24,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "seg_profile")
 
-public class ProfileDto implements Serializable {
+public class Profile implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -37,16 +37,16 @@ public class ProfileDto implements Serializable {
     @Column(name = "status")
     private boolean status;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "segProfile", fetch = FetchType.LAZY)
-    private Collection<UserProfileDto> segUserProfileCollection;
+    private Collection<UserProfile> segUserProfileCollection;
 
-    public ProfileDto() {
+    public Profile() {
     }
 
-    public ProfileDto(Integer prfId) {
+    public Profile(Integer prfId) {
         this.prfId = prfId;
     }
 
-    public ProfileDto(Integer prfId, String prfName, boolean status) {
+    public Profile(Integer prfId, String prfName, boolean status) {
         this.prfId = prfId;
         this.prfName = prfName;
         this.status = status;
@@ -76,11 +76,11 @@ public class ProfileDto implements Serializable {
         this.status = status;
     }
 
-    public Collection<UserProfileDto> getSegUserProfileCollection() {
+    public Collection<UserProfile> getSegUserProfileCollection() {
         return segUserProfileCollection;
     }
 
-    public void setSegUserProfileCollection(Collection<UserProfileDto> segUserProfileCollection) {
+    public void setSegUserProfileCollection(Collection<UserProfile> segUserProfileCollection) {
         this.segUserProfileCollection = segUserProfileCollection;
     }
 }

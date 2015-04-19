@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
-import ec.com.gesso.model.entity.UserDto;
+import ec.com.gesso.model.entity.User;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 @Controller
@@ -26,7 +26,7 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute("contact")Person contact, BindingResult result, HttpSession session) {
     	
-    	UserDto userDto = null;
+    	User userDto = null;
 		try {
 			userDto = GessoSecurityFactory.getInstance().getSecurityService().autenticateUser(contact.getUserDto().getUsrNickName(), contact.getUserDto().getUsrPassword());
 		} catch (GessoException e) {

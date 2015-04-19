@@ -26,7 +26,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "seg_user_profile")
 
-public class UserProfileDto implements Serializable {
+public class UserProfile implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected UserProfilePK segUserProfilePK;
@@ -37,28 +37,28 @@ public class UserProfileDto implements Serializable {
     @Column(name = "upr_status")
     private boolean uprStatus;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "segUserProfile", fetch = FetchType.LAZY)
-    private Collection<UserProfileOptionDto> segUserProfileOptionCollection;
+    private Collection<UserProfileOption> segUserProfileOptionCollection;
     @JoinColumn(name = "usr_id", referencedColumnName = "usr_id", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private UserDto userDto;
+    private User userDto;
     @JoinColumn(name = "prf_id", referencedColumnName = "prf_id", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private ProfileDto segProfile;
+    private Profile segProfile;
 
-    public UserProfileDto() {
+    public UserProfile() {
     }
 
-    public UserProfileDto(UserProfilePK segUserProfilePK) {
+    public UserProfile(UserProfilePK segUserProfilePK) {
         this.segUserProfilePK = segUserProfilePK;
     }
 
-    public UserProfileDto(UserProfilePK segUserProfilePK, long idCompany, boolean uprStatus) {
+    public UserProfile(UserProfilePK segUserProfilePK, long idCompany, boolean uprStatus) {
         this.segUserProfilePK = segUserProfilePK;
         this.idCompany = idCompany;
         this.uprStatus = uprStatus;
     }
 
-    public UserProfileDto(int prfId, int usrId) {
+    public UserProfile(int prfId, int usrId) {
         this.segUserProfilePK = new UserProfilePK(prfId, usrId);
     }
 
@@ -86,27 +86,27 @@ public class UserProfileDto implements Serializable {
         this.uprStatus = uprStatus;
     }
 
-    public Collection<UserProfileOptionDto> getSegUserProfileOptionCollection() {
+    public Collection<UserProfileOption> getSegUserProfileOptionCollection() {
         return segUserProfileOptionCollection;
     }
 
-    public void setSegUserProfileOptionCollection(Collection<UserProfileOptionDto> segUserProfileOptionCollection) {
+    public void setSegUserProfileOptionCollection(Collection<UserProfileOption> segUserProfileOptionCollection) {
         this.segUserProfileOptionCollection = segUserProfileOptionCollection;
     }
 
-    public UserDto getUserDto() {
+    public User getUserDto() {
 		return userDto;
 	}
 
-	public void setUserDto(UserDto userDto) {
+	public void setUserDto(User userDto) {
 		this.userDto = userDto;
 	}
 
-	public ProfileDto getSegProfile() {
+	public Profile getSegProfile() {
         return segProfile;
     }
 
-    public void setSegProfile(ProfileDto segProfile) {
+    public void setSegProfile(Profile segProfile) {
         this.segProfile = segProfile;
     }
 }

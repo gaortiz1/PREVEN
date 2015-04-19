@@ -26,7 +26,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "seg_option")
 
-public class OptionDto implements Serializable {
+public class Option implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -36,19 +36,19 @@ public class OptionDto implements Serializable {
     @Column(name = "opt_name")
     private String optName;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "segOption", fetch = FetchType.LAZY)
-    private Collection<UserProfileOptionDto> segUserProfileOptionCollection;
+    private Collection<UserProfileOption> segUserProfileOptionCollection;
     @JoinColumn(name = "men_id", referencedColumnName = "men_id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private MenuDto segMenu;
+    private Menu segMenu;
 
-    public OptionDto() {
+    public Option() {
     }
 
-    public OptionDto(Integer optId) {
+    public Option(Integer optId) {
         this.optId = optId;
     }
 
-    public OptionDto(Integer optId, String optName) {
+    public Option(Integer optId, String optName) {
         this.optId = optId;
         this.optName = optName;
     }
@@ -69,19 +69,19 @@ public class OptionDto implements Serializable {
         this.optName = optName;
     }
 
-    public Collection<UserProfileOptionDto> getSegUserProfileOptionCollection() {
+    public Collection<UserProfileOption> getSegUserProfileOptionCollection() {
         return segUserProfileOptionCollection;
     }
 
-    public void setSegUserProfileOptionCollection(Collection<UserProfileOptionDto> segUserProfileOptionCollection) {
+    public void setSegUserProfileOptionCollection(Collection<UserProfileOption> segUserProfileOptionCollection) {
         this.segUserProfileOptionCollection = segUserProfileOptionCollection;
     }
 
-    public MenuDto getSegMenu() {
+    public Menu getSegMenu() {
         return segMenu;
     }
 
-    public void setSegMenu(MenuDto segMenu) {
+    public void setSegMenu(Menu segMenu) {
         this.segMenu = segMenu;
     }
 }

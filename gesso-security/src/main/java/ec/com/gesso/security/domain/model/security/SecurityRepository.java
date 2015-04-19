@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
-import ec.com.gesso.model.entity.UserDto;
+import ec.com.gesso.model.entity.User;
 
 /**
  * @author roberto
@@ -12,10 +12,10 @@ import ec.com.gesso.model.entity.UserDto;
  */
 public interface SecurityRepository {
 	
-	public UserDto autenticateUser(String username, String password) throws GessoException;
+	public User autenticateUser(String username, String password) throws GessoException;
 	public void persistNewUser(Person person) throws GessoException;
-	public void persistUser(UserDto userDto) throws GessoException;
-	public Collection<UserDto> findAllUsers() throws GessoException;
+	public void persistUser(User userDto) throws GessoException;
+	public Collection<User> findAllUsers() throws GessoException;
 	public void persistPerson(Person person) throws GessoException;
-	public UserDto findUserById(Integer usrId) throws GessoException;
+	public User findUserById(Integer usrId) throws GessoException;
 }

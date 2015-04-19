@@ -24,7 +24,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "seg_system")
 
-public class SystemDto implements Serializable {
+public class System implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -37,16 +37,16 @@ public class SystemDto implements Serializable {
     @Column(name = "sys_status")
     private boolean sysStatus;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "segSystem", fetch = FetchType.LAZY)
-    private Collection<MenuDto> segMenuCollection;
+    private Collection<Menu> segMenuCollection;
 
-    public SystemDto() {
+    public System() {
     }
 
-    public SystemDto(Integer sysId) {
+    public System(Integer sysId) {
         this.sysId = sysId;
     }
 
-    public SystemDto(Integer sysId, String sysName, boolean sysStatus) {
+    public System(Integer sysId, String sysName, boolean sysStatus) {
         this.sysId = sysId;
         this.sysName = sysName;
         this.sysStatus = sysStatus;
@@ -76,11 +76,11 @@ public class SystemDto implements Serializable {
         this.sysStatus = sysStatus;
     }
 
-    public Collection<MenuDto> getSegMenuCollection() {
+    public Collection<Menu> getSegMenuCollection() {
         return segMenuCollection;
     }
 
-    public void setSegMenuCollection(Collection<MenuDto> segMenuCollection) {
+    public void setSegMenuCollection(Collection<Menu> segMenuCollection) {
         this.segMenuCollection = segMenuCollection;
     }
 }

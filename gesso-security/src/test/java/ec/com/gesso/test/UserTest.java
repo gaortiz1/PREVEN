@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
-import ec.com.gesso.model.entity.UserDto;
+import ec.com.gesso.model.entity.User;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 public class UserTest {
@@ -26,7 +26,7 @@ public class UserTest {
 		Person person = new Person("prueba", "prueba", new Date(), true);
 		person.setIdSexCatalog("M");
 		
-		person.setUserDto(new UserDto("pruebas", "qwe123"));
+		person.setUserDto(new User("pruebas", "qwe123"));
 		
 		try {
 			GessoSecurityFactory.getInstance().getSecurityService().persistNewUser(person);

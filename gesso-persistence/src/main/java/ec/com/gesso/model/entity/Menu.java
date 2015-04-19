@@ -26,7 +26,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "seg_menu")
 
-public class MenuDto implements Serializable {
+public class Menu implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -40,18 +40,18 @@ public class MenuDto implements Serializable {
     private boolean menStatus;
     @JoinColumn(name = "sys_id", referencedColumnName = "sys_id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private SystemDto segSystem;
+    private System segSystem;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "segMenu", fetch = FetchType.LAZY)
-    private Collection<OptionDto> segOptionCollection;
+    private Collection<Option> segOptionCollection;
 
-    public MenuDto() {
+    public Menu() {
     }
 
-    public MenuDto(Integer menId) {
+    public Menu(Integer menId) {
         this.menId = menId;
     }
 
-    public MenuDto(Integer menId, String menName, boolean menStatus) {
+    public Menu(Integer menId, String menName, boolean menStatus) {
         this.menId = menId;
         this.menName = menName;
         this.menStatus = menStatus;
@@ -81,19 +81,19 @@ public class MenuDto implements Serializable {
         this.menStatus = menStatus;
     }
 
-    public SystemDto getSegSystem() {
+    public System getSegSystem() {
         return segSystem;
     }
 
-    public void setSegSystem(SystemDto segSystem) {
+    public void setSegSystem(System segSystem) {
         this.segSystem = segSystem;
     }
 
-    public Collection<OptionDto> getSegOptionCollection() {
+    public Collection<Option> getSegOptionCollection() {
         return segOptionCollection;
     }
 
-    public void setSegOptionCollection(Collection<OptionDto> segOptionCollection) {
+    public void setSegOptionCollection(Collection<Option> segOptionCollection) {
         this.segOptionCollection = segOptionCollection;
     }
 }

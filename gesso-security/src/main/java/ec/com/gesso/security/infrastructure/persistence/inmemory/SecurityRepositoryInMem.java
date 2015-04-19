@@ -5,7 +5,7 @@ import java.util.Map;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
-import ec.com.gesso.model.entity.UserDto;
+import ec.com.gesso.model.entity.User;
 import ec.com.gesso.security.domain.model.handling.HandlingEventRepository;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
 
@@ -18,7 +18,7 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 	private Map<String, Object> securityDb;
 	private HandlingEventRepository handlingEventRepository;
 	  
-	public UserDto autenticateUser(String username, String password) {
+	public User autenticateUser(String username, String password) {
 		return null;
 	}
 
@@ -28,7 +28,7 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 	}
 
 //	@Override
-	public Collection<UserDto> findAllUsers() {
+	public Collection<User> findAllUsers() {
 		return null;
 	}
 	
@@ -37,13 +37,13 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 	}
 
 	@Override
-	public void persistUser(UserDto userDto) throws GessoException {
+	public void persistUser(User userDto) throws GessoException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public UserDto findUserById(Integer usrId) throws GessoException {
+	public User findUserById(Integer usrId) throws GessoException {
 		// TODO Auto-generated method stub
 		return null;
 	}

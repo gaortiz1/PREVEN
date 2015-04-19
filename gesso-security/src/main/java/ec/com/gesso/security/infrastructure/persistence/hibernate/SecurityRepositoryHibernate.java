@@ -8,21 +8,21 @@ import org.hibernate.criterion.Restrictions;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
-import ec.com.gesso.model.entity.UserDto;
+import ec.com.gesso.model.entity.User;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
 
 public class SecurityRepositoryHibernate extends HibernateRepository implements SecurityRepository{
 
-	public UserDto autenticateUser(String userName, String userPassword) throws GessoException{
+	public User autenticateUser(String userName, String userPassword) throws GessoException{
 
 		Criteria criteria =  null;
 		
-		criteria =  getSession().createCriteria(UserDto.class);
+		criteria =  getSession().createCriteria(User.class);
 		
 		criteria.add(Restrictions.eq("usrNickName", userName));
 		criteria.add(Restrictions.eq("usrPassword", userPassword));
 		
-		UserDto userDto = (UserDto) criteria.uniqueResult();
+		User userDto = (User) criteria.uniqueResult();
 		
 		return userDto;
 	}
@@ -41,9 +41,9 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 	}
 
 //	@Override
-	public Collection<UserDto> findAllUsers() throws GessoException{
+	public Collection<User> findAllUsers() throws GessoException{
 		Criteria criteria =  null;
-		criteria = getSession().createCriteria(UserDto.class);
+		criteria = getSession().createCriteria(User.class);
 		criteria.createAlias("person", "personA");
 		criteria.setFetchMode("personA", FetchMode.JOIN);
 		
@@ -56,20 +56,20 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 	}
 
 	@Override
-	public void persistUser(UserDto userDto) throws GessoException {
+	public void persistUser(User userDto) throws GessoException {
 		getSession().persist(userDto);
 		getSession().flush();
 	}
 
 	@Override
-	public UserDto findUserById(Integer usrId) throws GessoException {
+	public User findUserById(Integer usrId) throws GessoException {
 		Criteria criteria =  null;
 		
-		criteria =  getSession().createCriteria(UserDto.class);
+		criteria =  getSession().createCriteria(User.class);
 		
 		criteria.add(Restrictions.eq("usrId", usrId));
 		
-		UserDto userDto = (UserDto) criteria.uniqueResult();
+		User userDto = (User) criteria.uniqueResult();
 		return userDto;
 	}
 

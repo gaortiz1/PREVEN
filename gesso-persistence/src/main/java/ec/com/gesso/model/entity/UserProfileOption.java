@@ -24,7 +24,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "seg_user_profile_option")
 
-public class UserProfileOptionDto implements Serializable {
+public class UserProfileOption implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected UserProfileOptionPK segUserProfileOptionPK;
@@ -35,24 +35,24 @@ public class UserProfileOptionDto implements Serializable {
         @JoinColumn(name = "prf_id", referencedColumnName = "prf_id", insertable = false, updatable = false),
         @JoinColumn(name = "usr_id", referencedColumnName = "usr_id", insertable = false, updatable = false)})
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private UserProfileDto segUserProfile;
+    private UserProfile segUserProfile;
     @JoinColumn(name = "opt_id", referencedColumnName = "opt_id", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private OptionDto segOption;
+    private Option segOption;
 
-    public UserProfileOptionDto() {
+    public UserProfileOption() {
     }
 
-    public UserProfileOptionDto(UserProfileOptionPK segUserProfileOptionPK) {
+    public UserProfileOption(UserProfileOptionPK segUserProfileOptionPK) {
         this.segUserProfileOptionPK = segUserProfileOptionPK;
     }
 
-    public UserProfileOptionDto(UserProfileOptionPK segUserProfileOptionPK, boolean upoStatus) {
+    public UserProfileOption(UserProfileOptionPK segUserProfileOptionPK, boolean upoStatus) {
         this.segUserProfileOptionPK = segUserProfileOptionPK;
         this.upoStatus = upoStatus;
     }
 
-    public UserProfileOptionDto(int optId, int prfId, int usrId) {
+    public UserProfileOption(int optId, int prfId, int usrId) {
         this.segUserProfileOptionPK = new UserProfileOptionPK(optId, prfId, usrId);
     }
 
@@ -72,19 +72,19 @@ public class UserProfileOptionDto implements Serializable {
         this.upoStatus = upoStatus;
     }
 
-    public UserProfileDto getSegUserProfile() {
+    public UserProfile getSegUserProfile() {
         return segUserProfile;
     }
 
-    public void setSegUserProfile(UserProfileDto segUserProfile) {
+    public void setSegUserProfile(UserProfile segUserProfile) {
         this.segUserProfile = segUserProfile;
     }
 
-    public OptionDto getSegOption() {
+    public Option getSegOption() {
         return segOption;
     }
 
-    public void setSegOption(OptionDto segOption) {
+    public void setSegOption(Option segOption) {
         this.segOption = segOption;
     }
     

@@ -26,7 +26,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
@@ -147,7 +146,7 @@ public class Person implements Serializable {
     private Collection<CurriculumVitae> curriculumVitaeCollection;
     @JoinColumn(name = "usr_id", referencedColumnName = "usr_id", insertable = false, updatable = false)
     @OneToOne(fetch = FetchType.LAZY)
-    private UserDto userDto;
+    private User userDto;
     @JoinColumn(name = "id_catalog", referencedColumnName = "id_catalog", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Catalog sexCatalogDto;
@@ -268,11 +267,11 @@ public class Person implements Serializable {
         this.curriculumVitaeCollection = curriculumVitaeCollection;
     }
 
-    public UserDto getUserDto() {
+    public User getUserDto() {
 		return userDto;
 	}
 
-	public void setUserDto(UserDto userDto) {
+	public void setUserDto(User userDto) {
 		this.userDto = userDto;
 	}
 

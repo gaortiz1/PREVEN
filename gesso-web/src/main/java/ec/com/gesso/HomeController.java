@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ec.com.gesso.model.entity.Person;
-import ec.com.gesso.model.entity.UserDto;
+import ec.com.gesso.model.entity.User;
 
 /**
  * Handles requests for the application home page.
@@ -28,7 +28,7 @@ public class HomeController {
 		logger.info("Welcome home! The client locale is {}.", locale);
 
 		Person person = new Person();
-		person.setUserDto(new UserDto());
+		person.setUserDto(new User());
 		model.addAttribute("command", person );
 
 		return "login";

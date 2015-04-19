@@ -27,7 +27,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "seg_user")
-public class UserDto implements Serializable {
+public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -42,26 +42,26 @@ public class UserDto implements Serializable {
     @Column(name = "usr_password")
     private String usrPassword;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userDto", fetch = FetchType.LAZY)
-    private Collection<UserProfileDto> segUserProfileCollection;
+    private Collection<UserProfile> segUserProfileCollection;
 
     @OneToOne(mappedBy = "userDto", fetch = FetchType.LAZY)
 //    @Transient
     private Person person;
     
-    public UserDto() {
+    public User() {
     }
 
-    public UserDto(Integer usrId) {
+    public User(Integer usrId) {
         this.usrId = usrId;
     }
 
-    public UserDto(Integer usrId, String usrNickName, String usrPassword) {
+    public User(Integer usrId, String usrNickName, String usrPassword) {
         this.usrId = usrId;
         this.usrNickName = usrNickName;
         this.usrPassword = usrPassword;
     }
     
-    public UserDto(String usrNickName, String usrPassword) {
+    public User(String usrNickName, String usrPassword) {
         this.usrNickName = usrNickName;
         this.usrPassword = usrPassword;
     }
@@ -90,11 +90,11 @@ public class UserDto implements Serializable {
         this.usrPassword = usrPassword;
     }
 
-    public Collection<UserProfileDto> getSegUserProfileCollection() {
+    public Collection<UserProfile> getSegUserProfileCollection() {
         return segUserProfileCollection;
     }
 
-    public void setSegUserProfileCollection(Collection<UserProfileDto> segUserProfileCollection) {
+    public void setSegUserProfileCollection(Collection<UserProfile> segUserProfileCollection) {
         this.segUserProfileCollection = segUserProfileCollection;
     }
 

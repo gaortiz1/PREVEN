@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
-import ec.com.gesso.model.entity.UserDto;
+import ec.com.gesso.model.entity.User;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 
@@ -24,7 +24,7 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
 public class UserAdministrationController {
 	@RequestMapping(value = "/user-administration", method = RequestMethod.GET)
 	public void userAdministration(Model model){
-		Collection<UserDto> lstCollection = null;
+		Collection<User> lstCollection = null;
 		try {
 			lstCollection = GessoSecurityFactory.getInstance().getSecurityService().findAllUsers();
 		} catch (GessoException e) {
@@ -41,7 +41,7 @@ public class UserAdministrationController {
 	@RequestMapping(value = "/user-administration-edit/{idUser}", method = RequestMethod.GET)
 	@ResponseBody
 	public String userAdministrationEdit(@PathVariable Integer idUser, Model model){
-		UserDto userDto = null;
+		User userDto = null;
 		try {
 			userDto = GessoSecurityFactory.getInstance().getSecurityService().findUserById(idUser);
 		} catch (GessoException e) {
@@ -54,7 +54,7 @@ public class UserAdministrationController {
 //		return new ModelAndView("user-administration", "command", lstCollection);
 	}
 	@RequestMapping(value = "/user-administration-edit", method = RequestMethod.POST)
-    public String userAdministration(@ModelAttribute("contact")UserDto userDto, BindingResult result) {
+    public String userAdministration(@ModelAttribute("contact")User userDto, BindingResult result) {
     	
     	
 		try {
@@ -69,7 +69,7 @@ public class UserAdministrationController {
 	@RequestMapping(value = "/user-administration", method = RequestMethod.POST)
     public String userAdministration(@ModelAttribute("contact")Person contact, BindingResult result) {
     	
-    	Collection<UserDto> lstCollection = null;
+    	Collection<User> lstCollection = null;
 		try {
 			lstCollection = GessoSecurityFactory.getInstance().getSecurityService().findAllUsers();
 		} catch (GessoException e) {

@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
-import ec.com.gesso.model.entity.UserDto;
+import ec.com.gesso.model.entity.User;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 @Controller
@@ -22,7 +22,7 @@ public class SignUpController {
 	public ModelAndView signUp() {
 		
 		Person person = new Person();
-		person.setUserDto(new UserDto());
+		person.setUserDto(new User());
 		
 		return new ModelAndView("home", "command", person);
 	}

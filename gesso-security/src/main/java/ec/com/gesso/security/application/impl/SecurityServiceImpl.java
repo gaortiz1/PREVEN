@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
-import ec.com.gesso.model.entity.UserDto;
+import ec.com.gesso.model.entity.User;
 import ec.com.gesso.security.application.ISecurityService;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
 
@@ -21,7 +21,7 @@ public class SecurityServiceImpl implements ISecurityService{
 	}
 	
 	@Override
-	public UserDto autenticateUser(String userName, String userPassword) throws GessoException{
+	public User autenticateUser(String userName, String userPassword) throws GessoException{
 		return securityRepository.autenticateUser(userName, userPassword);
 	}
 
@@ -31,7 +31,7 @@ public class SecurityServiceImpl implements ISecurityService{
 	}
 
 	@Override
-	public Collection<UserDto> findAllUsers() throws GessoException{
+	public Collection<User> findAllUsers() throws GessoException{
 		return securityRepository.findAllUsers();
 	}
 	
@@ -41,12 +41,12 @@ public class SecurityServiceImpl implements ISecurityService{
 	}
 
 	@Override
-	public void persistUser(UserDto userDto) throws GessoException {
+	public void persistUser(User userDto) throws GessoException {
 		securityRepository.persistUser(userDto);
 	}
 
 	@Override
-	public UserDto findUserById(Integer usrId) throws GessoException {
+	public User findUserById(Integer usrId) throws GessoException {
 		return securityRepository.findUserById(usrId);
 	}
 
