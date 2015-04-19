@@ -6,6 +6,7 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/persistence/resources/spring/config/gesso-persistencia.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/persistence/resources/spring/config/gesso-criteria.xml</file>
         </fileset>
       </configuration>
     </facet>
