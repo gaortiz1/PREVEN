@@ -50,6 +50,12 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.5.RELEASE" />
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.3.1" />
+          <element id="archive" name="gesso-application-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="gesso-application" />
+          </element>
+          <element id="archive" name="gesso-model-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="gesso-model" />
+          </element>
         </element>
       </element>
       <element id="directory" name="META-INF">
