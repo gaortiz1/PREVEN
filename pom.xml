@@ -13,6 +13,7 @@
 		<module>gesso-model</module>
 		<module>gesso-persistence</module>
 		<module>gesso-application</module>
+		<module>gesso-criteria</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
