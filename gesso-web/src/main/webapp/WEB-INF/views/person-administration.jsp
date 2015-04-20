@@ -1258,8 +1258,10 @@
 							$(".person-jobs-selector").append($("<option></option>").attr("value",item.id).text(item.text));
 							 
 					   	});
-			          	
-		          	},
+						$(".person-subprocess-selector").trigger("chosen:updated");
+						$(".person-jobs-selector").chosen();
+
+					},
 		          	error: function( jqXhr, textStatus, errorThrown ){
 			          	alert( errorThrown );
 		          	}
@@ -1285,7 +1287,8 @@
 							$(".person-subprocess-selector").append($("<option></option>").attr("value",item.id).text(item.text));
 							 
 					   	});
-			          	
+						$(".person-subprocess-selector").trigger("chosen:updated");
+						$(".person-subprocess-selector").chosen();
 		          	},
 		          	error: function( jqXhr, textStatus, errorThrown ){
 			          	alert( errorThrown );

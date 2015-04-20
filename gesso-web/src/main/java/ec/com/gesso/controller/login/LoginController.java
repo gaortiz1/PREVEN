@@ -2,12 +2,11 @@ package ec.com.gesso.controller.login;
 
 import javax.servlet.http.HttpSession;
 
+import ec.com.gesso.application.dto.UserDto;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import ec.com.gesso.common.exception.GessoException;
@@ -18,11 +17,35 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
 @Controller
 @SessionAttributes()
 public class LoginController {
+	private String password;
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(){
 		return new ModelAndView("login", "command", new Person());
 	}
-	
+
+
+	@RequestMapping(value="/springcontent",
+			method=RequestMethod.GET,produces={"application/xml", "application/json"})
+	@ResponseStatus(HttpStatus.OK)
+	public @ResponseBody
+	UserDto getUser() {
+		UserDto userDetails = new UserDto();
+		userDetails.setNickName("Praveen");
+		userDetails.setPassword(password);
+		return userDetails;
+	}
+
+	@RequestMapping(value = "/savecompany_json", method = RequestMethod.POST)
+	public  @ResponseBody String login_JSON( @RequestBody UserDto userDto )   {
+		//
+		// Code processing the input parameters
+		//
+		System.out.println(userDto);
+		return "JSON: The company name: " + userDto.getNickName() + ", Employees count: " + userDto.getPassword() + ", Headoffice: " + userDto.getNickName();
+	}
+
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute("contact")Person contact, BindingResult result, HttpSession session) {
     	
