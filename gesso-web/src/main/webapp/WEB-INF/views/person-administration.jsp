@@ -384,8 +384,8 @@
 
 										<div class="col-sm-2">
 											<div class="input-group">
-												<form:input path="dateOfBirth" type="date" class="form-control date-picker txt-validate-empty"/>
-												
+												<form:input path="dateOfBirth" class="form-control date-picker txt-validate-empty"/>
+
 												<span class="input-group-addon">
 													<i class="fa fa-calendar bigger-110"></i>
 												</span>
@@ -519,7 +519,7 @@
 
 										<div class="col-sm-2">
 											<div class="input-group">
-												<form:input path="dateJobStart" type="date" class="form-control date-picker txt-validate-empty"/>
+												<form:input path="dateJobStart" class="form-control date-picker txt-validate-empty"/>
 												
 												<span class="input-group-addon">
 													<i class="fa fa-calendar bigger-110"></i>
@@ -881,14 +881,6 @@
 							 $this.next().css({'width': $this.parent().width()});
 						})
 					});
-			
-			
-					$('#chosen-multiple-style .btn').on('click', function(e){
-						var target = $(this).find('input[type=radio]');
-						var which = parseInt(target.val());
-						if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
-						 else $('#form-field-select-4').removeClass('tag-input-style');
-					});
 				}
 			
 			
@@ -1026,16 +1018,7 @@
 					//console.log($(this).data('ace_input_method'));
 				});
 				
-				
-				//$('#id-input-file-3')
-				//.ace_file_input('show_file_list', [
-					//{type: 'image', name: 'name of image', path: 'http://path/to/image/for/preview'},
-					//{type: 'file', name: 'hello.txt'}
-				//]);
-			
-				
-				
-			
+
 				//dynamically change allowed formats by changing allowExt && allowMime function
 				$('#id-file-format').removeAttr('checked').on('change', function() {
 					var whitelist_ext, whitelist_mime;
@@ -1106,99 +1089,29 @@
 					//alert($('#spinner1').val())
 				}); 
 				$('#spinner2').ace_spinner({value:0,min:0,max:10000,step:100, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up bigger-110', icon_down:'ace-icon fa fa-caret-down bigger-110'});
-				$('#spinner3').ace_spinner({value:0,min:-100,max:100,step:10, on_sides: true, icon_up:'ace-icon fa fa-plus bigger-110', icon_down:'ace-icon fa fa-minus bigger-110', btn_up_class:'btn-success' , btn_down_class:'btn-danger'});
-				$('#spinner4').ace_spinner({value:0,min:-100,max:100,step:10, on_sides: true, icon_up:'ace-icon fa fa-plus', icon_down:'ace-icon fa fa-minus', btn_up_class:'btn-purple' , btn_down_class:'btn-purple'});
-			
-				//$('#spinner1').ace_spinner('disable').ace_spinner('value', 11);
-				//or
-				//$('#spinner1').closest('.ace-spinner').spinner('disable').spinner('enable').spinner('value', 11);//disable, enable or change value
-				//$('#spinner1').closest('.ace-spinner').spinner('value', 0);//reset to 0
-			
+
+
 			
 				//datepicker plugin
 				//link
 				$('.date-picker').datepicker({
 					autoclose: true,
 					todayHighlight: true
-				})
-				//show datepicker when clicking on the icon
-				.next().on(ace.click_event, function(){
-					$(this).prev().focus();
-				});
-			
-				//or change it into a date range picker
-				$('.input-daterange').datepicker({autoclose:true});
-			
-			
-				//to translate the daterange picker, please copy the "examples/daterange-fr.js" contents here before initialization
-				$('input[name=date-range-picker]').daterangepicker({
-					'applyClass' : 'btn-sm btn-success',
-					'cancelClass' : 'btn-sm btn-default',
-					locale: {
-						applyLabel: 'Apply',
-						cancelLabel: 'Cancel',
-					}
-				})
-				.prev().on(ace.click_event, function(){
-					$(this).next().focus();
-				});
-			
-			
-				$('#timepicker1').timepicker({
-					minuteStep: 1,
-					showSeconds: true,
-					showMeridian: false
 				}).next().on(ace.click_event, function(){
 					$(this).prev().focus();
 				});
-				
-				$('#date-timepicker1').datetimepicker().next().on(ace.click_event, function(){
+
+
+				$('.fechauno').datepicker({
+					autoclose: true
+				}).next().on(ace.click_event, function(){
 					$(this).prev().focus();
 				});
-				
-			
-				$('#colorpicker1').colorpicker();
-			
-				$('#simple-colorpicker-1').ace_colorpicker();
-				//$('#simple-colorpicker-1').ace_colorpicker('pick', 2);//select 2nd color
-				//$('#simple-colorpicker-1').ace_colorpicker('pick', '#fbe983');//select #fbe983 color
-				//var picker = $('#simple-colorpicker-1').data('ace_colorpicker')
-				//picker.pick('red', true);//insert the color if it doesn't exist
-			
+				//show datepicker when clicking on the icon
+
 			
 				$(".knob").knob();
-				
-				
-				var tag_input = $('#form-field-tags');
-				try{
-					tag_input.tag(
-					  {
-						placeholder:tag_input.attr('placeholder'),
-						//enable typeahead by specifying the source array
-						source: ace.vars['US_STATES'],//defined in ace.js >> ace.enable_search_ahead
-						/**
-						//or fetch data from database, fetch those that match "query"
-						source: function(query, process) {
-						  $.ajax({url: 'remote_source.php?q='+encodeURIComponent(query)})
-						  .done(function(result_items){
-							process(result_items);
-						  });
-						}
-						*/
-					  }
-					)
-			
-					//programmatically add a new
-					var $tag_obj = $('#form-field-tags').data('tag');
-					$tag_obj.add('Programmatically Added');
-				}
-				catch(e) {
-					//display a textarea for old IE, because it doesn't support this plugin or another one I tried!
-					tag_input.after('<textarea id="'+tag_input.attr('id')+'" name="'+tag_input.attr('name')+'" rows="3">'+tag_input.val()+'</textarea>').remove();
-					//$('#form-field-tags').autosize({append: "\n"});
-				}
-				
-				
+
 				/////////
 				$('#modal-form input[type=file]').ace_file_input({
 					style:'well',
