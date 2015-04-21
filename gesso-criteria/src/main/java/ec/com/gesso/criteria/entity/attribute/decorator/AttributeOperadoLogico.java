@@ -3,7 +3,8 @@
  */
 package ec.com.gesso.criteria.entity.attribute.decorator;
 
-import ec.com.gesso.criteria.WrapperPredicable;
+import javax.persistence.criteria.Predicate;
+
 import ec.com.gesso.criteria.entity.attribute.AbstractAttribute;
 import ec.com.gesso.criteria.operador.condicion.enumeration.EnumCondicion;
 
@@ -13,10 +14,10 @@ import ec.com.gesso.criteria.operador.condicion.enumeration.EnumCondicion;
  */
 public class AttributeOperadoLogico<T extends AbstractAttribute, E extends EnumCondicion> extends AbstractAttributeDecorator<T> {
 	
-	private final WrapperPredicable operadorLogico;
+	private final Predicate operadorLogico;
 	private final E comparacionEnum;
 
-	public AttributeOperadoLogico(T field, WrapperPredicable operadorLogico, E comparacionEnum) {
+	public AttributeOperadoLogico(T field, Predicate operadorLogico, E comparacionEnum) {
 		super(field);
 		this.operadorLogico = operadorLogico;
 		this.comparacionEnum = comparacionEnum;
@@ -25,7 +26,7 @@ public class AttributeOperadoLogico<T extends AbstractAttribute, E extends EnumC
 	/**
 	 * @return the operadorLogico
 	 */
-	public WrapperPredicable getOperadorLogico() {
+	public Predicate getOperadorLogico() {
 		return operadorLogico;
 	}
 

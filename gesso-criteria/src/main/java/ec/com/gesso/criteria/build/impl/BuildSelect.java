@@ -52,7 +52,7 @@ public class BuildSelect implements BuildableSelect {
 
 			final EntityType<?> entityType = rootEntity.getModel();
 			
-			final Predicate where = SelectEntity.select(criteriaBuilder, entityManager.getMetamodel()).getWhere(entity, rootEntity, entityType).getPredicate();
+			final Predicate where = SelectEntity.select(criteriaBuilder, entityManager.getMetamodel()).getWhere(entity, rootEntity, entityType);
 
 			if (where != null) {
 				criteriaSelect.where(where);

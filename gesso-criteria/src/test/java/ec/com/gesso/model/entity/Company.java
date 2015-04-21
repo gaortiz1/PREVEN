@@ -77,13 +77,6 @@ public class Company implements Serializable {
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private Collection<Document> documentCollection;
-    
-    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Collection<ScheduleWork> scheduleWorkCollection;
-    
-    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Collection<ContactData> contactDataCollection;
-
 	/**
 	 * @return the id
 	 */
@@ -266,35 +259,5 @@ public class Company implements Serializable {
 	 */
 	public void setDocumentCollection(Collection<Document> documentCollection) {
 		this.documentCollection = documentCollection;
-	}
-
-	/**
-	 * @return the scheduleWorkCollection
-	 */
-	public Collection<ScheduleWork> getScheduleWorkCollection() {
-		return scheduleWorkCollection;
-	}
-
-	/**
-	 * @param scheduleWorkCollection the scheduleWorkCollection to set
-	 */
-	public void setScheduleWorkCollection(
-			Collection<ScheduleWork> scheduleWorkCollection) {
-		this.scheduleWorkCollection = scheduleWorkCollection;
-	}
-
-	/**
-	 * @return the contactDataCollection
-	 */
-	public Collection<ContactData> getContactDataCollection() {
-		return contactDataCollection;
-	}
-
-	/**
-	 * @param contactDataCollection the contactDataCollection to set
-	 */
-	public void setContactDataCollection(
-			Collection<ContactData> contactDataCollection) {
-		this.contactDataCollection = contactDataCollection;
 	}
 }

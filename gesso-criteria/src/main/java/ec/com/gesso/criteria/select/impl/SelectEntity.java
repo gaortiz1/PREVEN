@@ -9,13 +9,12 @@ import java.util.Set;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.From;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.metamodel.EntityType;
 import javax.persistence.metamodel.Metamodel;
 
 import org.apache.commons.collections4.CollectionUtils;
 
-import ec.com.gesso.criteria.WrapperPredicable;
-import ec.com.gesso.criteria.build.BuilderWrapperPredicable;
 import ec.com.gesso.criteria.entity.attribute.basic.AttributeOneValue;
 import ec.com.gesso.criteria.entity.attribute.decorator.AttributeJoin;
 import ec.com.gesso.criteria.from.fetch.impl.FetchEntityLazy;
@@ -45,13 +44,13 @@ public final class SelectEntity implements Select {
 
 
 	@SuppressWarnings("unchecked")
-	public <T extends Serializable> WrapperPredicable getWhere(final T entity, final From<?, ?> from, final EntityType<?> entityType) {
+	public <T extends Serializable> Predicate getWhere(final T entity, final From<?, ?> from, final EntityType<?> entityType) {
 		
-		BuilderWrapperPredicable builderWhere = null;
 		ReadableEntity readEntity = null;
 		
 		readEntity = ReadEntity.read(entityType, entity, criteriaBuilder);
-		builderWhere = new BuilderWrapperPredicable(WhereEntity.where(criteriaBuilder, from, readEntity));;
+		
+		Predicate whereEntity = WhereEntity.where(criteriaBuilder, from, readEntity).getPredicate();
 		
 		final Set<AttributeJoin<?>> fieldsWithObject = readEntity.getBeanFields();
 		
@@ -75,21 +74,37 @@ public final class SelectEntity implements Select {
 						final Collection<?> collection = (Collection<?>) attributeOneValue.getValue();
 						
 						if (CollectionUtils.isNotEmpty(collection)) {
-							entityTypeJoin = buildEntityType(collection.iterator().next());
+							entityJoin = (T) collection.iterator().next();
+							entityTypeJoin = buildEntityType(entityJoin);
 						}
 						
 					} else {
-						entityTypeJoin = buildEntityType(attributeOneValue.getValue());
+						entityJoin = (T)attributeOneValue.getValue();
+						entityTypeJoin = buildEntityType(entityJoin);
 					}
 					
-					builderWhere.addCondicion(this.getWhere(entityJoin, join, entityTypeJoin));
+					final Predicate whereJoin = this.getWhere(entityJoin, join, entityTypeJoin);
+					
+					if (whereEntity != null) {
+						
+						if(whereJoin != null){
+							whereEntity.getExpressions().add(whereJoin);
+						}
+							
+					} else {
+						
+						if(whereJoin != null){
+							whereEntity = whereJoin;
+						}
+						
+					}
 					
 				}
 			}
 			
 		}
 		
-		return builderWhere;
+		return whereEntity;
 	}
 	
 	
