@@ -483,11 +483,7 @@
 											</form:select>
 										</div>
 									</div>
-									
-									
-									
-									
-									
+
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right">
 											Sub proceso
