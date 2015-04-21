@@ -899,9 +899,7 @@
 				$('.input-mask-phone').mask('(999) 999-9999');
 				$('.input-mask-eyescript').mask('~9.99 ~9.99 999');
 				$(".input-mask-product").mask("a*-999-a999",{placeholder:" ",completed:function(){alert("You typed the following: "+this.val());}});
-			
-			
-			
+
 				$( "#input-size-slider" ).css('width','200px').slider({
 					value:1,
 					range: "min",
@@ -1089,7 +1087,6 @@
 				.on('changed.fu.spinbox', function(){
 					//alert($('#spinner1').val())
 				}); 
-				$('#spinner2').ace_spinner({value:0,min:0,max:10000,step:100, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up bigger-110', icon_down:'ace-icon fa fa-caret-down bigger-110'});
 
 
 			
@@ -1142,9 +1139,9 @@
 					$(this).find('.modal-chosen').chosen();
 				})
 				*/
-			
-				
-				
+
+
+
 				$(document).one('ajaxloadstart.page', function(e) {
 					$('textarea[class*=autosize]').trigger('autosize.destroy');
 					$('.limiterBox,.autosizejs').remove();
@@ -1202,7 +1199,6 @@
 					   	});
 						$(".person-jobs-selector").trigger("chosen:updated");
 						$(".person-jobs-selector").chosen();
-
 					},
 		          	error: function( jqXhr, textStatus, errorThrown ){
 			          	alert( errorThrown );
