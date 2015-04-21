@@ -478,6 +478,7 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="menu.label.process"/></label>
 										<div class="col-sm-5">
 											<form:select path="idProcess" cssClass="chosen-select form-control" data-placeholder="Seleccionar proceso..." onchange="cargarSubProcesos(this, event)">
+												<option >Seleccione</option>
 												<form:options items="${lstProcess}" itemLabel="name" itemValue="id" />
 											</form:select>
 										</div>
@@ -506,7 +507,7 @@
 										</label>
 										
 										<div class="col-sm-5">
-											<select id="idSubProcess" name="idSubProcess" class="form-control person-jobs-selector" data-placeholder="Seleccionar sub-proceso" >
+											<select id="idSubProcess" name="idSubProcess" class="form-control person-jobs-selector" data-placeholder="Seleccione" >
 												
 											</select>
 										</div>
@@ -1152,6 +1153,36 @@
 			
 			});
 
+			function cargarSubProcesos(element, callJob){
+
+				var selectResult=0;
+				$(element).find("option:selected").each(function(indice, elemento) {
+					selectResult= $(elemento).val();
+				});
+
+				$.ajax({
+					method: "GET",
+					url: "person-load-sub-process/"+selectResult,
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					success:function( data, textStatus, errorThrown ){
+						$(".person-subprocess-selector").find('option').remove();
+						$(".person-subprocess-selector").append($("<option></option>").text("Seleccione"));
+						$.each( data, function( i, item ) {
+							$(".person-subprocess-selector").append($("<option></option>").attr("value",item.id).text(item.text));
+						});
+						$(".person-subprocess-selector").trigger("chosen:updated");
+						$(".person-subprocess-selector").chosen();
+
+						$(".person-jobs-selector").find('option').remove();
+						$(".person-jobs-selector").trigger("chosen:updated");
+						$(".person-jobs-selector").chosen();
+					},
+					error: function( jqXhr, textStatus, errorThrown ){
+						alert( errorThrown );
+					}
+				});
+			}
 
 			function cargarTrabajos(element, event){
 				var selectResult=0;
@@ -1167,11 +1198,9 @@
 					success:function( data, textStatus, errorThrown ){
 						$(".person-jobs-selector").find('option').remove();
 						$.each( data, function( i, item ) {
-							
 							$(".person-jobs-selector").append($("<option></option>").attr("value",item.id).text(item.text));
-							 
 					   	});
-						$(".person-subprocess-selector").trigger("chosen:updated");
+						$(".person-jobs-selector").trigger("chosen:updated");
 						$(".person-jobs-selector").chosen();
 
 					},
@@ -1181,33 +1210,7 @@
 				});
 			}
 			
-			function cargarSubProcesos(element, event){
 
-				var selectResult=0;
-				$(element).find("option:selected").each(function(indice, elemento) {
-					selectResult= $(elemento).val();
-				});
-				
-				$.ajax({
-					method: "GET",
-					url: "person-load-sub-process/"+selectResult,
-					contentType: "application/json; charset=utf-8",
-					dataType: "json",
-					success:function( data, textStatus, errorThrown ){
-						$(".person-subprocess-selector").find('option').remove();
-						$.each( data, function( i, item ) {
-							
-							$(".person-subprocess-selector").append($("<option></option>").attr("value",item.id).text(item.text));
-							 
-					   	});
-						$(".person-subprocess-selector").trigger("chosen:updated");
-						$(".person-subprocess-selector").chosen();
-		          	},
-		          	error: function( jqXhr, textStatus, errorThrown ){
-			          	alert( errorThrown );
-		          	}
-				});
-			}
 		</script>
 
 		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
