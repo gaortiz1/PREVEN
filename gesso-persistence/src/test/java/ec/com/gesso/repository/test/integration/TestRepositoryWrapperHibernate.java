@@ -16,7 +16,7 @@ import ec.com.gesso.repository.exception.GessoRepositoryException;
  * @author Gabriel
  *
  */
-public class TestRepositoryWrapperHibernate extends AbstractRepositoryIntegration {
+public class TestRepositoryWrapperHibernate extends BaseRepositoryIntegration {
 	
 	@Before
 	public void setUp() throws Exception {

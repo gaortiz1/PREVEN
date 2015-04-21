@@ -4,7 +4,6 @@
 package ec.com.gesso.criteria.impl;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 
 import ec.com.gesso.criteria.AbstractCriteriaJPA;
 
@@ -14,13 +13,13 @@ import ec.com.gesso.criteria.AbstractCriteriaJPA;
  */
 public final class CriteriaJPA extends AbstractCriteriaJPA {
 	
-	private EntityManager entityManager;
+	private final EntityManager entityManager;
 
 	/**
 	 * @param entityManager
 	 */
-	public CriteriaJPA(EntityManagerFactory entityManagerFactory) {
-		this.entityManager = entityManagerFactory.createEntityManager();
+	public CriteriaJPA(EntityManager entityManager) {
+		this.entityManager = entityManager;
 	}
 
 	/* (non-Javadoc)

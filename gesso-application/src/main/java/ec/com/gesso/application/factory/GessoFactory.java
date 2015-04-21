@@ -21,11 +21,12 @@ public final  class GessoFactory {
 	private GessoFactory() {
 		context = new ClassPathXmlApplicationContext(
 				new String []{
-						"ec/com/gesso/application/resource/spring/config/gesso-transactions.xml",
-						"ec/com/gesso/persistence/resources/spring/config/gesso-persistencia.xml", 
-						"ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml", 
-						"ec/com/gesso/domain/resource/spring/config/gesso-domain.xml",
-						"ec/com/gesso/application/resource/spring/config/gesso-application.xml"
+						"classpath:ec/com/gesso/application/resource/spring/config/gesso-application.xml",
+						"classpath:ec/com/gesso/application/resource/spring/config/gesso-criteria.xml", 
+						"classpath:ec/com/gesso/application/resource/spring/config/gesso-persistencia.xml",
+						"classpath:ec/com/gesso/application/resource/spring/config/gesso-transactions.xml",
+						"classpath:ec/com/gesso/domain/resource/spring/config/gesso-domain.xml",
+						"classpath:ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml"
 			});
 	}
 

@@ -27,7 +27,7 @@ import ec.com.gesso.model.entity.GroupCatalog;
 @ContextConfiguration(locations = {
 		"classpath:ec/com/gesso/criteria/test/resources/spring/config/gesso-transactions.xml",
 		"classpath:ec/com/gesso/criteria/test/resources/spring/config/gesso-entity-manager.xml",
-		"classpath:ec/com/gesso/criteria/resources/spring/config/gesso-criteria.xml" })
+		"classpath:ec/com/gesso/criteria/test/resources/spring/config/gesso-criteria.xml" })
 public class TestIntegracionCriteriaJPA {
 	
 	@Autowired protected ApplicationContext applicationContext;
@@ -64,7 +64,6 @@ public class TestIntegracionCriteriaJPA {
 		catalog.getGroupCatalog().setName("a");
 		
 		company.setCatalogSectorProductivo(catalog);
-		
 		
 		company.setActivityEconomicCompanyCollection(new ArrayList<ActivityEconomicCompany>());
 		

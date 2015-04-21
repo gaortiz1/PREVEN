@@ -40,7 +40,7 @@ public class GroupCatalog implements Serializable {
     
     @Basic(optional = false)
     @Column(name = "status_group_catalog")
-    private boolean status;
+    private Boolean state;
     
     @OneToMany(mappedBy = "groupCatalog", fetch = FetchType.LAZY)
     private Collection<Catalog> catalogCollection;
@@ -72,19 +72,19 @@ public class GroupCatalog implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
 	/**
-	 * @return the status
+	 * @return the state
 	 */
-	public boolean isStatus() {
-		return status;
+	public Boolean getState() {
+		return state;
 	}
 
 	/**
-	 * @param status the status to set
+	 * @param state the state to set
 	 */
-	public void setStatus(boolean status) {
-		this.status = status;
+	public void setState(Boolean state) {
+		this.state = state;
 	}
 
 	/**

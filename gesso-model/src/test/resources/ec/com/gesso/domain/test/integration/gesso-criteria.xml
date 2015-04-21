@@ -4,9 +4,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<bean id="repositoryCriteriaGeoPolDivi" class="ec.com.gesso.repository.impl.RepositoryCriteriaGeoPolDivi">
-		<constructor-arg index="0">
-			<ref bean="hibernate4AnnotatedSessionFactory" />
+		<constructor-arg>
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+	            <property name="persistenceUnitName" value="gessoUnitName" />
+	        </bean>
 		</constructor-arg>
 	</bean>
-	
 </beans>

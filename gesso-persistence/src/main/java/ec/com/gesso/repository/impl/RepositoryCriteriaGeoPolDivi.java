@@ -5,9 +5,10 @@ package ec.com.gesso.repository.impl;
 
 import java.util.Collection;
 
-import org.hibernate.Criteria;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
+import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import ec.com.gesso.model.entity.GeopoliticalDivision;
 import ec.com.gesso.repository.IRepositoryCriteriaGeoPolDivi;
@@ -16,31 +17,38 @@ import ec.com.gesso.repository.IRepositoryCriteriaGeoPolDivi;
  * @author Gabriel
  *
  */
-public class RepositoryCriteriaGeoPolDivi extends BaseHibernateRepository implements IRepositoryCriteriaGeoPolDivi {
-
-	public RepositoryCriteriaGeoPolDivi(SessionFactory sessionFactory) {
-		super(sessionFactory);
-	}
+public class RepositoryCriteriaGeoPolDivi extends BaseJpaRepository implements IRepositoryCriteriaGeoPolDivi {
 	
+	public RepositoryCriteriaGeoPolDivi(EntityManager entityManager) {
+		super(entityManager);
+	}
+
 	public Collection<GeopoliticalDivision> findGeopoliticalDivisionRoot(Long idRoot){
-		Criteria criteria =  null;
-		criteria = getSession().createCriteria(GeopoliticalDivision.class);
-		criteria.add(Restrictions.eq("idRoot", idRoot));
-		return criteria.list();
+		
+		final CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
+		final CriteriaQuery<GeopoliticalDivision> criteriaQuery = criteriaBuilder.createQuery(GeopoliticalDivision.class);
+		final Root<GeopoliticalDivision> root = criteriaQuery.from(GeopoliticalDivision.class);
+		
+		criteriaQuery.select(root).where(criteriaBuilder.equal(root.get("idRoot"), idRoot));
+		return this.getEntityManager().createQuery(criteriaQuery).getResultList();
 	}
 	
 	public Collection<GeopoliticalDivision> findGeopoliticalDivisionWitoutRoot(){
-		Criteria criteria =  null;
-		criteria = getSession().createCriteria(GeopoliticalDivision.class);
-		criteria.add(Restrictions.isNull("idRoot"));
-		return criteria.list();
+		final CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
+		final CriteriaQuery<GeopoliticalDivision> criteriaQuery = criteriaBuilder.createQuery(GeopoliticalDivision.class);
+		final Root<GeopoliticalDivision> root = criteriaQuery.from(GeopoliticalDivision.class);
+		
+		criteriaQuery.select(root).where(criteriaBuilder.isNull(root.get("idRoot")));
+		return this.getEntityManager().createQuery(criteriaQuery).getResultList();
 	}
 	
 	public Collection<GeopoliticalDivision> findGeopoliticalDivisionById(Long id){
-		Criteria criteria =  null;
-		criteria = getSession().createCriteria(GeopoliticalDivision.class);
-		criteria.add(Restrictions.eq("id", id));
-		return criteria.list();
+		final CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
+		final CriteriaQuery<GeopoliticalDivision> criteriaQuery = criteriaBuilder.createQuery(GeopoliticalDivision.class);
+		final Root<GeopoliticalDivision> root = criteriaQuery.from(GeopoliticalDivision.class);
+		
+		criteriaQuery.select(root).where(criteriaBuilder.equal(root.get("id"), id));
+		return this.getEntityManager().createQuery(criteriaQuery).getResultList();
 	}
 	
 	
