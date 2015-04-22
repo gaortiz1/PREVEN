@@ -2,6 +2,8 @@ package ec.com.gesso.controller.administration;
 
 import java.util.Collection;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,16 +13,20 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import ec.com.gesso.application.factory.GessoFactory;
+import ec.com.gesso.application.factory.GessoSearchCriteria;
 import ec.com.gesso.application.lang.CompanyBuilder;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.CompanyModel;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.Company;
+import ec.com.gesso.model.entity.GeopoliticalDivision;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 @Controller
 @SessionAttributes
 public class CompanyAdministrationController {
+	
+	 private final static Logger LOGGER = LoggerFactory.getLogger(CompanyAdministrationController.class);
 	
 	@RequestMapping(value = "/company-administration", method = RequestMethod.GET)
 	public ModelAndView userAdministration(){
@@ -46,18 +52,18 @@ public class CompanyAdministrationController {
 			e.printStackTrace();
 		}
 		
-//		Collection<GeopoliticalDivision> geopoliticalDivisions =  null;
-//		try {
-//			geopoliticalDivisions = GessoSecurityFactory.getInstance().getGeopoloticalDivisionService().findAllGeopoliticalDivisionRoot();
-//		} catch (GessoException e) {
-//			e.printStackTrace();
-//		}
+		Collection<GeopoliticalDivision> geopoliticalDivisions =  null;
+		try {
+			geopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findRootGeopoliticalDivision();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		final ModelAndView modelAndView = new ModelAndView("company-administration", "command", new CompanyModel());
 		modelAndView.addObject("typesCompanies", typesCompanies);
 		modelAndView.addObject("worksHours", worksHours);
 		modelAndView.addObject("productivesSector", productivesSector);
-//		modelAndView.addObject("geopoliticalDivisions", geopoliticalDivisions);
+		modelAndView.addObject("geopoliticalDivisions", geopoliticalDivisions);
 		return modelAndView;
 	}
 	
@@ -85,12 +91,16 @@ public class CompanyAdministrationController {
     			}
     		}
     		
+    		if (companyModel.getIdGeopoliticalDivisionCity() != null){
+    			companyBuilder.addGeopoliticalDivision(companyModel.getIdGeopoliticalDivisionCity());
+    		}
+    		
     		final Company company = companyBuilder.build();
     		
     		GessoFactory.getInstance().getServiceCompany().create(company);
     		
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.error("A courrido un error", e);
 		}
     	
     	

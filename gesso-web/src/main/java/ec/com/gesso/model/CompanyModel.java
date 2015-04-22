@@ -28,6 +28,9 @@ public class CompanyModel implements Serializable {
 	private String celular;
 	private String direccion;
 	private String email;
+	private Long idGeopoliticalDivisionCountry;
+	private Long idGeopoliticalDivisionProvince;
+	private Long idGeopoliticalDivisionCity;
 	
 	private String[] schedulesWork;
 
@@ -212,6 +215,49 @@ public class CompanyModel implements Serializable {
 	 */
 	public void setSchedulesWork(String[] schedulesWork) {
 		this.schedulesWork = schedulesWork;
+	}
+
+	/**
+	 * @return the idGeopoliticalDivisionCountry
+	 */
+	public Long getIdGeopoliticalDivisionCountry() {
+		return idGeopoliticalDivisionCountry;
+	}
+
+	/**
+	 * @param idGeopoliticalDivisionCountry the idGeopoliticalDivisionCountry to set
+	 */
+	public void setIdGeopoliticalDivisionCountry(Long idGeopoliticalDivisionCountry) {
+		this.idGeopoliticalDivisionCountry = idGeopoliticalDivisionCountry;
+	}
+
+	/**
+	 * @return the idGeopoliticalDivisionProvince
+	 */
+	public Long getIdGeopoliticalDivisionProvince() {
+		return idGeopoliticalDivisionProvince;
+	}
+
+	/**
+	 * @param idGeopoliticalDivisionProvince the idGeopoliticalDivisionProvince to set
+	 */
+	public void setIdGeopoliticalDivisionProvince(
+			Long idGeopoliticalDivisionProvince) {
+		this.idGeopoliticalDivisionProvince = idGeopoliticalDivisionProvince;
+	}
+
+	/**
+	 * @return the idGeopoliticalDivisionCity
+	 */
+	public Long getIdGeopoliticalDivisionCity() {
+		return idGeopoliticalDivisionCity;
+	}
+
+	/**
+	 * @param idGeopoliticalDivisionCity the idGeopoliticalDivisionCity to set
+	 */
+	public void setIdGeopoliticalDivisionCity(Long idGeopoliticalDivisionCity) {
+		this.idGeopoliticalDivisionCity = idGeopoliticalDivisionCity;
 	}
 	
 }

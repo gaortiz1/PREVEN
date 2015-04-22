@@ -28,7 +28,7 @@ public class TestRepositoryCriteriaGeoPolDivi extends BaseRepositoryIntegration{
 	
 	@Test
 	public void shouldHaveGeoPolDivi(){
-		final Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = this.repositoryCriteriaGeoPolDivi.findGeopoliticalDivisionWitoutRoot(); 
+		final Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = this.repositoryCriteriaGeoPolDivi.findRootGeopoliticalDivision(); 
 		assertEquals(Boolean.FALSE, collectionGeopoliticalDivisions.isEmpty());
 	}
 
