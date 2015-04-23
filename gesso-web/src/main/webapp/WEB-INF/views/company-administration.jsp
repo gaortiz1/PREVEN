@@ -378,7 +378,8 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.pais"/></label>
 										<div class="col-sm-5">
-											<form:select path="idGeopoliticalDivisionCountry" id="selectPais"  data-placeholder="Seleccione pais..." required="required" onchange="loadChildren(this, event,'idGeopoliticalDivisionProvince')">
+											<form:select path="idGeopoliticalDivisionCountry" id="selectPais"  data-placeholder="Seleccione pais..." required="required" onchange="loadChildren(this, event,'idGeopoliticalDivisionProvince')" style="width: 452px;">
+												<form:option value="" label="--- Seleccione---" />
 												<form:options items="${geopoliticalDivisions}" itemLabel="name" itemValue="id" />
 											</form:select>
 										</div>
@@ -387,8 +388,8 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.provincia"/></label>
 										<div class="col-sm-5">
-											<form:select path="idGeopoliticalDivisionProvince"  data-placeholder="Seleccione provincia..." required="required" onchange="loadChildren(this, event, 'idGeopoliticalDivisionCity')">
-												<form:option value="NONE" label="--- Select ---" />
+											<form:select path="idGeopoliticalDivisionProvince"  data-placeholder="Seleccione provincia..." required="required" onchange="loadChildren(this, event, 'idGeopoliticalDivisionCity')" style="width: 452px;">
+												<form:option value="" label="--- Seleccine un pais---" />
 											</form:select>
 										</div>
 									</div>
@@ -396,8 +397,8 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.cuidad"/></label>
 										<div class="col-sm-5">
-											<form:select path="idGeopoliticalDivisionCity" data-placeholder="Seleccione ciudad..." required="required">
-												<form:option value="" label="--- Select ---" />
+											<form:select path="idGeopoliticalDivisionCity" data-placeholder="Seleccione ciudad..." required="required" style="width: 452px;">
+												<form:option value="" label="--- Select una provincia---" />
 											</form:select>
 										</div>
 									</div>
@@ -602,6 +603,7 @@
 					success:function( data, textStatus, errorThrown ){
 						try{
 							$("#"+idChildren).find('option').remove();
+							$("#"+idChildren).append($("<option></option>").attr("value","").text("Seleccione")); 
 							$.each( data, function( i, item ) {
 								$("#"+idChildren).append($("<option></option>").attr("value",item.id).text(item.name)); 
 						   	});

@@ -9,5 +9,9 @@ app.controller("app-gesso-ctrl-adm", ['$http', function($http){
         response.error(function (data, status, headers, config) {
             alert("Error.");
         });
-	}
+
+
+	};
+
+    this.loadprocess();
 }]);

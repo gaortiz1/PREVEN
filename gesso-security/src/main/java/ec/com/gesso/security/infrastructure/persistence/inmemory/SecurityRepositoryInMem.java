@@ -47,4 +47,8 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public Collection<Person> findAllPersons() throws GessoException {
+		return null;
+	}
 }

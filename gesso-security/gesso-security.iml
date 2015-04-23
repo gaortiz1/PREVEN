@@ -55,6 +55,12 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.1.5.RELEASE" level="project" />
     <orderEntry type="module" module-name="gesso-persistence" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.3.2" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions-jdbc:3.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions-jta:3.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions:3.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions-api:3.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:atomikos-util:3.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions-hibernate3:3.9.3" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
   </component>
 </module>

@@ -164,7 +164,7 @@
 					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-pencil-square-o"></i>
-							<span class="menu-text"> Forms </span>
+							<span class="menu-text"> Edicion </span>
 
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
@@ -173,9 +173,9 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="form-elements.html">
+								<a href="${pageContext.request.contextPath}/person-edit">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Person
+									<spring:message code="menu.label.person.edit"/>
 								</a>
 
 								<b class="arrow"></b>
@@ -1193,13 +1193,15 @@
 						$.each( data, function( i, item ) {
 							$(".person-jobs-selector").append($("<option></option>").attr("value",item.id).text(item.text));
 					   	});
-						$(".person-jobs-selector").trigger("chosen:updated");
-						$(".person-jobs-selector").chosen();
+
 					},
 		          	error: function( jqXhr, textStatus, errorThrown ){
 			          	alert( errorThrown );
 		          	}
 				});
+
+				$(".person-jobs-selector").trigger("chosen:updated");
+				$(".person-jobs-selector").chosen();
 			}
 			
 
