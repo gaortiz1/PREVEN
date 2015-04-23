@@ -23,7 +23,7 @@ public class RepositoryCriteriaGeoPolDivi extends BaseJpaRepository implements I
 		super(entityManager);
 	}
 
-	public Collection<GeopoliticalDivision> findChildrenGeopoliticalDivision(Long idRoot){
+	public Collection<GeopoliticalDivision> findGeopoliticalDivisionRoot(Long idRoot){
 		
 		final CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
 		final CriteriaQuery<GeopoliticalDivision> criteriaQuery = criteriaBuilder.createQuery(GeopoliticalDivision.class);
@@ -33,7 +33,7 @@ public class RepositoryCriteriaGeoPolDivi extends BaseJpaRepository implements I
 		return this.getEntityManager().createQuery(criteriaQuery).getResultList();
 	}
 	
-	public Collection<GeopoliticalDivision> findRootGeopoliticalDivision(){
+	public Collection<GeopoliticalDivision> findGeopoliticalDivisionWitoutRoot(){
 		final CriteriaBuilder criteriaBuilder = getEntityManager().getCriteriaBuilder();
 		final CriteriaQuery<GeopoliticalDivision> criteriaQuery = criteriaBuilder.createQuery(GeopoliticalDivision.class);
 		final Root<GeopoliticalDivision> root = criteriaQuery.from(GeopoliticalDivision.class);

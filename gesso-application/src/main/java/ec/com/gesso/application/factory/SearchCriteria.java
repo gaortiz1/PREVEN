@@ -12,13 +12,13 @@ import ec.com.gesso.application.service.IServiceCriteria;
  * @author Gabriel
  *
  */
-public class GessoSearchCriteria {
+public class SearchCriteria {
 	
-private static final GessoSearchCriteria SEARCH_CRITERIA = new GessoSearchCriteria();
+private static final SearchCriteria SEARCH_CRITERIA = new SearchCriteria();
 	
 	private ApplicationContext context =  null;
 	
-	private GessoSearchCriteria() {
+	private SearchCriteria() {
 		context = new ClassPathXmlApplicationContext(
 				new String []{
 						"classpath:ec/com/gesso/application/resource/spring/config/gesso-application.xml",
@@ -33,7 +33,7 @@ private static final GessoSearchCriteria SEARCH_CRITERIA = new GessoSearchCriter
 	/**
 	 * @return the gessoFactory
 	 */
-	public static GessoSearchCriteria getInstance() {
+	public static SearchCriteria getInstance() {
 		return SEARCH_CRITERIA;
 	}
 	

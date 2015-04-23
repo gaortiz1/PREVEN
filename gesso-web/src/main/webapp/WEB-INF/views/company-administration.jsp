@@ -361,6 +361,8 @@
 										</div>
 									</div>
 									
+									
+									
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.company.actividad.economica.principal"/></label>
 										<div class="col-sm-9">
@@ -372,33 +374,6 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.company.actividad.economica.secundaria" /></label>
 										<div class="col-sm-9">
 											<form:textarea path="actividadComercialSecuandaria" placeholder="Actividad económica secundaria" cssClass="txt-validate-empty" rows="2" cols="50"/>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.pais"/></label>
-										<div class="col-sm-5">
-											<form:select path="idGeopoliticalDivisionCountry" id="selectPais"  data-placeholder="Seleccione pais..." required="required" onchange="loadChildren(this, event,'idGeopoliticalDivisionProvince')">
-												<form:options items="${geopoliticalDivisions}" itemLabel="name" itemValue="id" />
-											</form:select>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.provincia"/></label>
-										<div class="col-sm-5">
-											<form:select path="idGeopoliticalDivisionProvince"  data-placeholder="Seleccione provincia..." required="required" onchange="loadChildren(this, event, 'idGeopoliticalDivisionCity')">
-												<form:option value="NONE" label="--- Select ---" />
-											</form:select>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.cuidad"/></label>
-										<div class="col-sm-5">
-											<form:select path="idGeopoliticalDivisionCity" data-placeholder="Seleccione ciudad..." required="required">
-												<form:option value="" label="--- Select ---" />
-											</form:select>
 										</div>
 									</div>
 									
@@ -585,36 +560,6 @@
 		<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.settings-skin.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.widget-on-reload.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.searchbox-autocomplete.js"></script>
-		
-		<script type="text/javascript">
-			function loadChildren(element, event, idChildren){
-	
-				var selectResult=0;
-				$(element).find("option:selected").each(function(indice, elemento) {
-					selectResult= $(elemento).val();
-				});
-				
-				$.ajax({
-					method: "GET",
-					url: "geopoliticaldivision/children/"+selectResult,
-					contentType: "application/json; charset=utf-8",
-					dataType: "json",
-					success:function( data, textStatus, errorThrown ){
-						try{
-							$("#"+idChildren).find('option').remove();
-							$.each( data, function( i, item ) {
-								$("#"+idChildren).append($("<option></option>").attr("value",item.id).text(item.name)); 
-						   	});
-						} catch (e) {
-							alert(e);
-						}
-		          	},
-		          	error: function( jqXhr, textStatus, errorThrown ){
-			          	alert( errorThrown );
-		          	}
-				});
-			}
-		</script>
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">

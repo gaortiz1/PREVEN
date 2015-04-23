@@ -9,7 +9,7 @@ import java.util.Collection;
 
 import org.junit.Test;
 
-import ec.com.gesso.application.factory.GessoSearchCriteria;
+import ec.com.gesso.application.factory.SearchCriteria;
 import ec.com.gesso.model.entity.GeopoliticalDivision;
 
 /**
@@ -20,13 +20,13 @@ public class TestCriteria {
 
 	@Test
 	public void shouldExistGeopoliticalDivisionRoot() {
-		final Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findRootGeopoliticalDivision(); 
+		final Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = SearchCriteria.getInstance().getServiceCriteria().findGeopoliticalDivisionWitoutRoot(); 
 		assertEquals(Boolean.FALSE, collectionGeopoliticalDivisions.isEmpty());
 	}
 	
 	@Test
 	public void shouldExistGeopoliticalDivision() {
-		final Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findChildrenGeopoliticalDivision(1L);
+		final Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = SearchCriteria.getInstance().getServiceCriteria().findGeopoliticalDivisionRoot(1L);
 		assertEquals(Boolean.FALSE, collectionGeopoliticalDivisions.isEmpty());
 	}
 

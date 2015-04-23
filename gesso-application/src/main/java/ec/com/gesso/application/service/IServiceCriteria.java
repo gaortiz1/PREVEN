@@ -14,9 +14,9 @@ import ec.com.gesso.model.entity.GeopoliticalDivision;
  */
 public interface IServiceCriteria  extends QueryCriteria{
 	
-	Collection<GeopoliticalDivision> findChildrenGeopoliticalDivision(Long idRoot);
+	Collection<GeopoliticalDivision> findGeopoliticalDivisionRoot(Long idRoot);
 	
-	Collection<GeopoliticalDivision> findRootGeopoliticalDivision();
+	Collection<GeopoliticalDivision> findGeopoliticalDivisionWitoutRoot();
 	
 	Collection<GeopoliticalDivision> findGeopoliticalDivisionById(Long id);
 
