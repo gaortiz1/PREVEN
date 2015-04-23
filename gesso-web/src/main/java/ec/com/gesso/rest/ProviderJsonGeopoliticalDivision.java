@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import ec.com.gesso.application.factory.SearchCriteria;
+import ec.com.gesso.application.factory.GessoSearchCriteria;
 import ec.com.gesso.json.serializer.GeopoliticalDivisionSerializer;
 import ec.com.gesso.model.entity.GeopoliticalDivision;
 
@@ -47,7 +47,7 @@ public class ProviderJsonGeopoliticalDivision implements Serializable {
 	@ResponseBody
     public String findGeopoliticalDivisionWitoutRoot(Model model) {
 		
-		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = SearchCriteria.getInstance().getServiceCriteria().findGeopoliticalDivisionWitoutRoot();
+		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findRootGeopoliticalDivision();
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
 	    Gson gson = gsonBuilder.registerTypeAdapter(GeopoliticalDivision.class, geopoliticalDivisionSerializer).create();
@@ -60,7 +60,7 @@ public class ProviderJsonGeopoliticalDivision implements Serializable {
 	@ResponseBody
     public String findGeopoliticalDivisionRoot(@PathVariable Long idRoot, Model model) {
 		
-		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = SearchCriteria.getInstance().getServiceCriteria().findGeopoliticalDivisionRoot(idRoot);
+		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findChildrenGeopoliticalDivision(idRoot);
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
 	    Gson gson = gsonBuilder.registerTypeAdapter(GeopoliticalDivision.class, geopoliticalDivisionSerializer).create();
@@ -73,7 +73,7 @@ public class ProviderJsonGeopoliticalDivision implements Serializable {
 	@ResponseBody
     public String findGeopoliticalDivisionById(@PathVariable Long id, Model model) {
 		
-		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = SearchCriteria.getInstance().getServiceCriteria().findGeopoliticalDivisionById(id);
+		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findGeopoliticalDivisionById(id);
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
 	    Gson gson = gsonBuilder.registerTypeAdapter(GeopoliticalDivision.class, geopoliticalDivisionSerializer).create();

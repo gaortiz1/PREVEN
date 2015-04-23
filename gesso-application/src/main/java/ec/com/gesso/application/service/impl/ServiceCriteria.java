@@ -21,12 +21,12 @@ public class ServiceCriteria implements IServiceCriteria {
 	
 	private QueryCriteria queryCriteria;
 
-	public Collection<GeopoliticalDivision> findGeopoliticalDivisionRoot(Long idRoot) {
-		return this.repositoryCriteriaGeoPolDivi.findGeopoliticalDivisionRoot(idRoot);
+	public Collection<GeopoliticalDivision> findChildrenGeopoliticalDivision(Long idRoot) {
+		return this.repositoryCriteriaGeoPolDivi.findChildrenGeopoliticalDivision(idRoot);
 	}
 
-	public Collection<GeopoliticalDivision> findGeopoliticalDivisionWitoutRoot() {
-		return this.repositoryCriteriaGeoPolDivi.findGeopoliticalDivisionWitoutRoot();
+	public Collection<GeopoliticalDivision> findRootGeopoliticalDivision() {
+		return this.repositoryCriteriaGeoPolDivi.findRootGeopoliticalDivision();
 	}
 	
 	public Collection<GeopoliticalDivision> findGeopoliticalDivisionById(Long id) {
