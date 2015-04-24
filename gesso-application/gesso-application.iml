@@ -6,7 +6,10 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-transactions.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-application.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-application-criteria.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-criteria.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-persistencia.xml</file>
+          <file>file://$MODULE_DIR$/../gesso-model/src/main/resources/ec/com/gesso/domain/resource/spring/config/gesso-domain.xml</file>
+          <file>file://$MODULE_DIR$/../gesso-persistence/src/main/resources/ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml</file>
         </fileset>
       </configuration>
     </facet>

@@ -12,6 +12,7 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -25,7 +26,23 @@ import java.util.List;
 @SessionAttributes()
 public class PersonEditController {
 
-    @RequestMapping(value="/person-edit", method= RequestMethod.GET,produces={"application/xml", "application/json"})
+
+    @RequestMapping(value = "/person-edit", method = RequestMethod.GET)
+    public ModelAndView processAdministration(){
+        ProcessView processView = new ProcessView();
+        try {
+            processView.setLstProcess(GessoSecurityFactory.getInstance().getProcessService().findProcess());
+        } catch (GessoException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        ModelAndView modelAndView = new ModelAndView("person-edit", "command", processView);
+        modelAndView.addObject("lstProcess", processView.getLstProcess());
+        return modelAndView;
+    }
+
+    @RequestMapping(value="/person-edit2", method= RequestMethod.GET,produces={"application/xml", "application/json"})
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody Collection<PersonDto> getPersonList() {
         Collection<Person> lstPersonas = null;
