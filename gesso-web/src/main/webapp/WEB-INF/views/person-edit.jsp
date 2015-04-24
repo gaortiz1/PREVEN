@@ -340,7 +340,41 @@
 
             <div ng-app="app-gesso-adm">
               <div ng-controller="app-gesso-ctrl-adm">
-
+                <table st-table="controller.lstPerson" class="table table-striped">
+                  <thead>
+                  <tr>
+                    <th st-sort="firstName">first name</th>
+                    <th st-sort="lastName">last name</th>
+                    <th st-sort="birthDate">birth date</th>
+                    <th st-sort="balance">balance</th>
+                    <th>email</th>
+                  </tr>
+                  <tr>
+                    <th>
+                      <input st-search="'firstName'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+                    </th>
+                    <th colspan="4">
+                      <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr ng-repeat="row in controller.lstPerson">
+                    <td>s{{row.personalEmail | uppercase}}</td>
+                    <td>{{row.personalEmail}}</td>
+                    <td>{{row.personalEmail | date}}</td>
+                    <td>{{row.personalEmail | currency}}</td>
+                    <td><a ng-href="mailto:{{row.personalEmail}}">email</a></td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <td colspan="5" class="text-center">
+                      <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                    </td>
+                  </tr>
+                  </tfoot>
+                </table>
               </div>
             </div>
 
