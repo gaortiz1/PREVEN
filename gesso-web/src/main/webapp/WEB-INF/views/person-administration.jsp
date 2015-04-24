@@ -175,7 +175,7 @@
 							<li class="">
 								<a href="${pageContext.request.contextPath}/person-edit">
 									<i class="menu-icon fa fa-caret-right"></i>
-									<spring:message code="menu.label.process"/>
+									<spring:message code="menu.label.person.edit"/>
 								</a>
 
 								<b class="arrow"></b>
