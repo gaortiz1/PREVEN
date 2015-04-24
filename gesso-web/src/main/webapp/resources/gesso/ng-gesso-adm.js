@@ -11,7 +11,7 @@ app.controller("app-gesso-ctrl-adm", ['$http', function($http){
         });
 
 
-	}
+	};
 
-    loadprocess();
+    this.loadprocess();
 }]);
