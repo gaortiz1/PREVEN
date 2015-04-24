@@ -9,9 +9,6 @@ import java.util.Collection;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import ec.com.gesso.model.entity.GeopoliticalDivision;
 import ec.com.gesso.repository.IRepositoryCriteriaGeoPolDivi;
@@ -20,12 +17,7 @@ import ec.com.gesso.repository.IRepositoryCriteriaGeoPolDivi;
  * @author Gabriel
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {
-		"geso-transactions.xml",
-		"classpath:ec/com/gesso/persistence/resources/spring/config/gesso-persistencia.xml",
-		"classpath:ec/com/gesso/persistence/resources/spring/config/gesso-criteria.xml" })
-public class TestRepositoryCriteriaGeoPolDivi extends AbstractRepositoryIntegration{
+public class TestRepositoryCriteriaGeoPolDivi extends BaseRepositoryIntegration{
 	
 	private IRepositoryCriteriaGeoPolDivi repositoryCriteriaGeoPolDivi;
 	
@@ -36,7 +28,7 @@ public class TestRepositoryCriteriaGeoPolDivi extends AbstractRepositoryIntegrat
 	
 	@Test
 	public void shouldHaveGeoPolDivi(){
-		final Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = this.repositoryCriteriaGeoPolDivi.findGeopoliticalDivisionWitoutRoot(); 
+		final Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = this.repositoryCriteriaGeoPolDivi.findRootGeopoliticalDivision(); 
 		assertEquals(Boolean.FALSE, collectionGeopoliticalDivisions.isEmpty());
 	}
 

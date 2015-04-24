@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = { 
 		"classpath:ec/com/gesso/domain/resource/spring/config/gesso-domain.xml",
 		"classpath:ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml",
-		"classpath:ec/com/gesso/persistence/resources/spring/config/gesso-persistencia.xml"
+		"classpath:ec/com/gesso/domain/test/integration/gesso-persistencia.xml"
 		})
 public class TestIocApplicaction {
 	

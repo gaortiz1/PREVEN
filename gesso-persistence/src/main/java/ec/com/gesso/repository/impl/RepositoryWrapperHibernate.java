@@ -20,7 +20,7 @@ import ec.com.gesso.repository.exception.GessoRepositoryException;
  */
 public class RepositoryWrapperHibernate<Entity extends Serializable> extends BaseHibernateRepository implements IRepositoryEntity<Entity> {
 
-	public RepositoryWrapperHibernate(final SessionFactory sessionFactory) {
+	public RepositoryWrapperHibernate(SessionFactory sessionFactory) {
 		super(sessionFactory);
 	}
 

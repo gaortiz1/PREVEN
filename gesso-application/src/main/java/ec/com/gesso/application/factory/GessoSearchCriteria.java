@@ -1,24 +1,24 @@
+/**
+ * 
+ */
 package ec.com.gesso.application.factory;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import ec.com.gesso.application.service.IServiceEntity;
-import ec.com.gesso.model.entity.Company;
-
+import ec.com.gesso.application.service.IServiceCriteria;
 
 /**
- * 
  * @author Gabriel
  *
  */
-public final  class GessoFactory {
+public class GessoSearchCriteria {
 	
-	private static final GessoFactory GESSO_FACTORY = new GessoFactory();
+private static final GessoSearchCriteria SEARCH_CRITERIA = new GessoSearchCriteria();
 	
 	private ApplicationContext context =  null;
 	
-	private GessoFactory() {
+	private GessoSearchCriteria() {
 		context = new ClassPathXmlApplicationContext(
 				new String []{
 						"classpath:ec/com/gesso/application/resource/spring/config/gesso-application.xml",
@@ -33,13 +33,12 @@ public final  class GessoFactory {
 	/**
 	 * @return the gessoFactory
 	 */
-	public static GessoFactory getInstance() {
-		return GESSO_FACTORY;
+	public static GessoSearchCriteria getInstance() {
+		return SEARCH_CRITERIA;
 	}
 	
-	public IServiceEntity<Company> getServiceCompany(){
-		return this.context.getBean("serviceCompany",IServiceEntity.class);
+	public IServiceCriteria getServiceCriteria(){
+		return this.context.getBean("serviceCriteria",IServiceCriteria.class);
 	}
-	
 
 }

@@ -18,6 +18,7 @@
 	
 	<bean id="entityManager" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSourceSpring" />
+        <property name="persistenceUnitName" value="gessoUnitName"/>
         <property name="packagesToScan" value="ec.com.gesso.model.entity" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />

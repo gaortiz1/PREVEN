@@ -71,6 +71,11 @@
 		  <groupId>org.modelmapper</groupId>
 		  <artifactId>modelmapper</artifactId>
 	  </dependency>
+	  <dependency>
+	  	<groupId>ec.com.gesso</groupId>
+	  	<artifactId>gesso-criteria</artifactId>
+	  	<version>0.0.1-SNAPSHOT</version>
+	  </dependency>
   </dependencies>
   
   <repositories>

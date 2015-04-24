@@ -67,12 +67,6 @@ public class Company implements Serializable {
     private GeopoliticalDivision geopoliticalDivision;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Collection<Subcompany> subcompanyCollection;
-    
-    @OneToMany( mappedBy = "company1", fetch = FetchType.LAZY)
-    private Collection<Subcompany> subcompanyCollection1;
-    
-    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private Collection<ActivityEconomicCompany> activityEconomicCompanyCollection;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
@@ -201,35 +195,6 @@ public class Company implements Serializable {
 	 */
 	public void setGeopoliticalDivision(GeopoliticalDivision geopoliticalDivision) {
 		this.geopoliticalDivision = geopoliticalDivision;
-	}
-
-	/**
-	 * @return the subcompanyCollection
-	 */
-	public Collection<Subcompany> getSubcompanyCollection() {
-		return subcompanyCollection;
-	}
-
-	/**
-	 * @param subcompanyCollection the subcompanyCollection to set
-	 */
-	public void setSubcompanyCollection(Collection<Subcompany> subcompanyCollection) {
-		this.subcompanyCollection = subcompanyCollection;
-	}
-
-	/**
-	 * @return the subcompanyCollection1
-	 */
-	public Collection<Subcompany> getSubcompanyCollection1() {
-		return subcompanyCollection1;
-	}
-
-	/**
-	 * @param subcompanyCollection1 the subcompanyCollection1 to set
-	 */
-	public void setSubcompanyCollection1(
-			Collection<Subcompany> subcompanyCollection1) {
-		this.subcompanyCollection1 = subcompanyCollection1;
 	}
 
 	/**

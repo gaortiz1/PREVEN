@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="serviceCriteria" class="ec.com.gesso.application.service.impl.ServiceCriteria">
+		<property name="repositoryCriteriaGeoPolDivi">
+			<ref bean="repositoryCriteriaGeoPolDivi"/>
+		</property>
+		<property name="queryCriteria">
+			<ref bean="criteriaJPA"/>
+		</property>
+	</bean>
+	
+	
+	<bean id="criteriaJPA" class="ec.com.gesso.criteria.impl.CriteriaJPA">
+		<constructor-arg>
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+	            <property name="persistenceUnitName" value="gessoUnitName" />
+	        </bean>
+		</constructor-arg>
+		<!-- 
+		<property name="entityManager">
+	        <bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+	            <property name="persistenceUnitName" value="gessoUnitName" />
+	        </bean>
+	    </property>
+	     -->
+	</bean>
+	
+	<bean id="repositoryCriteriaGeoPolDivi" class="ec.com.gesso.repository.impl.RepositoryCriteriaGeoPolDivi">
+		<constructor-arg>
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+	            <property name="persistenceUnitName" value="gessoUnitName" />
+	        </bean>
+		</constructor-arg>
+	</bean>
+</beans>

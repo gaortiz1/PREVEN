@@ -20,10 +20,11 @@ import ec.com.gesso.repository.IRepositoryEntity;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
-		"geso-transactions.xml",
-		"gesso-persistencia-embedded.xml",
+		"gesso-criteria.xml",
+		"gesso-persistencia.xml",
+		"gesso-transactions.xml",
 		"classpath:ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml" })
-public abstract class AbstractRepositoryIntegration <Entity extends Serializable>{
+public abstract class BaseRepositoryIntegration <Entity extends Serializable>{
 	
 	protected IRepositoryEntity<Entity> repository;
 	@Autowired protected ApplicationContext applicationContext;
