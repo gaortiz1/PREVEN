@@ -73,4 +73,11 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		return userDto;
 	}
 
+	public Collection<Person> findAllPersons() throws GessoException {
+		Criteria criteria =  null;
+
+		criteria =  getSession().createCriteria(Person.class);
+		return criteria.list();
+	}
+
 }

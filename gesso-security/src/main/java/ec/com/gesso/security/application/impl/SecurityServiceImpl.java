@@ -50,6 +50,9 @@ public class SecurityServiceImpl implements ISecurityService{
 		return securityRepository.findUserById(usrId);
 	}
 
-	
+	public Collection<Person> findAllPersons() throws GessoException {
+		return securityRepository.findAllPersons();
+	}
+
 
 }

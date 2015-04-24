@@ -23,9 +23,10 @@ public interface ISecurityService {
 	 * Create new user with minimal parameters
 	 * @param person
 	 */
-	public void persistNewUser(Person person) throws GessoException;
-	public void persistPerson(Person person) throws GessoException;
-	public void persistUser(User userDto) throws GessoException;
-	public Collection<User> findAllUsers() throws GessoException;
-	public User findUserById(Integer usrId) throws GessoException;
+	void persistNewUser(Person person) throws GessoException;
+	void persistPerson(Person person) throws GessoException;
+	void persistUser(User userDto) throws GessoException;
+	Collection<User> findAllUsers() throws GessoException;
+	User findUserById(Integer usrId) throws GessoException;
+	Collection<Person> findAllPersons() throws GessoException;
 }
