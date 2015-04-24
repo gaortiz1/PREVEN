@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ec.com.gesso.model;
+package ec.com.gesso.model.company;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author Gabriel
  *
  */
-public class CompanyModel implements Serializable {
+public class CreateCompanyModel implements Serializable {
 
 	/**
 	 * 
