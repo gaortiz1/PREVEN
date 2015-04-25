@@ -338,12 +338,11 @@
           <div class="col-xs-12">
             <!-- PAGE CONTENT BEGINS -->
 
+            <div ng-app="app-gesso-adm">
+              <div ng-controller="app-gesso-ctrl-adm">
 
-
-            <div ng-controller="app-gesso-ctrl-adm">
-
+              </div>
             </div>
-
 
             <script type="text/javascript">
               $(document).ready(function() {
