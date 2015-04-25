@@ -18,5 +18,17 @@ app.controller("app-gesso-ctrl-adm", ['$http', '$scope', function($http, $scope)
         });
 	};
 
+
+    this.updatePerson = function (){
+        var res = $http.post('/saveperson_json', dataObj);
+        res.success(function(data, status, headers, config) {
+            $scope.message = data;
+            alert('dato guardado');
+        });
+        res.error(function(data, status, headers, config) {
+            alert( "failure message: " + JSON.stringify({data: data}));
+        });
+    }
+
     this.loadprocess();
 }]);
