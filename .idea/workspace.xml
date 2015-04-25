@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70aac63a-e815-443d-9717-abe5a57ce1f7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java" afterPath="$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gesso-root.iws" />
@@ -89,8 +88,8 @@
       <file leaf-file-name="SecurityRepositoryHibernate.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.23646724">
+              <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -1736,7 +1735,7 @@
       <workItem from="1429923755659" duration="4139000" />
       <workItem from="1429928483725" duration="145000" />
       <workItem from="1429928656109" duration="1226000" />
-      <workItem from="1429931066066" duration="6215000" />
+      <workItem from="1429931066066" duration="6478000" />
     </task>
     <task id="LOCAL-00001" summary="ceacion carpeta de documentos">
       <created>1424749837951</created>
@@ -1906,11 +1905,17 @@
       <option name="project" value="LOCAL" />
       <updated>1429937100217</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="get y post angular spring mvc">
+      <created>1429937320285</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1429937320285</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61769000" />
+    <option name="totallyTimeSpent" value="62032000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -2043,6 +2048,9 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
       <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
@@ -2469,8 +2477,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.23646724">
+          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
           <folding />
         </state>
       </provider>
