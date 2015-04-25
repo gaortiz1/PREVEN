@@ -53,6 +53,7 @@ public class ProcessAdministration {
         ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
         
         try {
+			processView.getProcess().setIdCompany(3);
 			GessoSecurityFactory.getInstance().getProcessService().persisNewProcess(processView.getProcess());
 		} catch (GessoException e) {
 			e.printStackTrace();

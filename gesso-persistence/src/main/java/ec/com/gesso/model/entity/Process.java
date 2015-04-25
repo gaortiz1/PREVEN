@@ -48,8 +48,13 @@ public class Process implements Serializable{
 	private String description;
 	
 	@Column(name = "STATUS_PROCESS")
-	private Boolean status; 
-	
+	private Boolean status;
+
+
+
+	@Column(name = "id_company")
+	private Integer idCompany;
+
 	@JoinColumn(name = "ID_PROCESS_ROOT", referencedColumnName = "ID_PROCESS_ROOT", insertable=false, updatable=false)
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Process levelProcessRoot;
@@ -170,5 +175,14 @@ public class Process implements Serializable{
 	 */
 	public void setSubLevels(Collection<Process> subLevels) {
 		this.subLevels = subLevels;
+	}
+
+
+	public Integer getIdCompany() {
+		return idCompany;
+	}
+
+	public void setIdCompany(Integer idCompany) {
+		this.idCompany = idCompany;
 	}
 }

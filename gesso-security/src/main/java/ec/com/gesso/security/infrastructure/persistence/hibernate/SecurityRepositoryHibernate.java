@@ -33,6 +33,7 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		try {
 			
 			getSession().persist(person.getUserDto());
+			person.setUserId(person.getUserDto().getUsrId());
 			getSession().persist(person);
 			getSession().flush();
 		} catch (Exception e) {

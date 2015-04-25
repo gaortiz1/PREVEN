@@ -39,3 +39,6 @@ create sequence seq_id_contact_data
 increment 1
 start 1;
 
+create sequence seq_id_contact_data
+increment 1
+start 1;
