@@ -3,12 +3,14 @@ app.controller("app-gesso-ctrl-adm", ['$http', '$scope', function($http, $scope)
 
     this.controller = $scope;
 
-    this.lstPerson = [];
+    $scope.nombre = 'prueba';
+    $scope.lstPerson = [];
 
 	this.loadprocess = function(){
 		var response = $http.get('person-edit2.json');
         response.success(function (data, status, headers, config) {
-            controller.lstPerson = data;
+            $scope.lstPerson = data;
+            $scope.nombre = 'cambio';
         });
 
         response.error(function (data, status, headers, config) {

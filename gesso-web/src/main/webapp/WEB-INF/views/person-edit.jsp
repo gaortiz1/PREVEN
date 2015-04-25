@@ -338,9 +338,11 @@
           <div class="col-xs-12">
             <!-- PAGE CONTENT BEGINS -->
 
-            <div ng-app="app-gesso-adm">
-              <div ng-controller="app-gesso-ctrl-adm">
-                <table st-table="controller.lstPerson" class="table table-striped">
+            <div >
+              <div ng-app="app-gesso-adm" ng-controller="app-gesso-ctrl-adm">
+                  {{nombre}}
+                  <div ng-repeat=""></div>
+                <table st-table="lstPerson" class="table table-striped">
                   <thead>
                   <tr>
                     <th st-sort="firstName">first name</th>
@@ -359,7 +361,7 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr ng-repeat="row in controller.lstPerson">
+                  <tr ng-repeat="row in lstPerson">
                     <td>s{{row.personalEmail | uppercase}}</td>
                     <td>{{row.personalEmail}}</td>
                     <td>{{row.personalEmail | date}}</td>
