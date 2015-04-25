@@ -363,7 +363,7 @@
 				                                <td>${member.person.lastName}</td>
 				                                <td>${member.person.dateOfBirth}</td>
 				                                <td>
-													<a href="#modal-form" role="button" class="blue" onclick="editarUsuario(${member.usrId})"> Edit </a>
+													<a href="#modal-form" role="button" class="blue" onclick="editarUsuario(${member.usrId})"> Editar </a>
 				                                </td>
 				                            </tr>
 				                        </c:forEach>

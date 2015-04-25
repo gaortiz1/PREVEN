@@ -207,7 +207,7 @@
   </div>
 
   <!-- /section:basics/sidebar -->
-  <div class="main-content">
+  <div class="main-content" ng-app="app-gesso-adm" ng-controller="app-gesso-ctrl-adm">
     <div class="main-content-inner">
       <!-- #section:basics/content.breadcrumbs -->
       <div class="breadcrumbs" id="breadcrumbs">
@@ -339,7 +339,7 @@
             <!-- PAGE CONTENT BEGINS -->
 
             <div >
-              <div ng-app="app-gesso-adm" ng-controller="app-gesso-ctrl-adm">
+              <div>
                   <div ng-repeat=""></div>
                 <table st-table="lstPerson" class="table table-striped">
                   <thead>
@@ -425,7 +425,7 @@
                           <label for="form-field-username">Username</label>
 
                           <div>
-                            <input type="text" id="form-field-username" placeholder="Username" value="alexdoe" />
+                            <input type="text" id="form-field-username"   ng-value="personSelected.firstName"/>
                           </div>
                         </div>
 

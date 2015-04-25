@@ -5,6 +5,7 @@ app.controller("app-gesso-ctrl-adm", ['$http', '$scope', function($http, $scope)
 
     $scope.nombre = 'prueba';
     $scope.lstPerson = [];
+    $scope.personSelected = [];
 
 	this.loadprocess = function(){
 		var response = $http.get('load-person-list.json');
@@ -20,10 +21,13 @@ app.controller("app-gesso-ctrl-adm", ['$http', '$scope', function($http, $scope)
 
 
     $scope.updatePerson = function (dataObj){
+        $scope.personSelected = dataObj;
         var res = $http.post('saveperson_json', dataObj);
         res.success(function(data, status, headers, config) {
             $scope.message = data;
+
             alert('dato guardado');
+            $('#modal-form').modal('show')
         });
         res.error(function(data, status, headers, config) {
             alert( "failure message: " + JSON.stringify({data: data}));
