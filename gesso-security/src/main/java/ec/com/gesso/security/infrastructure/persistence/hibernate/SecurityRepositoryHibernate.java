@@ -84,8 +84,13 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 	}
 
 	public void persistPersonUpdate(Person person) {
-		getSession().update(person);
-		getSession().flush();
+		try {
+
+			getSession().update(person);
+			getSession().flush();
+		}catch(Exception ex){
+			System.out.println(ex);
+		}
 	}
 
 }
