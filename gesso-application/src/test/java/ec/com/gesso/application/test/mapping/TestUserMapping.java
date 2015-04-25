@@ -13,6 +13,7 @@ public class TestUserMapping {
     @Test
     public void mappUser(){
         ModelMapper modelMapper = new ModelMapper();
+
         Person user = new Person();
         user.setPersonalEmail("maniac787");
         user.setUserDto(new User("usuaio","clave"));
