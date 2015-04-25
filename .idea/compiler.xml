@@ -23,14 +23,50 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="gesso-application" />
-        <module name="gesso-client" />
-        <module name="gesso-criteria" />
         <module name="gesso-ear" />
-        <module name="gesso-model" />
-        <module name="gesso-persistence" />
-        <module name="gesso-security" />
         <module name="gesso-security-model" />
+      </profile>
+      <profile default="false" name="Annotation profile for gesso-security" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="gesso-security" />
+      </profile>
+      <profile default="false" name="Annotation profile for gesso-model" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="gesso-model" />
+      </profile>
+      <profile default="false" name="Annotation profile for gesso-criteria" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="gesso-criteria" />
+      </profile>
+      <profile default="false" name="Annotation profile for gesso-web" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="gesso-web" />
+      </profile>
+      <profile default="false" name="Annotation profile for gesso-persistence" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="gesso-persistence" />
+      </profile>
+      <profile default="false" name="Annotation profile for gesso-client" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="gesso-client" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

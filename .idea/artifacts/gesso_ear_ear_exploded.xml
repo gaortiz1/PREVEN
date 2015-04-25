@@ -4,7 +4,7 @@
     <root id="root">
       <element id="javaee-facet-resources" facet="gesso-ear/javaeeApplication/JavaEE" />
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/gesso-ear/target/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/gesso-ear/target/gesso-ear-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="dir-copy" path="EarContent" />
       <element id="archive" name="gesso-web-0.0.1-SNAPSHOT.war">
