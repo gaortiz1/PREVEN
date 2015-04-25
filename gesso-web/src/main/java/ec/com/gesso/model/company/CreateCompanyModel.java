@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author Gabriel
  *
  */
-public class CompanyModel implements Serializable {
+public class CreateCompanyModel implements Serializable {
 
 	/**
 	 * 

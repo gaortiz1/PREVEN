@@ -139,6 +139,17 @@
 								</a>
 
 								<b class="arrow"></b>
+								
+								<ul class="submenu">
+									<li class="">
+										<a href="${pageContext.request.contextPath}/company/create-company">
+											<i class="menu-icon fa fa-caret-right"></i>
+											<spring:message code="menu.label.company.new"/>
+										</a>
+		
+										<b class="arrow"></b>
+									</li>
+								</ul>
 							</li>
 
 							<li class="">
@@ -224,16 +235,6 @@
 							</li>
 							<li class="active">Company</li>
 						</ul><!-- /.breadcrumb -->
-
-						<!-- #section:basics/content.searchbox -->
-						<div class="nav-search" id="nav-search">
-							<form class="form-search">
-								<span class="input-icon">
-									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-									<i class="ace-icon fa fa-search nav-search-icon"></i>
-								</span>
-							</form>
-						</div><!-- /.nav-search -->
 
 						<!-- /section:basics/content.searchbox -->
 					</div>
@@ -356,7 +357,7 @@
 					                                <td>${company.typeCompany.name}</td>
 					                                <td>${company.catalogSectorProductivo.name}</td>
 					                                <td>
-														<a href="#modal-form" role="button" class="blue" onclick="editarUsuario(${member.usrId})"> Edit </a>
+														<a href="/gesso/company/edit-company/${company.id}" role="button" class="blue" onclick="editarCompany(${company.id})"> Edit </a>
 					                                </td>
 					                            </tr>
 					                        </c:forEach>
@@ -469,34 +470,21 @@
 		<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.searchbox-autocomplete.js"></script>
 		
 		<script type="text/javascript">
-			function loadChildren(element, event, idChildren){
-	
-				var selectResult=0;
-				$(element).find("option:selected").each(function(indice, elemento) {
-					selectResult= $(elemento).val();
-				});
-				
+		
+			function editarCompany(id){						
 				$.ajax({
 					method: "GET",
-					url: "geopoliticaldivision/children/"+selectResult,
-					contentType: "application/json; charset=utf-8",
-					dataType: "json",
-					success:function( data, textStatus, errorThrown ){
-						try{
-							$("#"+idChildren).find('option').remove();
-							$("#"+idChildren).append($("<option></option>").attr("value","").text("Seleccione")); 
-							$.each( data, function( i, item ) {
-								$("#"+idChildren).append($("<option></option>").attr("value",item.id).text(item.name)); 
-						   	});
-						} catch (e) {
-							alert(e);
-						}
+					url: "/gesso/company/edit-company/"+id,
+					success: function( ){
+						$('#modal-form').modal('show')
 		          	},
-		          	error: function( jqXhr, textStatus, errorThrown ){
-			          	alert( errorThrown );
+		          	error: function(  ){
+			          	alert( 'error');
 		          	}
 				});
+				
 			}
+				
 		</script>
 
 		<!-- inline scripts related to this page -->

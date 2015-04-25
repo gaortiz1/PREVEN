@@ -16,7 +16,7 @@ import ec.com.gesso.application.factory.GessoFactory;
 import ec.com.gesso.application.factory.GessoSearchCriteria;
 import ec.com.gesso.application.lang.CompanyBuilder;
 import ec.com.gesso.common.exception.GessoException;
-import ec.com.gesso.model.company.CompanyModel;
+import ec.com.gesso.model.company.CreateCompanyModel;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.Company;
 import ec.com.gesso.model.entity.GeopoliticalDivision;
@@ -59,7 +59,7 @@ public class CreateCompanyController {
 			e.printStackTrace();
 		}
 		
-		final ModelAndView modelAndView = new ModelAndView("/company/create-company", "command", new CompanyModel());
+		final ModelAndView modelAndView = new ModelAndView("/company/create-company", "command", new CreateCompanyModel());
 		modelAndView.addObject("typesCompanies", typesCompanies);
 		modelAndView.addObject("worksHours", worksHours);
 		modelAndView.addObject("productivesSector", productivesSector);
@@ -68,7 +68,11 @@ public class CreateCompanyController {
 	}
 	
 	@RequestMapping(value = "/company-administration", method = RequestMethod.POST)
+<<<<<<< HEAD:gesso-web/src/main/java/ec/com/gesso/controller/administration/company/CreateCompanyController.java
     public String saveCompany(@ModelAttribute("contact")CompanyModel companyModel, BindingResult result) {
+=======
+    public String saveCompany(@ModelAttribute("contact")CreateCompanyModel companyModel, BindingResult result) {
+>>>>>>> parent of 58195ff... Edicion de Company:gesso-web/src/main/java/ec/com/gesso/controller/administration/company/CreateCompanyController.java
     	try {
     		
     		CompanyBuilder companyBuilder = new CompanyBuilder();

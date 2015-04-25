@@ -1,4 +1,4 @@
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
@@ -380,7 +380,7 @@
 										<div class="col-sm-5">
 											<form:select path="idGeopoliticalDivisionCountry" id="selectPais"  data-placeholder="Seleccione pais..." required="required" onchange="loadChildren(this, event,'idGeopoliticalDivisionProvince')" style="width: 452px;">
 												<form:option value="" label="--- Seleccione---" />
-												<form:options items="${geopoliticalDivisions}" itemLabel="name" itemValue="id" />
+												<form:options items="${geopoliticalCountries}" itemLabel="name" itemValue="id" />
 											</form:select>
 										</div>
 									</div>
@@ -389,7 +389,7 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.provincia"/></label>
 										<div class="col-sm-5">
 											<form:select path="idGeopoliticalDivisionProvince"  data-placeholder="Seleccione provincia..." required="required" onchange="loadChildren(this, event, 'idGeopoliticalDivisionCity')" style="width: 452px;">
-												<form:option value="" label="--- Seleccine un pais---" />
+												<form:options items="${geopoliticalProvinces}" itemLabel="name" itemValue="id" />
 											</form:select>
 										</div>
 									</div>
@@ -398,7 +398,7 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.cuidad"/></label>
 										<div class="col-sm-5">
 											<form:select path="idGeopoliticalDivisionCity" data-placeholder="Seleccione ciudad..." required="required" style="width: 452px;">
-												<form:option value="" label="--- Select una provincia---" />
+												<form:options items="${geopoliticalProvinces}" itemLabel="name" itemValue="id" />
 											</form:select>
 										</div>
 									</div>
