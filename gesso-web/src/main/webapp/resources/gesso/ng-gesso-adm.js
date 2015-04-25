@@ -20,14 +20,18 @@ app.controller("app-gesso-ctrl-adm", ['$http', '$scope', function($http, $scope)
 	};
 
 
-    $scope.updatePerson = function (dataObj){
+    $scope.selectPerson = function (dataObj){
         $scope.personSelected = dataObj;
-        var res = $http.post('saveperson_json', dataObj);
+        $('#modal-form').modal('show')
+    }
+
+
+    $scope.updatePerson = function(){
+        var res = $http.post('saveperson_json', $scope.personSelected);
         res.success(function(data, status, headers, config) {
             $scope.message = data;
 
             alert('dato guardado');
-            $('#modal-form').modal('show')
         });
         res.error(function(data, status, headers, config) {
             alert( "failure message: " + JSON.stringify({data: data}));

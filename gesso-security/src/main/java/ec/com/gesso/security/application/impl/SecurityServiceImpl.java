@@ -40,6 +40,10 @@ public class SecurityServiceImpl implements ISecurityService{
 		securityRepository.persistPerson(person);
 	}
 
+	public void persistPersonUpdate(Person person) throws GessoException {
+		securityRepository.persistPersonUpdate(person);
+	}
+
 	@Override
 	public void persistUser(User userDto) throws GessoException {
 		securityRepository.persistUser(userDto);

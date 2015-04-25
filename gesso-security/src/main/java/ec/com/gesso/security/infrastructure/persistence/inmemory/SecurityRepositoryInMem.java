@@ -51,4 +51,8 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 	public Collection<Person> findAllPersons() throws GessoException {
 		return null;
 	}
+
+	public void persistPersonUpdate(Person person) {
+
+	}
 }

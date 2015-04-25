@@ -20,4 +20,6 @@ public interface SecurityRepository {
 	public User findUserById(Integer usrId) throws GessoException;
 
 	Collection<Person> findAllPersons() throws GessoException;
+
+	void persistPersonUpdate(Person person);
 }

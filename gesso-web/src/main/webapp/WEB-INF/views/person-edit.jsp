@@ -359,7 +359,7 @@
                     <td>{{row.documentNumber}}</td>
                     <td>{{row.personalEmail}}</td>
                     <td>
-                        <input type="button" ng-click = "updatePerson(row)"value="Editar"/>
+                        <input type="button" ng-click = "selectPerson(row)"value="Editar"/>
                     </td>
                   </tr>
                   </tbody>
@@ -408,37 +408,28 @@
                       </div>
 
                       <div class="col-xs-12 col-sm-7">
+
+                        <div class="space-4"></div>
+
                         <div class="form-group">
-                          <label for="form-field-select-3">Location</label>
+                          <label for="form-field-username">Primer nombre</label>
 
                           <div>
-                            <select class="chosen-select" data-placeholder="Choose a Country...">
-                              <option value="">&nbsp;</option>
-                              <option value="AL">Alabama</option>
-                            </select>
+                            <input type="text" id="form-field-username" ng-model="personSelected.firstName"/>
                           </div>
                         </div>
 
                         <div class="space-4"></div>
 
-                        <div class="form-group">
-                          <label for="form-field-username">Username</label>
+                          <div class="form-group">
+                              <label for="form-field-username">Primer apellido</label>
 
-                          <div>
-                            <input type="text" id="form-field-username"   ng-value="personSelected.firstName"/>
+                              <div>
+                                  <input type="text" id="form-field-username" ng-model="personSelected.lastName"/>
+                              </div>
                           </div>
-                        </div>
 
-                        <div class="space-4"></div>
-
-                        <div class="form-group">
-                          <label for="form-field-first">Name</label>
-
-                          <div>
-                            <input type="text" id="form-field-first" placeholder="First Name" value="Alex" />
-                            <input type="text" id="form-field-last" placeholder="Last Name" value="Doe" />
-                          </div>
-                        </div>
+                          <div class="space-4"></div>
                       </div>
                     </div>
                   </div>
@@ -449,7 +440,7 @@
                       Cancel
                     </button>
 
-                    <button class="btn btn-sm btn-primary">
+                    <button class="btn btn-sm btn-primary" ng-click="updatePerson()">
                       <i class="ace-icon fa fa-check"></i>
                       Save
                     </button>

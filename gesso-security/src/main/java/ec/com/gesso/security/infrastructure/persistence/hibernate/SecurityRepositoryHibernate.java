@@ -83,4 +83,9 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		return criteria.list();
 	}
 
+	public void persistPersonUpdate(Person person) {
+		getSession().update(person);
+		getSession().flush();
+	}
+
 }

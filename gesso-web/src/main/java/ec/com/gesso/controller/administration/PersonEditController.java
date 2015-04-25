@@ -63,8 +63,14 @@ public class PersonEditController {
 
 
     @RequestMapping(value = "/saveperson_json", method = RequestMethod.POST)
-    public  @ResponseBody PersonDto savePerson_JSON( @RequestBody PersonDto personDto )   {
-        System.out.println(personDto);
+    public  @ResponseBody PersonDto savePerson_JSON( @RequestBody PersonDto personDto ) throws Exception {
+        ModelMapper modelMapper = new ModelMapper();
+        Person objPersist = modelMapper.map(personDto, Person.class);
+        try {
+            GessoSecurityFactory.getInstance().getSecurityService().persistPersonUpdate(objPersist);
+        } catch (GessoException e) {
+            throw new Exception("Error");
+        }
         return personDto;
     }
 }
