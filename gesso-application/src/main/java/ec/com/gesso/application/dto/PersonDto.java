@@ -4,6 +4,7 @@ package ec.com.gesso.application.dto;
  * Created by Roberto on 19/04/2015.
  */
 public class PersonDto {
+    private Long idPerson;
     private UserDto userDto;
     private String personalEmail;
     private String firstName;
@@ -52,5 +53,13 @@ public class PersonDto {
 
     public void setDocumentNumber(String documentNumber) {
         this.documentNumber = documentNumber;
+    }
+
+    public Long getIdPerson() {
+        return idPerson;
+    }
+
+    public void setIdPerson(Long idPerson) {
+        this.idPerson = idPerson;
     }
 }
