@@ -24,7 +24,7 @@ public final  class GessoFactory {
 						"classpath:ec/com/gesso/application/resource/spring/config/gesso-application.xml",
 						"classpath:ec/com/gesso/application/resource/spring/config/gesso-criteria.xml", 
 						"classpath:ec/com/gesso/application/resource/spring/config/gesso-persistencia.xml",
-						"classpath:ec/com/gesso/application/resource/spring/config/gesso-transactions.xml",
+						"classpath:ec/com/gesso/application/resource/spring/config/gesso-transactions-hibernate.xml",
 						"classpath:ec/com/gesso/domain/resource/spring/config/gesso-domain.xml",
 						"classpath:ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml"
 			});
@@ -39,6 +39,10 @@ public final  class GessoFactory {
 	
 	public IServiceEntity<Company> getServiceCompany(){
 		return this.context.getBean("serviceCompany",IServiceEntity.class);
+	}
+	
+	public IServiceEntity<ec.com.gesso.model.entity.Process> getServiceProcess(){
+		return this.context.getBean("serviceProcess",IServiceEntity.class);
 	}
 	
 

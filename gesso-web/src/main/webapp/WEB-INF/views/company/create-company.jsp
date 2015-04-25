@@ -597,7 +597,7 @@
 				
 				$.ajax({
 					method: "GET",
-					url: "geopoliticaldivision/children/"+selectResult,
+					url: "/gesso/geopoliticaldivision/children/"+selectResult,
 					contentType: "application/json; charset=utf-8",
 					dataType: "json",
 					success:function( data, textStatus, errorThrown ){

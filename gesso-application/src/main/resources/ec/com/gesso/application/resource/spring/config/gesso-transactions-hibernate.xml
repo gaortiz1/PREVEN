@@ -22,22 +22,4 @@
 		<aop:pointcut  id="pointcutServiceMethods" expression="within(ec.com.gesso.application.service..*)"/>		
 		<aop:advisor advice-ref="txAdviceHibernate" pointcut-ref="pointcutServiceMethods"/>		
 	</aop:config>
-	
-	
-	
-	<bean id="gessoTransactionManagerJpa" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
-	
-	<tx:advice id="txAdviceHibernate" transaction-manager="gessoTransactionManagerJpa">
-		<tx:attributes>
-			<tx:method name="*" rollback-for="Throwable"/>
-		</tx:attributes>
-	</tx:advice>
-	
-	<aop:config>
-		<aop:pointcut  id="pointcutServiceMethods" expression="within(ec.com.gesso.application.service..*)"/>		
-		<aop:advisor advice-ref="txAdviceHibernate" pointcut-ref="pointcutServiceMethods"/>		
-	</aop:config>
-	
 </beans>

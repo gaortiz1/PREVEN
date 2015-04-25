@@ -16,7 +16,7 @@ import ec.com.gesso.application.factory.GessoFactory;
 import ec.com.gesso.application.factory.GessoSearchCriteria;
 import ec.com.gesso.application.lang.CompanyBuilder;
 import ec.com.gesso.common.exception.GessoException;
-import ec.com.gesso.model.company.CreateCompanyModel;
+import ec.com.gesso.model.company.CompanyModel;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.Company;
 import ec.com.gesso.model.entity.GeopoliticalDivision;
@@ -24,9 +24,9 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 @Controller
 @SessionAttributes
-public class CreateCompanyController {
+public class CompanyCreateController {
 	
-	 private final static Logger LOGGER = LoggerFactory.getLogger(CreateCompanyController.class);
+	 private final static Logger LOGGER = LoggerFactory.getLogger(CompanyCreateController.class);
 	
 	@RequestMapping(value = "/company/create-company", method = RequestMethod.GET)
 	public ModelAndView createCompany(){
@@ -59,7 +59,7 @@ public class CreateCompanyController {
 			e.printStackTrace();
 		}
 		
-		final ModelAndView modelAndView = new ModelAndView("/company/create-company", "command", new CreateCompanyModel());
+		final ModelAndView modelAndView = new ModelAndView("/company/create-company", "command", new CompanyModel());
 		modelAndView.addObject("typesCompanies", typesCompanies);
 		modelAndView.addObject("worksHours", worksHours);
 		modelAndView.addObject("productivesSector", productivesSector);
@@ -67,12 +67,13 @@ public class CreateCompanyController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/company-administration", method = RequestMethod.POST)
-    public String saveCompany(@ModelAttribute("contact")CreateCompanyModel companyModel, BindingResult result) {
+	@RequestMapping(value = "/company/create-company", method = RequestMethod.POST)
+    public String saveCompany(@ModelAttribute("contact")CompanyModel companyModel, BindingResult result) {
     	try {
     		
     		CompanyBuilder companyBuilder = new CompanyBuilder();
     		companyBuilder.createNameCompany(companyModel.getNombreComercial())
+    				.addrRazonSocial(companyModel.getRazonSocial())
     				.addDocument("RUC", companyModel.getRuc())
     				.addActivityEconomic(companyModel.getActividadComercialPrincipal())
     				.addActivityEconomic(companyModel.getActividadComercialSecuandaria())
@@ -104,7 +105,7 @@ public class CreateCompanyController {
 		}
     	
     	
-        return "redirect:company-administration";
+        return "redirect:/company-administration";
     }
 
 }

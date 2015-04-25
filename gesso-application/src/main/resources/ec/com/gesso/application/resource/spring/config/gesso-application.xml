@@ -9,10 +9,6 @@
 		</property>
 	</bean>
 	
-	<bean id="gessoTransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory"><ref bean="hibernate4AnnotatedSessionFactory"/></property>
-	</bean>
-	
 	<bean id="serviceCompany" class="ec.com.gesso.application.service.impl.ServiceCompany">
 		<property name="domainCompany">
 			<ref bean="domainCompany"/>
