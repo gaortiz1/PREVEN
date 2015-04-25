@@ -16,7 +16,7 @@ import ec.com.gesso.application.factory.GessoFactory;
 import ec.com.gesso.application.factory.GessoSearchCriteria;
 import ec.com.gesso.application.lang.CompanyBuilder;
 import ec.com.gesso.common.exception.GessoException;
-import ec.com.gesso.model.company.CreateCompanyModel;
+import ec.com.gesso.model.company.CompanyModel;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.Company;
 import ec.com.gesso.model.entity.GeopoliticalDivision;
@@ -59,7 +59,7 @@ public class CreateCompanyController {
 			e.printStackTrace();
 		}
 		
-		final ModelAndView modelAndView = new ModelAndView("/company/create-company", "command", new CreateCompanyModel());
+		final ModelAndView modelAndView = new ModelAndView("/company/create-company", "command", new CompanyModel());
 		modelAndView.addObject("typesCompanies", typesCompanies);
 		modelAndView.addObject("worksHours", worksHours);
 		modelAndView.addObject("productivesSector", productivesSector);
@@ -68,7 +68,7 @@ public class CreateCompanyController {
 	}
 	
 	@RequestMapping(value = "/company-administration", method = RequestMethod.POST)
-    public String saveCompany(@ModelAttribute("contact")CreateCompanyModel companyModel, BindingResult result) {
+    public String saveCompany(@ModelAttribute("contact")CompanyModel companyModel, BindingResult result) {
     	try {
     		
     		CompanyBuilder companyBuilder = new CompanyBuilder();
