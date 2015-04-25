@@ -16,7 +16,7 @@ import ec.com.gesso.model.entity.GeopoliticalDivision;
 
 @Controller
 @SessionAttributes
-public class CompanySearchyController {
+public class CompanySearchController {
 	
 	@RequestMapping(value = "/company-administration", method = RequestMethod.GET)
 	public ModelAndView searchAllCompanies(){
