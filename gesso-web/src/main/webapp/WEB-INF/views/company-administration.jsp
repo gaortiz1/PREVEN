@@ -357,7 +357,7 @@
 					                                <td>${company.typeCompany.name}</td>
 					                                <td>${company.catalogSectorProductivo.name}</td>
 					                                <td>
-														<a href="/gesso/company/edit-company/${company.id}" role="button" class="blue" onclick="editarCompany(${company.id})"> Edit </a>
+														<a href="/gesso/company/edit-company/${company.id}" role="button" class="blue"> Edit </a>
 					                                </td>
 					                            </tr>
 					                        </c:forEach>

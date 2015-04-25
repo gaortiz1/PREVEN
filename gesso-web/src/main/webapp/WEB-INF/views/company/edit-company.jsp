@@ -398,7 +398,7 @@
 										<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.cuidad"/></label>
 										<div class="col-sm-5">
 											<form:select path="idGeopoliticalDivisionCity" data-placeholder="Seleccione ciudad..." required="required" style="width: 452px;">
-												<form:options items="${geopoliticalProvinces}" itemLabel="name" itemValue="id" />
+												<form:options items="${geopoliticalCities}" itemLabel="name" itemValue="id" />
 											</form:select>
 										</div>
 									</div>

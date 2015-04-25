@@ -7,6 +7,7 @@ package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Set;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -20,6 +21,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  *
@@ -51,6 +55,10 @@ public class Company implements Serializable {
     private String name;
     
     @Basic(optional = false)
+    @Column(name = "RAZON_SOCIAL")
+    private String razonSocial;
+    
+    @Basic(optional = false)
     @Column(name = "state_company")
     private Boolean state;
     
@@ -67,22 +75,22 @@ public class Company implements Serializable {
     private GeopoliticalDivision geopoliticalDivision;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Collection<Subcompany> subcompanyCollection;
+    private Set<Subcompany> subcompanyCollection;
     
     @OneToMany( mappedBy = "company1", fetch = FetchType.LAZY)
-    private Collection<Subcompany> subcompanyCollection1;
+    private Set<Subcompany> subcompanyCollection1;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Collection<ActivityEconomicCompany> activityEconomicCompanyCollection;
+    private Set<ActivityEconomicCompany> activityEconomicCompanyCollection;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Collection<Document> documentCollection;
+    private Set<Document> documentCollection;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Collection<ScheduleWork> scheduleWorkCollection;
+    private Set<ScheduleWork> scheduleWorkCollection;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Collection<ContactData> contactDataCollection;
+    private Set<ContactData> contactDataCollection;
 
 	/**
 	 * @return the id
@@ -155,6 +163,20 @@ public class Company implements Serializable {
 	}
 
 	/**
+	 * @return the razonSocial
+	 */
+	public String getRazonSocial() {
+		return razonSocial;
+	}
+
+	/**
+	 * @param razonSocial the razonSocial to set
+	 */
+	public void setRazonSocial(String razonSocial) {
+		this.razonSocial = razonSocial;
+	}
+
+	/**
 	 * @return the state
 	 */
 	public Boolean getState() {
@@ -213,36 +235,35 @@ public class Company implements Serializable {
 	/**
 	 * @return the subcompanyCollection
 	 */
-	public Collection<Subcompany> getSubcompanyCollection() {
+	public Set<Subcompany> getSubcompanyCollection() {
 		return subcompanyCollection;
 	}
 
 	/**
 	 * @param subcompanyCollection the subcompanyCollection to set
 	 */
-	public void setSubcompanyCollection(Collection<Subcompany> subcompanyCollection) {
+	public void setSubcompanyCollection(Set<Subcompany> subcompanyCollection) {
 		this.subcompanyCollection = subcompanyCollection;
 	}
 
 	/**
 	 * @return the subcompanyCollection1
 	 */
-	public Collection<Subcompany> getSubcompanyCollection1() {
+	public Set<Subcompany> getSubcompanyCollection1() {
 		return subcompanyCollection1;
 	}
 
 	/**
 	 * @param subcompanyCollection1 the subcompanyCollection1 to set
 	 */
-	public void setSubcompanyCollection1(
-			Collection<Subcompany> subcompanyCollection1) {
+	public void setSubcompanyCollection1(Set<Subcompany> subcompanyCollection1) {
 		this.subcompanyCollection1 = subcompanyCollection1;
 	}
 
 	/**
 	 * @return the activityEconomicCompanyCollection
 	 */
-	public Collection<ActivityEconomicCompany> getActivityEconomicCompanyCollection() {
+	public Set<ActivityEconomicCompany> getActivityEconomicCompanyCollection() {
 		return activityEconomicCompanyCollection;
 	}
 
@@ -250,51 +271,49 @@ public class Company implements Serializable {
 	 * @param activityEconomicCompanyCollection the activityEconomicCompanyCollection to set
 	 */
 	public void setActivityEconomicCompanyCollection(
-			Collection<ActivityEconomicCompany> activityEconomicCompanyCollection) {
+			Set<ActivityEconomicCompany> activityEconomicCompanyCollection) {
 		this.activityEconomicCompanyCollection = activityEconomicCompanyCollection;
 	}
 
 	/**
 	 * @return the documentCollection
 	 */
-	public Collection<Document> getDocumentCollection() {
+	public Set<Document> getDocumentCollection() {
 		return documentCollection;
 	}
 
 	/**
 	 * @param documentCollection the documentCollection to set
 	 */
-	public void setDocumentCollection(Collection<Document> documentCollection) {
+	public void setDocumentCollection(Set<Document> documentCollection) {
 		this.documentCollection = documentCollection;
 	}
 
 	/**
 	 * @return the scheduleWorkCollection
 	 */
-	public Collection<ScheduleWork> getScheduleWorkCollection() {
+	public Set<ScheduleWork> getScheduleWorkCollection() {
 		return scheduleWorkCollection;
 	}
 
 	/**
 	 * @param scheduleWorkCollection the scheduleWorkCollection to set
 	 */
-	public void setScheduleWorkCollection(
-			Collection<ScheduleWork> scheduleWorkCollection) {
+	public void setScheduleWorkCollection(Set<ScheduleWork> scheduleWorkCollection) {
 		this.scheduleWorkCollection = scheduleWorkCollection;
 	}
 
 	/**
 	 * @return the contactDataCollection
 	 */
-	public Collection<ContactData> getContactDataCollection() {
+	public Set<ContactData> getContactDataCollection() {
 		return contactDataCollection;
 	}
 
 	/**
 	 * @param contactDataCollection the contactDataCollection to set
 	 */
-	public void setContactDataCollection(
-			Collection<ContactData> contactDataCollection) {
+	public void setContactDataCollection(Set<ContactData> contactDataCollection) {
 		this.contactDataCollection = contactDataCollection;
 	}
 }

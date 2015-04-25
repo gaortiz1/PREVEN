@@ -69,7 +69,7 @@ public final class SelectEntity implements Select {
 					final AttributeOneValue attributeOneValue = (AttributeOneValue) fieldObjectJoin.getAttribute();
 			
 					
-					if (attributeOneValue.getValue() instanceof Collection) {
+					if (attributeOneValue.getValue() instanceof Iterable) {
 						
 						final Collection<?> collection = (Collection<?>) attributeOneValue.getValue();
 						

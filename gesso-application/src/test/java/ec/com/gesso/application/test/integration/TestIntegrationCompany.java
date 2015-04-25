@@ -5,19 +5,15 @@ import org.junit.Test;
 
 import ec.com.gesso.application.factory.GessoFactory;
 import ec.com.gesso.application.lang.CompanyBuilder;
-import ec.com.gesso.application.service.IServiceEntity;
 import ec.com.gesso.model.entity.Company;
 
-public class TestIntegrationCompany extends AbstractApplicationIntegration {
+public class TestIntegrationCompany {
 
-	private IServiceEntity<Company> serviceCompany;
 	private CompanyBuilder companyBuilder = new CompanyBuilder();
 	private Company company;
-
-	@SuppressWarnings("unchecked")
+	
 	@Before
 	public void setUp() throws Exception {
-		this.serviceCompany = (IServiceEntity<Company>) applicationContext.getBean("serviceCompany");
 		company = companyBuilder.createNameCompany("empresa abc")
 				.addDocument("RUC", "1717189235001")
 				.addDocument("RUC", "1717189235001")
@@ -35,11 +31,6 @@ public class TestIntegrationCompany extends AbstractApplicationIntegration {
 				.addPhone("0999090909", "CEL")
 				.addPhone("123213", "TEL")
 				.build();
-	}
-
-	@Test
-	public void testCreateCompany() {
-		this.serviceCompany.create(company);
 	}
 	
 	@Test

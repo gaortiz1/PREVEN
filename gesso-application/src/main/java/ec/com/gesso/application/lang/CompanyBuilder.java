@@ -3,8 +3,8 @@
  */
 package ec.com.gesso.application.lang;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -23,7 +23,8 @@ import ec.com.gesso.model.entity.ScheduleWorkPK;
  */
 public class CompanyBuilder {
 	
-	private String nombreComapny;
+	private String nombreComapany;
+	private String razonSocial;
 	private String typeCompany;
 	private String typeProductiveSector;
 	private Long idGeopoliticalDivision;
@@ -35,7 +36,12 @@ public class CompanyBuilder {
 	
 
 	public CompanyBuilder createNameCompany(final String nombre) {
-		this.nombreComapny = nombre;
+		this.nombreComapany = nombre;
+		return this;
+	}
+	
+	public CompanyBuilder addrRazonSocial(final String razonSocial) {
+		this.razonSocial = razonSocial;
 		return this;
 	}
 
@@ -86,13 +92,14 @@ public class CompanyBuilder {
 	
 	public Company build(){
 		final Company company = new Company();
-		company.setName(this.nombreComapny);
+		company.setName(this.nombreComapany);
+		company.setRazonSocial(this.razonSocial);
 		company.setIdTypeCompany(this.typeCompany);
 		company.setIdProductiveSector(this.typeProductiveSector);
 		company.setIdGeopoliticalDivision(this.idGeopoliticalDivision);
 		
 		if(!this.namesActivityEconomicCompany.isEmpty()){
-			company.setActivityEconomicCompanyCollection(new ArrayList<ActivityEconomicCompany>());
+			company.setActivityEconomicCompanyCollection(new HashSet<ActivityEconomicCompany>());
 			for(final String activityEconomic : this.namesActivityEconomicCompany){
 				ActivityEconomicCompany activityEconomicCompany = new ActivityEconomicCompany();
 				activityEconomicCompany.setName(activityEconomic);
@@ -101,7 +108,7 @@ public class CompanyBuilder {
 		}
 		
 		if(!this.idsBusinessHour.isEmpty()) {
-			company.setScheduleWorkCollection(new ArrayList<ScheduleWork>());
+			company.setScheduleWorkCollection(new HashSet<ScheduleWork>());
 			for(final String idBusinessHour: this.idsBusinessHour) {
 				final ScheduleWork scheduleWork = new ScheduleWork();
 				scheduleWork.setIdScheduleWork(new ScheduleWorkPK());
@@ -111,7 +118,7 @@ public class CompanyBuilder {
 		}
 		
 		if(!this.documents.isEmpty()) {
-			company.setDocumentCollection(new ArrayList<Document>());
+			company.setDocumentCollection(new HashSet<Document>());
 			for (final Map.Entry<String,String> entryDocument : this.documents.entrySet()) {
 				final Document document = new Document();
 				document.setIdDocument(new DocumentPK());
@@ -121,7 +128,7 @@ public class CompanyBuilder {
 			}
 		}
 		
-		company.setContactDataCollection(new ArrayList<ContactData>());
+		company.setContactDataCollection(new HashSet<ContactData>());
 		company.getContactDataCollection().add(contactDataBuilder.build());
 		
 		return company;
