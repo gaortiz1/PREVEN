@@ -7,7 +7,7 @@ app.controller("app-gesso-ctrl-adm", ['$http', '$scope', function($http, $scope)
     $scope.lstPerson = [];
 
 	this.loadprocess = function(){
-		var response = $http.get('person-edit2.json');
+		var response = $http.get('load-person-list.json');
         response.success(function (data, status, headers, config) {
             $scope.lstPerson = data;
             $scope.nombre = 'cambio';

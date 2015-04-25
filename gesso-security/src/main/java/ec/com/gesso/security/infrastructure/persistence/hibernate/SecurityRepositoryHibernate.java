@@ -10,6 +10,7 @@ import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.User;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
+import org.hibernate.sql.JoinType;
 
 public class SecurityRepositoryHibernate extends HibernateRepository implements SecurityRepository{
 
@@ -77,7 +78,7 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		Criteria criteria =  null;
 
 		criteria =  getSession().createCriteria(Person.class);
-		criteria.createAlias("userDto", "userDtoA");
+		criteria.createAlias("userDto", "userDtoA", JoinType.LEFT_OUTER_JOIN);
 		criteria.setFetchMode("userDtoA", FetchMode.JOIN);
 		return criteria.list();
 	}

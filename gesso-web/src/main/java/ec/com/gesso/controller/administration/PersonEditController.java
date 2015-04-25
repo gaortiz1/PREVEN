@@ -42,7 +42,7 @@ public class PersonEditController {
         return modelAndView;
     }
 
-    @RequestMapping(value="/person-edit2", method= RequestMethod.GET,produces={"application/xml", "application/json"})
+    @RequestMapping(value="/load-person-list", method= RequestMethod.GET,produces={"application/xml", "application/json"})
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody Collection<PersonDto> getPersonList() {
         Collection<Person> lstPersonas = null;
@@ -58,9 +58,6 @@ public class PersonEditController {
         Type listType = new TypeToken<List<PersonDto>>() {}.getType();
         lstPersonasDto = modelMapper.map(lstPersonas, listType );
 
-        for(Person obj: lstPersonas){
-            lstPersonasDto.add(modelMapper.map(obj, PersonDto.class));
-        }
         return lstPersonasDto;
     }
 }

@@ -340,33 +340,25 @@
 
             <div >
               <div ng-app="app-gesso-adm" ng-controller="app-gesso-ctrl-adm">
-                  {{nombre}}
                   <div ng-repeat=""></div>
                 <table st-table="lstPerson" class="table table-striped">
                   <thead>
                   <tr>
-                    <th st-sort="firstName">first name</th>
-                    <th st-sort="lastName">last name</th>
-                    <th st-sort="birthDate">birth date</th>
-                    <th st-sort="balance">balance</th>
-                    <th>email</th>
+                    <th st-sort="firstName">Nombre</th>
+                    <th st-sort="lastName">apellido</th>
+                    <th st-sort="documentNumber">Documento</th>
+                    <th st-sort="personalEmail">Email</th>
+                    <th>Editar</th>
                   </tr>
-                  <tr>
-                    <th>
-                      <input st-search="'firstName'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
-                    </th>
-                    <th colspan="4">
-                      <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
-                    </th>
-                  </tr>
+
                   </thead>
                   <tbody>
                   <tr ng-repeat="row in lstPerson">
-                    <td>s{{row.personalEmail | uppercase}}</td>
+                    <td>{{row.firstName | uppercase}}</td>
+                    <td>{{row.lastName}}</td>
+                    <td>{{row.documentNumber}}</td>
                     <td>{{row.personalEmail}}</td>
-                    <td>{{row.personalEmail | date}}</td>
-                    <td>{{row.personalEmail | currency}}</td>
-                    <td><a ng-href="mailto:{{row.personalEmail}}">email</a></td>
+                    <td><a href="#">Editar</a></td>
                   </tr>
                   </tbody>
                   <tfoot>

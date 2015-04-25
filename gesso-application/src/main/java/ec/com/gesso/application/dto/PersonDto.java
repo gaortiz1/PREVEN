@@ -6,6 +6,9 @@ package ec.com.gesso.application.dto;
 public class PersonDto {
     private UserDto userDto;
     private String personalEmail;
+    private String firstName;
+    private String lastName;
+    private String documentNumber;
 
     public PersonDto() {
 
@@ -25,5 +28,29 @@ public class PersonDto {
 
     public void setUserDto(UserDto userDto) {
         this.userDto = userDto;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getDocumentNumber() {
+        return documentNumber;
+    }
+
+    public void setDocumentNumber(String documentNumber) {
+        this.documentNumber = documentNumber;
     }
 }
