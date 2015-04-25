@@ -358,7 +358,9 @@
                     <td>{{row.lastName}}</td>
                     <td>{{row.documentNumber}}</td>
                     <td>{{row.personalEmail}}</td>
-                    <td><a href="#">Editar</a></td>
+                    <td>
+                        <input type="button" ng-click = "updatePerson(row)"value="Editar"/>
+                    </td>
                   </tr>
                   </tbody>
                   <tfoot>

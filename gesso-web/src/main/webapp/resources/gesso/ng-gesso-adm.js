@@ -19,8 +19,8 @@ app.controller("app-gesso-ctrl-adm", ['$http', '$scope', function($http, $scope)
 	};
 
 
-    this.updatePerson = function (){
-        var res = $http.post('/saveperson_json', dataObj);
+    $scope.updatePerson = function (dataObj){
+        var res = $http.post('saveperson_json', dataObj);
         res.success(function(data, status, headers, config) {
             $scope.message = data;
             alert('dato guardado');

@@ -63,8 +63,8 @@ public class PersonEditController {
 
 
     @RequestMapping(value = "/saveperson_json", method = RequestMethod.POST)
-    public  @ResponseBody String saveCompany_JSON( @RequestBody PersonDto personDto )   {
+    public  @ResponseBody PersonDto savePerson_JSON( @RequestBody PersonDto personDto )   {
         System.out.println(personDto);
-        return "JSON: The company name: " + personDto.getFirstName() + ", Employees count: " + personDto.getLastName();
+        return personDto;
     }
 }

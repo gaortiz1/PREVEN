@@ -4,6 +4,7 @@
     <list default="true" id="70aac63a-e815-443d-9717-abe5a57ce1f7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/administration/PersonEditController.java" afterPath="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/administration/PersonEditController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-adm.js" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-adm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gesso-root.iws" />
@@ -95,8 +96,8 @@
       <file leaf-file-name="PersonEditController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/administration/PersonEditController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1509972">
-              <caret line="64" column="45" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.41880342">
+              <caret line="64" column="76" selection-start-line="64" selection-start-column="76" selection-end-line="64" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -125,11 +126,11 @@
       <file leaf-file-name="person-edit.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.3846154">
-              <caret line="335" column="0" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.846154">
+              <caret line="360" column="24" selection-start-line="360" selection-start-column="24" selection-end-line="360" selection-end-column="24" />
               <folding>
-                <marker date="1429933556388" expanded="true" signature="18748:18893" placeholder="..." />
-                <marker date="1429933556388" expanded="true" signature="26652:26684" placeholder="..." />
+                <marker date="1429934572538" expanded="true" signature="18839:18984" placeholder="..." />
+                <marker date="1429934572538" expanded="true" signature="26743:26775" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -139,7 +140,7 @@
         <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-adm.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -249,8 +250,8 @@
         <option value="$PROJECT_DIR$/gesso-security/src/main/resources/ec/com/gesso/resources/spring/config/spring4.xml" />
         <option value="$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java" />
         <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp" />
-        <option value="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/administration/PersonEditController.java" />
         <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-adm.js" />
+        <option value="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/administration/PersonEditController.java" />
       </list>
     </option>
   </component>
@@ -1711,7 +1712,7 @@
       <workItem from="1429923755659" duration="4139000" />
       <workItem from="1429928483725" duration="145000" />
       <workItem from="1429928656109" duration="1226000" />
-      <workItem from="1429931066066" duration="2935000" />
+      <workItem from="1429931066066" duration="4266000" />
     </task>
     <task id="LOCAL-00001" summary="ceacion carpeta de documentos">
       <created>1424749837951</created>
@@ -1851,11 +1852,17 @@
       <option name="project" value="LOCAL" />
       <updated>1429933596998</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="actualizacion proyecto">
+      <created>1429934069847</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1429934069847</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58489000" />
+    <option name="totallyTimeSpent" value="59820000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1891,7 +1898,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40408805" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40408805" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1900,7 +1907,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3600629" sideWeight="0.74444443" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25241157" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25241157" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1978,10 +1985,10 @@
           <url>file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/administration/PersonEditController.java</url>
           <line>66</line>
           <properties />
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2377,25 +2384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.3846154">
-          <caret line="335" column="0" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
-          <folding>
-            <marker date="1429933556388" expanded="true" signature="18748:18893" placeholder="..." />
-            <marker date="1429933556388" expanded="true" signature="26652:26684" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-adm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/application/impl/SecurityServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2412,10 +2400,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.846154">
+          <caret line="360" column="24" selection-start-line="360" selection-start-column="24" selection-end-line="360" selection-end-column="24" />
+          <folding>
+            <marker date="1429934572538" expanded="true" signature="18839:18984" placeholder="..." />
+            <marker date="1429934572538" expanded="true" signature="26743:26775" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-adm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/administration/PersonEditController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1509972">
-          <caret line="64" column="45" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.41880342">
+          <caret line="64" column="76" selection-start-line="64" selection-start-column="76" selection-end-line="64" selection-end-column="76" />
           <folding />
         </state>
       </provider>
