@@ -46,7 +46,7 @@ public class PersonEditController {
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody Collection<PersonDto> getPersonList() {
         Collection<Person> lstPersonas = null;
-        Collection<PersonDto> lstPersonasDto = new ArrayList<PersonDto>();
+        Collection<PersonDto> lstPersonasDto = null;
         try {
             lstPersonas  = GessoSecurityFactory.getInstance().getSecurityService().findAllPersons();
         } catch (GessoException e) {
@@ -54,6 +54,9 @@ public class PersonEditController {
         }
 
         ModelMapper modelMapper = new ModelMapper();
+
+        Type listType = new TypeToken<List<PersonDto>>() {}.getType();
+        lstPersonasDto = modelMapper.map(lstPersonas, listType );
 
         for(Person obj: lstPersonas){
             lstPersonasDto.add(modelMapper.map(obj, PersonDto.class));
