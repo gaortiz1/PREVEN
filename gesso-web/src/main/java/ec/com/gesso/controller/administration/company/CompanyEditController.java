@@ -27,7 +27,7 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
 @SessionAttributes
 public class CompanyEditController {
 	
-	 private final static Logger LOGGER = LoggerFactory.getLogger(CompanyEditController.class);
+//	 private final static Logger LOGGER = LoggerFactory.getLogger(CompanyEditController.class);
 	
 	@RequestMapping(value = "/company/edit-company/{id}", method = RequestMethod.GET)
 	public ModelAndView editCompany(@PathVariable("id") Long id, Model model){
