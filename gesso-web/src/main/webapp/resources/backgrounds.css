@@ -1,0 +1,23 @@
+body.square {
+	background:url("images/error/404/background_square.png") top left !important;
+}
+
+body.hash {
+	background:url("images/error/404/background_hash.png") top left !important;
+}
+
+body.rhash {
+	background:url("images/error/404/background_rhash.png") top left !important;
+}
+
+body.dline {
+	background:url("images/error/404/background_dline.png") top left !important;
+}
+
+body.line {
+	background:url("images/error/404/background_line.png") top left !important;
+}
+
+body.vline {
+	background:url("images/error/404/background_vline.png") top left !important;
+}

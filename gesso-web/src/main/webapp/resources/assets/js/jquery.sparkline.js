@@ -352,10 +352,12 @@
     };
 
     // You can have tooltips use a css class other than jqstooltip by specifying tooltipClassname
+    // tooltip modified by westilian:jaman
     defaultStyles = '.jqstooltip { ' +
             'position: absolute;' +
             'left: 0px;' +
             'top: 0px;' +
+            'display: block;' +
             'visibility: hidden;' +
             'background: rgb(0, 0, 0) transparent;' +
             'background-color: rgba(0,0,0,0.6);' +
@@ -365,12 +367,13 @@
             'font: 10px arial, san serif;' +
             'text-align: left;' +
             'white-space: nowrap;' +
-            'padding: 5px;' +
+            
             'border: 1px solid white;' +
             'z-index: 10000;' +
             '}' +
             '.jqsfield { ' +
             'color: white;' +
+            'padding: 5px 5px 8px 5px;' +
             'font: 10px arial, san serif;' +
             'text-align: left;' +
             '}';
