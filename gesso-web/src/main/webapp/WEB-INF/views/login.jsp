@@ -29,13 +29,13 @@
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <form:input id="login-username" path="userDto.usrNickName" cssClass="form-control" placeholder="username or email" required="required"></form:input>
+                            <form:input id="login-username" path="userDto.usrNickName" cssClass="form-control" placeholder="Usuario" required="required"></form:input>
                         </div>
 
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <form:password id="login-password" path="userDto.usrPassword" cssClass="form-control" placeholder="password" required="required"></form:password>
+                            <form:password id="login-password" path="userDto.usrPassword" cssClass="form-control" placeholder="Clave" required="required"></form:password>
                         </div>
 
 
@@ -53,17 +53,17 @@
                             <!-- Button -->
 
                             <div class="col-sm-12 controls">
-                                <button type="submit" class="btn btn-success" >Login</button>
+                                <button type="submit" class="btn btn-success" >Ingresar</button>
                             </div>
                         </div>
 
 
                         <div class="form-group">
                             <div class="col-md-12 control">
-                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                    Don't have an account!
+                                <div>
+                                    No tiene una cuenta!
                                     <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                        Sign Up Here
+                                        Crear usuario
                                     </a>
                                 </div>
                             </div>
@@ -78,8 +78,8 @@
         <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <div class="panel-title">Sign Up</div>
-                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+                    <div class="panel-title">Crear usuario</div>
+                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Login</a></div>
                 </div>
                 <div class="panel-body" >
                     <form:form id="signupform" class="form-horizontal" role="form" action="signUp">
@@ -118,7 +118,7 @@
                         <div class="form-group">
                             <!-- Button -->
                             <div class="col-md-offset-3 col-md-9">
-                                <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                                <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Ingresar</button>
                             </div>
                         </div>
                     </form:form>
