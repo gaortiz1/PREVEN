@@ -103,8 +103,9 @@ public class Person implements Serializable {
     
     @Column(name = "occupational_accident_detail")
     private String occupationalAccidentDetail;
-    
-    
+
+    @Column(name = "usr_id")
+    private Integer userId;
     
     @Column(name = "security_training_detail")
     private String securityTrainingDetail;
@@ -496,5 +497,11 @@ public class Person implements Serializable {
 		this.idJob = idJob;
 	}
 
-	
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 }
