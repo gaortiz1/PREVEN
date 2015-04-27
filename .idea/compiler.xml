@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="!?*.java" />
@@ -12,19 +11,11 @@
       <entry name="!?*.flex" />
       <entry name="!?*.kt" />
       <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
     </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
-      </profile>
-      <profile default="false" name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="gesso-application" />
-        <module name="gesso-ear" />
-        <module name="gesso-security-model" />
       </profile>
       <profile default="false" name="Annotation profile for gesso-security" enabled="true">
         <sourceOutputDir name="target\generated-sources\annotations" />
@@ -46,6 +37,14 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="gesso-criteria" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="gesso-application" />
+        <module name="gesso-ear" />
       </profile>
       <profile default="false" name="Annotation profile for gesso-web" enabled="true">
         <sourceOutputDir name="target\generated-sources\annotations" />
