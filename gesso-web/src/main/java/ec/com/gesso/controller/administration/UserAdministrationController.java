@@ -1,16 +1,18 @@
 package ec.com.gesso.controller.administration;
 
+import java.lang.reflect.Type;
 import java.util.Collection;
+import java.util.List;
 
+import ec.com.gesso.application.dto.PersonDto;
+import ec.com.gesso.application.dto.UserDto;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import ec.com.gesso.common.exception.GessoException;
@@ -36,7 +38,28 @@ public class UserAdministrationController {
 		
 //		return new ModelAndView("user-administration", "command", lstCollection);
 	}
-	
+
+    @RequestMapping(value="/find_users_json",
+            method=RequestMethod.GET,produces={"application/xml", "application/json"})
+    @ResponseStatus(HttpStatus.OK)
+    public @ResponseBody
+    Collection<UserDto> findUsers() {
+        Collection<User> lstUserResult = null;
+        Collection<UserDto> lstUserDtoResult = null;
+        try {
+            lstUserResult = GessoSecurityFactory.getInstance().getSecurityService().findAllUsers();
+        } catch (GessoException e) {
+            e.printStackTrace();
+
+        }
+        ModelMapper modelMapper = new ModelMapper();
+        Type listType = new TypeToken<Collection<UserDto>>() {}.getType();
+        lstUserDtoResult = modelMapper.map(lstUserResult, listType );
+
+        return lstUserDtoResult;
+    }
+
+
 	
 	@RequestMapping(value = "/user-administration-edit/{idUser}", method = RequestMethod.GET)
 	@ResponseBody

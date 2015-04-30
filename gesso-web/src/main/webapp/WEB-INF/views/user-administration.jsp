@@ -9,32 +9,39 @@
 		<form:form class="form-horizontal" role="form" >
             <script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-user.js" type="text/javascript"></script>
             <div ng-app="app-gesso" ng-controller="gesso-user-adm as ctrlUser">
-                <table id="membersTable" class="table table-striped table-bordered table-hover">
+
+
+
+                <table st-table="ctrlUser.lstUsers" class="table table-striped">
                     <thead>
                     <tr>
-                        <th><spring:message code="page.label.username"/> </th>
-                        <th><spring:message code="page.label.firstName"/></th>
-                        <th><spring:message code="page.label.lastName"/></th>
-                        <th><spring:message code="page.label.dateofbirth"/></th>
-                        <th><spring:message code="gobal.label.edit"/></th>
+                        <th st-sort="nickName">Nombre</th>
+                        <th st-sort="password">apellido</th>
+
+                        <th>Editar</th>
                     </tr>
+
                     </thead>
                     <tbody>
-                    <c:forEach items="${members}" var="member">
-                        <tr>
-                            <td>${member.usrNickName}</td>
-                            <td>${member.person.firstName}</td>
-                            <td>${member.person.lastName}</td>
-                            <td>${member.person.dateOfBirth}</td>
-                            <td>
-                                <a href="#modal-form" role="button" class="blue" onclick="editarUsuario(${member.usrId})"> Editar </a>
-                            </td>
-                        </tr>
-                    </c:forEach>
+                    <tr ng-repeat="row in ctrlUser.lstUsers">
+                        <td>{{row.nickName | uppercase}}</td>
+                        <td>{{row.password}}</td>
+
+                        <td>
+                            <input type="button" value="Editar"/>
+                        </td>
+                    </tr>
                     </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                        </td>
+                    </tr>
+                    </tfoot>
                 </table>
                 <input type="button" ng-click="ctrlUser.findUsers()" value="asdasd">
-                
+
             </div>
 		</form:form>
 	</jsp:attribute>
