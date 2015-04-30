@@ -1,4 +1,3 @@
-var app = angular.module("app-gesso-adm",[]);
 app.controller("app-gesso-ctrl-adm", ['$http', '$scope', function($http, $scope){
 
     this.controller = $scope;
