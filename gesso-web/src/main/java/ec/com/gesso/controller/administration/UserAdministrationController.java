@@ -43,17 +43,17 @@ public class UserAdministrationController {
             method=RequestMethod.GET,produces={"application/xml", "application/json"})
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
-    Collection<UserDto> findUsers() {
-        Collection<User> lstUserResult = null;
-        Collection<UserDto> lstUserDtoResult = null;
+    Collection<PersonDto> findUsers() {
+        Collection<Person> lstUserResult = null;
+        Collection<PersonDto> lstUserDtoResult = null;
         try {
-            lstUserResult = GessoSecurityFactory.getInstance().getSecurityService().findAllUsers();
+            lstUserResult = GessoSecurityFactory.getInstance().getSecurityService().findAllUsersByPerson();
         } catch (GessoException e) {
             e.printStackTrace();
-
         }
+
         ModelMapper modelMapper = new ModelMapper();
-        Type listType = new TypeToken<Collection<UserDto>>() {}.getType();
+        Type listType = new TypeToken<Collection<PersonDto>>() {}.getType();
         lstUserDtoResult = modelMapper.map(lstUserResult, listType );
 
         return lstUserDtoResult;

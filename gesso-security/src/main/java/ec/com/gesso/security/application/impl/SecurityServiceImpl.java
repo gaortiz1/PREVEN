@@ -34,7 +34,11 @@ public class SecurityServiceImpl implements ISecurityService{
 	public Collection<User> findAllUsers() throws GessoException{
 		return securityRepository.findAllUsers();
 	}
-	
+
+	public Collection<Person> findAllUsersByPerson() throws GessoException {
+		return securityRepository.findAllUsersByPerson();
+	}
+
 	@Override
 	public void persistPerson(Person person) throws GessoException{
 		securityRepository.persistPerson(person);

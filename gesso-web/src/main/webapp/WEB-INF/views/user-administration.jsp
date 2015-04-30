@@ -24,11 +24,11 @@
                     </thead>
                     <tbody>
                     <tr ng-repeat="row in ctrlUser.lstUsers">
-                        <td>{{row.nickName | uppercase}}</td>
-                        <td>{{row.password}}</td>
+                        <td>{{row.userDto.nickName | uppercase}}</td>
+                        <td>{{row.userDto.password}}</td>
 
                         <td>
-                            <input type="button" value="Editar"/>
+                            <input type="button" value="Editar" ng-click="ctrlUser.selectUser();"/>
                         </td>
                     </tr>
                     </tbody>
@@ -42,6 +42,65 @@
                 </table>
                 <input type="button" ng-click="ctrlUser.findUsers()" value="asdasd">
 
+
+
+                <!-- MODAL EDICION USUARIO -->
+                <div id="modal-form" class="modal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="blue bigger">
+                                    <spring:message code="page.label.update.password.status"/>
+                                </h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-7">
+
+                                        <div class="form-group">
+                                            <label for="form-field-first">
+                                                <spring:message code="page.label.password"></spring:message>
+                                            </label>
+
+                                            <div>
+                                                <input type="text"  placeholder="Nueva clave" name="${userDto.usrNickName}" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="form-field-first">
+                                                <spring:message code="page.label.status"></spring:message>
+                                            </label>
+
+                                            <div>
+                                                <label>
+                                                    <input name="lactationPeriod" class="ace ace-switch ace-switch-6" type="checkbox" />
+                                                    <span class="lbl"></span>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-sm" data-dismiss="modal">
+                                    <i class="ace-icon fa fa-times"></i>
+                                    Cancel
+                                </button>
+
+                                <button class="btn btn-sm btn-primary" data-dismiss="modal">
+                                    <i class="ace-icon fa fa-check"></i>
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 		</form:form>
 	</jsp:attribute>

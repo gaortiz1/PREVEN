@@ -31,7 +31,12 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 	public Collection<User> findAllUsers() {
 		return null;
 	}
-	
+
+	@Override
+	public Collection<Person> findAllUsersByPerson() throws GessoException {
+		return null;
+	}
+
 	public void persistPerson(Person person) {
 		
 	}

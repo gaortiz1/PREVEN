@@ -52,6 +52,14 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		return criteria.list();
 	}
 
+	public Collection<Person> findAllUsersByPerson() throws GessoException {
+		Criteria criteria =  null;
+		criteria =  getSession().createCriteria(Person.class);
+		criteria.createAlias("userDto", "userDtoA", JoinType.INNER_JOIN);
+		criteria.setFetchMode("userDtoA", FetchMode.JOIN);
+		return criteria.list();
+	}
+
 	public void persistPerson(Person person) throws GessoException{
 		getSession().persist(person);
 		getSession().flush();
