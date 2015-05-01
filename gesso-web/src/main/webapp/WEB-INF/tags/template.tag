@@ -39,7 +39,7 @@
 	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-app.js"></script>
 </head>
 
-<body>
+<body ng-app="app-gesso">
 
 <section id="container">
 	<!-- **********************************************************************************************************************************************************

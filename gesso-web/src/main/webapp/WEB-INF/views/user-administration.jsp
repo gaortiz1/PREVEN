@@ -8,7 +8,7 @@
 	<jsp:attribute name="body">
 		<form:form class="form-horizontal" role="form" >
             <script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-user.js" type="text/javascript"></script>
-            <div ng-app="app-gesso" ng-controller="gesso-user-adm as ctrlUser">
+            <div  ng-controller="gesso-user-adm as ctrlUser">
 
 
 
