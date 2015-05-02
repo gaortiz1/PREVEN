@@ -9,7 +9,6 @@ import java.util.Collection;
 import ec.com.gesso.application.service.IServiceCriteria;
 import ec.com.gesso.criteria.QueryCriteria;
 import ec.com.gesso.model.entity.GeopoliticalDivision;
-import ec.com.gesso.repository.IRepositoryCriteriaGeoPolDivi;
 
 /**
  * @author Gabriel
@@ -17,20 +16,18 @@ import ec.com.gesso.repository.IRepositoryCriteriaGeoPolDivi;
  */
 public class ServiceCriteria implements IServiceCriteria {
 	
-	private IRepositoryCriteriaGeoPolDivi repositoryCriteriaGeoPolDivi;
-	
 	private QueryCriteria queryCriteria;
 
 	public Collection<GeopoliticalDivision> findChildrenGeopoliticalDivision(Long idRoot) {
-		return this.repositoryCriteriaGeoPolDivi.findChildrenGeopoliticalDivision(idRoot);
+		return null;
 	}
 
 	public Collection<GeopoliticalDivision> findRootGeopoliticalDivision() {
-		return this.repositoryCriteriaGeoPolDivi.findRootGeopoliticalDivision();
+		return null;
 	}
 	
 	public Collection<GeopoliticalDivision> findGeopoliticalDivisionById(Long id) {
-		return this.repositoryCriteriaGeoPolDivi.findGeopoliticalDivisionById(id);
+		return null;
 	}
 
 	public <T extends Serializable> T find(T entity) {
@@ -39,13 +36,6 @@ public class ServiceCriteria implements IServiceCriteria {
 
 	public <T extends Serializable> Collection<T> findAll(T entity) {
 		return this.queryCriteria.findAll(entity);
-	}
-	
-	/**
-	 * @param repositoryCriteriaGeoPolDivi the repositoryCriteriaGeoPolDivi to set
-	 */
-	public void setRepositoryCriteriaGeoPolDivi(IRepositoryCriteriaGeoPolDivi repositoryCriteriaGeoPolDivi) {
-		this.repositoryCriteriaGeoPolDivi = repositoryCriteriaGeoPolDivi;
 	}
 
 	/**
