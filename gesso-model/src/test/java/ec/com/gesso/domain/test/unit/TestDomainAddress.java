@@ -29,13 +29,13 @@ public class TestDomainAddress extends BaseTestDomainEntity<Address>{
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldNameAddress() {
 		this.entity.setNameAddress(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldIdContactDataNull() {
 		this.entity.setIdContactData(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 }

@@ -19,26 +19,23 @@ public class DomainContactData extends BaseDomainEntity<ContactData> {
 	private IDomainEntity<Email> domainEmail;
 	private IDomainEntity<Address> domainAddress;
 	private IDomainEntity<Phone> domainPhone;
-
-	public ContactData create(final ContactData contactData) {
+	
+	public ContactData register(final ContactData contactData) {
 		
-		if (null == contactData) {
-			throw new ValidationEntity("No se puede insert un valor null");
+		this.validarContactData(contactData);
+		
+		if (contactData.getId() == null) {
+			contactData.setState(Boolean.TRUE);
+			this.repositoryEntity.create(contactData);
+		} else {
+			this.repositoryEntity.edit(contactData);
 		}
-		
-		if(contactData.getIdPerson() == null && contactData.getIdCompany() == null){
-			throw new ValidationEntity("El dato de contaco debe tener a una persona o una empresa");
-		}
-		
-		contactData.setState(Boolean.TRUE);
-		
-		this.repositoryEntity.create(contactData);
 		
 		if(contactData.getCollectionEmails() != null){
 			
 			for (final Email email : contactData.getCollectionEmails()){
 				email.setIdContactData(contactData.getId());
-				this.domainEmail.create(email);
+				this.domainEmail.register(email);
 			}
 			
 		}
@@ -47,7 +44,7 @@ public class DomainContactData extends BaseDomainEntity<ContactData> {
 			
 			for (final Address address : contactData.getCollectionAddress()){
 				address.setIdContactData(contactData.getId());
-				this.domainAddress.create(address);
+				this.domainAddress.register(address);
 			}
 		}
 		
@@ -55,11 +52,20 @@ public class DomainContactData extends BaseDomainEntity<ContactData> {
 			
 			for (final Phone phone: contactData.getCollectionPhones()) {
 				phone.setIdContactData(contactData.getId());
-				this.domainPhone.create(phone);
+				this.domainPhone.register(phone);
 			}
 		}
-		
 		return contactData;
+	}
+	
+	private void validarContactData(final ContactData contactData){
+		if (null == contactData) {
+			throw new ValidationEntity("No se puede insert un valor null");
+		}
+		
+		if(contactData.getIdPerson() == null && contactData.getIdCompany() == null){
+			throw new ValidationEntity("El dato de contaco debe tener a una persona o una empresa");
+		}
 	}
 
 	/**

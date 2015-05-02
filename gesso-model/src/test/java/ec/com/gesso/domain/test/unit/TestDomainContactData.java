@@ -31,6 +31,6 @@ public class TestDomainContactData extends BaseTestDomainEntity<ContactData>{
 	public void shouldNotCreateWithOutFieldIdCompanyAndIdPerson() {
 		entity.setIdCompany(null);
 		entity.setIdPerson(null);
-		this.domainEntity.create(entity);
+		this.domainEntity.register(entity);
 	}
 }

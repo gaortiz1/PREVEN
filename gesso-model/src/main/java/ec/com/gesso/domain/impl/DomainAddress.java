@@ -11,13 +11,26 @@ import ec.com.gesso.repository.exception.ValidationEntity;
  *
  */
 public class DomainAddress extends BaseDomainEntity<Address> {
-
+	
 	/*
 	 * (non-Javadoc)
-	 * @see ec.com.gesso.repository.IRepositoryEntity#create(java.io.Serializable)
+	 * @see ec.com.gesso.domain.IDomainEntity#register(java.io.Serializable)
 	 */
-	public Address create(final Address address) {
+	public Address register(final Address address) {
 		
+		this.validarAddress(address);
+		
+		if (address.getId() == null) {
+			address.setState(Boolean.TRUE);
+			this.repositoryEntity.create(address);
+		} else{
+			this.repositoryEntity.edit(address);
+		}
+		
+		return address;
+	}
+	
+	private void validarAddress(final Address address) {
 		if (null == address) {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}
@@ -29,10 +42,6 @@ public class DomainAddress extends BaseDomainEntity<Address> {
 		if (null == address.getNameAddress()) {
 			throw new ValidationEntity("El campo nombre es null");
 		}
-		
-		address.setState(Boolean.TRUE);
-		
-		return this.repositoryEntity.create(address);
 	}
-
+	
 }

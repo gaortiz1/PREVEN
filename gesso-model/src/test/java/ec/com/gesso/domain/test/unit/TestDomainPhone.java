@@ -32,18 +32,18 @@ public class TestDomainPhone extends BaseTestDomainEntity<Phone>{
 	@Test(expected=ValidationEntity.class)
 	public void sholudNotCreateWithFieldIdtypePhoneNull() {
 		this.entity.setIdtypePhone(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void sholudNotCreateWithFieldsetIdContactDataNull() {
 		this.entity.setIdContactData(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void sholudNotCreateWithFieldNumberNull() {
 		this.entity.setNumber(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 }

@@ -15,9 +15,8 @@ import ec.com.gesso.repository.exception.ValidationEntity;
 public class DomainProcess extends BaseDomainEntity<Process> {
 	
 	private IDomainEntity<SubProcess> domainSubProcess;
-
-	public Process create(final Process process) {
-		
+	
+	public Process register(final Process process) {
 		if(null == process) {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}
@@ -29,15 +28,18 @@ public class DomainProcess extends BaseDomainEntity<Process> {
 			throw new ValidationEntity("El campo Description es null");
 		}
 		
-		process.setStatus(Boolean.TRUE);
-		
-		this.repositoryEntity.create(process);
+		if (process.getId() == null) {
+			process.setStatus(Boolean.TRUE);
+			this.repositoryEntity.create(process);
+		} else {
+			this.repositoryEntity.edit(process);
+		}
 		
 		if(process.getSubLevels() != null && !process.getSubLevels().isEmpty()) {
 			
 			for(final Process subLevel : process.getSubLevels()) {
 				subLevel.setIdRoot(process.getId());
-				this.create(subLevel);
+				this.register(subLevel);
 			}
 		}
 		
@@ -45,7 +47,7 @@ public class DomainProcess extends BaseDomainEntity<Process> {
 			
 			for(final SubProcess subProcess : process.getSubProcesses()) {
 				subProcess.setIdProcess(process.getId());
-				this.domainSubProcess.create(subProcess);
+				this.domainSubProcess.register(subProcess);
 			}
 		}
 		

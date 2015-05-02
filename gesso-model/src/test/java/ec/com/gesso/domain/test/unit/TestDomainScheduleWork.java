@@ -32,18 +32,18 @@ public class TestDomainScheduleWork extends BaseTestDomainEntity<ScheduleWork> {
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldIdScheduleWorkNull() {
 		this.entity.setIdScheduleWork(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldIdBusinessNull() {
 		this.entity.getIdScheduleWork().setIdBusinessHour(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldIdCompanyNull() {
 		this.entity.getIdScheduleWork().setIdCompany(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 }

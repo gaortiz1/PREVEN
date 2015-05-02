@@ -11,13 +11,26 @@ import ec.com.gesso.repository.exception.ValidationEntity;
  *
  */
 public class DomainPhone extends BaseDomainEntity<Phone> {
-
+	
 	/*
 	 * (non-Javadoc)
-	 * @see ec.com.gesso.repository.IRepositoryEntity#create(java.io.Serializable)
+	 * @see ec.com.gesso.domain.IDomainEntity#register(java.io.Serializable)
 	 */
-	public Phone create(final Phone phone) {
+	public Phone register(final Phone phone) {
 		
+		this.validarPhone(phone);
+		
+		if (phone.getId() == null) {
+			phone.setState(Boolean.TRUE);
+			this.repositoryEntity.create(phone);
+		} else{
+			this.repositoryEntity.edit(phone);
+		}
+		
+		return phone;
+	}
+	
+	private void validarPhone(final Phone phone){
 		if (null == phone) {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}
@@ -33,10 +46,6 @@ public class DomainPhone extends BaseDomainEntity<Phone> {
 		if (null == phone.getNumber()) {
 			throw new ValidationEntity("El campo number es null");
 		}
-		
-		phone.setState(Boolean.TRUE);
-		
-		return this.repositoryEntity.create(phone);
 	}
 
 }

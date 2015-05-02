@@ -33,12 +33,12 @@ public abstract class BaseTestDomainEntity<Entity extends Serializable> {
 	abstract Entity getInstanceEntity();
 	
 	@Test
-	public void shouldCreateWithFieldsNotNull() {
-		this.domainEntity.create(entity);
+	public void shouldRegisterWithFieldsNotNull() {
+		this.domainEntity.register(entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
-	public void shouldNotCreateWithParameterNull() {
-		this.domainEntity.create(null);
+	public void shouldNotRegisterWithParameterNull() {
+		this.domainEntity.register(null);
 	}
 }

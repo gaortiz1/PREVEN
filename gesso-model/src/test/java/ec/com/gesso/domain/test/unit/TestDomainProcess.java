@@ -32,12 +32,12 @@ public class TestDomainProcess extends BaseTestDomainEntity<Process>{
 	@Test(expected=ValidationEntity.class)
 	public void sholudNotCreateWithFieldNameNull() {
 		this.entity.setName(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void sholudNotCreateWithFieldDescriptionNull() {
 		this.entity.setDescription(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 }

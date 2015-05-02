@@ -11,9 +11,26 @@ import ec.com.gesso.repository.exception.ValidationEntity;
  *
  */
 public class DomainDocument extends BaseDomainEntity<Document> {
-
-	public Document create(final Document document) {
+	
+	/*
+	 * (non-Javadoc)
+	 * @see ec.com.gesso.domain.IDomainEntity#register(java.io.Serializable)
+	 */
+	public Document register(final Document document) {
 		
+		this.validateDocument(document);
+		
+		if (document.getIdDocument().getIdDocument() == null) {
+			document.setState(Boolean.TRUE);
+			this.repositoryEntity.create(document);
+		} else {
+			this.repositoryEntity.edit(document);
+		}
+		
+		return document;
+	}
+	
+	private void validateDocument(final Document document) {
 		if (null == document) {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}
@@ -46,9 +63,5 @@ public class DomainDocument extends BaseDomainEntity<Document> {
 		if(document.getIdPerson() != null && document.getIdDocument() != null){
 			document.getIdDocument().setIdDocument(document.getIdPerson());
 		}
-		
-		document.setState(Boolean.TRUE);
-		
-		return this.repositoryEntity.create(document);
 	}
 }

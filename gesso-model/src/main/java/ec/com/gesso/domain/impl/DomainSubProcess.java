@@ -16,8 +16,40 @@ public class DomainSubProcess extends BaseDomainEntity<SubProcess> {
 	
 	private IDomainEntity<Job> domainJob;
 
-	public SubProcess create(final SubProcess subProcess) {
+	/*
+	 * (non-Javadoc)
+	 * @see ec.com.gesso.domain.IDomainEntity#register(java.io.Serializable)
+	 */
+	public SubProcess register(SubProcess subProcess) {
+		this.validarSubProcess(subProcess);
 		
+		if (subProcess.getId() == null) {
+			subProcess.setState(Boolean.TRUE);
+			this.repositoryEntity.create(subProcess);
+		} else {
+			this.repositoryEntity.edit(subProcess);
+		}
+		
+		if(subProcess.getSubLevels() != null && !subProcess.getSubLevels().isEmpty()) {
+			
+			for(final SubProcess subLevel : subProcess.getSubLevels()) {
+				subLevel.setIdRoot(subProcess.getId());
+				this.register(subLevel);
+			}
+		}
+		
+		if(subProcess.getJobs() != null && !subProcess.getJobs().isEmpty()) {
+			
+			for(final Job job : subProcess.getJobs()) {
+				subProcess.setIdProcess(subProcess.getId());
+				this.domainJob.register(job);
+			}
+		}
+		
+		return subProcess;
+	}
+	
+	private void validarSubProcess(final SubProcess subProcess){
 		if (null == subProcess) {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}
@@ -33,28 +65,6 @@ public class DomainSubProcess extends BaseDomainEntity<SubProcess> {
 		if (null == subProcess.getDescription()) {
 			throw new ValidationEntity("El campo description no puede ser null");
 		}
-		
-		subProcess.setState(Boolean.TRUE);
-		
-		this.repositoryEntity.create(subProcess);
-		
-		if(subProcess.getSubLevels() != null && !subProcess.getSubLevels().isEmpty()) {
-			
-			for(final SubProcess subLevel : subProcess.getSubLevels()) {
-				subLevel.setIdRoot(subProcess.getId());
-				this.create(subLevel);
-			}
-		}
-		
-		if(subProcess.getJobs() != null && !subProcess.getJobs().isEmpty()) {
-			
-			for(final Job job : subProcess.getJobs()) {
-				subProcess.setIdProcess(subProcess.getId());
-				this.domainJob.create(job);
-			}
-		}
-		
-		return subProcess;
 	}
 
 	/**

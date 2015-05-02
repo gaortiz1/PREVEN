@@ -32,44 +32,50 @@ public class TestDomainDocument extends BaseTestDomainEntity<Document>{
 	@Test
 	public void shouldCreateWithFieldsNotNull() {
 		this.entity.setIdCompany(1l);
-		this.domainEntity.create(entity);
+		this.domainEntity.register(entity);
 	}
 
 	@Test
 	public void shouldCreateWithFieldIdPersonNotNull() {
 		this.entity.setIdPerson(1l);
-		this.domainEntity.create(entity);
+		this.domainEntity.register(entity);
 	}
 	
 	@Test
 	public void shouldCreateWithFieldIdCompanyNotNull() {
 		this.entity.setIdCompany(1l);
-		this.domainEntity.create(entity);
+		this.domainEntity.register(entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldIdDocumentNull() {
 		this.entity.setIdDocument(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldValueNull() {
 		this.entity.setValue(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldIdTypeCompanyNull() {
 		this.entity.getIdDocument().setIdTypeDocument(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithOutFieldsIDCompanyAndIDPersonNull() {
 		this.entity.setIdCompany(null);
 		this.entity.setIdPerson(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
+	}
+	
+	@Test
+	public void shouldRegisterWithFieldsNotNull() {
+		this.entity.setIdCompany(1l);
+		this.domainEntity.register(entity);
 	}
 	
 }

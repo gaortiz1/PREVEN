@@ -11,13 +11,26 @@ import ec.com.gesso.repository.exception.ValidationEntity;
  *
  */
 public class DomainEmail extends BaseDomainEntity<Email> {
-
+	
 	/*
 	 * (non-Javadoc)
-	 * @see ec.com.gesso.repository.IRepositoryEntity#create(java.io.Serializable)
+	 * @see ec.com.gesso.domain.IDomainEntity#register(java.io.Serializable)
 	 */
-	public Email create(final Email email) {
+	public Email register(final Email email) {
 		
+		this.validarEmail(email);
+		
+		if (email.getId() == null){
+			email.setState(Boolean.TRUE);
+			this.repositoryEntity.create(email);
+		} else {
+			this.repositoryEntity.edit(email);
+		}
+		
+		return email;
+	}
+	
+	private void validarEmail(final Email email) {
 		if (null == email) {
 			throw new ValidationEntity("No se puede insert un email null");
 		}
@@ -29,10 +42,5 @@ public class DomainEmail extends BaseDomainEntity<Email> {
 		if (null == email.getEmailaddess()) {
 			throw new ValidationEntity("El campo email es null");
 		}
-		
-		email.setState(Boolean.TRUE);
-		
-		return this.repositoryEntity.create(email);
 	}
-
 }

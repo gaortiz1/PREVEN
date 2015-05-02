@@ -26,15 +26,15 @@ public class TestDomainActivityEconomicCompany extends BaseTestDomainEntity<Acti
 	}
 	
 	@Test(expected=ValidationEntity.class)
-	public void shouldNotCreateWithFielsNameNull() {
+	public void shouldNotRegisterWithFielsNameNull() {
 		this.entity.setName(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
-	public void shouldNotCreateWithFielsIdCompanyNull() {
+	public void shouldNotRegisterWithFielsIdCompanyNull() {
 		this.entity.setIdCompany(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 }

@@ -33,19 +33,19 @@ public class TestDomainSubProcess extends BaseTestDomainEntity<SubProcess> {
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldIdProcessNull() {
 		this.entity.setIdProcess(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldNameNull() {
 		this.entity.setName(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldDescriptionNull() {
 		this.entity.setDescription(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 
 }

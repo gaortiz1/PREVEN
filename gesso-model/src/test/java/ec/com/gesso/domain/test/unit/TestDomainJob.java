@@ -32,13 +32,13 @@ public class TestDomainJob extends BaseTestDomainEntity<Job>{
 	@Test(expected=ValidationEntity.class)
 	public void shouldCreateWithFieldNameNull() {
 		this.entity.setName(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldDescriptionNull() {
 		this.entity.setDescription(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 }

@@ -32,18 +32,18 @@ public class TestDomainCompany extends BaseTestDomainEntity<Company>{
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFielsNameNull() {
 		this.entity.setName(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFielsIdProductiveSectorNull() {
 		this.entity.setIdProductiveSector(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFielsIdTypeCompanyNull() {
 		this.entity.setIdTypeCompany(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 }

@@ -30,12 +30,12 @@ public class TestDomainEmail extends BaseTestDomainEntity<Email>{
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldIdContactDataNull() {
 		this.entity.setIdContactData(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 	
 	@Test(expected=ValidationEntity.class)
 	public void shouldNotCreateWithFieldEmailAddessNull() {
 		this.entity.setEmailaddess(null);
-		this.domainEntity.create(this.entity);
+		this.domainEntity.register(this.entity);
 	}
 }

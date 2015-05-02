@@ -11,6 +11,6 @@ import java.io.Serializable;
  */
 public interface IDomainEntity<Entity extends Serializable> {
 	
-	public Entity create(Entity entity);
+	public Entity register(Entity entity);
 	
 }

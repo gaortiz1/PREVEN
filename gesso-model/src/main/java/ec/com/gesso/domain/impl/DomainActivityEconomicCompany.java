@@ -11,12 +11,26 @@ import ec.com.gesso.repository.exception.ValidationEntity;
  *
  */
 public class DomainActivityEconomicCompany extends BaseDomainEntity<ActivityEconomicCompany> {
-
+	
 	/*
 	 * (non-Javadoc)
-	 * @see ec.com.gesso.domain.IDomainEntity#create(java.io.Serializable)
+	 * @see ec.com.gesso.domain.IDomainEntity#register(java.io.Serializable)
 	 */
-	public ActivityEconomicCompany create(final ActivityEconomicCompany activityEconomicCompany) {
+	public ActivityEconomicCompany register(final ActivityEconomicCompany activityEconomicCompany) {
+		
+		this.validarActivityEconomicCompany(activityEconomicCompany);
+		
+		if (activityEconomicCompany.getId() == null){
+			activityEconomicCompany.setState(Boolean.TRUE);
+			this.repositoryEntity.create(activityEconomicCompany);
+		} else {
+			this.repositoryEntity.edit(activityEconomicCompany);
+		}
+		return activityEconomicCompany;
+	}
+	
+	private void validarActivityEconomicCompany(final ActivityEconomicCompany activityEconomicCompany) {
+		
 		if (null == activityEconomicCompany) {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}
@@ -32,10 +46,6 @@ public class DomainActivityEconomicCompany extends BaseDomainEntity<ActivityEcon
 		if (null == activityEconomicCompany.getIdCompany()) {
 			throw new ValidationEntity("El campo id compania es null");
 		}
-		
-		activityEconomicCompany.setState(Boolean.TRUE);
-		
-		return this.repositoryEntity.create(activityEconomicCompany);
 	}
 
 }

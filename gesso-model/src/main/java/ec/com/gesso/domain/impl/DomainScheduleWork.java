@@ -11,12 +11,26 @@ import ec.com.gesso.repository.exception.ValidationEntity;
  *
  */
 public class DomainScheduleWork extends BaseDomainEntity<ScheduleWork> {
-
+	
 	/*
 	 * (non-Javadoc)
-	 * @see ec.com.gesso.repository.IRepositoryEntity#create(java.io.Serializable)
+	 * @see ec.com.gesso.domain.IDomainEntity#register(java.io.Serializable)
 	 */
-	public ScheduleWork create(final ScheduleWork scheduleWork) {
+	public ScheduleWork register(final ScheduleWork scheduleWork) {
+		
+		this.validarScheduleWork(scheduleWork);
+		
+		if (scheduleWork.getIdScheduleWork() == null) {
+			scheduleWork.setState(Boolean.TRUE);
+			this.repositoryEntity.create(scheduleWork);
+		} else {
+			this.repositoryEntity.edit(scheduleWork);
+		}
+		
+		return scheduleWork;
+	}
+	
+	private void validarScheduleWork(final ScheduleWork scheduleWork) {
 		
 		if (null == scheduleWork) {
 			throw new ValidationEntity("No se puede insert un valor null");
@@ -32,9 +46,5 @@ public class DomainScheduleWork extends BaseDomainEntity<ScheduleWork> {
 		if (null == scheduleWork.getIdScheduleWork().getIdBusinessHour()) {
 			throw new ValidationEntity("El campo id business hours es null");
 		}
-		
-		scheduleWork.setState(Boolean.TRUE);
-		
-		return this.repositoryEntity.create(scheduleWork);
 	}
 }

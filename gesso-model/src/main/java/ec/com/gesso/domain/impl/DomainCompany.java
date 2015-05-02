@@ -23,12 +23,34 @@ public class DomainCompany extends BaseDomainEntity<Company> {
 	private IDomainEntity<ScheduleWork> domainScheduleWork;
 	private IDomainEntity<ContactData> domainContactData;
 	private IDomainEntity<Document> domainDocument;
-
+	
 	/*
 	 * (non-Javadoc)
-	 * @see ec.com.gesso.domain.IDomainEntity#create(java.io.Serializable)
+	 * @see ec.com.gesso.domain.IDomainEntity#register(java.io.Serializable)
 	 */
-	public Company create(final Company company) {
+	public Company register(final Company company) {
+		
+		this.validarCompany(company);
+		
+		if (company.getId() == null) {
+			company.setState(Boolean.TRUE);
+			this.repositoryEntity.create(company);
+		} else{
+			this.repositoryEntity.edit(company);
+		}
+		
+		this.registerCollectionDocument(company.getDocumentCollection(), company.getId());
+		
+		this.registerCollectionScheduleWork(company.getScheduleWorkCollection(), company.getId());
+		
+		this.registerCollectionActivityEconomicCompany(company.getActivityEconomicCompanyCollection(), company.getId());
+		
+		this.registerCollectionContactData(company.getContactDataCollection(), company.getId());
+		
+		return company;
+	}
+	
+	private void validarCompany(final Company company){
 		
 		if (null == company) {
 			throw new ValidationEntity("No se puede insert un valor null");
@@ -44,32 +66,18 @@ public class DomainCompany extends BaseDomainEntity<Company> {
 		if (null == company.getIdProductiveSector()) {
 			throw new ValidationEntity("El campo ProductiveSector es null");
 		}
-		
-		company.setState(Boolean.TRUE);
-		
-		this.repositoryEntity.create(company);
-		
-		this.createCollectionDocument(company.getDocumentCollection(), company.getId());
-		
-		this.createCollectionScheduleWork(company.getScheduleWorkCollection(), company.getId());
-		
-		this.createCollectionActivityEconomicCompany(company.getActivityEconomicCompanyCollection(), company.getId());
-		
-		this.createCollectionContactData(company.getContactDataCollection(), company.getId());
-		
-		return company;
 	}
 	
-	private void createCollectionDocument(final Collection<Document> collectionDocuments, final Long idCompany) {
+	private void registerCollectionDocument(final Collection<Document> collectionDocuments, final Long idCompany) {
 		if(collectionDocuments != null) {
 			for(final Document document : collectionDocuments){
 				document.setIdCompany(idCompany);
-				this.domainDocument.create(document);
+				this.domainDocument.register(document);
 			}
 		}
 	}
 	
-	private void createCollectionScheduleWork(final Collection<ScheduleWork> collectionScheduleWorks, final Long idCompany) {
+	private void registerCollectionScheduleWork(final Collection<ScheduleWork> collectionScheduleWorks, final Long idCompany) {
 		if(collectionScheduleWorks != null) {
 			for(final ScheduleWork scheduleWork : collectionScheduleWorks) {
 				
@@ -77,25 +85,25 @@ public class DomainCompany extends BaseDomainEntity<Company> {
 					scheduleWork.getIdScheduleWork().setIdCompany(idCompany);
 				}
 				
-				this.domainScheduleWork.create(scheduleWork);
+				this.domainScheduleWork.register(scheduleWork);
 			}
 		}
 	}
 	
-	private void createCollectionActivityEconomicCompany(final Collection<ActivityEconomicCompany> collectionActivityEconomicCompany, final Long idCompany) {
+	private void registerCollectionActivityEconomicCompany(final Collection<ActivityEconomicCompany> collectionActivityEconomicCompany, final Long idCompany) {
 		if(collectionActivityEconomicCompany != null) {
 			for(final ActivityEconomicCompany activityEconomicCompany : collectionActivityEconomicCompany){
 				activityEconomicCompany.setIdCompany(idCompany);
-				this.domainActivityEconomicCompany.create(activityEconomicCompany);	
+				this.domainActivityEconomicCompany.register(activityEconomicCompany);	
 			}
 		}
 	}
 	
-	private void createCollectionContactData(final Collection<ContactData> collectionContactData, final Long idCompany) {
+	private void registerCollectionContactData(final Collection<ContactData> collectionContactData, final Long idCompany) {
 		if(collectionContactData != null){
 			for(final ContactData contactData : collectionContactData) {
 				contactData.setIdCompany(idCompany);
-				this.domainContactData.create(contactData);
+				this.domainContactData.register(contactData);
 			}
 			
 		}
