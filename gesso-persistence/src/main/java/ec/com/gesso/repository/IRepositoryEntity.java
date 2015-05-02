@@ -13,5 +13,7 @@ import java.io.Serializable;
 public interface IRepositoryEntity<Entity extends Serializable>{
 	
 	public Entity create(Entity entity);
+	
+	public void edit(Entity entity);
 
 }

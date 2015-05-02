@@ -12,9 +12,11 @@ import ec.com.gesso.repository.exception.ValidationEntity;
  */
 public class DomainActivityEconomicCompany extends BaseDomainEntity<ActivityEconomicCompany> {
 
-	@Override
+	/*
+	 * (non-Javadoc)
+	 * @see ec.com.gesso.domain.IDomainEntity#create(java.io.Serializable)
+	 */
 	public ActivityEconomicCompany create(final ActivityEconomicCompany activityEconomicCompany) {
-		
 		if (null == activityEconomicCompany) {
 			throw new ValidationEntity("No se puede insert un valor null");
 		}

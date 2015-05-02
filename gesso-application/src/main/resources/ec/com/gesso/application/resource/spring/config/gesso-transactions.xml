@@ -29,7 +29,7 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 	
-	<tx:advice id="txAdviceHibernate" transaction-manager="gessoTransactionManagerJpa">
+	<tx:advice id="txAdviceJpa" transaction-manager="gessoTransactionManagerJpa">
 		<tx:attributes>
 			<tx:method name="*" rollback-for="Throwable"/>
 		</tx:attributes>
@@ -37,7 +37,7 @@
 	
 	<aop:config>
 		<aop:pointcut  id="pointcutServiceMethods" expression="within(ec.com.gesso.application.service..*)"/>		
-		<aop:advisor advice-ref="txAdviceHibernate" pointcut-ref="pointcutServiceMethods"/>		
+		<aop:advisor advice-ref="txAdviceJpa" pointcut-ref="pointcutServiceMethods"/>		
 	</aop:config>
 	
 </beans>
