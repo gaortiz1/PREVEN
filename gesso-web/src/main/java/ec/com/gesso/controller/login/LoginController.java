@@ -63,7 +63,7 @@ public class LoginController {
     		return "redirect:login";
     	}
     	
-        return "redirect:newPerson";
+        return "redirect:home";
     }
 	
 	
