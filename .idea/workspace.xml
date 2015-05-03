@@ -2,377 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="171799b4-85d9-4d35-97bb-fde886f4a167" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ae.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/af.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ag.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/al.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/am.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/an.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ao.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/as.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/at.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/au.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/aw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ax.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/az.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ba.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/be.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bj.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/blog-large.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/blog1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/blog2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/blog3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/service-icon/box.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/br.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bv.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/bx_loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/by.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/bz.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ca.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/canon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/catalonia.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ch.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/service-icon/chat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ci.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/cisco.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ck.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/co.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/coming-soon-social.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/controls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cv.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cx.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/cz.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/de.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/dell.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/service-icon/diamond.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/dj.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/dk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/dm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/do.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/documentation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/dz.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/ea.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/ebay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ec.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ee.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/eg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/eh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/england.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/er.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/es.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/et.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/europeanunion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/facebook.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/fam.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/fi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/fj.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/fk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/fm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/fo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/fr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ga.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ge.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/google.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gq.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/gy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/hk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/hm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/hn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/hp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/hr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ht.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/hu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/icomoon-social.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/id.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/il.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/in-press.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/in.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/io.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/iq.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ir.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/is.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/it.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/jm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/jo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/jp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ke.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/kg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/kh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ki.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/km.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/kn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/kp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/kr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/kw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ky.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/kz.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/la.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/launch-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/lb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/lc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/less-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/li.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/lk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/lr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/lt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/lu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/lv.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ly.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/mPurpose-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ma.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/md.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/me.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/microsoft.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ml.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mq.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ms.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mv.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mx.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/my.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/mysql.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/mz.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/na.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/nc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ne.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/news1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/news2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/news3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/nf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ng.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ni.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/nl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/no.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/np.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/nr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/nu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/nz.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/om.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/page-background.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pe.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ph.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/portfolio1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/portfolio2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/portfolio3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/portfolio4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/portfolio5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/portfolio6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/portfolio7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/portfolio8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/product1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/product2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/product3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/product4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/product5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/product6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/product7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/product8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ps.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/pw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/py.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/qa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/re.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/rs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ru.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/service-icon/ruler.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/rw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/scotland.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/se.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/services1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/services2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/services3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/si.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sj.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slide1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slide2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slide3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/homepage-slider/slider-bg9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/so.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/social-login.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/sony.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/st.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/stay-connected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sv.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/sz.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/td.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/team1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/team2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/team3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/team4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/team5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/team6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/team7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/th.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tj.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tk.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/to.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tv.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/tz.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ua.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ug.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/um.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/us.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/user1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/user2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/user3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/user4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/user5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/user6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/uy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/uz.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/va.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/vc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ve.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/vg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/vi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/vimeo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/vn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/vu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/wales.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/wf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ws.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/logos/yahoo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/ye.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/yt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/za.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/zm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/img/flags/zw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/coming-soon-social.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/less/components.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/less/general.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/icomoon-social.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/jquery-1.9.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/jquery.bxslider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/jquery.fitvids.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/jquery.sequence-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/jquery.sequence.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/leaflet.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/leaflet.ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/less/lesshat.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main-green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main-grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/main-menu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main-orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main-red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/less/main.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/modernizr-2.6.2-respond-1.1.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/template.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/less/variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/HomeController.java" afterPath="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/login/LoginController.java" afterPath="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/login/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/portal/PortalController.java" afterPath="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/portal/PortalController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceCompany.java" afterPath="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceCompany.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceProcess.java" afterPath="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceProcess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-model/gesso-model.iml" afterPath="$PROJECT_DIR$/gesso-model/gesso-model.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-persistence/gesso-persistence.iml" afterPath="$PROJECT_DIR$/gesso-persistence/gesso-persistence.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/home.jsp" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/home.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main.css" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gesso-root.iws" />
@@ -407,21 +43,9 @@
       <file leaf-file-name="user-administration.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/user-administration.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="71.80769">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="9" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template.tag" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/tags/template.tag">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.423077">
-              <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
-              <folding>
-                <marker date="1430602352233" expanded="true" signature="5730:5743" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -440,33 +64,21 @@
         <entry file="file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="87" />
+              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
               <folding>
-                <element signature="e#703#704#0" expanded="true" />
-                <element signature="e#723#724#0" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/login/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5604396">
-              <caret line="73" column="67" selection-start-line="73" selection-start-column="67" selection-end-line="73" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PortalController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/portal/PortalController.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+              <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -475,9 +87,47 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
-              <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+            <state vertical-scroll-proportion="-18.961538">
+              <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceProcess.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceProcess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#582#583#0" expanded="false" />
+                <element signature="e#623#624#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="servlet-context.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceCompany.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceCompany.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+              <folding>
+                <element signature="e#505#506#0" expanded="true" />
+                <element signature="e#561#562#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -485,28 +135,18 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="68.65385">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.31270903">
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -553,10 +193,14 @@
         <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-app.js" />
         <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/index.html" />
         <option value="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/portal/PortalController.java" />
-        <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main.css" />
-        <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/index.jsp" />
         <option value="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/HomeController.java" />
         <option value="$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/login/LoginController.java" />
+        <option value="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceCriteria.java" />
+        <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/index.jsp" />
+        <option value="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceProcess.java" />
+        <option value="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceCompany.java" />
+        <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main.css" />
+        <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/home.jsp" />
       </list>
     </option>
   </component>
@@ -790,7 +434,49 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appServlet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -823,82 +509,6 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gesso-root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gesso-root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gesso-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gesso-root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gesso-root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gesso-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -932,7 +542,61 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gesso-web" />
+              <option name="myItemId" value="gesso-application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gesso-application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -948,7 +612,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gesso" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -962,7 +626,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gesso-web" />
+              <option name="myItemId" value="gesso-application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -978,15 +642,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gesso" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1000,7 +660,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gesso-web" />
+              <option name="myItemId" value="gesso-application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1016,11 +676,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gesso" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1423,7 +1087,7 @@
       <workItem from="1430354837569" duration="13429000" />
       <workItem from="1430448693313" duration="4729000" />
       <workItem from="1430591431937" duration="8929000" />
-      <workItem from="1430620757733" duration="3968000" />
+      <workItem from="1430620757733" duration="9090000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion pagina de inicio">
       <created>1430624629857</created>
@@ -1431,11 +1095,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430624629857</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creacion pagina de inicio">
+      <created>1430626600246</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1430626600246</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31055000" />
+    <option name="totallyTimeSpent" value="36177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -1454,7 +1124,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.49386504" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.49386504" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.508046" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1464,7 +1134,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.398773" sideWeight="0.4968254" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.398773" sideWeight="0.4968254" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1489,11 +1159,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.4968254" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32668713" sideWeight="0.48095238" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.49386504" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1537,185 +1207,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/tags/include/sidebar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-adm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/dto/PersonDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="149" column="16" selection-start-line="149" selection-start-column="12" selection-end-line="149" selection-end-column="16" />
-          <folding>
-            <element signature="e#5166#5167#0" expanded="false" />
-            <element signature="e#5206#5207#0" expanded="false" />
-            <element signature="e#5800#5801#0" expanded="false" />
-            <element signature="e#5831#5832#0" expanded="false" />
-            <element signature="e#5877#5878#0" expanded="false" />
-            <element signature="e#5917#5918#0" expanded="false" />
-            <element signature="e#5991#5992#0" expanded="false" />
-            <element signature="e#6016#6017#0" expanded="false" />
-            <element signature="e#6121#6122#0" expanded="false" />
-            <element signature="e#6158#6159#0" expanded="false" />
-            <element signature="e#6191#6192#0" expanded="false" />
-            <element signature="e#6223#6224#0" expanded="false" />
-            <element signature="e#6273#6274#0" expanded="false" />
-            <element signature="e#6315#6316#0" expanded="false" />
-            <element signature="e#6352#6353#0" expanded="false" />
-            <element signature="e#6385#6386#0" expanded="false" />
-            <element signature="e#6437#6438#0" expanded="false" />
-            <element signature="e#6481#6482#0" expanded="false" />
-            <element signature="e#6516#6517#0" expanded="false" />
-            <element signature="e#6547#6548#0" expanded="false" />
-            <element signature="e#6595#6596#0" expanded="false" />
-            <element signature="e#6635#6636#0" expanded="false" />
-            <element signature="e#6676#6677#0" expanded="false" />
-            <element signature="e#6713#6714#0" expanded="false" />
-            <element signature="e#6773#6774#0" expanded="false" />
-            <element signature="e#6825#6826#0" expanded="false" />
-            <element signature="e#6861#6862#0" expanded="false" />
-            <element signature="e#6895#6896#0" expanded="false" />
-            <element signature="e#6947#6948#0" expanded="false" />
-            <element signature="e#6993#6994#0" expanded="false" />
-            <element signature="e#7033#7034#0" expanded="false" />
-            <element signature="e#7068#7069#0" expanded="false" />
-            <element signature="e#7125#7126#0" expanded="false" />
-            <element signature="e#7173#7174#0" expanded="false" />
-            <element signature="e#7214#7215#0" expanded="false" />
-            <element signature="e#7242#7243#0" expanded="false" />
-            <element signature="e#7299#7300#0" expanded="false" />
-            <element signature="e#7342#7343#0" expanded="false" />
-            <element signature="e#7415#7416#0" expanded="false" />
-            <element signature="e#7463#7464#0" expanded="false" />
-            <element signature="e#7672#7673#0" expanded="false" />
-            <element signature="e#7693#7694#0" expanded="false" />
-            <element signature="e#7734#7735#0" expanded="false" />
-            <element signature="e#7763#7764#0" expanded="false" />
-            <element signature="e#7804#7805#0" expanded="false" />
-            <element signature="e#7831#7832#0" expanded="false" />
-            <element signature="e#7887#7888#0" expanded="false" />
-            <element signature="e#7928#7929#0" expanded="false" />
-            <element signature="e#7978#7979#0" expanded="false" />
-            <element signature="e#8016#8017#0" expanded="false" />
-            <element signature="e#8089#8090#0" expanded="false" />
-            <element signature="e#8143#8144#0" expanded="false" />
-            <element signature="e#8202#8203#0" expanded="false" />
-            <element signature="e#8243#8244#0" expanded="false" />
-            <element signature="e#8448#8449#0" expanded="false" />
-            <element signature="e#8491#8492#0" expanded="false" />
-            <element signature="e#8708#8709#0" expanded="false" />
-            <element signature="e#8752#8753#0" expanded="false" />
-            <element signature="e#8948#8949#0" expanded="false" />
-            <element signature="e#8974#8975#0" expanded="false" />
-            <element signature="e#9027#9028#0" expanded="false" />
-            <element signature="e#9066#9067#0" expanded="false" />
-            <element signature="e#9103#9104#0" expanded="false" />
-            <element signature="e#9127#9128#0" expanded="false" />
-            <element signature="e#9177#9178#0" expanded="false" />
-            <element signature="e#9212#9213#0" expanded="false" />
-            <element signature="e#9257#9258#0" expanded="false" />
-            <element signature="e#9291#9292#0" expanded="false" />
-            <element signature="e#9361#9362#0" expanded="false" />
-            <element signature="e#9416#9417#0" expanded="false" />
-            <element signature="e#9464#9465#0" expanded="false" />
-            <element signature="e#9500#9501#0" expanded="false" />
-            <element signature="e#9672#9673#0" expanded="false" />
-            <element signature="e#9701#9702#0" expanded="false" />
-            <element signature="e#9761#9762#0" expanded="false" />
-            <element signature="e#9806#9807#0" expanded="false" />
-            <element signature="e#9848#9849#0" expanded="false" />
-            <element signature="e#9880#9881#0" expanded="false" />
-            <element signature="e#9945#9946#0" expanded="false" />
-            <element signature="e#9996#9997#0" expanded="false" />
-            <element signature="e#10038#10039#0" expanded="false" />
-            <element signature="e#10070#10071#0" expanded="false" />
-            <element signature="e#10135#10136#0" expanded="false" />
-            <element signature="e#10186#10187#0" expanded="false" />
-            <element signature="e#10223#10224#0" expanded="false" />
-            <element signature="e#10250#10251#0" expanded="false" />
-            <element signature="e#10305#10306#0" expanded="false" />
-            <element signature="e#10346#10347#0" expanded="false" />
-            <element signature="e#10380#10381#0" expanded="false" />
-            <element signature="e#10404#10405#0" expanded="false" />
-            <element signature="e#10453#10454#0" expanded="false" />
-            <element signature="e#10488#10489#0" expanded="false" />
-            <element signature="e#10522#10523#0" expanded="false" />
-            <element signature="e#10548#10549#0" expanded="false" />
-            <element signature="e#10599#10600#0" expanded="false" />
-            <element signature="e#10638#10639#0" expanded="false" />
-            <element signature="e#10684#10685#0" expanded="false" />
-            <element signature="e#10720#10721#0" expanded="false" />
-            <element signature="e#10886#10887#0" expanded="false" />
-            <element signature="e#10910#10911#0" expanded="false" />
-            <element signature="e#10959#10960#0" expanded="false" />
-            <element signature="e#10994#10995#0" expanded="false" />
-            <element signature="e#11029#11030#0" expanded="false" />
-            <element signature="e#11054#11055#0" expanded="false" />
-            <element signature="e#11105#11106#0" expanded="false" />
-            <element signature="e#11142#11143#0" expanded="false" />
-            <element signature="e#11187#11188#0" expanded="false" />
-            <element signature="e#11221#11222#0" expanded="false" />
-            <element signature="e#11291#11292#0" expanded="false" />
-            <element signature="e#11346#11347#0" expanded="false" />
-            <element signature="e#11396#11397#0" expanded="false" />
-            <element signature="e#11436#11437#0" expanded="false" />
-            <element signature="e#11630#11631#0" expanded="false" />
-            <element signature="e#11666#11667#0" expanded="false" />
-            <element signature="e#11837#11838#0" expanded="false" />
-            <element signature="e#11866#11867#0" expanded="false" />
-            <element signature="e#11925#11926#0" expanded="false" />
-            <element signature="e#11970#11971#0" expanded="false" />
-            <element signature="e#12013#12014#0" expanded="false" />
-            <element signature="e#12045#12046#0" expanded="false" />
-            <element signature="e#12111#12112#0" expanded="false" />
-            <element signature="e#12162#12163#0" expanded="false" />
-            <element signature="e#12210#12211#0" expanded="false" />
-            <element signature="e#12247#12248#0" expanded="false" />
-            <element signature="e#12415#12416#0" expanded="false" />
-            <element signature="e#12438#12439#0" expanded="false" />
-            <element signature="e#12483#12484#0" expanded="false" />
-            <element signature="e#12516#12517#0" expanded="false" />
-            <element signature="e#12550#12551#0" expanded="false" />
-            <element signature="e#12576#12577#0" expanded="false" />
-            <element signature="e#12627#12628#0" expanded="false" />
-            <element signature="e#12666#12667#0" expanded="false" />
-            <element signature="e#12693#12694#0" expanded="false" />
-            <element signature="e#12712#12713#0" expanded="false" />
-            <element signature="e#12749#12750#0" expanded="false" />
-            <element signature="e#12774#12775#0" expanded="false" />
-            <element signature="e#12808#12809#0" expanded="false" />
-            <element signature="e#12837#12838#0" expanded="false" />
-            <element signature="e#12882#12883#0" expanded="false" />
-            <element signature="e#12918#12919#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/administration/UserAdministrationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2102,34 +1593,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/spring/root-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/user-administration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="71.80769">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -2146,10 +1613,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2169,20 +1633,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/tags/template.tag">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.423077">
           <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding>
-            <marker date="1430602352233" expanded="true" signature="5730:5743" placeholder="..." />
+            <marker date="1430602352233" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -2195,9 +1651,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/home.jsp">
+    <entry file="file://$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceCriteria.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="68.65385">
+        <state vertical-scroll-proportion="0.16545013">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#494#495#0" expanded="false" />
+            <element signature="e#512#513#0" expanded="false" />
+            <element signature="e#587#588#0" expanded="false" />
+            <element signature="e#605#606#0" expanded="false" />
+            <element signature="e#872#873#0" expanded="false" />
+            <element signature="e#920#921#0" expanded="false" />
+            <element signature="e#1042#1043#0" expanded="false" />
+            <element signature="e#1083#1084#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/login/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/main-menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0352564">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/js/template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -2205,27 +1707,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
-          <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+        <state vertical-scroll-proportion="-18.961538">
+          <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/HomeController.java">
+    <entry file="file://$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceProcess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="87" />
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding>
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#582#583#0" expanded="false" />
+            <element signature="e#623#624#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/java/ec/com/gesso/controller/login/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/spring/root-context.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5604396">
-          <caret line="73" column="67" selection-start-line="73" selection-start-column="67" selection-end-line="73" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceCompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding>
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/resources/portal/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/user-administration.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="9" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31270903">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding />
         </state>
       </provider>
