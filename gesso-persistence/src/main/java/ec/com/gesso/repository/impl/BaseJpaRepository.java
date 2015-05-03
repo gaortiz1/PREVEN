@@ -23,7 +23,7 @@ public abstract class BaseJpaRepository {
 	/**
 	 * @return the entityManager
 	 */
-	public EntityManager getEntityManager() {
+	protected final EntityManager getEntityManager() {
 		return entityManager;
 	}
 
