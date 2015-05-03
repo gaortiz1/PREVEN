@@ -3,11 +3,11 @@
  */
 var app = angular.module('app-gesso',['ngRoute', 'ngResource']);
 app.config(function($routeProvider) {
-    $routeProvider.when('/todo', {
+    $routeProvider.when('/login', {
         templateUrl: 'todo/layout'
 
     });
-    $routeProvider.when('/address', {
+    $routeProvider.when('/login', {
         templateUrl: 'address/layout'
     });
 

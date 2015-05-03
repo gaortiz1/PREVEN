@@ -13,7 +13,7 @@
 	<meta name="keyword" content="Gestión de seguridad y salud laboral, salud, seguridad, gestión, laboral, prevencion,riesgos laborales,riesgos profesionales,prl,prevencion de riesgos laborales,seguridad e higiene,sistema erp, sistemas erp,programa,informatico,aplicacion,app,seguridad industrial,prevengos,software,prevencion,laboral,riesgos,laborales,medicina,trabajo,vigilancia,salud,servicio,ajeno,propio,mancomunado,gespreven,medtra,senmut,navision,evalua,prevention,world">
 
 	<title>Gesso</title>
-
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/gesso/gesso-styles.css"/>
 	<!-- Bootstrap core CSS -->
 	<link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet">
 	<!--external css-->
