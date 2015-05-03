@@ -5,16 +5,12 @@
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" />
 
-<!-- ace styles -->
-<style type="text/css">
-
-</style>
-
 <t:template>
 	<jsp:attribute name="body">
 		<form:form class="form-horizontal" role="form" >
-
-            <div class="row">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/chosen.css" />
+            <script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-process.js" type="text/javascript"></script>
+            <div class="row" ng-controller="gesso-process-adm as crtlPro">
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
 
@@ -47,32 +43,24 @@
                                         <ul id="tree2"></ul>
                                     </div>
 
-
-                                    <button class="btn btn-white btn-info btn-round" onclick="$('#modal-form-process').modal('show')">
+                                    <button type="button" class="btn btn-white btn-info btn-round" ng-click="crtlPro.callModalProcess()">
                                         <i class="ace-icon fa fa-cogs bigger-120 blue"></i>
                                         <spring:message code="page.label.new.process"/>
                                     </button>
 
-                                    <button class="btn btn-white btn-warning btn-round" onclick="$('#modal-form-subprocess').modal('show')">
+                                    <button type="button" class="btn btn-white btn-warning btn-round" ng-click="crtlPro.callModalSubProcess()">
                                         <i class="ace-icon fa fa-cogs bigger-120 orange"></i>
                                         <spring:message code="page.label.new.subprocess"/>
                                     </button>
 
-                                    <button class="btn btn-white btn-default btn-round" onclick="$('#modal-form-job').modal('show')">
+                                    <button type="button" class="btn btn-white btn-default btn-round" ng-click="crtlPro.callModalJob()">
                                         <i class="ace-icon fa fa-cogs red2"></i>
                                         <spring:message code="page.label.new.job"/>
                                     </button>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
-
-
-
-
 
 
                     <div id="modal-form-process" class="modal" tabindex="-1">
@@ -91,23 +79,22 @@
                                             <div class="col-xs-12 col-sm-7">
 
                                                 <div class="form-group">
-                                                    <label for="form-field-first">
+                                                    <label>
                                                         <spring:message code="page.label.name"/>
                                                     </label>
 
                                                     <div>
-                                                        <form:input path="process.name" placeholder ="Nombre proceso" required="required"/>
-
+                                                        <form:input path="process.name" placeholder ="Nombre proceso" />
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="form-field-first">
+                                                    <label>
                                                         <spring:message code="page.label.description"/>
                                                     </label>
 
                                                     <div>
-                                                        <form:input path="process.description" required="required"/>
+                                                        <form:input path="process.description"/>
                                                     </div>
                                                 </div>
 
@@ -133,13 +120,6 @@
                     </div>
 
 
-
-
-
-
-
-
-
                     <div id="modal-form-subprocess" class="modal" tabindex="-1">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -156,19 +136,19 @@
                                             <div class="col-xs-12 col-sm-7">
 
                                                 <div class="form-group">
-                                                    <label for="form-field-first">
+                                                    <label>
                                                         <spring:message code="menu.label.process"/>
                                                     </label>
 
                                                     <div>
-                                                        <form:select path="subProcess.idProcess" cssClass="chosen-select form-control" data-placeholder="Seleccionar proceso" >
+                                                        <form:select path="subProcess.idProcess" cssClass="chosen-select form-control chosenSubprocess" data-placeholder="Seleccionar proceso" >
                                                             <form:options items="${lstProcess}" itemLabel="name" itemValue="id" />
                                                         </form:select>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="form-field-first">
+                                                    <label>
                                                         <spring:message code="page.label.name"/>
                                                     </label>
 
@@ -179,7 +159,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="form-field-first">
+                                                    <label>
                                                         <spring:message code="page.label.description" />
                                                     </label>
 
@@ -210,16 +190,6 @@
                     </div>
 
 
-
-
-
-
-
-
-
-
-
-
                     <div id="modal-form-job" class="modal" tabindex="-1">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -234,17 +204,13 @@
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-7">
-
-
-
-
                                                 <div class="form-group">
-                                                    <label for="form-field-first">
+                                                    <label>
                                                         <spring:message code="menu.label.process"/>
                                                     </label>
 
                                                     <div>
-                                                        <form:select path="idProcesFormJob" cssClass="chosen-select form-control" data-placeholder="Seleccionar proceso" onchange="cargarSubProcesos(this, event)">
+                                                        <form:select path="idProcesFormJob" cssClass="chosen-select form-control chosenJobProcess" data-placeholder="Seleccionar proceso" onchange="cargarSubProcesos(this, event)">
                                                             <form:options items="${lstProcess}" itemLabel="name" itemValue="id" />
                                                         </form:select>
                                                     </div>
@@ -263,7 +229,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="form-field-first">
+                                                    <label>
                                                         <spring:message code="page.label.name"/>
                                                     </label>
 
@@ -274,7 +240,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="form-field-first">
+                                                    <label>
                                                         <spring:message code="page.label.description" />
                                                     </label>
 
@@ -345,26 +311,19 @@ window.jQuery || document.write("<script src='${pageContext.request.contextPath}
 
 <!-- ace scripts -->
 <script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.scroller.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.colorpicker.js"></script>
+
 <script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.fileinput.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.typeahead.js"></script>
+
 <script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.wysiwyg.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.spinner.js"></script>
+
 <script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.treeview.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.wizard.js"></script>
+
 <script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.aside.js"></script>
 <script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.js"></script>
 <script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.ajax-content.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.touch-drag.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.sidebar.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.sidebar-scroll-1.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.submenu-hover.js"></script>
+
 <script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.widget-box.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.settings.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.settings-rtl.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.settings-skin.js"></script>
 <script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.widget-on-reload.js"></script>
-<script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.searchbox-autocomplete.js"></script>
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
@@ -440,6 +399,9 @@ window.jQuery || document.write("<script src='${pageContext.request.contextPath}
                     $(".job-subprocess-selector").append($("<option></option>").attr("value",item.id).text(item.text));
                 });
 
+                $(".job-subprocess-selector").trigger("chosen:updated");
+                $(".job-subprocess-selector").chosen();
+
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 alert( errorThrown );
@@ -484,3 +446,4 @@ window.jQuery || document.write("<script src='${pageContext.request.contextPath}
 <script src="${pageContext.request.contextPath}/resources/docs/assets/js/language/html.js"></script>
 <script src="${pageContext.request.contextPath}/resources/docs/assets/js/language/css.js"></script>
 <script src="${pageContext.request.contextPath}/resources/docs/assets/js/language/javascript.js"></script>
+<script src="${pageContext.request.contextPath}/resources/assets/js/chosen.jquery.js"></script>
