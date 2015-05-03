@@ -35,12 +35,16 @@
 	<![endif]-->
 
 	<script src="${pageContext.request.contextPath}/resources/angular/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-resource.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/i18n/angular-locale_es-ec.js"></script>
+
 	<script src="${pageContext.request.contextPath}/resources/angular/smart-table.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-app.js"></script>
 </head>
 
 <body ng-app="app-gesso">
-
+<div ng-view></div>
 <section id="container">
 	<!-- **********************************************************************************************************************************************************
   TOP BAR CONTENT & NOTIFICATIONS

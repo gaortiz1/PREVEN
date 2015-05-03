@@ -23,7 +23,7 @@ app.controller('gesso-user-adm', ['$scope', '$http', function($scope, $http){
 
     controller.selectUser = function(userSelected){
         controller.userSelected = userSelected;
-        $('#modal-form').modal('show');
+        $('#myModal').modal('show');
     }
 
     controller.findUsers();

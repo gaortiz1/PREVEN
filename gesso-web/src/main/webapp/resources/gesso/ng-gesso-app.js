@@ -1,4 +1,17 @@
 /**
  * Created by Roberto on 29/04/2015.
  */
-var app = angular.module('app-gesso',[]);
+var app = angular.module('app-gesso',['ngRoute', 'ngResource']);
+app.config(function($routeProvider) {
+    $routeProvider.when('/todo', {
+        templateUrl: 'todo/layout'
+
+    });
+    $routeProvider.when('/address', {
+        templateUrl: 'address/layout'
+    });
+
+    $routeProvider.otherwise({
+        redirectTo: '/'
+    });
+});

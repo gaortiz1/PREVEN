@@ -7,7 +7,7 @@
         <ul class="sidebar-menu" id="nav-accordion">
 
             <p class="centered">
-                <a href="#/tareas/">
+                <a href="#/todo/">
                     <img src="assets/img/ui-sam.jpg" class="img-circle" width="60">
                 </a>
             </p>
