@@ -42,3 +42,11 @@ start 1;
 create sequence seq_id_contact_data
 increment 1
 start 1;
+
+create sequence seq_new_user
+increment 1
+start 1;
+
+create sequence seq_new_person
+increment 1
+start 1;

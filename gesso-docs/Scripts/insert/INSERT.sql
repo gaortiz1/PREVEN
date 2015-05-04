@@ -29,3 +29,6 @@ INSERT INTO CATALOG VALUES('MED','TP', 'MEDIANA[50-199]', 'T');
 INSERT INTO CATALOG VALUES('GRAN','TP', 'GRANDE[200 Y MAS]', 'T');
 INSERT INTO CATALOG VALUES('CEL','TT', 'CELULAR', 'T');
 INSERT INTO CATALOG VALUES('TEL','TT', 'TELEFONO', 'T');
+
+--Usuarios
+INSERT INTO seg_user(usr_id, usr_nick_name, usr_password) VALUES (nextval('seq_new_user'), 'admin', 'qwe123');
