@@ -14,6 +14,7 @@
 		<module>gesso-persistence</module>
 		<module>gesso-application</module>
 		<module>gesso-criteria</module>
+		<module>gesso-mail</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>

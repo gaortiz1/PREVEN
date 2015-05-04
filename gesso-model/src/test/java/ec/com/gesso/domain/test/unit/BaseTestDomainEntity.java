@@ -7,7 +7,9 @@ import java.io.Serializable;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import ec.com.gesso.domain.IDomainEntity;
 import ec.com.gesso.repository.IRepositoryEntity;
@@ -17,6 +19,7 @@ import ec.com.gesso.repository.exception.ValidationEntity;
  * @author Gabriel
  *
  */
+@RunWith(MockitoJUnitRunner.class) 
 public abstract class BaseTestDomainEntity<Entity extends Serializable> {
 	
 	protected IDomainEntity<Entity> domainEntity;

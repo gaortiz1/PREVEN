@@ -11,5 +11,5 @@ import java.io.Serializable;
  */
 public interface IServiceEntity<Entity extends Serializable> {
 	
-	public Entity create(Entity entity);
+	public Entity register(Entity entity);
 }

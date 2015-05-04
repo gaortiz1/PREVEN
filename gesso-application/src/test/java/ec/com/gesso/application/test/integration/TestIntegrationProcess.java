@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import ec.com.gesso.application.factory.GessoFactory;
-import ec.com.gesso.application.service.IServiceEntity;
 import ec.com.gesso.model.entity.Process;
 
 public class TestIntegrationProcess {
@@ -23,7 +22,7 @@ public class TestIntegrationProcess {
 		
 		process.getSubLevels().add(subLevel);
 		
-		GessoFactory.getInstance().getServiceProcess().create(process);
+		GessoFactory.getInstance().getServiceProcess().register(process);
 	}
 
 }

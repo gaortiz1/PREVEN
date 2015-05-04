@@ -47,6 +47,8 @@ public class ProviderJsonGeopoliticalDivision implements Serializable {
 	@ResponseBody
     public String findGeopoliticalDivisionWitoutRoot(Model model) {
 		
+		final GeopoliticalDivision geopoliticalDivision = new GeopoliticalDivision();
+		
 		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findRootGeopoliticalDivision();
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
@@ -60,7 +62,11 @@ public class ProviderJsonGeopoliticalDivision implements Serializable {
 	@ResponseBody
     public String findGeopoliticalDivisionRoot(@PathVariable Long idRoot, Model model) {
 		
-		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findChildrenGeopoliticalDivision(idRoot);
+		final GeopoliticalDivision geopoliticalDivision = new GeopoliticalDivision();
+		geopoliticalDivision.setState(Boolean.TRUE);
+		geopoliticalDivision.setIdRoot(idRoot);
+		
+		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findAll(geopoliticalDivision);
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
 	    Gson gson = gsonBuilder.registerTypeAdapter(GeopoliticalDivision.class, geopoliticalDivisionSerializer).create();
@@ -73,7 +79,11 @@ public class ProviderJsonGeopoliticalDivision implements Serializable {
 	@ResponseBody
     public String findGeopoliticalDivisionById(@PathVariable Long id, Model model) {
 		
-		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findGeopoliticalDivisionById(id);
+		final GeopoliticalDivision geopoliticalDivision = new GeopoliticalDivision();
+		geopoliticalDivision.setState(Boolean.TRUE);
+		geopoliticalDivision.setId(id);
+		
+		Collection<GeopoliticalDivision> collectionGeopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findAll(geopoliticalDivision);
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
 	    Gson gson = gsonBuilder.registerTypeAdapter(GeopoliticalDivision.class, geopoliticalDivisionSerializer).create();

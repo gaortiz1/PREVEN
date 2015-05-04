@@ -98,7 +98,7 @@ public class CompanyCreateController {
     		
     		final Company company = companyBuilder.build();
     		
-    		GessoFactory.getInstance().getServiceCompany().create(company);
+    		GessoFactory.getInstance().getServiceCompany().register(company);
     		
 		} catch (Exception e) {
 			LOGGER.error("A courrido un error", e);

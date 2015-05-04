@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import ec.com.gesso.application.service.IServiceEntity;
 import ec.com.gesso.model.entity.Company;
+import ec.com.gesso.model.entity.Process;
 
 
 /**
@@ -22,8 +23,8 @@ public final  class GessoFactory {
 		context = new ClassPathXmlApplicationContext(
 				new String []{
 						"classpath:ec/com/gesso/application/resource/spring/config/gesso-application.xml", 
-						"classpath:ec/com/gesso/application/resource/spring/config/gesso-persistencia.xml",
-						"classpath:ec/com/gesso/application/resource/spring/config/gesso-transactions-persistence-hibernate.xml",
+						"classpath:ec/com/gesso/application/resource/spring/config/gesso-persistencia-hibernate.xml",
+						"classpath:ec/com/gesso/application/resource/spring/config/gesso-transactions.xml",
 						"classpath:ec/com/gesso/domain/resource/spring/config/gesso-domain.xml",
 						"classpath:ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml"
 			});
@@ -40,9 +41,8 @@ public final  class GessoFactory {
 		return this.context.getBean("serviceCompany",IServiceEntity.class);
 	}
 	
-	public IServiceEntity<ec.com.gesso.model.entity.Process> getServiceProcess(){
+	public IServiceEntity<Process> getServiceProcess(){
 		return this.context.getBean("serviceProcess",IServiceEntity.class);
 	}
 	
-
 }

@@ -19,8 +19,8 @@ public class ServiceCompany implements IServiceEntity<Company> {
 	 * (non-Javadoc)
 	 * @see ec.com.gesso.application.service.IServiceEntity#create(java.io.Serializable)
 	 */
-	public Company create(final Company company) {
-		return this.domainCompany.create(company);
+	public Company register(final Company company) {
+		return this.domainCompany.register(company);
 	}
 
 	/**
