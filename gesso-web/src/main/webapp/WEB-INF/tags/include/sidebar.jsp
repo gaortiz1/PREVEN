@@ -27,16 +27,13 @@
                     <span><spring:message code="menu.label.administration"/></span>
                 </a>
                 <ul class="sub">
-
                     <li><a href="${pageContext.request.contextPath}/user-administration"><spring:message code="menu.label.user"/></a></li>
                     <li><a href="${pageContext.request.contextPath}/company-administration"><spring:message code="menu.label.company"/></a></li>
                     <li><a href="${pageContext.request.contextPath}/person-administration"><spring:message code="menu.label.person"/></a></li>
+                    <li><a href="${pageContext.request.contextPath}/person-edit"><spring:message code="menu.label.person.edit"/></a></li>
                     <li><a href="${pageContext.request.contextPath}/process-administration"><spring:message code="menu.label.process"/></a></li>
                 </ul>
             </li>
-
-
-
         </ul>
         <!-- sidebar menu end-->
     </div>

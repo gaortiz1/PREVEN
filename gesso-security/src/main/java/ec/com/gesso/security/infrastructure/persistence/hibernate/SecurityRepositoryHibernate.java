@@ -1,16 +1,16 @@
 package ec.com.gesso.security.infrastructure.persistence.hibernate;
 
-import java.util.Collection;
-
-import org.hibernate.Criteria;
-import org.hibernate.FetchMode;
-import org.hibernate.criterion.Restrictions;
-
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.User;
+import ec.com.gesso.model.entity.UserProfile;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
+import org.hibernate.Criteria;
+import org.hibernate.FetchMode;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.sql.JoinType;
+
+import java.util.Collection;
 
 public class SecurityRepositoryHibernate extends HibernateRepository implements SecurityRepository{
 
@@ -100,6 +100,22 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		}catch(Exception ex){
 			System.out.println(ex);
 		}
+	}
+
+	@Override
+	public Collection<UserProfile> findMenuForUser(Integer usrId) throws GessoException {
+		Criteria criteria =  null;
+		criteria =  getSession().createCriteria(UserProfile.class);
+		criteria.createAlias("userDto", "userA");
+		criteria.add(Restrictions.eq("userA.usrId", usrId));
+
+		criteria.createAlias("segProfile", "profileA");
+
+
+
+		Collection<UserProfile> lst = criteria.list();
+
+		return lst;
 	}
 
 }

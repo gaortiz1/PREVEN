@@ -1,13 +1,13 @@
 package ec.com.gesso.security.application.impl;
 
-import java.util.Collection;
-
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Job;
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.model.entity.SubProcess;
 import ec.com.gesso.security.application.IProcessService;
 import ec.com.gesso.security.domain.model.process.IProcessRepository;
+
+import java.util.Collection;
 
 /**
  * @author roberto

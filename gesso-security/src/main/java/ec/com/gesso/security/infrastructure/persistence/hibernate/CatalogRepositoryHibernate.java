@@ -1,14 +1,13 @@
 package ec.com.gesso.security.infrastructure.persistence.hibernate;
 
-import java.util.Collection;
-
+import ec.com.gesso.common.exception.GessoException;
+import ec.com.gesso.model.entity.Catalog;
+import ec.com.gesso.security.domain.model.catagog.ICatalogRepository;
 import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
 import org.hibernate.criterion.Restrictions;
 
-import ec.com.gesso.common.exception.GessoException;
-import ec.com.gesso.model.entity.Catalog;
-import ec.com.gesso.security.domain.model.catagog.ICatalogRepository;
+import java.util.Collection;
 
 public class CatalogRepositoryHibernate extends HibernateRepository implements ICatalogRepository{
 

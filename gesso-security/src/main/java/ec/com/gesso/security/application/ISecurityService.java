@@ -5,6 +5,7 @@ import java.util.Collection;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.User;
+import ec.com.gesso.model.entity.UserProfile;
 
 /**
  * @author roberto
@@ -17,7 +18,7 @@ public interface ISecurityService {
 	 * @param userPassword
 	 * @return User loged
 	 */
-	public User autenticateUser(String userName, String userPassword) throws GessoException;
+	User autenticateUser(String userName, String userPassword) throws GessoException;
 	
 	/**
 	 * Create new user with minimal parameters
@@ -32,4 +33,6 @@ public interface ISecurityService {
 	Collection<Person> findAllUsersByPerson() throws GessoException;
 	User findUserById(Integer usrId) throws GessoException;
 	Collection<Person> findAllPersons() throws GessoException;
+
+	Collection<UserProfile> findMenuForUser(Integer usrId) throws GessoException;
 }

@@ -2,6 +2,7 @@ package ec.com.gesso.security.infrastructure.persistence.hibernate;
 
 import java.util.Collection;
 
+import ec.com.gesso.model.entity.UserProfile;
 import org.apache.commons.collections.CollectionUtils;
 import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
@@ -95,5 +96,7 @@ public class ProcessRepositoryHibernate extends HibernateRepository implements I
 			throw new GessoException(e.getCause());
 		}
 	}
+
+
 
 }
