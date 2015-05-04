@@ -21,7 +21,6 @@
 		  <script src="${pageContext.request.contextPath}/resources/assets/js/excanvas.js"></script>
 		<![endif]-->
 		<script src="${pageContext.request.contextPath}/resources/angular/angular.min.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-adm.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/assets/js/jquery-ui.custom.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.ui.touch-punch.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.easypiechart.js"></script>
