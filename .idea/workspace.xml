@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="171799b4-85d9-4d35-97bb-fde886f4a167" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-person-edit.js" />
-      <change type="DELETED" beforePath="E:\projects\IdeaProjects\gesso-root\gesso-web\src\main\webapp\resources\gesso\ng-gesso-adm.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceCompany.java" afterPath="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceCompany.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceProcess.java" afterPath="$PROJECT_DIR$/gesso-application/src/main/java/ec/com/gesso/application/service/impl/ServiceProcess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/gesso-footer-script.jspf" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/gesso-footer-script.jspf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp" afterPath="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gesso-root.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,24 +87,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="person-edit.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="person-edit.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="12.423077">
-              <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
+            <state vertical-scroll-proportion="-0.9714286">
+              <caret line="92" column="96" selection-start-line="92" selection-start-column="96" selection-end-line="92" selection-end-column="96" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gesso-footer-script.jspf" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/gesso-footer-script.jspf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6025974">
-              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-              <folding>
-                <marker date="1430761173348" expanded="true" signature="265:409" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -192,8 +176,8 @@
         <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-administration.jsp" />
         <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/tags/include/sidebar.jsp" />
         <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/resources/gesso/ng-gesso-person-edit.js" />
-        <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp" />
         <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/gesso-footer-script.jspf" />
+        <option value="$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp" />
       </list>
     </option>
   </component>
@@ -960,7 +944,7 @@
       <workItem from="1430591431937" duration="8929000" />
       <workItem from="1430620757733" duration="22423000" />
       <workItem from="1430700804845" duration="598000" />
-      <workItem from="1430704580636" duration="5585000" />
+      <workItem from="1430704580636" duration="5705000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion pagina de inicio">
       <created>1430624629857</created>
@@ -978,11 +962,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55693000" />
+    <option name="totallyTimeSpent" value="55813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -993,7 +977,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32668713" sideWeight="0.4904762" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17777778" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.4968254" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32668713" sideWeight="0.48095238" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32668713" sideWeight="0.48095238" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1448,21 +1432,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp">
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/gesso-footer-script.jspf">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="12.423077">
-          <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
-          <folding />
+        <state vertical-scroll-proportion="1.2805195">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+          <folding>
+            <marker date="1430761173348" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/gesso-footer-script.jspf">
+    <entry file="file://$PROJECT_DIR$/gesso-web/src/main/webapp/WEB-INF/views/person-edit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6025974">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-          <folding>
-            <marker date="1430761173348" expanded="true" signature="265:409" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-0.9714286">
+          <caret line="92" column="96" selection-start-line="92" selection-start-column="96" selection-end-line="92" selection-end-column="96" />
+          <folding />
         </state>
       </provider>
     </entry>
