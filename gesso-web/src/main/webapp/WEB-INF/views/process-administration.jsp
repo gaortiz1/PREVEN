@@ -328,59 +328,6 @@ window.jQuery || document.write("<script src='${pageContext.request.contextPath}
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
 
-
-    function cargarProcesos(){
-        $.ajax({
-            method: "GET",
-            url: "load-process",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: loadProcessDataAjax,
-            error: function( jqXhr, textStatus, errorThrown ){
-                console.log( errorThrown );
-            }
-        });
-    }
-
-    function loadProcessDataAjax(data, textStatus, jQxhr){
-        var tree_data = data;
-
-
-
-
-        var dataSource1 = function(options, callback){
-            var $data = null
-            if(!("text" in options) && !("type" in options)){
-                $data = tree_data;//the root tree
-                callback({ data: $data });
-                return;
-            }
-            else if("type" in options && options.type == "folder") {
-                if("additionalParameters" in options && "children" in options.additionalParameters)
-                    $data = options.additionalParameters.children || {};
-                else $data = {}//no data
-            }
-
-            if($data != null){
-                setTimeout(function(){callback({ data: $data });} , parseInt(Math.random() * 500) + 200);
-            }
-        }
-
-
-        $('#tree1').ace_tree({
-            dataSource: dataSource1,
-            multiSelect: true,
-            cacheItems: true,
-            'open-icon' : 'ace-icon tree-minus',
-            'close-icon' : 'ace-icon tree-plus',
-            'selectable' : true,
-            'selected-icon' : 'ace-icon fa fa-check',
-            'unselected-icon' : 'ace-icon fa fa-times',
-            loadingHTML : '<div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div>'
-        });
-    }
-
-
     function cargarSubProcesos(element, event){
 
         var selectResult=0;
@@ -408,28 +355,6 @@ window.jQuery || document.write("<script src='${pageContext.request.contextPath}
             }
         });
     }
-    jQuery(function($){
-        //see below
-
-        //please refer to docs for more info
-        $('#tree1')
-                .on('loaded.fu.tree', function(e) {
-
-                })
-                .on('updated.fu.tree', function(e, result) {
-                })
-                .on('selected.fu.tree', function(e, result) {
-                })
-                .on('deselected.fu.tree', function(e) {
-                })
-                .on('opened.fu.tree', function(e, result) {
-
-                })
-                .on('closed.fu.tree', function(e) {
-                });
-        cargarProcesos();
-
-    });
 </script>
 
 
