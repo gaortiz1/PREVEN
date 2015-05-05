@@ -22,45 +22,44 @@ public class UserProfileOptionPK implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Basic(optional = false)
     @Column(name = "opt_id")
-    private int optId;
+    private Integer optId;
     @Basic(optional = false)
     @Column(name = "prf_id")
-    private int prfId;
+    private Integer prfId;
     @Basic(optional = false)
     @Column(name = "usr_id")
-    private int usrId;
+    private Integer usrId;
 
     public UserProfileOptionPK() {
     }
 
-    public UserProfileOptionPK(int optId, int prfId, int usrId) {
+    public UserProfileOptionPK(Integer optId, Integer prfId, Integer usrId) {
         this.optId = optId;
         this.prfId = prfId;
         this.usrId = usrId;
     }
 
-    public int getOptId() {
+    public Integer getOptId() {
         return optId;
     }
 
-    public void setOptId(int optId) {
+    public void setOptId(Integer optId) {
         this.optId = optId;
     }
 
-    public int getPrfId() {
+    public Integer getPrfId() {
         return prfId;
     }
 
-    public void setPrfId(int prfId) {
+    public void setPrfId(Integer prfId) {
         this.prfId = prfId;
     }
 
-    public int getUsrId() {
+    public Integer getUsrId() {
         return usrId;
     }
 
-    public void setUsrId(int usrId) {
+    public void setUsrId(Integer usrId) {
         this.usrId = usrId;
     }
-    
 }

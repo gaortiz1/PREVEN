@@ -30,7 +30,7 @@ public class UserProfileOption implements Serializable {
     protected UserProfileOptionPK segUserProfileOptionPK;
     @Basic(optional = false)
     @Column(name = "upo_status")
-    private boolean upoStatus;
+    private Boolean status;
     @JoinColumns({
         @JoinColumn(name = "prf_id", referencedColumnName = "prf_id", insertable = false, updatable = false),
         @JoinColumn(name = "usr_id", referencedColumnName = "usr_id", insertable = false, updatable = false)})
@@ -47,9 +47,9 @@ public class UserProfileOption implements Serializable {
         this.segUserProfileOptionPK = segUserProfileOptionPK;
     }
 
-    public UserProfileOption(UserProfileOptionPK segUserProfileOptionPK, boolean upoStatus) {
+    public UserProfileOption(UserProfileOptionPK segUserProfileOptionPK, Boolean upoStatus) {
         this.segUserProfileOptionPK = segUserProfileOptionPK;
-        this.upoStatus = upoStatus;
+        this.status = upoStatus;
     }
 
     public UserProfileOption(int optId, int prfId, int usrId) {
@@ -64,12 +64,12 @@ public class UserProfileOption implements Serializable {
         this.segUserProfileOptionPK = segUserProfileOptionPK;
     }
 
-    public boolean getUpoStatus() {
-        return upoStatus;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setUpoStatus(boolean upoStatus) {
-        this.upoStatus = upoStatus;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public UserProfile getSegUserProfile() {

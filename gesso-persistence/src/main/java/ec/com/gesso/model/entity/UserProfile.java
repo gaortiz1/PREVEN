@@ -30,12 +30,12 @@ public class UserProfile implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected UserProfilePK segUserProfilePK;
-    @Basic(optional = false)
+    //@Basic(optional = false)
     @Column(name = "id_company")
-    private long idCompany;
+    private Integer idCompany;
     @Basic(optional = false)
     @Column(name = "upr_status")
-    private boolean uprStatus;
+    private Boolean status;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "segUserProfile", fetch = FetchType.LAZY)
     private Collection<UserProfileOption> segUserProfileOptionCollection;
     @JoinColumn(name = "usr_id", referencedColumnName = "usr_id", insertable = false, updatable = false)
@@ -45,6 +45,9 @@ public class UserProfile implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Profile segProfile;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userProfile", fetch = FetchType.LAZY)
+    private Collection<UserProfileMenu> lstUserProfileMenu;
+
     public UserProfile() {
     }
 
@@ -52,10 +55,10 @@ public class UserProfile implements Serializable {
         this.segUserProfilePK = segUserProfilePK;
     }
 
-    public UserProfile(UserProfilePK segUserProfilePK, long idCompany, boolean uprStatus) {
+    public UserProfile(UserProfilePK segUserProfilePK, Integer idCompany, boolean uprStatus) {
         this.segUserProfilePK = segUserProfilePK;
         this.idCompany = idCompany;
-        this.uprStatus = uprStatus;
+        this.status = uprStatus;
     }
 
     public UserProfile(int prfId, int usrId) {
@@ -70,20 +73,20 @@ public class UserProfile implements Serializable {
         this.segUserProfilePK = segUserProfilePK;
     }
 
-    public long getIdCompany() {
+    public Integer getIdCompany() {
         return idCompany;
     }
 
-    public void setIdCompany(long idCompany) {
+    public void setIdCompany(Integer idCompany) {
         this.idCompany = idCompany;
     }
 
-    public boolean getUprStatus() {
-        return uprStatus;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setUprStatus(boolean uprStatus) {
-        this.uprStatus = uprStatus;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public Collection<UserProfileOption> getSegUserProfileOptionCollection() {
@@ -108,5 +111,13 @@ public class UserProfile implements Serializable {
 
     public void setSegProfile(Profile segProfile) {
         this.segProfile = segProfile;
+    }
+
+    public Collection<UserProfileMenu> getLstUserProfileMenu() {
+        return lstUserProfileMenu;
+    }
+
+    public void setLstUserProfileMenu(Collection<UserProfileMenu> lstUserProfileMenu) {
+        this.lstUserProfileMenu = lstUserProfileMenu;
     }
 }
