@@ -20,7 +20,7 @@ public class UserProfileMenu implements Serializable {
     private UserProfile userProfile;
 
     @JoinColumn(name = "men_id", referencedColumnName = "men_id", insertable = false, updatable = false)
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Menu menu;
 
     public UserProfileMenu() {

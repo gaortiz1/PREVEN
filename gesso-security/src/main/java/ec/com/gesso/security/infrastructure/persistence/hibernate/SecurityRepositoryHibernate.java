@@ -7,6 +7,7 @@ import ec.com.gesso.model.entity.UserProfile;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
 import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
+import org.hibernate.Hibernate;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.sql.JoinType;
 
@@ -118,11 +119,9 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 
         criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 
-		Collection<UserProfile> lst = criteria.list();
 
-        for(UserProfile obj : lst){
-            System.out.println(obj.getLstUserProfileMenu());
-        }
+		Collection<UserProfile> lst = criteria.list();
+        Hibernate.initialize(lst);
 
 		return lst;
 	}

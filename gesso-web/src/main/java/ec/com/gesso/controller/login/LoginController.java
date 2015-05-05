@@ -4,6 +4,7 @@ import ec.com.gesso.application.dto.UserDto;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.User;
+import ec.com.gesso.model.entity.UserProfile;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.Collection;
 import java.util.Locale;
 
 @Controller
@@ -56,6 +58,17 @@ public class LoginController {
     	User userDto = null;
 		try {
 			userDto = GessoSecurityFactory.getInstance().getSecurityService().autenticateUser(contact.getUserDto().getUsrNickName(), contact.getUserDto().getUsrPassword());
+			Collection<UserProfile> lstResult = null;
+			try {
+				lstResult = GessoSecurityFactory.getInstance().getSecurityService().findMenuForUser(1);
+
+
+				for(UserProfile objResult: lstResult){
+					System.out.println(objResult);
+				}
+			} catch (GessoException e) {
+				e.printStackTrace();
+			}
 		} catch (GessoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

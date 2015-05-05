@@ -45,7 +45,7 @@ public class UserProfile implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Profile profile;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userProfile", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userProfile", fetch = FetchType.EAGER)
     private Collection<UserProfileMenu> lstUserProfileMenu;
 
     public UserProfile() {
