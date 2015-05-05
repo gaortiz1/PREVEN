@@ -35,10 +35,10 @@ public class UserProfileOption implements Serializable {
         @JoinColumn(name = "prf_id", referencedColumnName = "prf_id", insertable = false, updatable = false),
         @JoinColumn(name = "usr_id", referencedColumnName = "usr_id", insertable = false, updatable = false)})
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private UserProfile segUserProfile;
+    private UserProfile userProfile;
     @JoinColumn(name = "opt_id", referencedColumnName = "opt_id", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Option segOption;
+    private Option option;
 
     public UserProfileOption() {
     }
@@ -72,20 +72,20 @@ public class UserProfileOption implements Serializable {
         this.status = status;
     }
 
-    public UserProfile getSegUserProfile() {
-        return segUserProfile;
+    public UserProfile getUserProfile() {
+        return userProfile;
     }
 
-    public void setSegUserProfile(UserProfile segUserProfile) {
-        this.segUserProfile = segUserProfile;
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
     }
 
-    public Option getSegOption() {
-        return segOption;
+    public Option getOption() {
+        return option;
     }
 
-    public void setSegOption(Option segOption) {
-        this.segOption = segOption;
+    public void setOption(Option option) {
+        this.option = option;
     }
     
 }

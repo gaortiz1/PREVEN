@@ -36,8 +36,8 @@ public class Profile implements Serializable {
     @Basic(optional = false)
     @Column(name = "status")
     private boolean status;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "segProfile", fetch = FetchType.LAZY)
-    private Collection<UserProfile> segUserProfileCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "profile", fetch = FetchType.LAZY)
+    private Collection<UserProfile> lstUserProfile;
 
     public Profile() {
     }
@@ -76,11 +76,11 @@ public class Profile implements Serializable {
         this.status = status;
     }
 
-    public Collection<UserProfile> getSegUserProfileCollection() {
-        return segUserProfileCollection;
+    public Collection<UserProfile> getLstUserProfile() {
+        return lstUserProfile;
     }
 
-    public void setSegUserProfileCollection(Collection<UserProfile> segUserProfileCollection) {
-        this.segUserProfileCollection = segUserProfileCollection;
+    public void setLstUserProfile(Collection<UserProfile> lstUserProfile) {
+        this.lstUserProfile = lstUserProfile;
     }
 }

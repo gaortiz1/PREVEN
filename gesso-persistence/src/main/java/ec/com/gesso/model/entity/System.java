@@ -35,9 +35,9 @@ public class System implements Serializable {
     private String sysName;
     @Basic(optional = false)
     @Column(name = "sys_status")
-    private boolean sysStatus;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "segSystem", fetch = FetchType.LAZY)
-    private Collection<Menu> segMenuCollection;
+    private Boolean status;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "system", fetch = FetchType.LAZY)
+    private Collection<Menu> lstMenu;
 
     public System() {
     }
@@ -46,10 +46,10 @@ public class System implements Serializable {
         this.sysId = sysId;
     }
 
-    public System(Integer sysId, String sysName, boolean sysStatus) {
+    public System(Integer sysId, String sysName, Boolean sysStatus) {
         this.sysId = sysId;
         this.sysName = sysName;
-        this.sysStatus = sysStatus;
+        this.status = sysStatus;
     }
 
     public Integer getSysId() {
@@ -68,19 +68,19 @@ public class System implements Serializable {
         this.sysName = sysName;
     }
 
-    public boolean getSysStatus() {
-        return sysStatus;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setSysStatus(boolean sysStatus) {
-        this.sysStatus = sysStatus;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
-    public Collection<Menu> getSegMenuCollection() {
-        return segMenuCollection;
+    public Collection<Menu> getLstMenu() {
+        return lstMenu;
     }
 
-    public void setSegMenuCollection(Collection<Menu> segMenuCollection) {
-        this.segMenuCollection = segMenuCollection;
+    public void setLstMenu(Collection<Menu> lstMenu) {
+        this.lstMenu = lstMenu;
     }
 }

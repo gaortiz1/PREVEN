@@ -29,21 +29,21 @@ import javax.persistence.Table;
 public class UserProfile implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
-    protected UserProfilePK segUserProfilePK;
+    protected UserProfilePK userProfilePK;
     //@Basic(optional = false)
     @Column(name = "id_company")
     private Integer idCompany;
     @Basic(optional = false)
     @Column(name = "upr_status")
     private Boolean status;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "segUserProfile", fetch = FetchType.LAZY)
-    private Collection<UserProfileOption> segUserProfileOptionCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userProfile", fetch = FetchType.LAZY)
+    private Collection<UserProfileOption> lstUserProfileOption;
     @JoinColumn(name = "usr_id", referencedColumnName = "usr_id", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private User userDto;
     @JoinColumn(name = "prf_id", referencedColumnName = "prf_id", insertable = false, updatable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Profile segProfile;
+    private Profile profile;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userProfile", fetch = FetchType.LAZY)
     private Collection<UserProfileMenu> lstUserProfileMenu;
@@ -52,25 +52,25 @@ public class UserProfile implements Serializable {
     }
 
     public UserProfile(UserProfilePK segUserProfilePK) {
-        this.segUserProfilePK = segUserProfilePK;
+        this.userProfilePK = segUserProfilePK;
     }
 
     public UserProfile(UserProfilePK segUserProfilePK, Integer idCompany, boolean uprStatus) {
-        this.segUserProfilePK = segUserProfilePK;
+        this.userProfilePK = segUserProfilePK;
         this.idCompany = idCompany;
         this.status = uprStatus;
     }
 
-    public UserProfile(int prfId, int usrId) {
-        this.segUserProfilePK = new UserProfilePK(prfId, usrId);
+    public UserProfile(Integer prfId, Integer usrId) {
+        this.userProfilePK = new UserProfilePK(prfId, usrId);
     }
 
-    public UserProfilePK getSegUserProfilePK() {
-        return segUserProfilePK;
+    public UserProfilePK getUserProfilePK() {
+        return userProfilePK;
     }
 
-    public void setSegUserProfilePK(UserProfilePK segUserProfilePK) {
-        this.segUserProfilePK = segUserProfilePK;
+    public void setUserProfilePK(UserProfilePK userProfilePK) {
+        this.userProfilePK = userProfilePK;
     }
 
     public Integer getIdCompany() {
@@ -89,12 +89,12 @@ public class UserProfile implements Serializable {
         this.status = status;
     }
 
-    public Collection<UserProfileOption> getSegUserProfileOptionCollection() {
-        return segUserProfileOptionCollection;
+    public Collection<UserProfileOption> getLstUserProfileOption() {
+        return lstUserProfileOption;
     }
 
-    public void setSegUserProfileOptionCollection(Collection<UserProfileOption> segUserProfileOptionCollection) {
-        this.segUserProfileOptionCollection = segUserProfileOptionCollection;
+    public void setLstUserProfileOption(Collection<UserProfileOption> lstUserProfileOption) {
+        this.lstUserProfileOption = lstUserProfileOption;
     }
 
     public User getUserDto() {
@@ -105,12 +105,12 @@ public class UserProfile implements Serializable {
 		this.userDto = userDto;
 	}
 
-	public Profile getSegProfile() {
-        return segProfile;
+	public Profile getProfile() {
+        return profile;
     }
 
-    public void setSegProfile(Profile segProfile) {
-        this.segProfile = segProfile;
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 
     public Collection<UserProfileMenu> getLstUserProfileMenu() {

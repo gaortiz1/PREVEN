@@ -35,11 +35,11 @@ public class Option implements Serializable {
     @Basic(optional = false)
     @Column(name = "opt_name")
     private String optName;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "segOption", fetch = FetchType.LAZY)
-    private Collection<UserProfileOption> segUserProfileOptionCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "option", fetch = FetchType.LAZY)
+    private Collection<UserProfileOption> lstUserProfileOption;
     @JoinColumn(name = "men_id", referencedColumnName = "men_id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Menu segMenu;
+    private Menu menu;
 
     public Option() {
     }
@@ -69,19 +69,19 @@ public class Option implements Serializable {
         this.optName = optName;
     }
 
-    public Collection<UserProfileOption> getSegUserProfileOptionCollection() {
-        return segUserProfileOptionCollection;
+    public Collection<UserProfileOption> getLstUserProfileOption() {
+        return lstUserProfileOption;
     }
 
-    public void setSegUserProfileOptionCollection(Collection<UserProfileOption> segUserProfileOptionCollection) {
-        this.segUserProfileOptionCollection = segUserProfileOptionCollection;
+    public void setLstUserProfileOption(Collection<UserProfileOption> lstUserProfileOption) {
+        this.lstUserProfileOption = lstUserProfileOption;
     }
 
-    public Menu getSegMenu() {
-        return segMenu;
+    public Menu getMenu() {
+        return menu;
     }
 
-    public void setSegMenu(Menu segMenu) {
-        this.segMenu = segMenu;
+    public void setMenu(Menu menu) {
+        this.menu = menu;
     }
 }

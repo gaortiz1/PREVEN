@@ -37,12 +37,12 @@ public class Menu implements Serializable {
     private String menName;
     @Basic(optional = false)
     @Column(name = "men_status")
-    private boolean menStatus;
+    private Boolean status;
     @JoinColumn(name = "sys_id", referencedColumnName = "sys_id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private System segSystem;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "segMenu", fetch = FetchType.LAZY)
-    private Collection<Option> segOptionCollection;
+    private System system;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "menu", fetch = FetchType.LAZY)
+    private Collection<Option> lstOption;
 
     public Menu() {
     }
@@ -51,10 +51,10 @@ public class Menu implements Serializable {
         this.menId = menId;
     }
 
-    public Menu(Integer menId, String menName, boolean menStatus) {
+    public Menu(Integer menId, String menName, Boolean menStatus) {
         this.menId = menId;
         this.menName = menName;
-        this.menStatus = menStatus;
+        this.status = menStatus;
     }
 
     public Integer getMenId() {
@@ -73,27 +73,27 @@ public class Menu implements Serializable {
         this.menName = menName;
     }
 
-    public boolean getMenStatus() {
-        return menStatus;
+    public boolean getStatus() {
+        return status;
     }
 
-    public void setMenStatus(boolean menStatus) {
-        this.menStatus = menStatus;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
-    public System getSegSystem() {
-        return segSystem;
+    public System getSystem() {
+        return system;
     }
 
-    public void setSegSystem(System segSystem) {
-        this.segSystem = segSystem;
+    public void setSystem(System system) {
+        this.system = system;
     }
 
-    public Collection<Option> getSegOptionCollection() {
-        return segOptionCollection;
+    public Collection<Option> getLstOption() {
+        return lstOption;
     }
 
-    public void setSegOptionCollection(Collection<Option> segOptionCollection) {
-        this.segOptionCollection = segOptionCollection;
+    public void setLstOption(Collection<Option> lstOption) {
+        this.lstOption = lstOption;
     }
 }

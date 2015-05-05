@@ -42,7 +42,7 @@ public class User implements Serializable {
     @Column(name = "usr_password")
     private String usrPassword;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userDto", fetch = FetchType.LAZY)
-    private Collection<UserProfile> segUserProfileCollection;
+    private Collection<UserProfile> lstUserProfile;
 
     @OneToOne(mappedBy = "userDto", fetch = FetchType.LAZY)
 //    @Transient
@@ -90,12 +90,12 @@ public class User implements Serializable {
         this.usrPassword = usrPassword;
     }
 
-    public Collection<UserProfile> getSegUserProfileCollection() {
-        return segUserProfileCollection;
+    public Collection<UserProfile> getLstUserProfile() {
+        return lstUserProfile;
     }
 
-    public void setSegUserProfileCollection(Collection<UserProfile> segUserProfileCollection) {
-        this.segUserProfileCollection = segUserProfileCollection;
+    public void setLstUserProfile(Collection<UserProfile> lstUserProfile) {
+        this.lstUserProfile = lstUserProfile;
     }
 
 	public Person getPerson() {
