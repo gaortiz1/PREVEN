@@ -80,7 +80,6 @@ INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
     VALUES ('UNI', 'NEDU', 'Universitaria', TRUE);
 
 --Seguridades
-INSERT INTO seg_user(usr_id, usr_nick_name, usr_password) VALUES (nextval('seq_new_user'), 'admin', 'qwe123');
 
 INSERT INTO seg_system(sys_id, sys_name, sys_status)
     VALUES (1, 'GESSO', true);

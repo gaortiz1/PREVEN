@@ -107,8 +107,11 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		Criteria criteria =  null;
 		criteria =  getSession().createCriteria(UserProfile.class);
 		criteria.createAlias("userDto", "userA");
-		//criteria.setFetchMode("userA", FetchMode.DEFAULT);
-		criteria.add(Restrictions.eq("userA.usrId",usrId));
+		criteria.add(Restrictions.eq("userA.usrId", usrId));
+
+		criteria.createAlias("segProfile", "profileA");
+
+
 
 		Collection<UserProfile> lst = criteria.list();
 
