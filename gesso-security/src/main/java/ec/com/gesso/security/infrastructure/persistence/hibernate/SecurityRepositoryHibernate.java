@@ -110,7 +110,8 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		criteria.add(Restrictions.eq("userA.usrId", usrId));
 
 		criteria.createAlias("segProfile", "profileA");
-
+		criteria.createAlias("lstUserProfileMenu", "userProfileMenuA");
+		criteria.setFetchMode("userProfileMenuA", FetchMode.JOIN);
 
 
 		Collection<UserProfile> lst = criteria.list();

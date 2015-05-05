@@ -67,16 +67,24 @@
         <processorPath useClasspath="true" />
         <module name="gesso-client" />
       </profile>
+      <profile default="false" name="Annotation profile for gesso-mail" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="gesso-mail" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="gesso-application" target="1.5" />
-      <module name="gesso-client" target="1.7" />
-      <module name="gesso-criteria" target="1.7" />
+      <module name="gesso-client" target="1.6" />
+      <module name="gesso-criteria" target="1.6" />
       <module name="gesso-ear" target="1.5" />
+      <module name="gesso-mail" target="1.6" />
       <module name="gesso-model" target="1.6" />
       <module name="gesso-persistence" target="1.6" />
       <module name="gesso-root" target="1.5" />
-      <module name="gesso-security" target="1.5" />
+      <module name="gesso-security" target="1.6" />
       <module name="gesso-web" target="1.6" />
     </bytecodeTargetLevel>
   </component>
