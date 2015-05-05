@@ -69,7 +69,7 @@ INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
 
 INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
     VALUES ('F', 'SEX', 'Femenino', TRUE);
-    
+
 INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
     VALUES ('PRI', 'NEDU', 'Primaria', TRUE);
 
@@ -79,5 +79,35 @@ INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
 INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
     VALUES ('UNI', 'NEDU', 'Universitaria', TRUE);
 
---Usuarios
+--Seguridades
 INSERT INTO seg_user(usr_id, usr_nick_name, usr_password) VALUES (nextval('seq_new_user'), 'admin', 'qwe123');
+
+INSERT INTO seg_system(sys_id, sys_name, sys_status)
+    VALUES (1, 'GESSO', true);
+
+INSERT INTO seg_profile(
+            prf_id, prf_name, status)
+    VALUES (1, 'Administrador', TRUE);
+
+INSERT INTO seg_menu(
+            sys_id, men_id, men_name, men_status)
+    VALUES (1, 1, 'Administracion', TRUE);
+
+INSERT INTO seg_option(
+            men_id, opt_id, opt_name)
+    VALUES (1, 1, 'Usuario');
+
+INSERT INTO seg_option(
+            men_id, opt_id, opt_name)
+    VALUES (1, 2, 'Persona');
+
+
+INSERT INTO seg_option(
+            men_id, opt_id, opt_name)
+    VALUES (1, 3, 'Proceso');
+
+
+INSERT INTO seg_option(
+            men_id, opt_id, opt_name)
+    VALUES (1, 4, 'Empresa');
+
