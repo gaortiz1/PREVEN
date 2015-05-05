@@ -35,6 +35,6 @@ public class TestIntegrationCompany {
 	
 	@Test
 	public void testCreateCompanyWithFactory() {
-		GessoFactory.getInstance().getServiceCompany().create(company);
+		GessoFactory.getInstance().getServiceCompany().register(company);
 	}
 }

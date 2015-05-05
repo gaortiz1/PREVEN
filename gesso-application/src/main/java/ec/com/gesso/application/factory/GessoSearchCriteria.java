@@ -22,8 +22,8 @@ private static final GessoSearchCriteria SEARCH_CRITERIA = new GessoSearchCriter
 		context = new ClassPathXmlApplicationContext(
 				new String []{
 						"classpath:ec/com/gesso/application/resource/spring/config/gesso-criteria.xml", 
-						"classpath:ec/com/gesso/application/resource/spring/config/gesso-persistencia.xml",
-						"classpath:ec/com/gesso/application/resource/spring/config/gesso-transactions-persistence-jpa.xml"
+						"classpath:ec/com/gesso/application/resource/spring/config/gesso-persistencia-jpa.xml",
+						"classpath:ec/com/gesso/application/resource/spring/config/gesso-transactions.xml"
 			});
 	}
 

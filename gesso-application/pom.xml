@@ -76,6 +76,11 @@
 	  	<artifactId>gesso-criteria</artifactId>
 	  	<version>0.0.1-SNAPSHOT</version>
 	  </dependency>
+	  <dependency>
+	  	<groupId>ec.com.gesso</groupId>
+	  	<artifactId>gesso-mail</artifactId>
+	  	<version>0.0.1-SNAPSHOT</version>
+	  </dependency>
   </dependencies>
   
   <repositories>

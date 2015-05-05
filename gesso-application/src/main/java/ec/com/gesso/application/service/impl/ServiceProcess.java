@@ -15,9 +15,8 @@ public class ServiceProcess implements IServiceEntity<Process> {
 	
 	private IDomainEntity<Process> domainProcess;
 
-	public Process create(final Process process) {
-		
-		return this.domainProcess.create(process);
+	public Process register(final Process process) {
+		return this.domainProcess.register(process);
 	}
 
 	/**

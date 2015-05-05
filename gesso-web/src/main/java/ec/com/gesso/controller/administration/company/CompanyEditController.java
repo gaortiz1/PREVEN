@@ -3,8 +3,6 @@ package ec.com.gesso.controller.administration.company;
 import java.util.Collection;
 import java.util.HashSet;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -86,14 +84,14 @@ public class CompanyEditController {
 		
 		Collection<GeopoliticalDivision> geopoliticalProvinces =  null;
 		try {
-			geopoliticalProvinces = GessoSearchCriteria.getInstance().getServiceCriteria().findChildrenGeopoliticalDivision(company.getGeopoliticalDivision().getGeopoliticalDivisionRoot().getIdRoot());
+			geopoliticalProvinces = GessoSearchCriteria.getInstance().getServiceCriteria().findAll(null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		Collection<GeopoliticalDivision> geopoliticalCities =  null;
 		try {
-			geopoliticalCities = GessoSearchCriteria.getInstance().getServiceCriteria().findChildrenGeopoliticalDivision(company.getGeopoliticalDivision().getIdRoot());
+			geopoliticalCities = GessoSearchCriteria.getInstance().getServiceCriteria().findAll(null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
