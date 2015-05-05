@@ -15,6 +15,17 @@ INSERT INTO GROUP_CATALOG VALUES('HT', 'HORARIO DE TRABAJO', 't');
 INSERT INTO GROUP_CATALOG VALUES('TP', 'TIPO COMPAÑIA', 't');
 INSERT INTO GROUP_CATALOG VALUES('TT', 'TIPO TELEFONO', 't');
 
+INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
+    VALUES ('NVUL', 'Nivel vulnerabilidad', TRUE);
+
+INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
+    VALUES ('PRO', 'Profesion', TRUE);
+
+INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
+    VALUES ('SEX', 'Sexo', TRUE);
+
+
+
 --CATALOG
 INSERT INTO CATALOG VALUES('BR','SP', 'BAJO RIESGO', 't');
 INSERT INTO CATALOG VALUES('MR','SP', 'MEDIANO RIESGO', 't');
@@ -29,6 +40,34 @@ INSERT INTO CATALOG VALUES('MED','TP', 'MEDIANA[50-199]', 'T');
 INSERT INTO CATALOG VALUES('GRAN','TP', 'GRANDE[200 Y MAS]', 'T');
 INSERT INTO CATALOG VALUES('CEL','TT', 'CELULAR', 'T');
 INSERT INTO CATALOG VALUES('TEL','TT', 'TELEFONO', 'T');
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('NIG', 'NVUL', 'Ninguna', TRUE);
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('EMB', 'NVUL', 'Embarazada', TRUE);
+
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('DIS', 'NVUL', 'Discapacidad', TRUE);
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('3EDAD', 'NVUL', '3ra Edad', TRUE);
+
+    INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('SIS', 'PRO', 'Sistemas', TRUE);
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('LIC', 'PRO', 'Licenciado', TRUE);
+
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('M', 'SEX', 'Masculino', TRUE);
+
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('F', 'SEX', 'Femenino', TRUE);
+
 
 --Usuarios
 INSERT INTO seg_user(usr_id, usr_nick_name, usr_password) VALUES (nextval('seq_new_user'), 'admin', 'qwe123');

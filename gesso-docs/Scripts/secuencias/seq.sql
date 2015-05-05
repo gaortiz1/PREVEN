@@ -50,3 +50,17 @@ start 1;
 create sequence seq_new_person
 increment 1
 start 1;
+
+create sequence seq_id_process
+increment 1
+start 1;
+
+create sequence seq_id_subprocess
+increment 1
+start 1;
+
+create sequence seq_id_job
+increment 1
+start 1;
+
+
