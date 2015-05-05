@@ -5,6 +5,7 @@ import java.util.Collection;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.User;
+import ec.com.gesso.model.entity.UserProfile;
 import ec.com.gesso.security.application.ISecurityService;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
 
@@ -62,5 +63,9 @@ public class SecurityServiceImpl implements ISecurityService{
 		return securityRepository.findAllPersons();
 	}
 
+	@Override
+	public Collection<UserProfile> findMenuForUser(Integer usrId) throws GessoException {
+		return securityRepository.findMenuForUser(usrId);
+	}
 
 }

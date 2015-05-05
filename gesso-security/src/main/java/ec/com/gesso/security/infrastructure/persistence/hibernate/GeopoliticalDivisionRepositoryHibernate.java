@@ -1,13 +1,12 @@
 package ec.com.gesso.security.infrastructure.persistence.hibernate;
 
-import java.util.Collection;
-
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
-
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.GeopoliticalDivision;
 import ec.com.gesso.security.domain.model.geopoliticalDivisionRepository.IGeopoliticalDivisionRepository;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
+
+import java.util.Collection;
 
 public class GeopoliticalDivisionRepositoryHibernate extends HibernateRepository implements IGeopoliticalDivisionRepository{
 

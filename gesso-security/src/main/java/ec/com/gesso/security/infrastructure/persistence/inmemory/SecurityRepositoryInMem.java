@@ -1,13 +1,14 @@
 package ec.com.gesso.security.infrastructure.persistence.inmemory;
 
-import java.util.Collection;
-import java.util.Map;
-
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.User;
+import ec.com.gesso.model.entity.UserProfile;
 import ec.com.gesso.security.domain.model.handling.HandlingEventRepository;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
+
+import java.util.Collection;
+import java.util.Map;
 
 /**
  * @author roberto
@@ -59,5 +60,10 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 
 	public void persistPersonUpdate(Person person) {
 
+	}
+
+	@Override
+	public Collection<UserProfile> findMenuForUser(Integer usrId) throws GessoException {
+		return null;
 	}
 }

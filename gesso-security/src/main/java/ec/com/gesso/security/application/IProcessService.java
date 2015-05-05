@@ -6,6 +6,7 @@ import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Job;
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.model.entity.SubProcess;
+import ec.com.gesso.model.entity.UserProfile;
 
 /**
  * @author roberto
@@ -17,15 +18,15 @@ public interface IProcessService {
 	 * @return
 	 * @throws GessoException
 	 */
-	public Collection<Process> findProcess() throws GessoException;
-	public Collection<SubProcess> findSubProcess(Long idProcess) throws GessoException;
-	public Collection<Job> findJobs(Long idSubProcess) throws GessoException;
+	Collection<Process> findProcess() throws GessoException;
+	Collection<SubProcess> findSubProcess(Long idProcess) throws GessoException;
+	Collection<Job> findJobs(Long idSubProcess) throws GessoException;
 	
-	public void persisNewProcess(Process process) throws GessoException;
-	public void persisNewSubProcess(SubProcess subProcess) throws GessoException;
+	void persisNewProcess(Process process) throws GessoException;
+	void persisNewSubProcess(SubProcess subProcess) throws GessoException;
 	/**
 	 * @param job
 	 * @throws GessoException
 	 */
-	public void persisNewJob(Job job) throws GessoException;
+	void persisNewJob(Job job) throws GessoException;
 }
