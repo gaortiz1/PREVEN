@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="171799b4-85d9-4d35-97bb-fde886f4a167" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/Menu.java" afterPath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/Option.java" afterPath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/Option.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/Profile.java" afterPath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/Profile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java" afterPath="$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/System.java" afterPath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/System.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/User.java" afterPath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/UserProfile.java" afterPath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/UserProfile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/UserProfileOption.java" afterPath="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/UserProfileOption.java" />
     </list>
     <ignored path="gesso-root.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,25 +34,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SecurityRepositoryHibernate.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SecurityRepositoryHibernate.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.6730769">
+              <caret line="126" column="19" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4752747">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-              <folding>
-                <element signature="e#2640#2641#0" expanded="true" />
-                <element signature="e#2692#2693#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -68,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/gesso-security/src/test/java/ec/com/gesso/test/BuildMenuTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/UserProfile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+              <caret line="45" column="27" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -193,8 +173,8 @@
         <option value="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/Menu.java" />
         <option value="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/System.java" />
         <option value="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/Profile.java" />
-        <option value="$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java" />
         <option value="$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/User.java" />
+        <option value="$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java" />
       </list>
     </option>
   </component>
@@ -1005,7 +985,7 @@
       <workItem from="1430700804845" duration="598000" />
       <workItem from="1430704580636" duration="20356000" />
       <workItem from="1430791343873" duration="4492000" />
-      <workItem from="1430796014835" duration="4812000" />
+      <workItem from="1430796014835" duration="5865000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion pagina de inicio">
       <created>1430624629857</created>
@@ -1023,10 +1003,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79768000" />
+    <option name="totallyTimeSpent" value="80821000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
+    <frame x="54" y="-8" width="1320" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1129,7 +1109,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java</url>
-          <line>124</line>
+          <line>126</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
@@ -1460,14 +1440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/UserProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/UserProfileMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1494,16 +1466,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-security/src/test/java/ec/com/gesso/test/BuildMenuTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1539,22 +1501,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4752747">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.62637365">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
           <folding>
             <element signature="e#2640#2641#0" expanded="true" />
             <element signature="e#2692#2693#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-persistence/src/main/java/ec/com/gesso/model/entity/UserProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="27" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-security/src/test/java/ec/com/gesso/test/BuildMenuTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesso-security/src/main/java/ec/com/gesso/security/infrastructure/persistence/hibernate/SecurityRepositoryHibernate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6730769">
+          <caret line="126" column="19" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -105,12 +105,9 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 	@Override
 	public Collection<UserProfile> findMenuForUser(Integer usrId) throws GessoException {
 		Criteria criteria =  null;
-		criteria =  getSession().createCriteria(UserProfile.class);
-		criteria.createAlias("userDto", "userA");
-		criteria.add(Restrictions.eq("userA.usrId", usrId));
+		criteria =  getSession().createCriteria(UserProfile.class, "userProfileA");
 
-		criteria.createAlias("profile", "profileA");
-		criteria.createAlias("lstUserProfileMenu", "userProfileMenuA");
+		criteria.createAlias("userProfileA.lstUserProfileMenu", "userProfileMenuA");
 		criteria.setFetchMode("userProfileMenuA", FetchMode.JOIN);
 
         criteria.createAlias("userProfileMenuA.menu", "menuA");
@@ -118,9 +115,14 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 
         criteria.createAlias("menuA.lstOption", "optionA");
         criteria.setFetchMode("optionA", FetchMode.JOIN);
+
         criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 
 		Collection<UserProfile> lst = criteria.list();
+
+        for(UserProfile obj : lst){
+            System.out.println(obj.getLstUserProfileMenu());
+        }
 
 		return lst;
 	}
