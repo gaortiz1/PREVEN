@@ -41,6 +41,7 @@
 
 	<script src="${pageContext.request.contextPath}/resources/angular/smart-table.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-app.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-menu.js"></script>
 </head>
 
 <body ng-app="app-gesso">

@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <aside>
-    <div id="sidebar" class="nav-collapse ">
+    <div id="sidebar" class="nav-collapse " ng-controller="gesso-menu as ctrlMenu">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
 

@@ -10,7 +10,7 @@ app.controller('gesso-menu', ['$scope', '$http', function($scope, $http){
     controller.message = "pruebas";
 
     controller.builMenu = function (){
-        var response = $http.get('find_users_json.json');
+        var response = $http.get('build-user-menu.json');
         response.success(function (data, status, headers, config) {
             controller.lstUsers = data;
         });

@@ -8,6 +8,7 @@ import ec.com.gesso.model.entity.UserProfile;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -58,23 +59,13 @@ public class LoginController {
     	User userDto = null;
 		try {
 			userDto = GessoSecurityFactory.getInstance().getSecurityService().autenticateUser(contact.getUserDto().getUsrNickName(), contact.getUserDto().getUsrPassword());
-			Collection<UserProfile> lstResult = null;
-			try {
-				lstResult = GessoSecurityFactory.getInstance().getSecurityService().findMenuForUser(1);
 
-
-				for(UserProfile objResult: lstResult){
-					System.out.println(objResult);
-				}
-			} catch (GessoException e) {
-				e.printStackTrace();
-			}
 		} catch (GessoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	
-    	session.setAttribute("logedUser" , userDto);
+    	session.setAttribute("logedUser", userDto);
         
     	if(userDto == null){
     		return "redirect:login";
@@ -88,6 +79,23 @@ public class LoginController {
     public String signup(@ModelAttribute("contact")Person contact, BindingResult result) {
     	System.out.println(contact.getFirstName());
         return "redirect:newPerson";
+    }
+
+    @RequestMapping(value="/build-user-menu", method= RequestMethod.GET,produces={"application/xml", "application/json"})
+    @ResponseStatus(HttpStatus.OK)
+    public @ResponseBody Collection<UserProfile> buildUserMenu(){
+        Collection<UserProfile> lstResult = null;
+        try {
+            lstResult = GessoSecurityFactory.getInstance().getSecurityService().findMenuForUser(1);
+
+
+            for(UserProfile objResult: lstResult){
+                System.out.println(objResult);
+            }
+        } catch (GessoException e) {
+            e.printStackTrace();
+        }
+        return lstResult;
     }
 	
 }
