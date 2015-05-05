@@ -41,7 +41,7 @@ public class Menu implements Serializable {
     @JoinColumn(name = "sys_id", referencedColumnName = "sys_id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private System system;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "menu", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "menu", fetch = FetchType.EAGER)
     private Collection<Option> lstOption;
 
     public Menu() {
