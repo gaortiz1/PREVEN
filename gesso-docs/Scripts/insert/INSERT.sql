@@ -24,6 +24,8 @@ INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catal
 INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
     VALUES ('SEX', 'Sexo', TRUE);
 
+INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
+    VALUES ('NEDU', 'Nivel educacion', TRUE);
 
 
 --CATALOG
@@ -67,7 +69,15 @@ INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
 
 INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
     VALUES ('F', 'SEX', 'Femenino', TRUE);
+    
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('PRI', 'NEDU', 'Primaria', TRUE);
 
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('SEC', 'NEDU', 'Secundaria', TRUE);
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('UNI', 'NEDU', 'Universitaria', TRUE);
 
 --Usuarios
 INSERT INTO seg_user(usr_id, usr_nick_name, usr_password) VALUES (nextval('seq_new_user'), 'admin', 'qwe123');
