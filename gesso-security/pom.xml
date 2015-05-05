@@ -63,6 +63,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+            <version>9.3-1102-jdbc4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -103,9 +104,32 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>3.2.1</version>
+				<configuration>
+					<url>jdbc:postgresql://127.0.0.1:5432/gesso</url>
+                    <driver>org.postgresql.Driver</driver>
+					<user>postgres</user>
+                    <password>admin</password>
+                    <schemas>
+                        <schema>public</schema>
+                    </schemas>
+                    <baselineOnMigrate>true</baselineOnMigrate>
+				</configuration>
+				<dependencies>
+					<dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>9.3-1102-jdbc4</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

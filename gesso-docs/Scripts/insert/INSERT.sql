@@ -93,6 +93,10 @@ INSERT INTO seg_menu(
             sys_id, men_id, men_name, men_status)
     VALUES (1, 1, 'Administracion', TRUE);
 
+INSERT INTO seg_menu(
+            sys_id, men_id, men_name, men_status)
+    VALUES (1, 2, 'Edicion', TRUE);
+
 INSERT INTO seg_option(
             men_id, opt_id, opt_name)
     VALUES (1, 1, 'Usuario');
@@ -111,3 +115,6 @@ INSERT INTO seg_option(
             men_id, opt_id, opt_name)
     VALUES (1, 4, 'Empresa');
 
+INSERT INTO seg_option(
+            men_id, opt_id, opt_name)
+    VALUES (2, 5, 'Edicion persona');
