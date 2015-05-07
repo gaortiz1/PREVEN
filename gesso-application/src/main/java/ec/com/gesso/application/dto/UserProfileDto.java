@@ -9,11 +9,11 @@ public class UserProfileDto {
 
     private Integer idCompany;
 
-    //private Collection<UserProfileMenuDto> lstUserProfileMenu;
+    private Collection<UserProfileMenuDto> lstUserProfileMenu;
     //private Collection<UserProfileOptionDto> lstUserProfileOption;
 
     public UserProfileDto(){}
-/*
+
     public Collection<UserProfileMenuDto> getLstUserProfileMenu() {
         return lstUserProfileMenu;
     }
@@ -21,7 +21,7 @@ public class UserProfileDto {
     public void setLstUserProfileMenu(Collection<UserProfileMenuDto> lstUserProfileMenu) {
         this.lstUserProfileMenu = lstUserProfileMenu;
     }
-
+/*
     public Collection<UserProfileOptionDto> getLstUserProfileOption() {
         return lstUserProfileOption;
     }
