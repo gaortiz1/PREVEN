@@ -1,11 +1,15 @@
 package ec.com.gesso.controller.login;
 
+import ec.com.gesso.application.dto.PersonDto;
 import ec.com.gesso.application.dto.UserDto;
+import ec.com.gesso.application.dto.UserProfileDto;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.User;
 import ec.com.gesso.model.entity.UserProfile;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -15,7 +19,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Type;
 import java.util.Collection;
+import java.util.List;
 import java.util.Locale;
 
 @Controller
@@ -83,19 +89,25 @@ public class LoginController {
 
     @RequestMapping(value="/build-user-menu", method= RequestMethod.GET,produces={"application/xml", "application/json"})
     @ResponseStatus(HttpStatus.OK)
-    public @ResponseBody Collection<UserProfile> buildUserMenu(){
+    public @ResponseBody Collection<UserProfileDto> buildUserMenu(){
         Collection<UserProfile> lstResult = null;
         try {
             lstResult = GessoSecurityFactory.getInstance().getSecurityService().findMenuForUser(1);
-
-
-            for(UserProfile objResult: lstResult){
-                System.out.println(objResult);
-            }
         } catch (GessoException e) {
             e.printStackTrace();
         }
-        return lstResult;
+
+		ModelMapper modelMapper = new ModelMapper();
+        Collection<UserProfileDto> lstResultUserProfile = null;
+		Type listType = new TypeToken<List<UserProfileDto>>() {}.getType();
+        try {
+            lstResultUserProfile = modelMapper.map(lstResult, listType );
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+        return lstResultUserProfile;
     }
 	
 }

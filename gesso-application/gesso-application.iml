@@ -7,9 +7,13 @@
           <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-application.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-transactions.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-criteria.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-persistencia.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-transactions-persistence-jpa.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-transactions-persistence-hibernate.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-persistencia-hibernate.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/ec/com/gesso/application/resource/spring/config/gesso-persistencia-jpa.xml</file>
+          <file>file://$MODULE_DIR$/../gesso-mail/src/main/resources/ec/com/gesso/domain/resource/spring/config/gesso-mail.xml</file>
+          <file>file://$MODULE_DIR$/../gesso-model/src/main/resources/ec/com/gesso/domain/resource/spring/config/gesso-domain.xml</file>
+          <file>file://$MODULE_DIR$/../gesso-persistence/src/main/resources/ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml</file>
         </fileset>
       </configuration>
     </facet>

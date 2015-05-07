@@ -31,10 +31,10 @@ public class Menu implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "men_id")
-    private Integer menId;
+    private Integer menuId;
     @Basic(optional = false)
     @Column(name = "men_name")
-    private String menName;
+    private String menuName;
     @Basic(optional = false)
     @Column(name = "men_status")
     private Boolean status;
@@ -48,29 +48,29 @@ public class Menu implements Serializable {
     }
 
     public Menu(Integer menId) {
-        this.menId = menId;
+        this.menuId = menId;
     }
 
     public Menu(Integer menId, String menName, Boolean menStatus) {
-        this.menId = menId;
-        this.menName = menName;
+        this.menuId = menId;
+        this.menuName = menName;
         this.status = menStatus;
     }
 
-    public Integer getMenId() {
-        return menId;
+    public Integer getMenuId() {
+        return menuId;
     }
 
-    public void setMenId(Integer menId) {
-        this.menId = menId;
+    public void setMenuId(Integer menuId) {
+        this.menuId = menuId;
     }
 
-    public String getMenName() {
-        return menName;
+    public String getMenuName() {
+        return menuName;
     }
 
-    public void setMenName(String menName) {
-        this.menName = menName;
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
     }
 
     public boolean getStatus() {

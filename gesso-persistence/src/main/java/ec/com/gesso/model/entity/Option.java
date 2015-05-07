@@ -31,10 +31,10 @@ public class Option implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "opt_id")
-    private Integer optId;
+    private Integer optionId;
     @Basic(optional = false)
     @Column(name = "opt_name")
-    private String optName;
+    private String optionName;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "option", fetch = FetchType.LAZY)
     private Collection<UserProfileOption> lstUserProfileOption;
     @JoinColumn(name = "men_id", referencedColumnName = "men_id")
@@ -45,28 +45,28 @@ public class Option implements Serializable {
     }
 
     public Option(Integer optId) {
-        this.optId = optId;
+        this.optionId = optId;
     }
 
     public Option(Integer optId, String optName) {
-        this.optId = optId;
-        this.optName = optName;
+        this.optionId = optId;
+        this.optionName = optName;
     }
 
-    public Integer getOptId() {
-        return optId;
+    public Integer getOptionId() {
+        return optionId;
     }
 
-    public void setOptId(Integer optId) {
-        this.optId = optId;
+    public void setOptionId(Integer optionId) {
+        this.optionId = optionId;
     }
 
-    public String getOptName() {
-        return optName;
+    public String getOptionName() {
+        return optionName;
     }
 
-    public void setOptName(String optName) {
-        this.optName = optName;
+    public void setOptionName(String optionName) {
+        this.optionName = optionName;
     }
 
     public Collection<UserProfileOption> getLstUserProfileOption() {
