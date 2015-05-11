@@ -151,6 +151,7 @@
     
     <script src="${pageContext.request.contextPath}/resources/assets/js/fuelux/fuelux.tree.js"></script>
     <script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.treeview.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/ace/ace.js"></script>
     
     
     <script src="${pageContext.request.contextPath}/resources/assets/js/chosen.jquery.js"></script>
