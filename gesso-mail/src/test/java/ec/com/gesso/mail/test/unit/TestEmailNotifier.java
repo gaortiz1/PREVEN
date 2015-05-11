@@ -11,8 +11,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.mail.javamail.JavaMailSender;
 
 import ec.com.gesso.mail.exception.GessoMailException;
-import ec.com.gesso.mail.model.IModelMessage;
-import ec.com.gesso.mail.model.impl.ModelEmail;
+import ec.com.gesso.mail.model.IMessage;
+import ec.com.gesso.mail.model.impl.Email;
 import ec.com.gesso.mail.notifier.impl.EmailNotifier;
 
 /**
@@ -40,82 +40,82 @@ public class TestEmailNotifier {
 	
 	@Test(expected=GessoMailException.class)
 	public void shouldNotSendMailWithNullParameterTo(){
-		ModelEmail modelEmail = new ModelEmail();
-		modelEmail.setSubject("test");
-		modelEmail.setFrom("bisbiridolfo@hotmail.com");
-		modelEmail.setMessage(new IModelMessage() {
+		Email email = new Email();
+		email.setSubject("test");
+		email.setFrom("bisbiridolfo@hotmail.com");
+		email.setMessage(new IMessage() {
 			
 			@Override
 			public String getText() {
 				return "Send Message";
 			}
 		});
-		this.emailNotifier.send(modelEmail);
+		this.emailNotifier.send(email);
 	}
 	
 	@Test(expected=GessoMailException.class)
 	public void shouldNotSendMailWithNullParameterFrom(){
-		ModelEmail modelEmail = new ModelEmail();
-		modelEmail.setTo("bisbiridolfo@hotmail.com");
-		modelEmail.setSubject("test");
-		modelEmail.setMessage(new IModelMessage() {
+		Email email = new Email();
+		email.setTo("bisbiridolfo@hotmail.com");
+		email.setSubject("test");
+		email.setMessage(new IMessage() {
 			
 			@Override
 			public String getText() {
 				return "Send Message";
 			}
 		});
-		this.emailNotifier.send(modelEmail);
+		this.emailNotifier.send(email);
 	}
 	
 	@Test(expected=GessoMailException.class)
 	public void shouldNotSendMailWithNullParameterSubject(){
-		ModelEmail modelEmail = new ModelEmail();
-		modelEmail.setTo("bisbiridolfo@hotmail.com");
-		modelEmail.setFrom("bisbiridolfo@hotmail.com");
-		modelEmail.setMessage(new IModelMessage() {
+		Email email = new Email();
+		email.setTo("bisbiridolfo@hotmail.com");
+		email.setFrom("bisbiridolfo@hotmail.com");
+		email.setMessage(new IMessage() {
 			
 			@Override
 			public String getText() {
 				return "Send Message";
 			}
 		});
-		this.emailNotifier.send(modelEmail);
+		this.emailNotifier.send(email);
 	}
 	
 	@Test(expected=GessoMailException.class)
 	public void shouldNotSendMailWithNullParameterMessage(){
-		ModelEmail modelEmail = new ModelEmail();
-		modelEmail.setTo("bisbiridolfo@hotmail.com");
-		modelEmail.setSubject("test");
-		modelEmail.setFrom("bisbiridolfo@hotmail.com");
-		modelEmail.setMessage(null);
-		this.emailNotifier.send(modelEmail);
+		Email email = new Email();
+		email.setTo("bisbiridolfo@hotmail.com");
+		email.setSubject("test");
+		email.setFrom("bisbiridolfo@hotmail.com");
+		email.setMessage(null);
+		this.emailNotifier.send(email);
 	}
 	
 	@Test(expected=GessoMailException.class)
 	public void shouldNotSendMailWithNullParameterText(){
-		ModelEmail modelEmail = new ModelEmail();
-		modelEmail.setTo("bisbiridolfo@hotmail.com");
-		modelEmail.setSubject("test");
-		modelEmail.setFrom("bisbiridolfo@hotmail.com");
-		modelEmail.setMessage(new IModelMessage() {
+		Email email = new Email();
+		email.setTo("bisbiridolfo@hotmail.com");
+		email.setSubject("test");
+		email.setFrom("bisbiridolfo@hotmail.com");
+		email.setMessage(new IMessage() {
 			
 			@Override
 			public String getText() {
 				return null;
 			}
 		});
-		this.emailNotifier.send(modelEmail);
+		this.emailNotifier.send(email);
 	}
 	
 	@Test
 	public void shouldSendMailWithParameterModelEmail(){
-		ModelEmail modelEmail = new ModelEmail();
-		modelEmail.setTo("bisbiridolfo@hotmail.com");
-		modelEmail.setSubject("test");
-		modelEmail.setFrom("bisbiridolfo@hotmail.com");
-		modelEmail.setMessage(new IModelMessage() {
+		Email email = new Email();
+		email.setTo("bisbiridolfo@hotmail.com");
+		email.setSubject("test");
+		email.setFrom("bisbiridolfo@hotmail.com");
+		email.setMessage(new IMessage() {
 			
 			@Override
 			public String getText() {
@@ -123,7 +123,7 @@ public class TestEmailNotifier {
 			}
 		});
 		
-		this.emailNotifier.send(modelEmail);
+		this.emailNotifier.send(email);
 	}
 
 }

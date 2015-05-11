@@ -2,17 +2,41 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	
+
 	<bean id="serviceProcess" class="ec.com.gesso.application.service.impl.ServiceProcess">
 		<property name="domainProcess">
-			<ref bean="domainProcess"/>
+			<ref bean="domainProcess" />
 		</property>
 	</bean>
-	
+
 	<bean id="serviceCompany" class="ec.com.gesso.application.service.impl.ServiceCompany">
 		<property name="domainCompany">
-			<ref bean="domainCompany"/>
+			<ref bean="domainCompany" />
 		</property>
 	</bean>
-	
+
+	<bean id="postServiceCompany" class="ec.com.gesso.application.service.interceptor.before.PostServiceCompany">
+		<property name="serviceMail">
+			<ref bean="serviceCompanyMail"/>
+		</property>
+	</bean>
+
+	<bean id="serviceCompanyMail" class="ec.com.gesso.application.service.email.impl.ServiceCompanyMail">
+		<property name="emailNotifier">
+			<ref bean="emailNotifierAsync" />
+		</property>
+	</bean>
+
+	<bean id="serviceCompanyProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+
+		<property name="target" ref="serviceCompany" />
+
+		<property name="interceptorNames">
+			<list>
+				<value>postServiceCompany</value>
+			</list>
+		</property>
+	</bean>
+
+
 </beans>

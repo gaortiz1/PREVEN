@@ -10,13 +10,13 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 
-import ec.com.gesso.mail.model.IModelMessage;
+import ec.com.gesso.mail.model.IMessage;
 
 /**
  * @author Gabriel
  *
  */
-public class ModelMessageNotifier implements IModelMessage, Serializable {
+public class MessageNotifier implements IMessage, Serializable {
 
 	/**
 	 * 
@@ -31,7 +31,7 @@ public class ModelMessageNotifier implements IModelMessage, Serializable {
 	 * @param messageTitle
 	 * @param content
 	 */
-	public ModelMessageNotifier(String messageTitle, String content) {
+	public MessageNotifier(String messageTitle, String content) {
 		this.messageTitle = messageTitle;
 		this.content = content;
 	}

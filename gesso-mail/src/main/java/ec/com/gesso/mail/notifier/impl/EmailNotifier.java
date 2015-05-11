@@ -21,7 +21,7 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 
 import ec.com.gesso.mail.exception.GessoConnectionException;
 import ec.com.gesso.mail.exception.GessoMailException;
-import ec.com.gesso.mail.model.IModelEmail;
+import ec.com.gesso.mail.model.IEmail;
 import ec.com.gesso.mail.notifier.IEmailNotifier;
 
 /**
@@ -32,9 +32,9 @@ public class EmailNotifier implements IEmailNotifier {
 	
 	private JavaMailSender javaMailSender;
 
-	public void send(final IModelEmail modelEmail) {
+	public void send(final IEmail email) {
 		
-		this.validarModelEmail(modelEmail);
+		this.validarModelEmail(email);
 		
         try {
         	
@@ -44,22 +44,22 @@ public class EmailNotifier implements IEmailNotifier {
                 	
                 	final MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
                 	
-                	if (ArrayUtils.isNotEmpty(modelEmail.getTo())) {
-                		messageHelper.setTo(transformAddressToInternetAddress(modelEmail.getTo()));
+                	if (ArrayUtils.isNotEmpty(email.getTo())) {
+                		messageHelper.setTo(transformAddressToInternetAddress(email.getTo()));
                 	}
                 	
-                	if (ArrayUtils.isNotEmpty(modelEmail.getCc())) {
-                		messageHelper.setCc(transformAddressToInternetAddress(modelEmail.getCc()));
+                	if (ArrayUtils.isNotEmpty(email.getCc())) {
+                		messageHelper.setCc(transformAddressToInternetAddress(email.getCc()));
                 	}
                 	
-                	if (ArrayUtils.isNotEmpty(modelEmail.getBcc())) {
-                		messageHelper.setBcc(transformAddressToInternetAddress(modelEmail.getBcc()));
+                	if (ArrayUtils.isNotEmpty(email.getBcc())) {
+                		messageHelper.setBcc(transformAddressToInternetAddress(email.getBcc()));
                 	}
                 	
-                	messageHelper.setFrom(new InternetAddress(modelEmail.getFrom()));
-                	messageHelper.setSubject(modelEmail.getSubject());
+                	messageHelper.setFrom(new InternetAddress(email.getFrom()));
+                	messageHelper.setSubject(email.getSubject());
                 	messageHelper.setSentDate(new Date());
-                	messageHelper.setText(modelEmail.getMessage().getText(), true);
+                	messageHelper.setText(email.getMessage().getText(), true);
                 }
             };
         	
@@ -74,29 +74,29 @@ public class EmailNotifier implements IEmailNotifier {
         
 	}
 	
-	private void validarModelEmail(final IModelEmail modelEmail){
+	private void validarModelEmail(final IEmail email){
 		
-		if (modelEmail == null) {
+		if (email == null) {
 			throw new GessoMailException("No objeto modelEmail puede ser null ");
 		}
 		
-		if (StringUtils.isBlank(modelEmail.getFrom())){
+		if (StringUtils.isBlank(email.getFrom())){
 			throw new GessoMailException("El email debe tener una direccion de correo de referencia");
 		}
 		
-		if (ArrayUtils.isEmpty(modelEmail.getTo())){
+		if (ArrayUtils.isEmpty(email.getTo())){
 			throw new GessoMailException("El email debe tener al menos una dirrecion de correo para enviar");
 		}
 		
-		if (StringUtils.isBlank(modelEmail.getSubject())){
+		if (StringUtils.isBlank(email.getSubject())){
 			throw new GessoMailException("El email debe tener el subject");
 		}
 		
-		if (modelEmail.getMessage() == null){
+		if (email.getMessage() == null){
 			throw new GessoMailException("El email debe tener el mensaje");
 		}
 		
-		if (StringUtils.isBlank(modelEmail.getMessage().getText())){
+		if (StringUtils.isBlank(email.getMessage().getText())){
 			throw new GessoMailException("El email debe tener en el mensaje algun texto");
 		}
 		

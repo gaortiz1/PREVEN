@@ -40,7 +40,7 @@ public class CompanyBuilder {
 		return this;
 	}
 	
-	public CompanyBuilder addrRazonSocial(final String razonSocial) {
+	public CompanyBuilder addRazonSocial(final String razonSocial) {
 		this.razonSocial = razonSocial;
 		return this;
 	}

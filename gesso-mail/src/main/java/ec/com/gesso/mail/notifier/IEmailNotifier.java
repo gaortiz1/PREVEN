@@ -3,7 +3,7 @@
  */
 package ec.com.gesso.mail.notifier;
 
-import ec.com.gesso.mail.model.IModelEmail;
+import ec.com.gesso.mail.model.IEmail;
 
 /**
  * @author Gabriel
@@ -11,6 +11,6 @@ import ec.com.gesso.mail.model.IModelEmail;
  */
 public interface IEmailNotifier {
 	
-	void send(IModelEmail modelEmail);
+	void send(IEmail email);
 
 }

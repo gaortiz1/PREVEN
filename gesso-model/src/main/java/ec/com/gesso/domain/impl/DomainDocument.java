@@ -20,12 +20,10 @@ public class DomainDocument extends BaseDomainEntity<Document> {
 		
 		this.validateDocument(document);
 		
-		if (document.getIdDocument().getIdDocument() == null) {
+		if (document.getState() == null){
 			document.setState(Boolean.TRUE);
-			this.repositoryEntity.create(document);
-		} else {
-			this.repositoryEntity.edit(document);
 		}
+		this.repositoryEntity.saveOrUpdate(document);
 		
 		return document;
 	}

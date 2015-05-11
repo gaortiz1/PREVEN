@@ -19,6 +19,7 @@ public class TestIntegrationCompany {
 				.addDocument("RUC", "1717189235001")
 				.addActivityEconomic("nada")
 				.addActivityEconomic("nada 2")
+				.addRazonSocial("Razon social")
 				.addGeopoliticalDivision(8l)
 				.addTypeCompany("MICRO")
 				.addScheduleWork("J8")
@@ -26,15 +27,15 @@ public class TestIntegrationCompany {
 				.addProductiveSector("BR")
 				.addAddress("calle abc")
 				.addAddress("calle 2")
-				.addEmail("asd")
-				.addEmail("dasdas")
+				.addEmail("bisbiridolfo@hotmail.com")
+				.addEmail("gabrielortiz260388@hotmail.com")
 				.addPhone("0999090909", "CEL")
 				.addPhone("123213", "TEL")
 				.build();
 	}
 	
 	@Test
-	public void testCreateCompanyWithFactory() {
+	public void testCreateCompanyWithFactory() throws InterruptedException {
 		GessoFactory.getInstance().getServiceCompany().register(company);
 	}
 }

@@ -20,12 +20,11 @@ public class DomainScheduleWork extends BaseDomainEntity<ScheduleWork> {
 		
 		this.validarScheduleWork(scheduleWork);
 		
-		if (scheduleWork.getIdScheduleWork() == null) {
+		if (scheduleWork.getState() == null) {
 			scheduleWork.setState(Boolean.TRUE);
-			this.repositoryEntity.create(scheduleWork);
-		} else {
-			this.repositoryEntity.edit(scheduleWork);
 		}
+		
+		this.repositoryEntity.saveOrUpdate(scheduleWork);
 		
 		return scheduleWork;
 	}

@@ -5,15 +5,16 @@ package ec.com.gesso.mail.model.impl;
 
 import java.io.Serializable;
 
-import ec.com.gesso.mail.model.IModelEmail;
-import ec.com.gesso.mail.model.IModelMessage;
+import ec.com.gesso.mail.model.IEmail;
+import ec.com.gesso.mail.model.IMessage;
+import ec.com.gesso.mail.resource.ResourceBundleMail;
 
 
 /**
  * @author Gabriel
  *
  */
-public class ModelEmail implements IModelEmail, Serializable{
+public class EmailDefaultFrom implements IEmail, Serializable{
 	
 	/**
 	 * 
@@ -25,12 +26,14 @@ public class ModelEmail implements IModelEmail, Serializable{
 	private String[] cc;
 	private String[] bcc;
 	private String subject;
-	private IModelMessage message;
+	private IMessage message;
 	
 	/**
 	 * 
 	 */
-	public ModelEmail() {}
+	public EmailDefaultFrom() {
+		this.from = "no-reply@gesso.com";
+	}
 	
 	/**
 	 * @param from
@@ -40,7 +43,7 @@ public class ModelEmail implements IModelEmail, Serializable{
 	 * @param subject
 	 * @param message
 	 */
-	public ModelEmail(String from, String[] to, String[] cc, String[] bcc, String subject, IModelMessage message) {
+	public EmailDefaultFrom(String from, String[] to, String[] cc, String[] bcc, String subject, IMessage message) {
 		this.from = from;
 		this.to = to;
 		this.cc = cc;
@@ -112,13 +115,13 @@ public class ModelEmail implements IModelEmail, Serializable{
 	/**
 	 * @return the message
 	 */
-	public IModelMessage getMessage() {
+	public IMessage getMessage() {
 		return message;
 	}
 	/**
 	 * @param message the message to set
 	 */
-	public void setMessage(IModelMessage message) {
+	public void setMessage(IMessage message) {
 		this.message = message;
 	}
 }

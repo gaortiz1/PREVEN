@@ -7,7 +7,7 @@ package ec.com.gesso.mail.model;
  * @author Gabriel
  *
  */
-public interface IModelEmail {
+public interface IEmail {
 	
 	String getFrom();
 	
@@ -19,6 +19,6 @@ public interface IModelEmail {
 	
 	String getSubject();
 	
-	IModelMessage getMessage();
+	IMessage getMessage();
 
 }
