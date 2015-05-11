@@ -35,7 +35,7 @@ public class TestIntegrationCompany {
 	}
 	
 	@Test
-	public void testCreateCompanyWithFactory() throws InterruptedException {
+	public void testCreateCompanyWithFactory(){
 		GessoFactory.getInstance().getServiceCompany().register(company);
 	}
 }

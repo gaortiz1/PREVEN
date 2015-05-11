@@ -15,7 +15,7 @@
 		</property>
 	</bean>
 
-	<bean id="postServiceCompany" class="ec.com.gesso.application.service.interceptor.before.PostServiceCompany">
+	<bean id="postServiceCompany" class="ec.com.gesso.application.service.interceptor.post.PostServiceCompany">
 		<property name="serviceMail">
 			<ref bean="serviceCompanyMail"/>
 		</property>
