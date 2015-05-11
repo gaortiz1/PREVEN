@@ -7,6 +7,7 @@ public class OptionDto {
 
     private Integer optionId;
     private String optionName;
+    private String optionPath;
 
     public OptionDto() {
     }
@@ -26,4 +27,14 @@ public class OptionDto {
     public void setOptionName(String optionName) {
         this.optionName = optionName;
     }
+
+	public String getOptionPath() {
+		return optionPath;
+	}
+
+	public void setOptionPath(String optionPath) {
+		this.optionPath = optionPath;
+	}
+    
+    
 }

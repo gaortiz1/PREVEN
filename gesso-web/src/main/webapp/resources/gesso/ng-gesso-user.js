@@ -2,7 +2,7 @@
  * Created by Roberto on 29/04/2015.
  */
 
-app.controller('gesso-user-adm', ['$scope', '$http', function($scope, $http){
+app.controller('gesso-user-adm', ['$rootScope', '$scope', '$http','SweetAlert', function($rootScope, $scope, $http, SweetAlert){
 
     controller = this;
     controller.lstUsers = [];
@@ -23,8 +23,23 @@ app.controller('gesso-user-adm', ['$scope', '$http', function($scope, $http){
 
     controller.selectUser = function(userSelected){
         controller.userSelected = userSelected;
-        $('#myModal').modal('show');
+        $('#modal-form').modal('show');
     }
+    
+    
+    controller.saveChangesUser = function(){
+        var response = $http.post('user-administration-edit.json', controller.userSelected);
+        response.success(function (data, status, headers, config) {
+        	SweetAlert.swal("Ok","Registro actualizado", "success");
 
+        	$('#modal-form').modal('hide');
+        });
+
+        response.error(function (data, status, headers, config) {
+        	SweetAlert.swal('Heres a message');        	
+        });
+    }
+   
+    
     controller.findUsers();
 }]);

@@ -1,44 +1,38 @@
 package ec.com.gesso.controller.login;
 
-import ec.com.gesso.application.dto.PersonDto;
-import ec.com.gesso.application.dto.UserDto;
-import ec.com.gesso.application.dto.UserProfileDto;
-import ec.com.gesso.common.exception.GessoException;
-import ec.com.gesso.model.entity.Person;
-import ec.com.gesso.model.entity.User;
-import ec.com.gesso.model.entity.UserProfile;
-import ec.com.gesso.security.factory.GessoSecurityFactory;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpSession;
 import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
+
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import ec.com.gesso.application.dto.UserDto;
+import ec.com.gesso.application.dto.UserProfileDto;
+import ec.com.gesso.common.exception.GessoException;
+import ec.com.gesso.model.entity.User;
+import ec.com.gesso.model.entity.UserProfile;
+import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 @Controller
 @SessionAttributes()
+@RequestMapping("/")
 public class LoginController {
 
-	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
-
-	/*@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView login(){
-		return new ModelAndView("login", "command", new Person());
-	}*/
+	//private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 
@@ -46,46 +40,30 @@ public class LoginController {
 		person.setUserDto(new User());
 		model.addAttribute("command", person);
 
-		return "login";
+		return "home";
+	}*/
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String home() {
+		
+		return "loginForm";
 	}
-
-	@RequestMapping(value = "/savecompany_json", method = RequestMethod.POST)
-	public  @ResponseBody String login_JSON( @RequestBody UserDto userDto )   {
-		//
-		// Code processing the input parameters
-		//
-		System.out.println(userDto);
-		return "JSON: The company name: " + userDto.getNickName() + ", Employees count: " + userDto.getPassword() + ", Headoffice: " + userDto.getNickName();
-	}
-
-
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@ModelAttribute("contact")Person contact, BindingResult result, HttpSession session) {
-    	
-    	User userDto = null;
+	
+	
+	@RequestMapping(value = "/loginUser_json", method = RequestMethod.POST)
+	public  @ResponseBody UserDto loginUser_JSON( @RequestBody UserDto userDto )   {
+		User logedUser = null;
 		try {
-			userDto = GessoSecurityFactory.getInstance().getSecurityService().autenticateUser(contact.getUserDto().getUsrNickName(), contact.getUserDto().getUsrPassword());
-
+			logedUser = GessoSecurityFactory.getInstance().getSecurityService().autenticateUser(userDto.getNickName(), userDto.getPassword());
 		} catch (GessoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
-    	session.setAttribute("logedUser", userDto);
-        
-    	if(userDto == null){
-    		return "redirect:login";
-    	}
-    	
-        return "redirect:home";
-    }
+		
+		ModelMapper modelMapper = new ModelMapper();
+		modelMapper.map(logedUser, userDto);
+		return userDto;
+	}
 	
-	
-	@RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String signup(@ModelAttribute("contact")Person contact, BindingResult result) {
-    	System.out.println(contact.getFirstName());
-        return "redirect:newPerson";
-    }
 
     @RequestMapping(value="/build-user-menu", method= RequestMethod.GET,produces={"application/xml", "application/json"})
     @ResponseStatus(HttpStatus.OK)

@@ -13,6 +13,6 @@ public class PortalController {
 
     @RequestMapping
     public String getIndexPage() {
-        return "index";
+        return "login";
     }
 }

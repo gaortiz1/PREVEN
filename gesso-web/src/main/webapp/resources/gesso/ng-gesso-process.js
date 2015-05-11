@@ -2,10 +2,50 @@
  * Created by Roberto on 03/05/2015.
  */
 
-app.controller('gesso-process-adm', ['$scope', '$http', function($scope, $http){
+app.controller('gesso-process-adm', ['$scope', '$http','SweetAlert',  function($scope, $http, SweetAlert){
 
     controller = this;
-
+    controller.process = {
+    		idRoot:null,
+    		name:null,
+    		description:null,
+    		status:null,
+    		idCompany:null
+    };
+    
+    controller.subProcess = {
+    		idProcess:null,
+    		name:null,
+    		description:null,
+    		state:null, 
+    		processRoot : {
+    			idRoot:null,
+        		name:null,
+        		description:null,
+        		status:null,
+        		idCompany:null
+    		}
+    };
+    
+    controller.job ={
+    		id:null,
+    		idRoot:null,
+    		idSubProcess:null,
+    		name:null,
+    		description:null,
+    		subProcessRoot:{
+    			idProcess:null,
+        		name:null,
+        		description:null,
+        		state:null, 
+    		}
+    };
+    
+    controller.selectedProcess = [];
+    
+    controller.lstProcessModal = [];
+    controller.lstSubProcessModal = [];
+    
     controller.cargarProcesos = function (){
         var response = $http.get('load-process');
         response.success(function (data, status, headers, config) {
@@ -67,55 +107,112 @@ app.controller('gesso-process-adm', ['$scope', '$http', function($scope, $http){
     };
 
 
-    controller.cargarSubProcesos = function(element){
-        var selectResult=0;
-        $(element).find("option:selected").each(function(indice, elemento) {
-            selectResult= $(elemento).val();
+    controller.cargarSubProcesos = function(){
+    	
+    	var response = $http.post('load-sub_processByPro_json.json', controller.selectedProcess);
+        response.success(function (data, status, headers, config) {
+        	controller.lstSubProcessModal = data;
         });
-
-        $.ajax({
-            method: "GET",
-            url: "load-sub-process/"+selectResult,
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success:function( data, textStatus, errorThrown ){
-                $(".job-subprocess-selector").find('option').remove();
-                $.each( data, function( i, item ) {
-                    $(".job-subprocess-selector").append($("<option></option>").attr("value",item.id).text(item.text));
-                });
-
-                $(".job-subprocess-selector").trigger("chosen:updated");
-                $(".job-subprocess-selector").chosen();
-
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                alert( errorThrown );
-            }
+        response.error(function (data, status, headers, config) {
+            alert("Error.");
         });
+        
     };
 
+    controller.loadProcessToModal = function(){
+    	var response = $http.get('process_json.json');
+        response.success(function (data, status, headers, config) {
+            controller.lstProcessModal = data;
+        });
 
+        response.error(function (data, status, headers, config) {
+            alert("Error.");
+        });
+    	
+    }
     controller.callModalProcess = function(){
         $('#modal-form-process').modal('show');
     };
 
     controller.callModalSubProcess = function(){
-        $('#modal-form-subprocess').modal('show');
-        $(".chosenSubprocess").trigger("chosen:updated");
-        $(".chosenSubprocess").chosen();
+    	
+    	var response = $http.get('load-process_json.json');
+        response.success(function (data, status, headers, config) {
+            controller.lstProcessModal = data;
+            $('#modal-form-subprocess').modal('show');
+        });
+        
+        response.error(function (data, status, headers, config) {
+            alert("Error.");
+        });
+        
     };
 
     controller.callModalJob = function(){
-        $('#modal-form-job').modal('show');
+    	
+    	
+    	var response = $http.get('load-process_json.json');
+        response.success(function (data, status, headers, config) {
+            controller.lstProcessModal = data;
+            $('#modal-form-job').modal('show');
+/*
+            $(".chosenJobProcess").trigger("chosen:updated");
+            $(".chosenJobProcess").chosen();
 
-        $(".chosenJobProcess").trigger("chosen:updated");
-        $(".chosenJobProcess").chosen();
 
-
-        $(".job-subprocess-selector").trigger("chosen:updated");
-        $(".job-subprocess-selector").chosen();
+            $(".job-subprocess-selector").trigger("chosen:updated");
+            $(".job-subprocess-selector").chosen();
+            */
+        });
+        
+        response.error(function (data, status, headers, config) {
+            alert("Error.");
+        });
+        
+        
 
     };
+
+    controller.createProcess = function(){
+
+        var res = $http.post('saveProcess_json.json', controller.process);
+        res.success(function(data, status, headers, config) {
+            controller.message = data;
+            SweetAlert.swal("Ok!", "Proceso creado!", "success");
+            $('#modal-form-process').modal('hide');
+        });
+        res.error(function(data, status, headers, config) {
+        	SweetAlert.swal("Error!", "No se pudo crear el proceso!", "error");
+        });
+    }
+    
+    
+    controller.createSubProcess = function(){
+
+        var res = $http.post('saveSubProcess_json.json', controller.subProcess);
+        res.success(function(data, status, headers, config) {
+            controller.message = data;
+            SweetAlert.swal("Ok!", "Sub Proceso creado!", "success");
+            $('#modal-form-subprocess').modal('hide');
+        });
+        res.error(function(data, status, headers, config) {
+        	SweetAlert.swal("Error!", "No se pudo crear el sub proceso!", "error");
+        });
+    }
+    
+    
+    controller.createJob = function(){
+
+        var res = $http.post('saveJob_json.json', controller.job);
+        res.success(function(data, status, headers, config) {
+            controller.message = data;
+            SweetAlert.swal("Ok!", "Puesto de trabajo creado!", "success");
+            $('#modal-form-job').modal('hide');
+        });
+        res.error(function(data, status, headers, config) {
+        	SweetAlert.swal("Error!", "No se pudo crear el Puesto de trabajo!", "error");
+        });
+    }
 
     controller.cargarProcesos();
 }]);

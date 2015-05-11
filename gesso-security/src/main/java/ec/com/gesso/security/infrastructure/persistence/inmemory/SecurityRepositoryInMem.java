@@ -66,4 +66,10 @@ public class SecurityRepositoryInMem implements SecurityRepository{
 	public Collection<UserProfile> findMenuForUser(Integer usrId) throws GessoException {
 		return null;
 	}
+
+	@Override
+	public void updateUser(User userDto) throws GessoException {
+		// TODO Auto-generated method stub
+		
+	}
 }

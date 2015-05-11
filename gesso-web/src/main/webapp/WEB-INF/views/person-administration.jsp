@@ -3,12 +3,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="t" %>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" />
 
-<t:template>
-	<jsp:attribute name="body">
-
-		<form:form class="form-horizontal" role="form" >
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/chosen.css" />
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/datepicker.css" />
 			<div class="row">
@@ -412,9 +407,7 @@
 					</div><!-- PAGE CONTENT ENDS -->
 				</div><!-- /.col -->
 			</div><!-- /.row -->
-		</form:form>
-	</jsp:attribute>
-</t:template>
+
 
 
 

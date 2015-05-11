@@ -23,11 +23,12 @@ import javax.persistence.Table;
  *
  * @author roberto
  */
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "seg_option")
 
 public class Option implements Serializable {
-    private static final long serialVersionUID = 1L;
+    
     @Id
     @Basic(optional = false)
     @Column(name = "opt_id")
@@ -35,6 +36,11 @@ public class Option implements Serializable {
     @Basic(optional = false)
     @Column(name = "opt_name")
     private String optionName;
+    
+    @Column(name = "opt_path")
+    private String optionPath;
+    
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "option", fetch = FetchType.LAZY)
     private Collection<UserProfileOption> lstUserProfileOption;
     @JoinColumn(name = "men_id", referencedColumnName = "men_id")
@@ -84,4 +90,14 @@ public class Option implements Serializable {
     public void setMenu(Menu menu) {
         this.menu = menu;
     }
+
+	public String getOptionPath() {
+		return optionPath;
+	}
+
+	public void setOptionPath(String optionPath) {
+		this.optionPath = optionPath;
+	}
+    
+    
 }

@@ -5,20 +5,20 @@
 app.controller('gesso-menu', ['$scope', '$http', function($scope, $http){
 
     controller = this;
-    controller.lstMenu = [];
-
-    controller.message = "pruebas";
+    controller.lstUserProfileDto = [];
 
     controller.builMenu = function (){
         var response = $http.get('build-user-menu.json');
         response.success(function (data, status, headers, config) {
-            controller.lstUsers = data;
+            controller.lstUserProfileDto = data;
+        }).then(function(response){
+        	controller.lstUserProfileDto = response.data;
         });
 
         response.error(function (data, status, headers, config) {
             alert("Error.");
         });
     }
-
+    
     controller.builMenu();
 }]);

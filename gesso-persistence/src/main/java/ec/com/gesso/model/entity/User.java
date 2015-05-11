@@ -34,13 +34,13 @@ public class User implements Serializable {
     @Column(name = "usr_id")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_new_user")
     @SequenceGenerator(name="seq_new_user", sequenceName="seq_new_user", allocationSize = 1)
-    private Integer usrId;
+    private Integer userId;
     @Basic(optional = false)
     @Column(name = "usr_nick_name")
-    private String usrNickName;
+    private String nickName;
     @Basic(optional = false)
     @Column(name = "usr_password")
-    private String usrPassword;
+    private String password;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userDto", fetch = FetchType.LAZY)
     private Collection<UserProfile> lstUserProfile;
 
@@ -52,51 +52,51 @@ public class User implements Serializable {
     }
 
     public User(Integer usrId) {
-        this.usrId = usrId;
+        this.userId = usrId;
     }
 
     public User(Integer usrId, String usrNickName, String usrPassword) {
-        this.usrId = usrId;
-        this.usrNickName = usrNickName;
-        this.usrPassword = usrPassword;
+        this.userId = usrId;
+        this.nickName = usrNickName;
+        this.password = usrPassword;
     }
     
     public User(String usrNickName, String usrPassword) {
-        this.usrNickName = usrNickName;
-        this.usrPassword = usrPassword;
+        this.nickName = usrNickName;
+        this.password = usrPassword;
     }
 
-    public Integer getUsrId() {
-        return usrId;
-    }
-
-    public void setUsrId(Integer usrId) {
-        this.usrId = usrId;
-    }
-
-    public String getUsrNickName() {
-		return usrNickName;
+	public Integer getUserId() {
+		return userId;
 	}
 
-	public void setUsrNickName(String usrNickName) {
-		this.usrNickName = usrNickName;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
-	public String getUsrPassword() {
-        return usrPassword;
-    }
+	public String getNickName() {
+		return nickName;
+	}
 
-    public void setUsrPassword(String usrPassword) {
-        this.usrPassword = usrPassword;
-    }
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
 
-    public Collection<UserProfile> getLstUserProfile() {
-        return lstUserProfile;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setLstUserProfile(Collection<UserProfile> lstUserProfile) {
-        this.lstUserProfile = lstUserProfile;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Collection<UserProfile> getLstUserProfile() {
+		return lstUserProfile;
+	}
+
+	public void setLstUserProfile(Collection<UserProfile> lstUserProfile) {
+		this.lstUserProfile = lstUserProfile;
+	}
 
 	public Person getPerson() {
 		return person;
@@ -105,5 +105,7 @@ public class User implements Serializable {
 	public void setPerson(Person person) {
 		this.person = person;
 	}
+
+    
     
 }

@@ -5,127 +5,164 @@
 <html>
 <head>
 	<title>gesso</title>
+	
+	
+	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+	<title>Gesso</title>
+	
+	<!-- Bootstrap core CSS -->
 	<link href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-	<link href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css" rel="stylesheet"/>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/resources/jquery/js/jquery-2.1.3.min.js"></script>
+	
+	<!--external css-->
+	<link href="${pageContext.request.contextPath}/resources/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/assets/js/gritter/css/jquery.gritter.css" />
+	
+	<!-- Custom styles for this template -->
+	<link href="${pageContext.request.contextPath}/resources/assets/css/style.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/assets/css/style-responsive.css" rel="stylesheet">
+	
+	
+	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/chosen.css" />
+
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/gesso/gesso-styles.css"/>
+
+	
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+	
+	
+	
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/sweetalert/sweet-alert.css">
+	
+	<script src="${pageContext.request.contextPath}/resources/angular/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-resource.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/i18n/angular-locale_es-ec.js"></script>
+	
+	<script src="${pageContext.request.contextPath}/resources/smarttable/smart-table.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/sweetalert/sweet-alert.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/sweetalert/SweetAlert.js"></script>
+	
+	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-app.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-login.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-user.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-menu.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-person-edit.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-process.js" type="text/javascript"></script>
+    
 </head>
-<body>
- 
-<form:form method="post" action="login" >
-    <div class="container">
-        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-info" >
-                <div class="panel-heading">
-                    <div class="panel-title">Ingresar</div>
-                    <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#"></a></div>
-                </div>
-
-                <div style="padding-top:30px" class="panel-body" >
-
-                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-
-                    <form id="loginform" class="form-horizontal" role="form">
-
-                        <div style="margin-bottom: 25px" class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <form:input id="login-username" path="userDto.usrNickName" cssClass="form-control" placeholder="Usuario" required="required"></form:input>
-                        </div>
+<body ng-app="app-gesso">
+	<header class="header black-bg">
+		<div class="sidebar-toggle-box">
+			<div class="fa fa-bars tooltips" data-placement="right"
+				data-original-title="Toggle Navigation"></div>
+		</div>
+		<!--logo start-->
+		<a href="${pageContext.request.contextPath}" class="logo"><b>GESSO</b></a>
+		<!--logo end-->
+		<div class="top-menu">
+			<ul class="nav pull-right top-menu">
+				<li><a class="logout" href="login.html">Logout</a></li>
+			</ul>
+		</div>
+	</header>
 
 
-                        <div style="margin-bottom: 25px" class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <form:password id="login-password" path="userDto.usrPassword" cssClass="form-control" placeholder="Clave" required="required"></form:password>
-                        </div>
+<aside>
+	<div id="sidebar"  class="nav-collapse " ng-controller="gesso-menu as ctrlMenu">
+	    
+	    <!-- sidebar menu start-->
+	    <ul class="sidebar-menu" id="nav-accordion">
+	
+	        <p class="centered">
+	            <a href="#/todo/">
+	                
+	            </a>
+	        </p>
+	
+	        <h5 class="centered">Marcel Newman</h5>
+	
+	        <li class="mt">
+	            <a ng-click="ctrlMenu.builMenu();">
+	                <i class="fa fa-dashboard"></i>
+	                <span>Dashboard</span>
+	            </a>
+	        </li>
+	        
+	        
+            
+			<div ng-repeat="userProfileDto in ctrlMenu.lstUserProfileDto">
+			
+		        <li class="sub-menu" ng-repeat="userProfileMenuDto in userProfileDto.lstUserProfileMenu">
+		            <a href="javascript:;">
+		                <i class="fa fa-desktop"></i>
+		                <span>{{userProfileMenuDto.menu.menuName}}    </span>
+		            </a>
+		            
+		            <ul class="subNooooo" ng-repeat="option in userProfileMenuDto.menu.lstOption">
+		                <li><a href="{{option.optionPath}}">{{option.optionName}}</a></li>
+		            </ul>
+		        </li>
+	        </div>
+	    </ul>
+	    <!-- sidebar menu end-->
+	</div>
+</aside>
+
+	<section id="container"   >
+		
+		<section id="main-content">
+			<section class="wrapper">
+				<a href="#/login">loginForm.jsp</a>
+		    	<div ng-view></div>
+		    
+	    		
+	    	</section>
+	    </section>
+	</section>
+	
+	<!-- js placed at the end of the document so the pages load faster -->
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jjquery-1.8.3.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
+    <!--common script for all pages-->
+    <script src="${pageContext.request.contextPath}/resources/assets/js/common-scripts.js"></script>
 
-                        <div class="input-group">
-                            <div class="checkbox">
-                                <label>
-                                   
-                                </label>
-                            </div>
-                        </div>
+    <!--script for this page-->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/assets/js/gritter-conf.js"></script>
+    
+    
+    <script src="${pageContext.request.contextPath}/resources/assets/js/fuelux/fuelux.tree.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/ace/elements.treeview.js"></script>
+    
+    
+    <script src="${pageContext.request.contextPath}/resources/assets/js/chosen.jquery.js"></script>
+  <script>
+      //custom select box
 
+      $(function(){
+          $('select.styled').customSelect();
+      });
 
-                        <div style="margin-top:10px" class="form-group">
-                            <!-- Button -->
-
-                            <div class="col-sm-12 controls">
-                                <button type="submit" class="btn btn-success" >Ingresar</button>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <div class="col-md-12 control">
-                                <div>
-                                    No tiene una cuenta!
-                                    <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                        Crear usuario
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
-
-
-                </div>
-            </div>
-        </div>
-        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title">Crear usuario</div>
-                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Login</a></div>
-                </div>
-                <div class="panel-body" >
-                    <form:form id="signupform" class="form-horizontal" role="form" action="signUp">
-
-                        <div id="signupalert" style="display:none" class="alert alert-danger">
-                            <p>Error:</p>
-                            <span></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="firstName" class="col-md-3 control-label"><spring:message code="page.label.email"/></label>
-                            <div class="col-md-9">
-                                <form:input path="userDto.usrNickName" cssClass="form-control" placeholder="Nombre de usuario" required="required"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="firstname" class="col-md-3 control-label"><spring:message code="page.label.firstName"/></label>
-                            <div class="col-md-9">
-                                <form:input path="firstName" cssClass="form-control" placeholder="Nombre" required="required"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastname" class="col-md-3 control-label"><spring:message code="page.label.lastName"/></label>
-                            <div class="col-md-9">
-                                <form:input path="lastName" cssClass="form-control" placeholder="Apellido" required="required"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="col-md-3 control-label"><spring:message code="page.label.password"/></label>
-                            <div class="col-md-9">
-                                <form:password path="userDto.usrPassword" cssClass="form-control" placeholder="Clave" required="required"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <!-- Button -->
-                            <div class="col-md-offset-3 col-md-9">
-                                <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Ingresar</button>
-                            </div>
-                        </div>
-                    </form:form>
-                </div>
-            </div>
-        </div>
-    </div>
-</form:form>
+  </script>
+  
+	
 </body>
 </html>

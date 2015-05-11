@@ -1,17 +1,19 @@
 package ec.com.gesso.security.infrastructure.persistence.hibernate;
 
+import java.util.Collection;
+
+import org.hibernate.Criteria;
+import org.hibernate.FetchMode;
+import org.hibernate.Hibernate;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.sql.JoinType;
+
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.User;
 import ec.com.gesso.model.entity.UserProfile;
 import ec.com.gesso.security.domain.model.security.SecurityRepository;
-import org.hibernate.Criteria;
-import org.hibernate.FetchMode;
-import org.hibernate.Hibernate;
-import org.hibernate.criterion.Restrictions;
-import org.hibernate.sql.JoinType;
-
-import java.util.Collection;
 
 public class SecurityRepositoryHibernate extends HibernateRepository implements SecurityRepository{
 
@@ -21,8 +23,8 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		
 		criteria =  getSession().createCriteria(User.class);
 		
-		criteria.add(Restrictions.eq("usrNickName", userName));
-		criteria.add(Restrictions.eq("usrPassword", userPassword));
+		criteria.add(Restrictions.eq("nickName", userName));
+		criteria.add(Restrictions.eq("password", userPassword));
 		
 		User userDto = (User) criteria.uniqueResult();
 		
@@ -34,7 +36,7 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		try {
 			
 			getSession().persist(person.getUserDto());
-			person.setUserId(person.getUserDto().getUsrId());
+			person.setUserId(person.getUserDto().getUserId());
 			getSession().persist(person);
 			getSession().flush();
 		} catch (Exception e) {
@@ -49,6 +51,8 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
 		criteria = getSession().createCriteria(User.class);
 		criteria.createAlias("person", "personA");
 		criteria.setFetchMode("personA", FetchMode.JOIN);
+		criteria.addOrder(Order.desc("nickName"));
+		
 		
 		return criteria.list();
 	}
@@ -124,6 +128,18 @@ public class SecurityRepositoryHibernate extends HibernateRepository implements 
         Hibernate.initialize(lst);
 
 		return lst;
+	}
+
+	@Override
+	public void updateUser(User userDto) throws GessoException {
+		try {
+
+			getSession().update(userDto);
+			getSession().flush();
+		}catch(Exception ex){
+			System.out.println(ex);
+		}
+		
 	}
 
 }

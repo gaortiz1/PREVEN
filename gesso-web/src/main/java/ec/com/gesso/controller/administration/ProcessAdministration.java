@@ -5,9 +5,8 @@ import java.util.Collection;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,6 +19,7 @@ import com.google.gson.GsonBuilder;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.json.serializer.ProcessSerializer;
 import ec.com.gesso.json.serializer.SubProcessSerializer;
+import ec.com.gesso.model.entity.Job;
 import ec.com.gesso.model.entity.Process;
 import ec.com.gesso.model.entity.SubProcess;
 import ec.com.gesso.security.factory.GessoSecurityFactory;
@@ -46,74 +46,85 @@ public class ProcessAdministration {
         modelAndView.addObject("lstProcess", processView.getLstProcess());
         return modelAndView;
     }
+
+	@RequestMapping(value = "/saveProcess_json", method = RequestMethod.POST)
+	public  @ResponseBody Process savePerson_JSON( @RequestBody Process process ) throws Exception {
+		GessoSecurityFactory.getInstance().getProcessService().persisNewProcess(process);
+		return process;
+	}
+
     
-    @RequestMapping(value = "/new-process", method = RequestMethod.POST)
-    public ModelAndView newProcess(@ModelAttribute("contact")ProcessView processView, BindingResult result){
-    	
-        ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
+    @RequestMapping(value = "/saveSubProcess_json", method = RequestMethod.POST)
+    public @ResponseBody SubProcess newSubProcess(@RequestBody SubProcess subProcess){
         
         try {
-			processView.getProcess().setIdCompany(3);
-			GessoSecurityFactory.getInstance().getProcessService().persisNewProcess(processView.getProcess());
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
-        return modelAndView;
-    }
-    
-    @RequestMapping(value = "/new-subprocess", method = RequestMethod.POST)
-    public ModelAndView newSubProcess(@ModelAttribute("contact")ProcessView processView, BindingResult result){
-        ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
-        
-        try {
-			GessoSecurityFactory.getInstance().getProcessService().persisNewSubProcess(processView.getSubProcess());
+        	subProcess.setIdProcess(subProcess.getProcessRoot().getId());
+			GessoSecurityFactory.getInstance().getProcessService().persisNewSubProcess(subProcess);
 		} catch (GessoException e1) {
 			e1.printStackTrace();
 		}
-        
-        
-        modelAndView.addObject("lstProcess", loadProcess());
-        return modelAndView;
+        return subProcess;
     }
     
-    private Collection<Process> loadProcess(){
-    	try {
-    		return GessoSecurityFactory.getInstance().getProcessService().findProcess();
-    	} catch (GessoException e) {
-    		e.printStackTrace();
-    	}
-    	
-    	return null;
-    } 
     
-    @RequestMapping(value = "/new-job", method = RequestMethod.POST)
-    public ModelAndView newJob(@ModelAttribute("contact")ProcessView processView, BindingResult result){
-        ModelAndView modelAndView = new ModelAndView("process-administration", "command", processView);
-        try {
-			GessoSecurityFactory.getInstance().getProcessService().persisNewJob(processView.getJob());
+    @RequestMapping(value = "/saveJob_json", method = RequestMethod.POST)
+    public @ResponseBody Job newJob(@RequestBody Job job) throws GessoException{
+        
+        
+        	job.setIdSubProcess(job.getSubProcessRoot().getId());
+        	GessoSecurityFactory.getInstance().getProcessService().persisNewJob(job);
+		
+        return job;
+    }
+    
+    @RequestMapping(value = "/load-process_json", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody Collection<Process> loadProcess() {
+		
+		Collection<Process> lstResultProces = null;
+		try {
+			lstResultProces = GessoSecurityFactory.getInstance().getProcessService().findProcess();
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
-        
-        modelAndView.addObject("lstProcess", loadProcess());
-        return modelAndView;
+		
+		for(Process process: lstResultProces){
+			process.setSubLevels(null);
+			process.setSubProcesses(null);
+			process.setLevelProcessRoot(null);
+		}
+    	return lstResultProces;
     }
+    
+    @RequestMapping(value = "/load-sub_processByPro_json", method = RequestMethod.POST, produces=MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody Collection<SubProcess> loadSubProcessByProcess(@RequestBody Process value) {
+    	
+    	
+    	Collection<SubProcess> lstSubProcessResult = null;
+		try {
+			lstSubProcessResult = GessoSecurityFactory.getInstance().getProcessService().findSubProcess(value.getId());
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		
+    	return lstSubProcessResult;
+    }
+    
     
     @RequestMapping(value = "/load-process", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
     public String loadProcess(Model model) {
     	
 		
-		Collection<Process> levelVulnerability = null;
+		Collection<Process> lstResultProces = null;
 		try {
-			levelVulnerability = GessoSecurityFactory.getInstance().getProcessService().findProcess();
+			lstResultProces = GessoSecurityFactory.getInstance().getProcessService().findProcess();
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
 		
 		GsonBuilder gsonBuilder = new GsonBuilder();
 	    Gson gson = gsonBuilder.registerTypeAdapter(Process.class, new ProcessSerializer()).create();
-	    String valor = gson.toJson(levelVulnerability); 
+	    String valor = gson.toJson(lstResultProces); 
 	    System.out.println(valor);
     	return valor;
     }

@@ -2,19 +2,23 @@ package ec.com.gesso.controller.administration;
 
 import java.lang.reflect.Type;
 import java.util.Collection;
-import java.util.List;
 
-import ec.com.gesso.application.dto.PersonDto;
-import ec.com.gesso.application.dto.UserDto;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+import ec.com.gesso.application.dto.PersonDto;
+import ec.com.gesso.application.dto.UserDto;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.User;
@@ -30,7 +34,6 @@ public class UserAdministrationController {
 		try {
 			lstCollection = GessoSecurityFactory.getInstance().getSecurityService().findAllUsers();
 		} catch (GessoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -58,35 +61,20 @@ public class UserAdministrationController {
 
         return lstUserDtoResult;
     }
-
-
-	
-	@RequestMapping(value = "/user-administration-edit/{idUser}", method = RequestMethod.GET)
-	@ResponseBody
-	public String userAdministrationEdit(@PathVariable Integer idUser, Model model){
-		User userDto = null;
-		try {
-			userDto = GessoSecurityFactory.getInstance().getSecurityService().findUserById(idUser);
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
-		model.addAttribute("userDto", userDto);
-		
-
-		return "{message:ok}";
-//		return new ModelAndView("user-administration", "command", lstCollection);
-	}
+    
 	@RequestMapping(value = "/user-administration-edit", method = RequestMethod.POST)
-    public String userAdministration(@ModelAttribute("contact")User userDto, BindingResult result) {
+    public @ResponseBody UserDto userAdministration(@RequestBody UserDto userDto, BindingResult result) {
     	
-    	
+		ModelMapper modelMapper = new ModelMapper();
+		User user = new User();
+		modelMapper.map(userDto, user);
 		try {
-			GessoSecurityFactory.getInstance().getSecurityService().persistUser(userDto);
+			GessoSecurityFactory.getInstance().getSecurityService().updateUser(user);
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
     	
-        return "redirect:user-administration";
+        return userDto;
     }
 	
 	@RequestMapping(value = "/user-administration", method = RequestMethod.POST)
@@ -105,13 +93,5 @@ public class UserAdministrationController {
     	
         return "redirect:newPerson";
     }
-	
-	
-	
-	
-	@RequestMapping(value = "/user-profile", method = RequestMethod.GET)
-	public ModelAndView userProfile(){
-		return new ModelAndView("profile", "command", new Person());
-	}
 	
 }

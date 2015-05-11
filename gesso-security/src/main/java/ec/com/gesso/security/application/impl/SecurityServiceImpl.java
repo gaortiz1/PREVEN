@@ -68,4 +68,10 @@ public class SecurityServiceImpl implements ISecurityService{
 		return securityRepository.findMenuForUser(usrId);
 	}
 
+	@Override
+	public void updateUser(User userDto) throws GessoException {
+		securityRepository.updateUser(userDto);
+		
+	}
+
 }

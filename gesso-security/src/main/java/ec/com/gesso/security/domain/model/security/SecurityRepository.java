@@ -26,4 +26,6 @@ public interface SecurityRepository {
 	void persistPersonUpdate(Person person);
 
 	Collection<UserProfile> findMenuForUser(Integer usrId) throws GessoException;
+	
+	void updateUser(User userDto) throws GessoException;
 }

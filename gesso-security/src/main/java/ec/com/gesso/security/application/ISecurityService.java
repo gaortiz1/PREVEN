@@ -29,6 +29,7 @@ public interface ISecurityService {
 	void persistPersonUpdate(Person person) throws GessoException;
 
 	void persistUser(User userDto) throws GessoException;
+	void updateUser(User userDto) throws GessoException;
 	Collection<User> findAllUsers() throws GessoException;
 	Collection<Person> findAllUsersByPerson() throws GessoException;
 	User findUserById(Integer usrId) throws GessoException;

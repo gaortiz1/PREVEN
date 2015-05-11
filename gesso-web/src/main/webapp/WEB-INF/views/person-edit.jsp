@@ -1,13 +1,3 @@
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib tagdir="/WEB-INF/tags" prefix="t" %>
-
-
-<t:template>
-	<jsp:attribute name="body">
-		<form:form class="form-horizontal" role="form" >
-            <script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-person-edit.js" type="text/javascript"></script>
 
             <div class="row" ng-controller="app-gesso-person-edt as ctrlPerEdt">
                 <div class="col-xs-12">
@@ -125,7 +115,4 @@
                     </div><!-- PAGE CONTENT ENDS -->
                 </div><!-- /.col -->
             </div><!-- /.row -->
-        </form:form>
-	</jsp:attribute>
-</t:template>
-
+	

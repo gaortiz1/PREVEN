@@ -2,14 +2,18 @@ package ec.com.gesso.controller.login;
 
 import java.util.Date;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import ec.com.gesso.application.dto.PersonDto;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Person;
 import ec.com.gesso.model.entity.User;
@@ -39,4 +43,24 @@ public class SignUpController {
 		}
         return "redirect:login";
     }
+    
+    
+    @RequestMapping(value = "/recordUser_json", method = RequestMethod.POST)
+	public  @ResponseBody PersonDto recordUser_JSON( @RequestBody PersonDto personDto)   {
+    	ModelMapper modelMapper = new ModelMapper();
+    	
+    	Person person = new Person();
+    	modelMapper.map(personDto, person);
+    	
+    	person.setIdSexCatalog("M");
+    	person.setStatusPerson(Boolean.TRUE);
+    	person.setDateOfBirth(new Date());
+    	try {
+			GessoSecurityFactory.getInstance().getSecurityService().persistNewUser(person);
+			return personDto;
+		} catch (GessoException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

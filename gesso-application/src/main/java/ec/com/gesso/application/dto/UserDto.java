@@ -4,6 +4,7 @@ package ec.com.gesso.application.dto;
  * Created by Roberto on 19/04/2015.
  */
 public class UserDto {
+	private Integer userId;
     private String nickName;
     private String password;
 
@@ -29,4 +30,14 @@ public class UserDto {
     public void setPassword(String password) {
         this.password = password;
     }
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+    
+    
 }
