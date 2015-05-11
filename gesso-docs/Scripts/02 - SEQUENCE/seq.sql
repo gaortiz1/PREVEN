@@ -1,4 +1,4 @@
-﻿create sequence seq_id_job
+create sequence seq_id_job
 increment 1
 start 1;
 
