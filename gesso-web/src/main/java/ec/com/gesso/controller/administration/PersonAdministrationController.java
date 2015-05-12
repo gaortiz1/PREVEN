@@ -5,9 +5,8 @@ import java.util.Collection;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -44,25 +43,25 @@ public class PersonAdministrationController {
 		}
 		
 		Collection<Catalog> levelVulnerability = null;
-		try {
-			levelVulnerability = GessoSecurityFactory.getInstance().getCatalogService().findVulnerabilityCatalog();
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			levelVulnerability = GessoSecurityFactory.getInstance().getCatalogService().findVulnerabilityCatalog();
+//		} catch (GessoException e) {
+//			e.printStackTrace();
+//		}
 		
 		Collection<Catalog> lstProfesion = null;
-		try {
-			lstProfesion = GessoSecurityFactory.getInstance().getCatalogService().findProfesionCatalog();
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			lstProfesion = GessoSecurityFactory.getInstance().getCatalogService().findProfesionCatalog();
+//		} catch (GessoException e) {
+//			e.printStackTrace();
+//		}
 		
 		Collection<Process> lstProcess = null;
-		try {
-			lstProcess = GessoSecurityFactory.getInstance().getProcessService().findProcess();
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			lstProcess = GessoSecurityFactory.getInstance().getProcessService().findProcess();
+//		} catch (GessoException e) {
+//			e.printStackTrace();
+//		}
 		
 		
 		Person person = new Person();
@@ -76,6 +75,65 @@ public class PersonAdministrationController {
 		
 	        
 		return modelAndView;
+	}
+	
+	
+	
+	@RequestMapping(value = "/person-administration_json", method = RequestMethod.GET, produces={"application/xml", "application/json"})
+	public @ResponseBody PersonAdministrationModel userAdministrationJson(){
+		Collection<CountryDto> country = null;
+		try {
+			country = GessoSecurityFactory.getInstance().getLocalizationService().findCountry();
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		
+		Collection<Catalog> levelVulnerability = null;
+		try {
+			levelVulnerability = GessoSecurityFactory.getInstance().getCatalogService().findVulnerabilityCatalog();
+			for(Catalog catalog: levelVulnerability){
+				catalog.setGroupCatalog(null);
+			}
+			
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		
+		Collection<Catalog> lstProfesion = null;
+		try {
+			lstProfesion = GessoSecurityFactory.getInstance().getCatalogService().findProfesionCatalog();
+			for(Catalog catalog: lstProfesion){
+				catalog.setGroupCatalog(null);
+			}
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		
+		Collection<Process> lstProcess = null;
+		try {
+			lstProcess = GessoSecurityFactory.getInstance().getProcessService().findProcess();
+			
+			for(Process process: lstProcess){
+				process.setSubProcesses(null);
+			}
+		} catch (GessoException e) {
+			e.printStackTrace();
+		}
+		
+		
+		Person person = new Person();
+		person.setStatusPerson(Boolean.TRUE);
+        
+		PersonAdministrationModel administrationModel = new PersonAdministrationModel();
+		administrationModel.setCountry(country);
+		administrationModel.setLevelVulnerability(levelVulnerability);
+		administrationModel.setLstProcess(lstProcess);
+		administrationModel.setLstProfesion(lstProfesion);
+		administrationModel.setPerson(person);
+		
+		
+	        
+		return administrationModel;
 	}
 	
 //	@RequestMapping(value = "/person-fill-ciudad", method = RequestMethod.POST)
@@ -99,18 +157,13 @@ public class PersonAdministrationController {
     }
 	
 	
-	@RequestMapping(value = "/person-administration", method = RequestMethod.POST)
-    public String userAdministration(@ModelAttribute("contact")Person person, BindingResult result) {
-    	try {
-    		person.setStatusPerson(Boolean.TRUE);
-    		
-    		GessoSecurityFactory.getInstance().getSecurityService().persistPerson(person);	
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	@RequestMapping(value = "/create-person_json", method = RequestMethod.POST)
+    public @ResponseBody Person userAdministration(@RequestBody Person person) throws GessoException {
     	
-    	
-        return "redirect:person-administration";
+    	person.setStatusPerson(Boolean.TRUE);
+    	GessoSecurityFactory.getInstance().getSecurityService().persistPerson(person);	
+		
+        return person;
     }
 	
 	@RequestMapping(value = "/person-load-sub-process/{idProcess}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)

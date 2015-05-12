@@ -60,6 +60,7 @@
 	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-menu.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-person-edit.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-process.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-person-adm.js" type="text/javascript"></script>
     
 </head>
 <body ng-app="app-gesso">
