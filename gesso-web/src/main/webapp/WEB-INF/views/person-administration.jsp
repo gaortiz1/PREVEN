@@ -40,7 +40,7 @@
 				<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.country"/></label>
 				<div class="col-sm-5">
 					
-					<select class="cssSelPais" ng-options="pais.paisnombre for pais in crtlPerAdm.personAdministrationModel.country" data-placeholder="Seleccionar nacionalidad..." ng-model="crtlPerAdm.selectedCountry"></select>
+					<select chosen class="cssSelPais" ng-options="pais.paisnombre for pais in crtlPerAdm.personAdministrationModel.country" data-placeholder="Seleccionar nacionalidad..." ng-model="crtlPerAdm.selectedCountry"></select>
 				</div>
 			</div>
 
@@ -92,9 +92,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.level.vulnerability"/></label>
 				<div class="col-sm-5">
-<%-- 					<form:select path="idCatalogVulnerability" cssClass="chosen-select form-control" data-placeholder="Choose a vulnerability..."> --%>
-<%-- 						<form:options items="${levelVulnerability}" itemLabel="name" itemValue="id"/> --%>
-<%-- 					</form:select> --%>
+					<select chosen class="cssSelPais" ng-options="catvul.name for catvul in crtlPerAdm.personAdministrationModel.levelVulnerability" data-placeholder="Seleccionar nacionalidad..." ng-model="crtlPerAdm.selectedCatVul"></select>
 				</div>
 			</div>
 
@@ -143,10 +141,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right"><spring:message code="menu.label.process"/></label>
 				<div class="col-sm-5">
-<%-- 					<form:select path="idProcess" cssClass="chosen-select form-control" data-placeholder="Seleccionar proceso..." onchange="cargarSubProcesos(this, event)"> --%>
-<!-- 						<option >Seleccione</option> -->
-<%-- 						<form:options items="${lstProcess}" itemLabel="name" itemValue="id" /> --%>
-<%-- 					</form:select> --%>
+					<select chosen class="cssSelPais" ng-options="process.name for process in crtlPerAdm.personAdministrationModel.lstProcess" data-placeholder="Seleccionar nacionalidad..." ng-model="crtlPerAdm.selectedProcess"></select>
 				</div>
 			</div>
 
@@ -156,9 +151,7 @@
 				</label>
 
 				<div class="col-sm-5">
-<!-- 					<select id="idJob" name="idJob" class="form-control person-subprocess-selector" data-placeholder="Seleccionar sub-proceso" onchange="cargarTrabajos(this, event)"> -->
-
-<!-- 					</select> -->
+<!-- 					<select chosen class="cssSelPais" ng-options="process.name for process in crtlPerAdm.personAdministrationModel.lstProcess" data-placeholder="Seleccionar nacionalidad..." ng-model="crtlPerAdm.selectedProcess"></select> -->
 				</div>
 			</div>
 
@@ -341,7 +334,7 @@
 
 <script type="text/javascript">
 	jQuery(function($) {
-		$("#paiscodigo").chosen();
+		$(".cssSelPais").chosen();
 		$("#idCatalogVulnerability").chosen();
 		$("#idProcess").chosen();
 		$("#idSubProcess").chosen();

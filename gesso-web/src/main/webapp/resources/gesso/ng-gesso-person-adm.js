@@ -5,6 +5,9 @@
 app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($http, $scope, SweetAlert){
 	controller = this;
 	controller.selectedCountry = [];
+	controller.selectedCatVul = [];
+	controller.selectedProcess = [];
+	
 	
 	controller.personAdministrationModel = {
 		country : [],	
