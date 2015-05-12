@@ -5,7 +5,7 @@
 <div class="row" ng-controller="gesso-person-adm as crtlPerAdm">
 	<div class="col-xs-12">
 		<!-- PAGE CONTENT BEGINS -->
-		<form:form class="form-horizontal" role="form">
+		<form class="form-horizontal" role="form">
 			<!-- #section:elements.form -->
 
 			<div class="form-group">
@@ -295,7 +295,7 @@
 
 			<div class="clearfix form-actions">
 				<div class="col-md-offset-3 col-md-9">
-					<button class="btn btn-info" type="submit" onclick="return validateEmptyForm();">
+					<button class="btn btn-info" type="submit" ng-click="crtlPerAdm.createPerson()">
 						<i class="ace-icon fa fa-check bigger-110"></i>
 						<spring:message code="gobal.label.save"/>
 					</button>
@@ -310,21 +310,7 @@
 
 			<div class="hr hr-24"></div>
 
-		</form:form>
-
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$("#form").submit(function() {
-					$.post($(this).attr("action"), $(this).serialize(), function(html) {
-
-					});
-					return false;
-				});
-			});
-		</script>
-
-	
-
+		</form>
 		
 	</div><!-- /.col -->
 </div><!-- /.row -->
