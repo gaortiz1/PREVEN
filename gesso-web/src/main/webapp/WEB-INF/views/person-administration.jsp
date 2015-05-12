@@ -210,6 +210,8 @@
 					<spring:message code="page.label.profession.occupation"></spring:message>
 				</label>
 				<div class="col-sm-5">
+					<select chosen class="cssSelPais" ng-options="catprof.name for catprof in crtlPerAdm.personAdministrationModel.lstProfesion" data-placeholder="Seleccionar nacionalidad..." ng-model="crtlPerAdm.selectedProfesion"></select>
+					
 <%-- 					<form:select path="idCodeProfesion" cssClass="chosen-select form-control" data-placeholder="Seleccionar prefesion..."> --%>
 <%-- 						<form:options items="${lstProfesion}" itemLabel="name" itemValue="id" /> --%>
 <%-- 					</form:select> --%>

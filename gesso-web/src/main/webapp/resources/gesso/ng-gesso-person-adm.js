@@ -7,7 +7,7 @@ app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($h
 	controller.selectedCountry = [];
 	controller.selectedCatVul = [];
 	controller.selectedProcess = [];
-	
+	controller.selectedProfesion = [];
 	
 	controller.personAdministrationModel = {
 		country : [],	
