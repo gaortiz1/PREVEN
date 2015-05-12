@@ -28,7 +28,8 @@
 	<link href="${pageContext.request.contextPath}/resources/assets/css/style-responsive.css" rel="stylesheet">
 	
 	
-	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/chosen.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/chosen.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/datepicker.css" />
 
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/gesso/gesso-styles.css"/>
 
@@ -95,7 +96,7 @@
 	        <h5 class="centered">Marcel Newman</h5>
 	
 	        <li class="mt">
-	            <a ng-click="ctrlMenu.builMenu();">
+	            <a >
 	                <i class="fa fa-dashboard"></i>
 	                <span>Dashboard</span>
 	            </a>
@@ -156,6 +157,7 @@
     
     
     <script src="${pageContext.request.contextPath}/resources/assets/js/chosen.jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/date-time/bootstrap-datepicker.js"></script>
   <script>
       //custom select box
 

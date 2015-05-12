@@ -313,11 +313,7 @@
 		</form>
 		
 	</div><!-- /.col -->
-</div><!-- /.row -->
-
-
-
-
+	
 
 
 <script type="text/javascript">
@@ -412,3 +408,8 @@
 		$(".person-jobs-selector").chosen();
 	}
 </script>
+	
+</div><!-- /.row -->
+
+
+
