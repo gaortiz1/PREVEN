@@ -158,6 +158,10 @@
     
     <script src="${pageContext.request.contextPath}/resources/assets/js/chosen.jquery.js"></script>
     <script src="${pageContext.request.contextPath}/resources/assets/js/date-time/bootstrap-datepicker.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.autosize.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.inputlimiter.1.3.1.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.maskedinput.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap-tag.js"></script>
   <script>
       //custom select box
 

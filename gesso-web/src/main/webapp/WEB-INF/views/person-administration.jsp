@@ -324,32 +324,8 @@
 		$("#idSubProcess").chosen();
 		$("#idJob").chosen();
 		$("#idCodeProfesion").chosen();
-
-
-
-		$('.date-picker').datepicker({
-			autoclose: true,
-			todayHighlight: true
-		}).next().on(ace.click_event, function(){
-			$(this).prev().focus();
-		});
-
-
-		$('.fechauno').datepicker({
-			autoclose: true
-		}).next().on(ace.click_event, function(){
-			$(this).prev().focus();
-		});
-
-		$.mask.definitions['~']='[+-]';
-		$('.input-mask-date').mask('99/99/9999');
-		$('.input-mask-phone').mask('(999) 999-9999');
-		$('.input-mask-eyescript').mask('~9.99 ~9.99 999');
-		$(".input-mask-product").mask("a*-999-a999",{placeholder:" ",completed:function(){alert("You typed the following: "+this.val());}});
-
-
-
 	});
+	
 	function cargarSubProcesos(element, callJob){
 
 		var selectResult=0;

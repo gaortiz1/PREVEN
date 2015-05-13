@@ -55,12 +55,22 @@ app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($h
 		var response = $http.get('person-administration_json.json');
         response.success(function (data, status, headers, config) {
         	controller.personAdministrationModel = data;
-        	
         });
     
         response.error(function (data, status, headers, config) {
             alert("Error.");
         });
+        
+        $('.date-picker').datepicker({
+			autoclose: true,
+			todayHighlight: true
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+        
+        $.mask.definitions['~']='[+-]';
+        $('.input-mask-date').mask('99/99/9999');
+        $('.input-mask-phone').mask('(999) 999-9999');
 	}
 	
     controller.createPerson = function(){
@@ -76,5 +86,8 @@ app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($h
         });
     }
     
+  
+    
     controller.loadInitParameters();
+    
 }]);
