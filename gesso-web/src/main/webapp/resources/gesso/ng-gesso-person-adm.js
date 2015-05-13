@@ -74,7 +74,8 @@ app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($h
 	}
 	
     controller.createPerson = function(){
-        var res = $http.post('create-person_json', controller.personDto);
+    	
+        var res = $http.post('create-person_json', controller.personAdministrationModel.person);
         res.success(function(data, status, headers, config) {
             controller.message = data;
             

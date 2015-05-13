@@ -12,8 +12,8 @@
 				<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.firstName"/></label>
 
 				<div class="col-sm-9">
-					<input type="text" ng-model="crtlPerAdm.personDto.firstName" placeholder="Primer nombre" class="txt-validate-empty" />
-					<input type="text" ng-model="crtlPerAdm.personDto.middleName" placeholder="Segundo nombre" />
+					<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.firstName" placeholder="Primer nombre" class="txt-validate-empty" />
+					<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.middleName" placeholder="Segundo nombre" />
 				</div>
 			</div>
 
@@ -22,15 +22,15 @@
 				<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.lastName"/></label>
 
 				<div class="col-sm-9">
-					<input type="text" ng-model="crtlPerAdm.personDto.lastName" placeholder="Primer apellido" class="txt-validate-empty"/>
-					<input type="text" ng-model="crtlPerAdm.personDto.secondLastName" placeholder="Segundo apellido" />
+					<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.lastName" placeholder="Primer apellido" class="txt-validate-empty"/>
+					<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.secondLastName" placeholder="Segundo apellido" />
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" > <spring:message code="page.label.documentNumber"/> </label>
 				<div class="col-sm-9">
-					<input  type="text" ng-model="crtlPerAdm.personDto.documentNumber" placeholder="17XXXXXXX30" class="txt-validate-empty"/>
+					<input  type="text" ng-model="crtlPerAdm.personAdministrationModel.person.documentNumber" placeholder="17XXXXXXX30" class="txt-validate-empty"/>
 				</div>
 			</div>
 
@@ -49,7 +49,7 @@
 
 				<div class="col-sm-2">
 					<div class="input-group">
-						<input type="text" ng-model="crtlPerAdm.personDto.dateOfBirth" class="form-control date-picker txt-validate-empty"/>
+						<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.dateOfBirth" class="form-control date-picker txt-validate-empty"/>
 						<span class="input-group-addon">
 							<i class="fa fa-calendar bigger-110"></i>
 						</span>
@@ -62,14 +62,14 @@
 				<div class="col-sm-2">
 					<div class="radio">
 						<label>
-							<input type="radio" ng-model="crtlPerAdm.personDto.idSexCatalog" value="M" class="ace"/>
+							<input type="radio" ng-model="crtlPerAdm.personAdministrationModel.person.idSexCatalog" value="M" class="ace"/>
 							<span class="lbl"><spring:message code="page.label.sex.male"/> </span>
 						</label>
 					</div>
 
 					<div class="radio">
 						<label>
-							<input type="radio" ng-model="crtlPerAdm.personDto.idSexCatalog" value="F" class="ace"/>
+							<input type="radio" ng-model="crtlPerAdm.personAdministrationModel.person.idSexCatalog" value="F" class="ace"/>
 							<span class="lbl">
 								<spring:message code="page.label.sex.female"/>
 							</span>
@@ -83,7 +83,7 @@
 
 				<div class="col-xs-3">
 					<label>
-						<input ng-model="crtlPerAdm.personDto.disability" class="ace ace-switch ace-switch-6" type="checkbox" />
+						<input ng-model="crtlPerAdm.personAdministrationModel.person.disability" class="ace ace-switch ace-switch-6" type="checkbox" />
 						<span class="lbl"></span>
 					</label>
 				</div>
@@ -101,7 +101,7 @@
 
 				<div class="col-xs-3">
 					<label>
-						<input ng-model="crtlPerAdm.personDto.lactationPeriod" class="ace ace-switch ace-switch-6" type="checkbox" />
+						<input ng-model="crtlPerAdm.personAdministrationModel.person.lactationPeriod" class="ace ace-switch ace-switch-6" type="checkbox" />
 						<span class="lbl"></span>
 					</label>
 				</div>
@@ -116,12 +116,12 @@
 				<div class="col-sm-9">
 					<!-- #section:elements.form.input-icon -->
 					<span class="input-icon">
-						<input type="text"  ng-model="crtlPerAdm.personDto.personalLocalPhone" class="input-mask-phone"/>
+						<input type="text"  ng-model="crtlPerAdm.personAdministrationModel.person.personalLocalPhone" class="input-mask-phone"/>
 						<i class="ace-icon fa fa-phone"></i>
 					</span>
 
 					<span class="input-icon">
-						<input type="text" ng-model="crtlPerAdm.personDto.personalMobilPhone" class="input-mask-phone"/>
+						<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.personalMobilPhone" class="input-mask-phone"/>
 						<i class="ace-icon fa fa-phone"></i>
 					</span>
 				</div>
@@ -132,7 +132,7 @@
 				<label class="col-sm-3 control-label no-padding-right">Email</label>
 
 				<div class="col-sm-9">
-					<input type="text" ng-model="crtlPerAdm.personDto.personalEmail" data-rel="tooltip" placeholder="ejemplo@gmail.com" title="Email principal" data-placement="bottom"/>
+					<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.personalEmail" data-rel="tooltip" placeholder="ejemplo@gmail.com" title="Email principal" data-placement="bottom"/>
 					<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="Este sera el mail al cual se notificaran las novedades" title="Email principal">?</span>
 				</div>
 			</div>
@@ -175,7 +175,7 @@
 
 				<div class="col-sm-2">
 					<div class="input-group">
-						<input type="text" ng-model="crtlPerAdm.personDto.dateJobStart" class="form-control date-picker txt-validate-empty"/>
+						<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.dateJobStart" class="form-control date-picker txt-validate-empty"/>
 						<span class="input-group-addon">
 							<i class="fa fa-calendar bigger-110"></i>
 						</span>
@@ -191,14 +191,14 @@
 				<div class="col-sm-2">
 					<div class="radio">
 						<label>
-							<input type="radio" ng-model="crtlPerAdm.personDto.idEducaionLevelCatalog" value="PRI" class="ace"/>
+							<input type="radio" ng-model="crtlPerAdm.personAdministrationModel.person.idEducaionLevelCatalog" value="PRI" class="ace"/>
 							<span class="lbl">Primaria</span>
 						</label>
 					</div>
 
 					<div class="radio">
 						<label>
-							<input type="radio" ng-model="crtlPerAdm.personDto.idEducaionLevelCatalog" value="SEC" class="ace"/>
+							<input type="radio" ng-model="crtlPerAdm.personAdministrationModel.person.idEducaionLevelCatalog" value="SEC" class="ace"/>
 							<span class="lbl">Secundaria</span>
 						</label>
 					</div>
@@ -223,7 +223,7 @@
 					<spring:message code="page.label.deatail.work.activities"></spring:message>
 				</label>
 				<div class="col-sm-9">
-					<textarea ng-model="crtlPerAdm.personDto.workReview" class="form-control limited" maxlength="250"></textarea>
+					<textarea ng-model="crtlPerAdm.personAdministrationModel.person.workReview" class="form-control limited" maxlength="250"></textarea>
 				</div>
 			</div>
 
@@ -232,7 +232,7 @@
 					<spring:message code="page.label.last.company"></spring:message>
 				</label>
 				<div class="col-sm-9">
-					<input type="text" ng-model="crtlPerAdm.personDto.lastCompany" cssClass="txt-validate-empty"/>
+					<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.lastCompany" cssClass="txt-validate-empty"/>
 				</div>
 			</div>
 
@@ -242,7 +242,7 @@
 
 				<div class="col-xs-3">
 					<label>
-						<input ng-model="crtlPerAdm.personDto.occupationalAccident" class="ace ace-switch ace-switch-6" type="checkbox" />
+						<input ng-model="crtlPerAdm.personAdministrationModel.person.occupationalAccident" class="ace ace-switch ace-switch-6" type="checkbox" />
 						<span class="lbl"></span>
 					</label>
 				</div>
@@ -253,7 +253,7 @@
 					<spring:message code="page.label.brief.description"></spring:message>
 				</label>
 				<div class="col-sm-9">
-					<textarea ng-model="crtlPerAdm.personDto.occupationalAccidentDetail" class="form-control limited" maxlength="250"></textarea>
+					<textarea ng-model="crtlPerAdm.personAdministrationModel.person.occupationalAccidentDetail" class="form-control limited" maxlength="250"></textarea>
 				</div>
 			</div>
 
@@ -261,7 +261,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" > Descripcion capacitacion seguridad</label>
 				<div class="col-sm-9">
-					<textarea  ng-model="crtlPerAdm.personDto.securityTrainingDetail" class="form-control limited" maxlength="250"></textarea>
+					<textarea  ng-model="crtlPerAdm.personAdministrationModel.person.securityTrainingDetail" class="form-control limited" maxlength="250"></textarea>
 				</div>
 			</div>
 
@@ -273,7 +273,7 @@
 
 				<div class="col-xs-3">
 					<label>
-						<input ng-model="crtlPerAdm.personDto.securityUnitMember" class="ace ace-switch ace-switch-6" type="checkbox" />
+						<input ng-model="crtlPerAdm.personAdministrationModel.person.securityUnitMember" class="ace ace-switch ace-switch-6" type="checkbox" />
 						<span class="lbl"></span>
 					</label>
 				</div>
