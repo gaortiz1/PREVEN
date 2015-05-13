@@ -62,6 +62,7 @@ app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($h
         });
         
         $('.date-picker').datepicker({
+        	format:'yyyy/mm/dd',
 			autoclose: true,
 			todayHighlight: true
 		}).next().on(ace.click_event, function(){
