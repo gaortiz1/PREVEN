@@ -2,7 +2,7 @@
  * Created by Roberto on 29/04/2015.
  */
 
-	var app = angular.module('app-gesso',['ngRoute', 'ngResource', 'oitozero.ngSweetAlert', 'smart-table']);
+	var app = angular.module('app-gesso',['ngSanitize', 'ui.select', 'ngRoute', 'ngResource', 'oitozero.ngSweetAlert', 'smart-table']);
 	
 	
 	app.config(['$routeProvider', '$locationProvider', '$compileProvider', function($routeProvider, $locationProvider, $compileProvider) {

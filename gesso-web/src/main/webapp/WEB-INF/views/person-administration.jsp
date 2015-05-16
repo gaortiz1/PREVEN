@@ -39,8 +39,14 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right"><spring:message code="page.label.country"/></label>
 				<div class="col-sm-5">
-					
-					<select chosen class="cssSelPais" ng-options="pais.paisnombre for pais in crtlPerAdm.personAdministrationModel.country" data-placeholder="Seleccionar nacionalidad..." ng-model="crtlPerAdm.selectedCountry"></select>
+
+					<ui-select ng-model="crtlPerAdm.selectedCountry" theme="select2" ng-disabled="disabled" style="min-width: 300px;" title="Choose a person">
+						<ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.paisnombre}}</ui-select-match>
+						<ui-select-choices repeat="pais in crtlPerAdm.personAdministrationModel.country">
+							<div ng-bind-html="pais.paisnombre | highlight: $select.search"></div>
+
+						</ui-select-choices>
+					</ui-select>
 				</div>
 			</div>
 
