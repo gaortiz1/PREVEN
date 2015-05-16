@@ -151,7 +151,7 @@
 				<label class="col-sm-3 control-label no-padding-right"><spring:message code="menu.label.process"/></label>
 				<div class="col-sm-5">
 
-                    <ui-select ng-model="crtlPerAdm.selectedProcess">
+                    <ui-select ng-model="crtlPerAdm.selectedProcess" on-select="crtlPerAdm.loadSubProcess($item, $model)">
                         <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match>
                         <ui-select-choices repeat="process in crtlPerAdm.personAdministrationModel.lstProcess | filter: $select.search track by process.id">
                             <div ng-bind-html="process.name | highlight: $select.search"></div>
@@ -166,9 +166,16 @@
 					Sub proceso
 				</label>
 
-				<div class="col-sm-5">
+                <div class="col-sm-5">
+                    <ui-select ng-model="crtlPerAdm.selectedSubProcess" on-select="crtlPerAdm.loadJob($item, $model)">
+                        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="subProcess in crtlPerAdm.lstSubProcess | filter: $select.search track by subProcess.name">
+                            <div ng-bind-html="subProcess.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
 <!-- 					<select chosen class="cssSelPais" ng-options="process.name for process in crtlPerAdm.personAdministrationModel.lstProcess" data-placeholder="Seleccionar nacionalidad..." ng-model="crtlPerAdm.selectedProcess"></select> -->
-				</div>
+
 			</div>
 
 
@@ -178,9 +185,12 @@
 				</label>
 
 				<div class="col-sm-5">
-<!-- 					<select id="idSubProcess" name="idSubProcess" class="form-control person-jobs-selector" data-placeholder="Seleccione" > -->
-
-<!-- 					</select> -->
+                    <ui-select ng-model="crtlPerAdm.selectedJob">
+                        <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="job in crtlPerAdm.lstJob | filter: $select.search track by subProcess.job">
+                            <div ng-bind-html="job.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
 				</div>
 			</div>
 
@@ -191,7 +201,7 @@
 
 				<div class="col-sm-2">
 					<div class="input-group">
-						<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.dateJobStart" class="form-control date-picker txt-validate-empty"/>
+						<input type="text" ng-model="crtlPerAdm.personAdministrationModel.person.dateJobStart | date:'yyyy-MM-dd'" ng-value="crtlPerAdm.personAdministrationModel.person.dateJobStart| date:'yyyy/dd/MM'" class="form-control date-picker txt-validate-empty"/>
 						<span class="input-group-addon">
 							<i class="fa fa-calendar bigger-110"></i>
 						</span>
@@ -334,14 +344,6 @@
 
 
 <script type="text/javascript">
-	jQuery(function($) {
-		$(".cssSelPais").chosen();
-		$("#idCatalogVulnerability").chosen();
-		$("#idProcess").chosen();
-		$("#idSubProcess").chosen();
-		$("#idJob").chosen();
-		$("#idCodeProfesion").chosen();
-	});
 	
 	function cargarSubProcesos(element, callJob){
 

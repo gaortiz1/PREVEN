@@ -7,7 +7,12 @@ app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($h
 	controller.selectedCountry = [];
 	controller.selectedCatVul = [];
 	controller.selectedProcess = [];
+    controller.selectedSubProcess = [];
+    controller.selectedJob = [];
+
 	controller.selectedProfesion = [];
+    controller.lstSubProcess = [];
+    controller.lstJob = [];
 	
 	controller.personAdministrationModel = {
 		country : [],	
@@ -62,7 +67,7 @@ app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($h
         });
         
         $('.date-picker').datepicker({
-        	format:'yyyy/mm/dd',
+        	format:'yyyy/MM/dd',
 			autoclose: true,
 			todayHighlight: true
 		}).next().on(ace.click_event, function(){
@@ -73,7 +78,38 @@ app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($h
         $('.input-mask-date').mask('99/99/9999');
         $('.input-mask-phone').mask('(999) 999-9999');
 	}
-	
+
+
+    controller.loadSubProcess = function (item, model){
+        controller.selectedSubProcess = [];
+        controller.selectedJob = [];
+        controller.lstSubProcess = [];
+        controller.lstJob = [];
+
+
+        var response = $http.get('person-load-sub-process/'+item.id);
+        response.success(function (data, status, headers, config) {
+            controller.lstSubProcess = data;
+        });
+
+        response.error(function (data, status, headers, config) {
+            alert("Error.");
+        });
+    };
+
+
+    controller.loadJob = function(item, model){
+        controller.selectedJob = [];
+        var response = $http.get('person-load-jobs/'+item.id);
+        response.success(function (data, status, headers, config) {
+            controller.lstJob = data;
+        });
+
+        response.error(function (data, status, headers, config) {
+            alert("Error.");
+        });
+    }
+
     controller.createPerson = function(){
     	
         var res = $http.post('create-person_json', controller.personAdministrationModel.person);

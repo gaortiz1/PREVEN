@@ -2,6 +2,7 @@ package ec.com.gesso.controller.administration;
 
 import java.util.Collection;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,27 +44,11 @@ public class PersonAdministrationController {
 		}
 		
 		Collection<Catalog> levelVulnerability = null;
-//		try {
-//			levelVulnerability = GessoSecurityFactory.getInstance().getCatalogService().findVulnerabilityCatalog();
-//		} catch (GessoException e) {
-//			e.printStackTrace();
-//		}
-		
+
 		Collection<Catalog> lstProfesion = null;
-//		try {
-//			lstProfesion = GessoSecurityFactory.getInstance().getCatalogService().findProfesionCatalog();
-//		} catch (GessoException e) {
-//			e.printStackTrace();
-//		}
-		
+
 		Collection<Process> lstProcess = null;
-//		try {
-//			lstProcess = GessoSecurityFactory.getInstance().getProcessService().findProcess();
-//		} catch (GessoException e) {
-//			e.printStackTrace();
-//		}
-		
-		
+
 		Person person = new Person();
 		person.setStatusPerson(Boolean.TRUE);
         
@@ -168,39 +153,41 @@ public class PersonAdministrationController {
 	
 	@RequestMapping(value = "/person-load-sub-process/{idProcess}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-    public String loadSubProcess(@PathVariable Long idProcess, Model model) {
+    public Collection<SubProcess> loadSubProcess(@PathVariable Long idProcess) {
 		
-		Collection<SubProcess> levelVulnerability = null;
+		Collection<SubProcess> lstSubProcess = null;
 		try {
-			levelVulnerability = GessoSecurityFactory.getInstance().getProcessService().findSubProcess(idProcess);
+            lstSubProcess = GessoSecurityFactory.getInstance().getProcessService().findSubProcess(idProcess);
+            if(CollectionUtils.isNotEmpty(lstSubProcess)) {
+                for (SubProcess obj : lstSubProcess) {
+                    obj.setProcessRoot(null);
+                    obj.setJobs(null);
+                }
+            }
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
-		
-		GsonBuilder gsonBuilder = new GsonBuilder();
-	    Gson gson = gsonBuilder.registerTypeAdapter(SubProcess.class, new SubProcessSerializer()).create();
-	    
-	    String valor = gson.toJson(levelVulnerability); 
-    	return valor;
+
+    	return lstSubProcess;
     }
 	
 	
 	@RequestMapping(value = "/person-load-jobs/{idSubProcess}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-    public String loadJobs(@PathVariable Long idSubProcess, Model model) {
+    public Collection<Job> loadJobs(@PathVariable Long idSubProcess) {
 		
-		Collection<Job> levelVulnerability = null;
+		Collection<Job> lstJob = null;
 		try {
-			levelVulnerability = GessoSecurityFactory.getInstance().getProcessService().findJobs(idSubProcess);
+            lstJob = GessoSecurityFactory.getInstance().getProcessService().findJobs(idSubProcess);
+            if(CollectionUtils.isNotEmpty(lstJob)) {
+                for (Job obj : lstJob) {
+                    System.out.println(obj);
+                }
+            }
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
-		
-		GsonBuilder gsonBuilder = new GsonBuilder();
-	    Gson gson = gsonBuilder.registerTypeAdapter(Job.class, new JobSerializer()).create();
-	    
-	    String valor = gson.toJson(levelVulnerability); 
-    	return valor;
+    	return lstJob;
     }
 	
 	
