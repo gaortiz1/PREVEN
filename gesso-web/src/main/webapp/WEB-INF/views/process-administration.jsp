@@ -143,10 +143,12 @@
                                         </label>
 
                                         <div>
-
-                                            <select ng-options="process.name for process in crtlPro.lstProcessModal" ng-model="crtlPro.subProcess.processRoot" 
-                                            	class="chosen-select form-control chosenSubprocess" data-placeholder="Seleccionar proceso">
-                                            </select>
+                                            <ui-select ng-model="crtlPro.subProcess.processRoot">
+                                                <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match>
+                                                <ui-select-choices repeat="process in crtlPro.lstProcessModal | filter: $select.search track by process.name">
+                                                    <div ng-bind-html="process.name | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
                                         </div>
                                     </div>
 
@@ -213,10 +215,12 @@
                                         </label>
 
                                         <div>
-                                            
-                                            <select ng-options="process.name for process in crtlPro.lstProcessModal" ng-model="crtlPro.selectedProcess" ng-change="crtlPro.cargarSubProcesos()"
-                                            	class="chosen-select form-control chosenJobProcess" data-placeholder="Seleccionar proceso">
-                                            </select>
+                                            <ui-select ng-model="crtlPro.selectedProcess" on-select="crtlPro.loadSubProcess($item, $model)">
+                                                <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match>
+                                                <ui-select-choices repeat="process in crtlPro.lstProcessModal | filter: $select.search track by process.name">
+                                                    <div ng-bind-html="process.name | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
                                         </div>
                                     </div>
 
@@ -226,9 +230,12 @@
                                         </label>
 
                                         <div>
-                                            <select ng-options="subProcess.name for subProcess in crtlPro.lstSubProcessModal" ng-model="crtlPro.job.subProcessRoot" 
-                                            	class="chosen-select form-control job-subprocess-selector" data-placeholder="Seleccionar sub-proceso" required="required">
-                                            </select>
+                                            <ui-select ng-model="crtlPro.job.subProcessRoot">
+                                                <ui-select-match placeholder="Pick one...">{{$select.selected.name}}</ui-select-match>
+                                                <ui-select-choices repeat="subProcess in crtlPro.lstSubProcessModal | filter: $select.search track by subProcess.name">
+                                                    <div ng-bind-html="subProcess.name | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
                                         </div>
                                     </div>
 

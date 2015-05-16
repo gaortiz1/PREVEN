@@ -2,6 +2,7 @@ package ec.com.gesso.controller.administration;
 
 import java.util.Collection;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -102,6 +103,12 @@ public class ProcessAdministration {
     	Collection<SubProcess> lstSubProcessResult = null;
 		try {
 			lstSubProcessResult = GessoSecurityFactory.getInstance().getProcessService().findSubProcess(value.getId());
+			if(CollectionUtils.isNotEmpty(lstSubProcessResult)){
+                for(SubProcess obj: lstSubProcessResult){
+                    obj.setProcessRoot(null);
+                    obj.setJobs(null);
+                }
+            }
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}

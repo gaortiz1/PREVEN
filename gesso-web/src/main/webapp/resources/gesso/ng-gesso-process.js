@@ -119,6 +119,19 @@ app.controller('gesso-process-adm', ['$scope', '$http','SweetAlert',  function($
         
     };
 
+
+
+    controller.loadSubProcess = function (item, model){
+        var response = $http.post('load-sub_processByPro_json.json', model);
+        response.success(function (data, status, headers, config) {
+            controller.lstSubProcessModal = data;
+        });
+        response.error(function (data, status, headers, config) {
+            alert("Error.");
+        });
+    };
+
+
     controller.loadProcessToModal = function(){
     	var response = $http.get('process_json.json');
         response.success(function (data, status, headers, config) {
@@ -155,14 +168,6 @@ app.controller('gesso-process-adm', ['$scope', '$http','SweetAlert',  function($
         response.success(function (data, status, headers, config) {
             controller.lstProcessModal = data;
             $('#modal-form-job').modal('show');
-/*
-            $(".chosenJobProcess").trigger("chosen:updated");
-            $(".chosenJobProcess").chosen();
-
-
-            $(".job-subprocess-selector").trigger("chosen:updated");
-            $(".job-subprocess-selector").chosen();
-            */
         });
         
         response.error(function (data, status, headers, config) {
