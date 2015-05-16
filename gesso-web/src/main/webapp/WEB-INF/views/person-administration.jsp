@@ -313,7 +313,7 @@
 
 				<div class="col-xs-3">
 					<label>
-						<input ng-model="securityCommitteeMember" class="ace ace-switch ace-switch-6" type="checkbox" />
+						<input ng-model="crtlPerAdm.personAdministrationModel.person.securityCommitteeMember" class="ace ace-switch ace-switch-6" type="checkbox" />
 						<span class="lbl"></span>
 					</label>
 				</div>

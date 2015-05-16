@@ -1,6 +1,7 @@
 package ec.com.gesso.controller.administration;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.http.MediaType;
@@ -57,13 +58,10 @@ public class PersonAdministrationController {
 		modelAndView.addObject("levelVulnerability",levelVulnerability);
 		modelAndView.addObject("lstProfesion",lstProfesion);
 		modelAndView.addObject("lstProcess",lstProcess);
-		
-	        
+
 		return modelAndView;
 	}
-	
-	
-	
+
 	@RequestMapping(value = "/person-administration_json", method = RequestMethod.GET, produces={"application/xml", "application/json"})
 	public @ResponseBody PersonAdministrationModel userAdministrationJson(){
 		Collection<CountryDto> country = null;
@@ -104,8 +102,7 @@ public class PersonAdministrationController {
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 		Person person = new Person();
 		person.setStatusPerson(Boolean.TRUE);
         
@@ -115,19 +112,13 @@ public class PersonAdministrationController {
 		administrationModel.setLstProcess(lstProcess);
 		administrationModel.setLstProfesion(lstProfesion);
 		administrationModel.setPerson(person);
-		
-		
-	        
+
 		return administrationModel;
 	}
-	
-//	@RequestMapping(value = "/person-fill-ciudad", method = RequestMethod.POST)
+
 	@RequestMapping(value = "/person-fill-ciudad/{petId}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
     public String fillCiudad(@PathVariable String petId, Model model) {
-		
-//		Gson gson  = new Gson();
-		
 		Collection<Catalog> levelVulnerability = null;
 		try {
 			levelVulnerability = GessoSecurityFactory.getInstance().getCatalogService().findVulnerabilityCatalog();
@@ -141,11 +132,11 @@ public class PersonAdministrationController {
     	return gson.toJson(levelVulnerability);
     }
 	
-	
 	@RequestMapping(value = "/create-person_json", method = RequestMethod.POST)
     public @ResponseBody Person userAdministration(@RequestBody Person person) throws GessoException {
     	
     	person.setStatusPerson(Boolean.TRUE);
+        person.setDateOfBirth(new Date());
     	GessoSecurityFactory.getInstance().getSecurityService().persistPerson(person);	
 		
         return person;
@@ -171,7 +162,6 @@ public class PersonAdministrationController {
     	return lstSubProcess;
     }
 	
-	
 	@RequestMapping(value = "/person-load-jobs/{idSubProcess}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
     public Collection<Job> loadJobs(@PathVariable Long idSubProcess) {
@@ -189,9 +179,6 @@ public class PersonAdministrationController {
 		}
     	return lstJob;
     }
-	
-	
-	
 }
 
 

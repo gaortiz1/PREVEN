@@ -111,7 +111,9 @@ app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($h
     }
 
     controller.createPerson = function(){
-    	
+    	if(controller.selectedJob){
+            controller.personAdministrationModel.person.idJob = controller.selectedJob.id;
+        }
         var res = $http.post('create-person_json', controller.personAdministrationModel.person);
         res.success(function(data, status, headers, config) {
             controller.message = data;
