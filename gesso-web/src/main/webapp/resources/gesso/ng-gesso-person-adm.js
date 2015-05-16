@@ -117,9 +117,7 @@ app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($h
         var res = $http.post('create-person_json', controller.personAdministrationModel.person);
         res.success(function(data, status, headers, config) {
             controller.message = data;
-            
-            SweetAlert.swal("Error", "Usuario o clave incorrecto", "succes");
-            
+            SweetAlert.swal("Ok","Registro creado", "success");
         });
         res.error(function(data, status, headers, config) {
             alert( "failure message: " + JSON.stringify({data: data}));
