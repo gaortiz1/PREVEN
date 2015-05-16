@@ -73,7 +73,7 @@ public class CompanyCreateController {
     		
     		CompanyBuilder companyBuilder = new CompanyBuilder();
     		companyBuilder.createNameCompany(companyModel.getNombreComercial())
-    				.addrRazonSocial(companyModel.getRazonSocial())
+    				.addRazonSocial(companyModel.getRazonSocial())
     				.addDocument("RUC", companyModel.getRuc())
     				.addActivityEconomic(companyModel.getActividadComercialPrincipal())
     				.addActivityEconomic(companyModel.getActividadComercialSecuandaria())
