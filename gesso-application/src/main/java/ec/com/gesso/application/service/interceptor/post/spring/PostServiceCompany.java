@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ec.com.gesso.application.service.interceptor.post;
+package ec.com.gesso.application.service.interceptor.post.spring;
 
 import java.lang.reflect.Method;
 

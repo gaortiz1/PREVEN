@@ -9,7 +9,7 @@ import java.util.HashSet;
 
 import org.junit.Test;
 
-import ec.com.gesso.application.factory.GessoSearchCriteria;
+import ec.com.gesso.application.factory.GessoSearchCriteriaFactory;
 import ec.com.gesso.model.entity.Company;
 import ec.com.gesso.model.entity.ContactData;
 import ec.com.gesso.model.entity.Document;
@@ -33,7 +33,7 @@ public class TestCriteria {
 		companyCriteria.setContactDataCollection(new HashSet<ContactData>());
 		companyCriteria.setDocumentCollection(new HashSet<Document>());
 		
-		final Company company = GessoSearchCriteria.getInstance().getServiceCriteria().find(companyCriteria);
+		final Company company = GessoSearchCriteriaFactory.getInstance().getServiceCriteria().find(companyCriteria);
 		assertEquals(null, company);
 	}
 }

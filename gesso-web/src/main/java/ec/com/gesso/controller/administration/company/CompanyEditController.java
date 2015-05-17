@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import ec.com.gesso.application.factory.GessoSearchCriteria;
+import ec.com.gesso.application.factory.GessoSearchCriteriaFactory;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.company.CompanyModel;
 import ec.com.gesso.model.entity.Catalog;
@@ -40,7 +40,7 @@ public class CompanyEditController {
 		companyCriteria.setContactDataCollection(new HashSet<ContactData>());
 		companyCriteria.setDocumentCollection(new HashSet<Document>());
 		
-		final Company company = GessoSearchCriteria.getInstance().getServiceCriteria().find(companyCriteria);
+		final Company company = GessoSearchCriteriaFactory.getInstance().getServiceCriteria().find(companyCriteria);
 		
 		final CompanyModel companyModel = new CompanyModel();
 		companyModel.setNombreComercial(company.getName());
@@ -77,21 +77,21 @@ public class CompanyEditController {
 		
 		Collection<GeopoliticalDivision> geopoliticalCountries =  null;
 		try {
-			geopoliticalCountries = GessoSearchCriteria.getInstance().getServiceCriteria().findRootGeopoliticalDivision();
+			geopoliticalCountries = GessoSearchCriteriaFactory.getInstance().getServiceCriteria().findRootGeopoliticalDivision();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		Collection<GeopoliticalDivision> geopoliticalProvinces =  null;
 		try {
-			geopoliticalProvinces = GessoSearchCriteria.getInstance().getServiceCriteria().findAll(null);
+			geopoliticalProvinces = GessoSearchCriteriaFactory.getInstance().getServiceCriteria().findAll(null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		Collection<GeopoliticalDivision> geopoliticalCities =  null;
 		try {
-			geopoliticalCities = GessoSearchCriteria.getInstance().getServiceCriteria().findAll(null);
+			geopoliticalCities = GessoSearchCriteriaFactory.getInstance().getServiceCriteria().findAll(null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

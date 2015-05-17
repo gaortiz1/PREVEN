@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import ec.com.gesso.application.factory.GessoSearchCriteria;
+import ec.com.gesso.application.factory.GessoSearchCriteriaFactory;
 import ec.com.gesso.model.company.SearchCompanyModel;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.Company;
@@ -27,7 +27,7 @@ public class CompanySearchController {
 		company.setTypeCompany(new Catalog());
 		company.setGeopoliticalDivision(new GeopoliticalDivision());
 		
-		final Collection<Company> companies = GessoSearchCriteria.getInstance().getServiceCriteria().findAll(company);
+		final Collection<Company> companies = GessoSearchCriteriaFactory.getInstance().getServiceCriteria().findAll(company);
 		
 		final ModelAndView modelAndViewCompanies = new ModelAndView("company-administration", "command", new SearchCompanyModel());
 		modelAndViewCompanies.addObject("companies", companies);

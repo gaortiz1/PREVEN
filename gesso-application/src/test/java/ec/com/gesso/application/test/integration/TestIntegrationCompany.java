@@ -3,7 +3,7 @@ package ec.com.gesso.application.test.integration;
 import org.junit.Before;
 import org.junit.Test;
 
-import ec.com.gesso.application.factory.GessoFactory;
+import ec.com.gesso.application.factory.GessoServiceFactory;
 import ec.com.gesso.application.lang.CompanyBuilder;
 import ec.com.gesso.model.entity.Company;
 
@@ -36,6 +36,6 @@ public class TestIntegrationCompany {
 	
 	@Test
 	public void testCreateCompanyWithFactory(){
-		GessoFactory.getInstance().getServiceCompany().register(company);
+		GessoServiceFactory.getInstance().getServiceCompany().register(company);
 	}
 }
