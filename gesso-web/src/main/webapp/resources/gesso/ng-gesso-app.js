@@ -15,7 +15,7 @@
 	    $routeProvider.when('/login', {
 	    	templateUrl: 'login'
 	    });
-	    
+
 	    
 	    $routeProvider.when('/user-administration', {
 			templateUrl: 'user-administration'
