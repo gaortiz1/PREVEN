@@ -68,7 +68,7 @@
 	            <div class="panel panel-info">
 	                <div class="panel-heading">
 	                    <div class="panel-title">Crear usuario</div>
-	                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Login</a></div>
+	                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#/login" onclick="$('#signupbox').hide(); $('#loginbox').show()">Login</a></div>
 	                </div>
 	                <div class="panel-body" >
 	                    <form id="signupform" class="form-horizontal" role="form" action="signUp">
