@@ -150,10 +150,7 @@
 		
 		<section id="main-content">
 			<section class="wrapper">
-				<a href="#/login">loginForm.jsp</a>
 		    	<div ng-view></div>
-		    
-	    		
 	    	</section>
 	    </section>
 	</section>

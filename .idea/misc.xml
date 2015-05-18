@@ -6,6 +6,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="javaeeApplication" url="file://$PROJECT_DIR$/gesso-ear" />
     <file type="web" url="file://$PROJECT_DIR$/gesso-web" />
+    <file type="web" url="file://$PROJECT_DIR$/gesso-web-home" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

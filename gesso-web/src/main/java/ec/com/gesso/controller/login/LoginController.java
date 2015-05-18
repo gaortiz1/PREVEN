@@ -65,7 +65,7 @@ public class LoginController {
     public @ResponseBody Collection<UserProfileDto> buildUserMenu(@PathVariable Integer usrId){
         Collection<UserProfile> lstResult = null;
         try {
-            lstResult = GessoSecurityFactory.getInstance().getSecurityService().findMenuForUser(1);
+            lstResult = GessoSecurityFactory.getInstance().getSecurityService().findMenuForUser(usrId);
         } catch (GessoException e) {
             e.printStackTrace();
         }
