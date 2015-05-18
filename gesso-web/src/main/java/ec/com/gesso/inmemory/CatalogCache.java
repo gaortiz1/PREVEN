@@ -2,8 +2,6 @@ package ec.com.gesso.inmemory;
 
 import java.util.Collection;
 
-import ec.com.gesso.application.cache.ICacheable;
-import ec.com.gesso.application.factory.GessoCacheFactory;
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.security.application.ICatalogService;
@@ -14,25 +12,23 @@ import ec.com.gesso.security.factory.GessoSecurityFactory;
  * @author Gabriel
  *
  */
-public class CatalogCache {
+public class CatalogCache extends AbstracCache  {
 	
 	private static final CatalogCache CATALOG_CACHE = new CatalogCache();
 	
-	private ICatalogService catalogService;
-	private ICacheable cache;
+	private final ICatalogService catalogService;
 	
 	public static CatalogCache getInstance() {
 		return CATALOG_CACHE;
 	}
 	
-
 	/**
 	 * @param catalogService
 	 * @param gessoCache
 	 */
 	private CatalogCache() {
+		super();
 		this.catalogService = GessoSecurityFactory.getInstance().getCatalogService();
-		this.cache = GessoCacheFactory.getInstance().getServiceGessoCache();
 	}
 
 	public Collection<Catalog> findCatalogByGroup(String idGroupCatalog) throws GessoException {

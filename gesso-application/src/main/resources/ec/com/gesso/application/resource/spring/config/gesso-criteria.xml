@@ -8,6 +8,11 @@
 		<property name="queryCriteria">
 			<ref bean="criteriaJPA"/>
 		</property>
+		<property name="entityManager">
+	        <bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+	            <property name="persistenceUnitName" value="gessoUnitName" />
+	        </bean>
+	    </property>
 	</bean>
 	
 	

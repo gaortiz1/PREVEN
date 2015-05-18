@@ -26,6 +26,11 @@
 	        templateUrl: 'company-administration',
 	        
 	    });
+	    
+	    $routeProvider.when('/create-company', {
+	        templateUrl: 'company/create-company'
+	     });
+	    
 	    $routeProvider.when('/person-administration', {
 	        templateUrl: 'person-administration',
 	        
