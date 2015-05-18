@@ -128,7 +128,7 @@
 	        
 	        
             
-			<div ng-repeat="userProfileDto in ctrlMenu.lstUserProfileDto">
+			<div ng-repeat="userProfileDto in lstUserProfileDto">
 			
 		        <li class="sub-menu" ng-repeat="userProfileMenuDto in userProfileDto.lstUserProfileMenu">
 		            <a href="javascript:;">

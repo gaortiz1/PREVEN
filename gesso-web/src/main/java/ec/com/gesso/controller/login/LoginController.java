@@ -8,12 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import ec.com.gesso.application.dto.UserDto;
 import ec.com.gesso.application.dto.UserProfileDto;
@@ -65,9 +60,9 @@ public class LoginController {
 	}
 	
 
-    @RequestMapping(value="/build-user-menu", method= RequestMethod.GET,produces={"application/xml", "application/json"})
+    @RequestMapping(value="/build-user-menu/{usrId}", method= RequestMethod.GET,produces={"application/xml", "application/json"})
     @ResponseStatus(HttpStatus.OK)
-    public @ResponseBody Collection<UserProfileDto> buildUserMenu(){
+    public @ResponseBody Collection<UserProfileDto> buildUserMenu(@PathVariable Integer usrId){
         Collection<UserProfile> lstResult = null;
         try {
             lstResult = GessoSecurityFactory.getInstance().getSecurityService().findMenuForUser(1);
