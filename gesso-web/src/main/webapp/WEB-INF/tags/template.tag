@@ -11,7 +11,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="gesso">
 	<meta name="keyword" content="Gestión de seguridad y salud laboral, salud, seguridad, gestión, laboral, prevencion,riesgos laborales,riesgos profesionales,prl,prevencion de riesgos laborales,seguridad e higiene,sistema erp, sistemas erp,programa,informatico,aplicacion,app,seguridad industrial,prevengos,software,prevencion,laboral,riesgos,laborales,medicina,trabajo,vigilancia,salud,servicio,ajeno,propio,mancomunado,gespreven,medtra,senmut,navision,evalua,prevention,world">
-
+	<meta name="Description" content="Proporcionar a nuestros clientes el soporte técnico para el diseño, desarrollo e implantación de sistemas y planes de seguridad, emergencia y contingencia en las diferentes actividades, ocupacionales así como también asistencia y asesoría a municipios y comunidades en general, con el fin de alcanzar altos niveles de protección de las personas y los bienes">
 	<title>Gesso</title>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/gesso/gesso-styles.css"/>
 	<!-- Bootstrap core CSS -->

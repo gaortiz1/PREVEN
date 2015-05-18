@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+		<property name="cacheManager" ref="ehCacheManagerFactoryBean" />
+	</bean>
+	<bean id="ehCacheManagerFactoryBean" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:ec/com/gesso/application/resource/ehcache/ehcache.xml" />
+		<property name="shared" value="true" />
+	</bean>
+
+	<bean id="cacheManager" class="net.sf.ehcache.CacheManager" factory-bean="ehCacheManager" factory-method="getCacheManager">
+	</bean>
+
+	<bean id="gessoCache" class="ec.com.gesso.application.cache.impl.GessoCache">
+		<property name="cacheManager">
+			<ref bean="cacheManager" />
+		</property>
+	</bean>
+
+</beans>

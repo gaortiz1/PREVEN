@@ -19,9 +19,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import ec.com.gesso.common.exception.GessoException;
+import ec.com.gesso.inmemory.CatalogCache;
 import ec.com.gesso.json.serializer.CatalogSerializer;
-import ec.com.gesso.json.serializer.JobSerializer;
-import ec.com.gesso.json.serializer.SubProcessSerializer;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.CountryDto;
 import ec.com.gesso.model.entity.Job;
@@ -73,7 +72,7 @@ public class PersonAdministrationController {
 		
 		Collection<Catalog> levelVulnerability = null;
 		try {
-			levelVulnerability = GessoSecurityFactory.getInstance().getCatalogService().findVulnerabilityCatalog();
+			levelVulnerability = CatalogCache.getInstance().findVulnerabilityCatalog();
 			for(Catalog catalog: levelVulnerability){
 				catalog.setGroupCatalog(null);
 			}
@@ -84,7 +83,7 @@ public class PersonAdministrationController {
 		
 		Collection<Catalog> lstProfesion = null;
 		try {
-			lstProfesion = GessoSecurityFactory.getInstance().getCatalogService().findProfesionCatalog();
+			lstProfesion = CatalogCache.getInstance().findProfesionCatalog();
 			for(Catalog catalog: lstProfesion){
 				catalog.setGroupCatalog(null);
 			}
@@ -121,7 +120,7 @@ public class PersonAdministrationController {
     public String fillCiudad(@PathVariable String petId, Model model) {
 		Collection<Catalog> levelVulnerability = null;
 		try {
-			levelVulnerability = GessoSecurityFactory.getInstance().getCatalogService().findVulnerabilityCatalog();
+			levelVulnerability = CatalogCache.getInstance().findVulnerabilityCatalog();
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}

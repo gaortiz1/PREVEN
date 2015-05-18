@@ -1,13 +1,14 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>ec.com.gesso</groupId>
-    <artifactId>gesso-root</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>gesso-application</artifactId>
-  
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ec.com.gesso</groupId>
+		<artifactId>gesso-root</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>gesso-application</artifactId>
+
+	<dependencies>
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
@@ -67,23 +68,35 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-	  <dependency>
-		  <groupId>org.modelmapper</groupId>
-		  <artifactId>modelmapper</artifactId>
-	  </dependency>
-	  <dependency>
-	  	<groupId>ec.com.gesso</groupId>
-	  	<artifactId>gesso-criteria</artifactId>
-	  	<version>0.0.1-SNAPSHOT</version>
-	  </dependency>
-	  <dependency>
-	  	<groupId>ec.com.gesso</groupId>
-	  	<artifactId>gesso-mail</artifactId>
-	  	<version>0.0.1-SNAPSHOT</version>
-	  </dependency>
-  </dependencies>
-  
-  <repositories>
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.gesso</groupId>
+			<artifactId>gesso-criteria</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.gesso</groupId>
+			<artifactId>gesso-mail</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>ec.com.gesso</groupId>
+			<artifactId>gesso-security</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
 		<repository>
 			<id>org.jboss.repository.releases</id>
 			<name>JBoss Maven Release Repository</name>
@@ -94,5 +107,5 @@
 		</repository>
 
 	</repositories>
-  
+
 </project>

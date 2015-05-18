@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import ec.com.gesso.application.factory.GessoFactory;
-import ec.com.gesso.application.factory.GessoSearchCriteria;
+import ec.com.gesso.application.factory.GessoSearchCriteriaFactory;
+import ec.com.gesso.application.factory.GessoServiceFactory;
 import ec.com.gesso.application.lang.CompanyBuilder;
 import ec.com.gesso.common.exception.GessoException;
+import ec.com.gesso.inmemory.CatalogCache;
 import ec.com.gesso.model.company.CompanyModel;
 import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.Company;
 import ec.com.gesso.model.entity.GeopoliticalDivision;
-import ec.com.gesso.security.factory.GessoSecurityFactory;
 
 @Controller
 @SessionAttributes
@@ -33,28 +33,28 @@ public class CompanyCreateController {
 		
 		Collection<Catalog> typesCompanies = null;
 		try {
-			typesCompanies = GessoSecurityFactory.getInstance().getCatalogService().findCatalogByGroup("TP");
+			typesCompanies = CatalogCache.getInstance().findCatalogByGroup("TP");
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
 		
 		Collection<Catalog> worksHours = null;
 		try {
-			worksHours = GessoSecurityFactory.getInstance().getCatalogService().findCatalogByGroup("HT");
+			worksHours = CatalogCache.getInstance().findCatalogByGroup("HT");
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
 		
 		Collection<Catalog> productivesSector = null;
 		try {
-			productivesSector = GessoSecurityFactory.getInstance().getCatalogService().findCatalogByGroup("SP");
+			productivesSector = CatalogCache.getInstance().findCatalogByGroup("SP");
 		} catch (GessoException e) {
 			e.printStackTrace();
 		}
 		
 		Collection<GeopoliticalDivision> geopoliticalDivisions =  null;
 		try {
-			geopoliticalDivisions = GessoSearchCriteria.getInstance().getServiceCriteria().findRootGeopoliticalDivision();
+			geopoliticalDivisions = GessoSearchCriteriaFactory.getInstance().getServiceCriteria().findRootGeopoliticalDivision();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -98,7 +98,7 @@ public class CompanyCreateController {
     		
     		final Company company = companyBuilder.build();
     		
-    		GessoFactory.getInstance().getServiceCompany().register(company);
+    		GessoServiceFactory.getInstance().getServiceCompany().register(company);
     		
 		} catch (Exception e) {
 			LOGGER.error("A courrido un error", e);
