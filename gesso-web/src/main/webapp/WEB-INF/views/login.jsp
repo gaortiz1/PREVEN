@@ -89,7 +89,7 @@
     
 </head>
 <body ng-app="app-gesso">
-	<header class="header black-bg">
+	<header class="header black-bg" ng-show="logedUser">
 		<div class="sidebar-toggle-box">
 			<div class="fa fa-bars tooltips" data-placement="right"
 				data-original-title="Toggle Navigation"></div>
@@ -99,7 +99,7 @@
 		<!--logo end-->
 		<div class="top-menu">
 			<ul class="nav pull-right top-menu">
-				<li><a class="logout" href="login.html">Logout</a></li>
+				<li><a class="logout" href="#/login">Logout</a></li>
 			</ul>
 		</div>
 	</header>
@@ -109,7 +109,7 @@
 	<div id="sidebar"  class="nav-collapse " ng-controller="gesso-menu as ctrlMenu">
 	    
 	    <!-- sidebar menu start-->
-	    <ul class="sidebar-menu" id="nav-accordion">
+	    <ul class="sidebar-menu" id="nav-accordion" ng-show="logedUser">
 	
 	        <p class="centered">
 	            <a href="#/todo/">

@@ -27,6 +27,7 @@ app.controller('gesso-user-login', ['$rootScope', '$scope', '$http', '$location'
     controller.loginUser = function (){
         var response = $http.post('loginUser_json.json', controller.userDto);
         response.success(function (data, status, headers, config) {
+            $rootScope.logedUser = data;
         	$location.path('/dashboard');
         }).then(function(result){
             var response = $http.get('build-user-menu/'+result.data.userId);
