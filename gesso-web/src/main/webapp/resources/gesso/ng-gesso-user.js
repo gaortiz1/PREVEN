@@ -6,14 +6,15 @@ app.controller('gesso-user-adm', ['$rootScope', '$scope', '$http','SweetAlert', 
 
     controller = this;
     controller.lstUsers = [];
+    controller.lstUsersDisplayed = [];
 
-    controller.message = "pruebas";
     controller.userSelected = [];
 
     controller.findUsers = function (){
         var response = $http.get('find_users_json.json');
         response.success(function (data, status, headers, config) {
             controller.lstUsers = data;
+            controller.lstUsersDisplayed = [].concat(data);
         });
 
         response.error(function (data, status, headers, config) {
