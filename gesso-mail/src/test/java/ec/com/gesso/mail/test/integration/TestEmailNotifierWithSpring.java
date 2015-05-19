@@ -42,7 +42,7 @@ public class TestEmailNotifierWithSpring {
 	public void shouldSendMailWithModelEmailWithOutArray() {
 		this.email = new Email();
 		this.email.setFrom("inforprueba@plasemco.com");
-		this.email.setTo("maniac787@hotmail.com");
+		this.email.setTo("emailpruebas@hotmail.com");
 		this.email.setSubject("Test");
 		this.email.setMessage(new MessageNotifier("Compañia", "La compañia se genero con exito"));
 		this.emailNotifier.send(this.email);
@@ -52,7 +52,7 @@ public class TestEmailNotifierWithSpring {
 	public void shouldSendMailWithModelEmailWithArray() {
 		this.email = new Email();
 		this.email.setFrom("inforprueba@plasemco.com");
-		this.email.setTo("maniac787@hotmail.com", "bisbiridolfo@hotmail.com");
+		this.email.setTo("emailpruebas@hotmail.com", "bisbiridolfo@hotmail.com");
 		this.email.setBcc("a@a.com", "a@a.com");
 		this.email.setCc("a@a.com", "a@a.com");
 		this.email.setSubject("Test");
@@ -64,7 +64,7 @@ public class TestEmailNotifierWithSpring {
 	public void shouldNotSendMailWithModelEmailWithArray() {
 		this.email = new Email();
 		this.email.setFrom("inforprueba");
-		this.email.setTo("maniac787m", "bisbiridolfo");
+		this.email.setTo("emailpruebas", "bisbiridolfo");
 		this.email.setBcc("a@a.com", "a@a.com");
 		this.email.setCc("a@a.com", "a@a.com");
 		this.email.setSubject("Test");
