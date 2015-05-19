@@ -2,18 +2,18 @@
 
 
 		<div ng-controller="gesso-user-adm as ctrlUser">
-		     <table st-table="ctrlUser.lstUsers" class="table table-striped">
+		     <table st-table="ctrlUser.lstUsersDisplayed" st-safe-src="ctrlUser.lstUsers"  class="table table-striped">
 		         <thead>
 		         <tr>
-		             <th st-sort="nickName">Nombre</th>
-		             <th st-sort="password">apellido</th>
+		             <th st-sort="userDto.nickName">Nombre</th>
+		             <th st-sort="userDto.password">apellido</th>
 		
 		             <th>Editar</th>
 		         </tr>
 		
 		         </thead>
 		         <tbody>
-		         <tr ng-repeat="row in ctrlUser.lstUsers">
+		         <tr ng-repeat="row in ctrlUser.lstUsersDisplayed">
 		             <td>{{row.userDto.nickName | uppercase}}</td>
 		             <td>{{row.userDto.password}}</td>
 		
@@ -24,14 +24,13 @@
 		         </tbody>
 		         <tfoot>
 		         <tr>
-		             <td colspan="5" class="text-center">
-		                 <div st-pagination="" st-items-by-page="4" st-displayed-pages="7"></div>
+		             <td colspan="3" class="text-center">
+		                 <div st-pagination="" st-items-by-page="4" st-displayed-pages="2"></div>
 		             </td>
 		         </tr>
 		         </tfoot>
 		     </table>
-		     
-		
+
 		     <!-- MODAL EDICION USUARIO -->
 		     <div id="modal-form" class="modal" tabindex="-1">
 		         <div class="modal-dialog">
@@ -48,7 +47,7 @@
 		                         <div class="col-xs-12 col-sm-7">
 		
 		                             <div class="form-group">
-		                                 <label for="form-field-first">
+		                                 <label>
 		                                     <spring:message code="page.label.password"></spring:message>
 		                                 </label>
 		
@@ -58,7 +57,7 @@
 		                             </div>
 		
 		                             <div class="form-group">
-		                                 <label for="form-field-first">
+		                                 <label>
 		                                     <spring:message code="page.label.status"></spring:message>
 		                                 </label>
 		
