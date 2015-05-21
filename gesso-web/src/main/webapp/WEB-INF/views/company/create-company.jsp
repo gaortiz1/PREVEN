@@ -65,10 +65,71 @@
 						<label class="col-sm-3 col-sm-3 control-label"> 
 							<spring:message code="page.label.pais" />
 						</label>
-						<div class="col-sm-6">
-							<select ng-model="companyModel.idGeopoliticalDivisionCountry" class="chosen-select form-control" data-placeholder="Seleccione pais..." required>
-							</select>
+						<div class="col-sm-6">							
+							<ui-select ng-model="companyModel.idGeopoliticalDivisionCountry" on-select="loadProvinces($item)">
+		                        <ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
+		                        <ui-select-choices repeat="country in countries | filter: $select.search track by country.id">
+		                            <div ng-bind-html="country.name | highlight: $select.search"></div>
+		                        </ui-select-choices>
+		                    </ui-select>
 						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-3 col-sm-3 control-label"> 
+							<spring:message code="page.label.provincia" />
+						</label>
+						<div class="col-sm-6">							
+							<ui-select ng-model="companyModel.idGeopoliticalDivisionProvince" on-select="loadCities($item)">
+		                        <ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
+		                        <ui-select-choices repeat="province in provinces | filter: $select.search track by province.id">
+		                            <div ng-bind-html="province.name | highlight: $select.search"></div>
+		                        </ui-select-choices>
+		                    </ui-select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-3 col-sm-3 control-label"> 
+							<spring:message code="page.label.cuidad" />
+						</label>
+						<div class="col-sm-6">							
+							<ui-select ng-model="companyModel.idGeopoliticalDivisionCity">
+		                        <ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
+		                        <ui-select-choices repeat="city in cities | filter: $select.search track by city.id">
+		                            <div ng-bind-html="city.name | highlight: $select.search"></div>
+		                        </ui-select-choices>
+		                    </ui-select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-sm-3 control-label"> 
+							<spring:message code="page.label.company.type.company" />
+						</label>
+						<div class="col-sm-6">							
+							<ui-select ng-model="companyModel.typesCompanies">
+		                        <ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
+		                        <ui-select-choices repeat="company in typesCompanies | filter: $select.search track by company.id">
+		                            <div ng-bind-html="company.name | highlight: $select.search"></div>
+		                        </ui-select-choices>
+		                    </ui-select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.company.sector.productor" />
+						</label>
+						<div class="col-sm-6">							
+							<ui-select ng-model="companyModel.typeProductiveSector">
+		                        <ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
+		                        <ui-select-choices repeat="sector in productivesSector | filter: $select.search track by sector.id">
+		                            <div ng-bind-html="sector.name | highlight: $select.search"></div>
+		                        </ui-select-choices>
+		                    </ui-select>
+						</div>
+						
 					</div>
 
 				</div>

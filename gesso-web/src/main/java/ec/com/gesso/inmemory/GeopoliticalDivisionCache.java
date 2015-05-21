@@ -5,6 +5,8 @@ package ec.com.gesso.inmemory;
 
 import java.util.Collection;
 
+import org.apache.commons.collections4.CollectionUtils;
+
 import ec.com.gesso.application.factory.GessoSearchCriteriaFactory;
 import ec.com.gesso.application.service.IServiceCriteria;
 import ec.com.gesso.model.entity.GeopoliticalDivision;
@@ -32,33 +34,58 @@ public class GeopoliticalDivisionCache extends AbstracCache {
 	}
 	
 	public Collection<GeopoliticalDivision> findRootGeopoliticalDivision() {
+		
 		if (!this.cache.existValue("root")) {
-			this.cache.put("root", this.serviceCriteria.findRootGeopoliticalDivision());
-		}
+			
+			final Collection<GeopoliticalDivision> geopoliticalDivisions = this.serviceCriteria.findRootGeopoliticalDivision();
+			
+			if(CollectionUtils.isNotEmpty(geopoliticalDivisions)) {
+				this.cache.put("root", geopoliticalDivisions);
+			} else {
+				return CollectionUtils.EMPTY_COLLECTION;
+			}
+			
+		} 
 		return (Collection<GeopoliticalDivision>) this.cache.get("root");
     }
 	
 	public Collection<GeopoliticalDivision> findGeopoliticalDivisionRoot(final Long idRoot) {
 		
-		final GeopoliticalDivision geopoliticalDivision = new GeopoliticalDivision();
-		geopoliticalDivision.setState(Boolean.TRUE);
-		geopoliticalDivision.setIdRoot(idRoot);
-		
 		if (!this.cache.existValue(idRoot)) {
-			this.cache.put(idRoot, this.serviceCriteria.findAll(geopoliticalDivision));
+			
+			final GeopoliticalDivision geopoliticalDivision = new GeopoliticalDivision();
+			geopoliticalDivision.setState(Boolean.TRUE);
+			geopoliticalDivision.setIdRoot(idRoot);
+			
+			final Collection<GeopoliticalDivision> geopoliticalDivisions = this.serviceCriteria.findAll(geopoliticalDivision);
+			
+			if (CollectionUtils.isNotEmpty(geopoliticalDivisions)) {
+				this.cache.put(idRoot, this.serviceCriteria.findAll(geopoliticalDivision));
+			} else {
+				return CollectionUtils.EMPTY_COLLECTION;
+			}
+			
 		}
 		return (Collection<GeopoliticalDivision>) this.cache.get(idRoot);
     }
 	
 	public Collection<GeopoliticalDivision> findGeopoliticalDivisionById(final Long id) {
 
-		final GeopoliticalDivision geopoliticalDivision = new GeopoliticalDivision();
-		geopoliticalDivision.setState(Boolean.TRUE);
-		geopoliticalDivision.setId(id);
-
 		if (!this.cache.existValue(id)) {
-			this.cache.put(id, this.serviceCriteria.findAll(geopoliticalDivision));
-		}
+			
+			final GeopoliticalDivision geopoliticalDivision = new GeopoliticalDivision();
+			geopoliticalDivision.setState(Boolean.TRUE);
+			geopoliticalDivision.setId(id);
+			
+			final Collection<GeopoliticalDivision> geopoliticalDivisions = this.serviceCriteria.findAll(geopoliticalDivision);
+			
+			if (CollectionUtils.isNotEmpty(geopoliticalDivisions)) {
+				this.cache.put(id, this.serviceCriteria.findAll(geopoliticalDivision));
+			} else {
+				return CollectionUtils.EMPTY_COLLECTION;
+			}
+			
+		} 
 		return (Collection<GeopoliticalDivision>) this.cache.get(id);
 	}
 }

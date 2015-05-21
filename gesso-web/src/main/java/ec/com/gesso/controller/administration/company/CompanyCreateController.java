@@ -1,7 +1,5 @@
 package ec.com.gesso.controller.administration.company;
 
-import java.util.Collection;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,15 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import ec.com.gesso.application.factory.GessoSearchCriteriaFactory;
 import ec.com.gesso.application.factory.GessoServiceFactory;
 import ec.com.gesso.application.lang.CompanyBuilder;
-import ec.com.gesso.common.exception.GessoException;
-import ec.com.gesso.inmemory.CatalogCache;
 import ec.com.gesso.model.company.CompanyModel;
-import ec.com.gesso.model.entity.Catalog;
 import ec.com.gesso.model.entity.Company;
-import ec.com.gesso.model.entity.GeopoliticalDivision;
 
 @Controller
 @SessionAttributes
@@ -29,41 +22,8 @@ public class CompanyCreateController {
 	 private final static Logger LOGGER = LoggerFactory.getLogger(CompanyCreateController.class);
 	
 	@RequestMapping(value = "/company/create-company", method = RequestMethod.GET)
-	public ModelAndView createCompany(){
-		
-		Collection<Catalog> typesCompanies = null;
-		try {
-			typesCompanies = CatalogCache.getInstance().findCatalogByGroup("TP");
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
-		
-		Collection<Catalog> worksHours = null;
-		try {
-			worksHours = CatalogCache.getInstance().findCatalogByGroup("HT");
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
-		
-		Collection<Catalog> productivesSector = null;
-		try {
-			productivesSector = CatalogCache.getInstance().findCatalogByGroup("SP");
-		} catch (GessoException e) {
-			e.printStackTrace();
-		}
-		
-		Collection<GeopoliticalDivision> geopoliticalDivisions =  null;
-		try {
-			geopoliticalDivisions = GessoSearchCriteriaFactory.getInstance().getServiceCriteria().findRootGeopoliticalDivision();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+	public ModelAndView createCompany(){		
 		final ModelAndView modelAndView = new ModelAndView("/company/create-company", "command", new CompanyModel());
-		modelAndView.addObject("typesCompanies", typesCompanies);
-		modelAndView.addObject("worksHours", worksHours);
-		modelAndView.addObject("productivesSector", productivesSector);
-		modelAndView.addObject("geopoliticalDivisions", geopoliticalDivisions);
 		return modelAndView;
 	}
 	
