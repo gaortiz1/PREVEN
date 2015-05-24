@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="gesso-web-home:war">
-    <output-path>$PROJECT_DIR$/gesso-web-home/target</output-path>
-    <root id="archive" name="gesso-web-home-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="gesso-web-home:war exploded" />
-    </root>
-  </artifact>
-</component>
