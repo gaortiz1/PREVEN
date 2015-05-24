@@ -22,9 +22,9 @@ public class DomainEmail extends BaseDomainEntity<Email> {
 		
 		if (email.getId() == null){
 			email.setState(Boolean.TRUE);
-			this.repositoryEntity.create(email);
+			this.repositoryEntity.add(email);
 		} else {
-			this.repositoryEntity.edit(email);
+			this.repositoryEntity.update(email);
 		}
 		
 		return email;

@@ -4,6 +4,7 @@
 package ec.com.gesso.repository.impl;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.HibernateException;
@@ -27,7 +28,7 @@ public class RepositoryWrapperHibernate<Entity extends Serializable> extends Bas
 		super(sessionFactory);
 	}
 
-	public Entity create(final Entity entity) {
+	public Entity add(final Entity entity) {
 
 		try {
 			this.getSession().persist(entity);
@@ -67,7 +68,7 @@ public class RepositoryWrapperHibernate<Entity extends Serializable> extends Bas
 		}
 	}
 
-	public void edit(final Entity entity) {
+	public void update(final Entity entity) {
 		try {
 			final Session session = this.getSession();
 			session.merge(entity);
@@ -145,5 +146,4 @@ public class RepositoryWrapperHibernate<Entity extends Serializable> extends Bas
 			throw new GessoRepositoryException("Ocurrio un error al intentat crear", e);
 		}
 	}
-
 }

@@ -61,8 +61,11 @@ public class Job implements Serializable{
 	@JoinColumn(name = "ID_SUBPROCESS", referencedColumnName = "ID_SUBPROCESS", insertable=false, updatable=false)
 	private SubProcess subProcessRoot;
 	
-	@OneToMany(mappedBy="levelJobRoot")
+	@OneToMany(mappedBy="levelJobRoot", fetch=FetchType.LAZY)
 	private Collection<Job> subLevels;
+	
+	@OneToMany(mappedBy="job", fetch=FetchType.LAZY)
+	private Collection<JobRisk> jobRisks;
 
 	/**
 	 * @return the id
@@ -188,5 +191,19 @@ public class Job implements Serializable{
 	 */
 	public void setSubLevels(Collection<Job> subLevels) {
 		this.subLevels = subLevels;
+	}
+
+	/**
+	 * @return the jobRisks
+	 */
+	public Collection<JobRisk> getJobRisks() {
+		return jobRisks;
+	}
+
+	/**
+	 * @param jobRisks the jobRisks to set
+	 */
+	public void setJobRisks(Collection<JobRisk> jobRisks) {
+		this.jobRisks = jobRisks;
 	}
 }

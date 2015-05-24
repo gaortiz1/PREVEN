@@ -34,9 +34,9 @@ public class DomainCompany extends BaseDomainEntity<Company> {
 		
 		if (company.getId() == null) {
 			company.setState(Boolean.TRUE);
-			this.repositoryEntity.create(company);
+			this.repositoryEntity.add(company);
 		} else{
-			this.repositoryEntity.edit(company);
+			this.repositoryEntity.update(company);
 		}
 		
 		this.registerCollectionDocument(company.getDocumentCollection(), company.getId());

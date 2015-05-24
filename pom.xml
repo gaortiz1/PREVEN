@@ -10,7 +10,7 @@
 		<module>gesso-web</module>
 		<module>gesso-security</module>
 		<module>gesso-ear</module>
-		<module>gesso-model</module>
+		<module>gesso-domain</module>
 		<module>gesso-persistence</module>
 		<module>gesso-application</module>
 		<module>gesso-criteria</module>

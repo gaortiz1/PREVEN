@@ -62,11 +62,6 @@
 			<artifactId>gesso-persistence</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>ec.com.gesso</groupId>
-			<artifactId>gesso-model</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.modelmapper</groupId>
@@ -92,6 +87,11 @@
 		<dependency>
 			<groupId>ec.com.gesso</groupId>
 			<artifactId>gesso-security</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.gesso</groupId>
+			<artifactId>gesso-domain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

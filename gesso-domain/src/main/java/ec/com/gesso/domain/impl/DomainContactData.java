@@ -26,9 +26,9 @@ public class DomainContactData extends BaseDomainEntity<ContactData> {
 		
 		if (contactData.getId() == null) {
 			contactData.setState(Boolean.TRUE);
-			this.repositoryEntity.create(contactData);
+			this.repositoryEntity.add(contactData);
 		} else {
-			this.repositoryEntity.edit(contactData);
+			this.repositoryEntity.update(contactData);
 		}
 		
 		if(contactData.getCollectionEmails() != null){

@@ -22,9 +22,9 @@ public class DomainAddress extends BaseDomainEntity<Address> {
 		
 		if (address.getId() == null) {
 			address.setState(Boolean.TRUE);
-			this.repositoryEntity.create(address);
+			this.repositoryEntity.add(address);
 		} else{
-			this.repositoryEntity.edit(address);
+			this.repositoryEntity.update(address);
 		}
 		
 		return address;

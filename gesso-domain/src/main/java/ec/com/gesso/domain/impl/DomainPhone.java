@@ -22,9 +22,9 @@ public class DomainPhone extends BaseDomainEntity<Phone> {
 		
 		if (phone.getId() == null) {
 			phone.setState(Boolean.TRUE);
-			this.repositoryEntity.create(phone);
+			this.repositoryEntity.add(phone);
 		} else{
-			this.repositoryEntity.edit(phone);
+			this.repositoryEntity.update(phone);
 		}
 		
 		return phone;

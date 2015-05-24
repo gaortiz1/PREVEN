@@ -21,9 +21,9 @@ public class DomainJob extends BaseDomainEntity<Job> {
 		
 		if (job.getId() == null) {
 			job.setState(Boolean.TRUE);
-			this.repositoryEntity.create(job);
+			this.repositoryEntity.add(job);
 		} else {
-			this.repositoryEntity.edit(job);
+			this.repositoryEntity.update(job);
 		}
 		
 		return job;

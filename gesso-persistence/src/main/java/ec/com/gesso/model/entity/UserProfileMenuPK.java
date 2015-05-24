@@ -11,7 +11,12 @@ import java.io.Serializable;
 
 @Embeddable
 public class UserProfileMenuPK implements Serializable {
-    @Basic(optional = false)
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Basic(optional = false)
     @Column(name = "men_id")
     private Integer menuId ;
 

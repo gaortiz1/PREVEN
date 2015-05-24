@@ -22,9 +22,9 @@ public class DomainActivityEconomicCompany extends BaseDomainEntity<ActivityEcon
 		
 		if (activityEconomicCompany.getId() == null){
 			activityEconomicCompany.setState(Boolean.TRUE);
-			this.repositoryEntity.create(activityEconomicCompany);
+			this.repositoryEntity.add(activityEconomicCompany);
 		} else {
-			this.repositoryEntity.edit(activityEconomicCompany);
+			this.repositoryEntity.update(activityEconomicCompany);
 		}
 		return activityEconomicCompany;
 	}
