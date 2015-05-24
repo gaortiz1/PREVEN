@@ -150,7 +150,7 @@
 	<section id="container"   >
 		
 		<section id="main-content">
-			<section class="wrapper">
+			<section class="wrapper site-min-height">
 		    	<div ng-view></div>
 	    	</section>
 	    </section>
