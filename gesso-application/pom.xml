@@ -57,11 +57,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>ec.com.gesso</groupId>
-			<artifactId>gesso-persistence</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.modelmapper</groupId>
@@ -92,6 +87,11 @@
 		<dependency>
 			<groupId>ec.com.gesso</groupId>
 			<artifactId>gesso-domain</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.gesso</groupId>
+			<artifactId>gesso-infrastructure</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
