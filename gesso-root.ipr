@@ -440,7 +440,6 @@
       <module fileurl="file://$PROJECT_DIR$/gesso-ear/gesso-ear.iml" filepath="$PROJECT_DIR$/gesso-ear/gesso-ear.iml" />
       <module fileurl="file://$PROJECT_DIR$/gesso-infrastructure/gesso-infrastructure.iml" filepath="$PROJECT_DIR$/gesso-infrastructure/gesso-infrastructure.iml" />
       <module fileurl="file://$PROJECT_DIR$/gesso-mail/gesso-mail.iml" filepath="$PROJECT_DIR$/gesso-mail/gesso-mail.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gesso-persistence/gesso-persistence.iml" filepath="$PROJECT_DIR$/gesso-persistence/gesso-persistence.iml" />
       <module fileurl="file://$PROJECT_DIR$/gesso-root.iml" filepath="$PROJECT_DIR$/gesso-root.iml" />
       <module fileurl="file://$PROJECT_DIR$/gesso-security/gesso-security.iml" filepath="$PROJECT_DIR$/gesso-security/gesso-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/gesso-web/gesso-web.iml" filepath="$PROJECT_DIR$/gesso-web/gesso-web.iml" />
