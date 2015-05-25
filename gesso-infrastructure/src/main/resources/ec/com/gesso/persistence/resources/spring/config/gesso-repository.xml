@@ -3,10 +3,36 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="repositoryWrapperHibernate" class="ec.com.gesso.repository.impl.RepositoryWrapperHibernate">
-		<constructor-arg index="0">
-			<ref bean="hibernate4AnnotatedSessionFactory" />
+	<bean id="repositoryHibernate" class="ec.com.gesso.repository.impl.hibernate.RepositoryHibernate">
+		<property name="session" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="criteriaJPA" class="ec.com.gesso.criteria.impl.CriteriaJPA">
+		<constructor-arg>
+			<bean class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+				<property name="persistenceUnitName" value="gessoUnitName" />
+			</bean>
 		</constructor-arg>
 	</bean>
+
+	<bean id="repositoryEntity" class="ec.com.gesso.repository.impl.RepositoryGenericEntity">
+		<constructor-arg ref="repositoryHibernate"/>
+		<constructor-arg ref="criteriaJPA"/>
+	</bean>
 	
+	<bean id="repositoryJob" class="ec.com.gesso.repository.impl.RepositoryJob">
+		<constructor-arg ref="repositoryHibernate"/>
+		<constructor-arg ref="criteriaJPA"/>
+	</bean>
+	
+	<bean id="repositoryProbabilityConsequence" class="ec.com.gesso.repository.impl.RepositoryProbabilityConsequence">
+		<constructor-arg ref="repositoryHibernate"/>
+		<constructor-arg ref="criteriaJPA"/>
+	</bean>
+	
+	<bean id="repositoryRisk" class="ec.com.gesso.repository.impl.RepositoryRisk">
+		<constructor-arg ref="repositoryHibernate"/>
+		<constructor-arg ref="criteriaJPA"/>
+	</bean>
+
 </beans>

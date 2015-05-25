@@ -4,7 +4,7 @@
 package ec.com.gesso.application.service.impl;
 
 import ec.com.gesso.application.service.IServiceEntity;
-import ec.com.gesso.domain.IDomainEntity;
+import ec.com.gesso.domain.IHandlerEntity;
 import ec.com.gesso.model.entity.Company;
 
 /**
@@ -13,20 +13,20 @@ import ec.com.gesso.model.entity.Company;
  */
 public class ServiceCompany implements IServiceEntity<Company> {
 	
-	private IDomainEntity<Company> domainCompany;
+	private IHandlerEntity<Company> handlerCompany;
 
 	/*
 	 * (non-Javadoc)
 	 * @see ec.com.gesso.application.service.IServiceEntity#create(java.io.Serializable)
 	 */
 	public Company register(final Company company) {
-		return this.domainCompany.register(company);
+		return this.handlerCompany.register(company);
 	}
 
 	/**
-	 * @param domainCompany the domainCompany to set
+	 * @param handlerCompany the handlerCompany to set
 	 */
-	public void setDomainCompany(IDomainEntity<Company> domainCompany) {
-		this.domainCompany = domainCompany;
+	public void setHandlerCompany(IHandlerEntity<Company> handlerCompany) {
+		this.handlerCompany = handlerCompany;
 	}
 }

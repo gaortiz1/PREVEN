@@ -3,62 +3,67 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<bean id="baseDomainEntity" class="ec.com.gesso.domain.impl.BaseDomainEntity" abstract="true">
+	<bean id="baseHandlerEntity" class="ec.com.gesso.domain.impl.BaseHandlerEntity" abstract="true">
 		<property name="repositoryEntity">
-			<ref bean="repositoryWrapperHibernate"/>
+			<ref bean="repositoryEntity"/>
 		</property>
 	</bean>
 	
-	<bean id="domainActivityEconomicCompany" class="ec.com.gesso.domain.impl.DomainActivityEconomicCompany" parent="baseDomainEntity" />
+	<bean id="handlerActivityEconomicCompany" class="ec.com.gesso.domain.impl.HandlerActivityEconomicCompany" parent="baseHandlerEntity" />
 	
-	<bean id="domainAddress" class="ec.com.gesso.domain.impl.DomainAddress" parent="baseDomainEntity" />
+	<bean id="handlerAddress" class="ec.com.gesso.domain.impl.HandlerAddress" parent="baseHandlerEntity" />
 	
-	<bean id="domainCompany" class="ec.com.gesso.domain.impl.DomainCompany" parent="baseDomainEntity">
-		<property name="domainActivityEconomicCompany">
-			<ref bean="domainActivityEconomicCompany"/>
+	<bean id="handlerCompany" class="ec.com.gesso.domain.impl.HandlerCompany" parent="baseHandlerEntity">
+		<property name="handlerActivityEconomicCompany">
+			<ref bean="handlerActivityEconomicCompany"/>
 		</property>
-		<property name="domainScheduleWork">
-			<ref bean="domainScheduleWork"/>
+		<property name="handlerScheduleWork">
+			<ref bean="handlerScheduleWork"/>
 		</property>
-		<property name="domainContactData">
-			<ref bean="domainContactData"/>
+		<property name="handlerContactData">
+			<ref bean="handlerContactData"/>
 		</property>
-		<property name="domainDocument">
-			<ref bean="domainDocument"/>
-		</property>
-	</bean>
-	
-	<bean id="domainContactData" class="ec.com.gesso.domain.impl.DomainContactData" parent="baseDomainEntity">
-		<property name="domainEmail">
-			<ref bean="domainEmail"/>
-		</property>
-		<property name="domainAddress">
-			<ref bean="domainAddress"/>
-		</property>
-		<property name="domainPhone">
-			<ref bean="domainPhone"/>
+		<property name="handlerDocument">
+			<ref bean="handlerDocument"/>
 		</property>
 	</bean>
 	
-	<bean id="domainDocument" class="ec.com.gesso.domain.impl.DomainDocument" parent="baseDomainEntity"/>
-	
-	<bean id="domainEmail" class="ec.com.gesso.domain.impl.DomainEmail" parent="baseDomainEntity"/>
-	
-	<bean id="domainJob" class="ec.com.gesso.domain.impl.DomainJob" parent="baseDomainEntity"/>
-	
-	<bean id="domainPhone" class="ec.com.gesso.domain.impl.DomainPhone" parent="baseDomainEntity"/>
-	
-	<bean id="domainProcess" class="ec.com.gesso.domain.impl.DomainProcess" parent="baseDomainEntity">
-		<property name="domainSubProcess">
-			<ref bean="domainSubProcess"/>
+	<bean id="handlerContactData" class="ec.com.gesso.domain.impl.HandlerContactData" parent="baseHandlerEntity">
+		<property name="handlerEmail">
+			<ref bean="handlerEmail"/>
+		</property>
+		<property name="handlerAddress">
+			<ref bean="handlerAddress"/>
+		</property>
+		<property name="handlerPhone">
+			<ref bean="handlerPhone"/>
 		</property>
 	</bean>
 	
-	<bean id="domainScheduleWork" class="ec.com.gesso.domain.impl.DomainScheduleWork" parent="baseDomainEntity"/>
+	<bean id="handlerDocument" class="ec.com.gesso.domain.impl.HandlerDocument" parent="baseHandlerEntity"/>
 	
-	<bean id="domainSubProcess" class="ec.com.gesso.domain.impl.DomainSubProcess" parent="baseDomainEntity">
-		<property name="domainJob">
-			<ref bean="domainJob"/>
+	<bean id="handlerEmail" class="ec.com.gesso.domain.impl.HandlerEmail" parent="baseHandlerEntity"/>
+	
+	<bean id="handlerJob" class="ec.com.gesso.domain.impl.HandlerJob" parent="baseHandlerEntity"/>
+	
+	<bean id="handlerPhone" class="ec.com.gesso.domain.impl.HandlerPhone" parent="baseHandlerEntity"/>
+	
+	<bean id="handlerProcess" class="ec.com.gesso.domain.impl.HandlerProcess" parent="baseHandlerEntity">
+		<property name="handlerSubProcess">
+			<ref bean="handlerSubProcess"/>
 		</property>
 	</bean>
+	
+	<bean id="handlerScheduleWork" class="ec.com.gesso.domain.impl.HandlerScheduleWork" parent="baseHandlerEntity"/>
+	
+	<bean id="handlerSubProcess" class="ec.com.gesso.domain.impl.HandlerSubProcess" parent="baseHandlerEntity">
+		<property name="handlerJob" ref="handlerJob"/>
+	</bean>
+	
+	<bean id="handlerJobRisk" class="ec.com.gesso.domain.impl.HandlerJobRisk" parent="baseHandlerEntity">
+		<property name="repositoryProbabilityConsequence" ref="repositoryProbabilityConsequence"/>
+		<property name="repositoryJob" ref="repositoryJob"/>
+		<property name="repositoryRisk" ref="repositoryRisk"/>
+	</bean>
+	
 </beans>

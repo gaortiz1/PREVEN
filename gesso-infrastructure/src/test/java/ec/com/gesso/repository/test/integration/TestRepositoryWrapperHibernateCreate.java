@@ -20,7 +20,7 @@ public class TestRepositoryWrapperHibernateCreate extends BaseRepositoryIntegrat
 	
 	@Before
 	public void setUp() throws Exception {
-		this.repository = (IRepositoryEntity) applicationContext.getBean("repositoryWrapperHibernate");
+		this.repository = (IRepositoryEntity) applicationContext.getBean("repositoryEntity");
 	}
 	
 	@Test(expected=EntityDataValidationException.class)

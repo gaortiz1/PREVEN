@@ -14,7 +14,7 @@ public interface IRepositoryEntity<Entity extends Serializable> {
 	
 	Entity add(Entity entity);
 	
-	void update(Entity entity);
+	Entity update(Entity entity);
 	
-	void saveOrUpdate(Entity entity);
+	Entity addOrUpdate(Entity entity);
 }

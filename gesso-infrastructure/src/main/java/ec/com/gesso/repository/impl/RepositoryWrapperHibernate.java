@@ -4,7 +4,6 @@
 package ec.com.gesso.repository.impl;
 
 import java.io.Serializable;
-import java.util.Collection;
 
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.HibernateException;
@@ -68,11 +67,12 @@ public class RepositoryWrapperHibernate<Entity extends Serializable> extends Bas
 		}
 	}
 
-	public void update(final Entity entity) {
+	public Entity update(final Entity entity) {
 		try {
 			final Session session = this.getSession();
 			session.merge(entity);
 			session.flush();
+			return entity;
 		} catch (IllegalArgumentException e) {
 			throw new EntityDataValidationException("La entidad no puede ser null");
 		} catch (MappingException e) {
@@ -108,11 +108,12 @@ public class RepositoryWrapperHibernate<Entity extends Serializable> extends Bas
 	}
 
 	@Override
-	public void saveOrUpdate(Entity entity) {
+	public Entity addOrUpdate(Entity entity) {
 		try {
 			final Session session = this.getSession();
 			session.saveOrUpdate(entity);
 			session.flush();
+			return entity;
 		} catch (IllegalArgumentException e) {
 			throw new EntityDataValidationException("La entidad no puede ser null");
 		} catch (MappingException e) {

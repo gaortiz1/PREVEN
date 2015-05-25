@@ -8,6 +8,9 @@
         <dependent-module archiveName="gesso-security-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/gesso-security/gesso-security">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="gesso-infrastructure-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/gesso-infrastructure/gesso-infrastructure">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="gesso-application-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/gesso-application/gesso-application">
             <dependency-type>uses</dependency-type>
         </dependent-module>

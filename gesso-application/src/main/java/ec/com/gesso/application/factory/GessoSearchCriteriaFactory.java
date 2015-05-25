@@ -14,8 +14,10 @@ public final class GessoSearchCriteriaFactory extends BaseFactorySpringXML {
 	private static final GessoSearchCriteriaFactory SEARCH_CRITERIA = new GessoSearchCriteriaFactory();
 	
 	private GessoSearchCriteriaFactory() {
-		super("classpath:ec/com/gesso/application/resource/spring/config/gesso-criteria.xml", 
-				"classpath:ec/com/gesso/application/resource/spring/config/gesso-persistencia-jpa.xml",
+		super("classpath:ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml",
+				"classpath:ec/com/gesso/application/resource/spring/config/gesso-data-source.xml", 
+				"classpath:ec/com/gesso/application/resource/spring/config/gesso-criteria.xml", 
+				"classpath:ec/com/gesso/application/resource/spring/config/gesso-jpa.xml",
 				"classpath:ec/com/gesso/application/resource/spring/config/gesso-transactions.xml");
 	}
 

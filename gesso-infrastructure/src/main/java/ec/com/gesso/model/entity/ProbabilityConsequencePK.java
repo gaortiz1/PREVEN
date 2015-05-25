@@ -34,6 +34,15 @@ public class ProbabilityConsequencePK implements Serializable {
 	}
 
 	/**
+	 * @param idProbability
+	 * @param idConsequence
+	 */
+	public ProbabilityConsequencePK(Long idProbability, Long idConsequence) {
+		this.idProbability = idProbability;
+		this.idConsequence = idConsequence;
+	}
+
+	/**
 	 * @param idProbability the idProbability to set
 	 */
 	public void setIdProbability(Long idProbability) {

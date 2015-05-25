@@ -4,16 +4,23 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="serviceProcess" class="ec.com.gesso.application.service.impl.ServiceProcess">
-		<property name="domainProcess">
-			<ref bean="domainProcess" />
+		<property name="handlerProcess">
+			<ref bean="handlerProcess" />
 		</property>
 	</bean>
 
 	<bean id="serviceCompany" class="ec.com.gesso.application.service.impl.ServiceCompany">
-		<property name="domainCompany">
-			<ref bean="domainCompany" />
+		<property name="handlerCompany">
+			<ref bean="handlerCompany" />
 		</property>
 	</bean>
+	
+	<bean id="serviceJobRisk" class="ec.com.gesso.application.service.impl.ServiceJobRisk">
+		<property name="handlerJobRisk">
+			<ref bean="handlerJobRisk" />
+		</property>
+	</bean>
+	
 
 	<bean id="postServiceCompany" class="ec.com.gesso.application.service.interceptor.post.spring.PostServiceCompany">
 		<property name="serviceMail">

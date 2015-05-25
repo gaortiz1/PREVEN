@@ -4,7 +4,7 @@
 package ec.com.gesso.application.service.impl;
 
 import ec.com.gesso.application.service.IServiceEntity;
-import ec.com.gesso.domain.IDomainEntity;
+import ec.com.gesso.domain.IHandlerEntity;
 import ec.com.gesso.model.entity.Process;
 
 /**
@@ -13,16 +13,16 @@ import ec.com.gesso.model.entity.Process;
  */
 public class ServiceProcess implements IServiceEntity<Process> {
 	
-	private IDomainEntity<Process> domainProcess;
+	private IHandlerEntity<Process> handlerProcess;
 
 	public Process register(final Process process) {
-		return this.domainProcess.register(process);
+		return this.handlerProcess.register(process);
 	}
 
 	/**
-	 * @param domainProcess the domainProcess to set
+	 * @param handlerProcess the handlerProcess to set
 	 */
-	public void setDomainProcess(IDomainEntity<Process> domainProcess) {
-		this.domainProcess = domainProcess;
+	public void setHandlerProcess(IHandlerEntity<Process> handlerProcess) {
+		this.handlerProcess = handlerProcess;
 	}
 }

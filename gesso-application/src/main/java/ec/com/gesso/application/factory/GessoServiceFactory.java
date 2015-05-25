@@ -14,8 +14,9 @@ public final class GessoServiceFactory extends BaseFactorySpringXML {
 	private static final GessoServiceFactory GESSO_FACTORY = new GessoServiceFactory();
 
 	private GessoServiceFactory() {
-		super("classpath:ec/com/gesso/application/resource/spring/config/gesso-application.xml",
-				"classpath:ec/com/gesso/application/resource/spring/config/gesso-persistencia-hibernate.xml",
+		super("classpath:ec/com/gesso/application/resource/spring/config/gesso-data-source.xml",
+				"classpath:ec/com/gesso/application/resource/spring/config/gesso-application.xml",
+				"classpath:ec/com/gesso/application/resource/spring/config/gesso-jpa.xml",
 				"classpath:ec/com/gesso/application/resource/spring/config/gesso-transactions.xml",
 				"classpath:ec/com/gesso/domain/resource/spring/config/gesso-domain.xml",
 				"classpath:ec/com/gesso/persistence/resources/spring/config/gesso-repository.xml",

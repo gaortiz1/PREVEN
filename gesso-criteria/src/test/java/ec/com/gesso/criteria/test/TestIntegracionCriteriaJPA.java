@@ -14,10 +14,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import ec.com.gesso.criteria.QueryCriteria;
-import ec.com.gesso.model.entity.ActivityEconomicCompany;
-import ec.com.gesso.model.entity.Catalog;
-import ec.com.gesso.model.entity.Company;
-import ec.com.gesso.model.entity.GroupCatalog;
+import ec.com.gesso.criteria.test.entity.ActivityEconomicCompany;
+import ec.com.gesso.criteria.test.entity.Catalog;
+import ec.com.gesso.criteria.test.entity.Company;
+import ec.com.gesso.criteria.test.entity.GroupCatalog;
 
 /**
  * @author Gabriel
