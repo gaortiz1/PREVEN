@@ -30,9 +30,9 @@ public class DomainProcess extends BaseDomainEntity<Process> {
 		
 		if (process.getId() == null) {
 			process.setStatus(Boolean.TRUE);
-			this.repositoryEntity.create(process);
+			this.repositoryEntity.add(process);
 		} else {
-			this.repositoryEntity.edit(process);
+			this.repositoryEntity.update(process);
 		}
 		
 		if(process.getSubLevels() != null && !process.getSubLevels().isEmpty()) {

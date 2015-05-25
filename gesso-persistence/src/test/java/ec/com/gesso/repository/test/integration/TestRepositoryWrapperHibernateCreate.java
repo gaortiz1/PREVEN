@@ -25,7 +25,7 @@ public class TestRepositoryWrapperHibernateCreate extends BaseRepositoryIntegrat
 	
 	@Test(expected=EntityDataValidationException.class)
 	public void testCreateWithEntityNull(){
-		this.repository.create(null);
+		this.repository.add(null);
 	}
 	
 	@Test(expected=EntityDataValidationException.class)
@@ -34,13 +34,13 @@ public class TestRepositoryWrapperHibernateCreate extends BaseRepositoryIntegrat
 			private static final long serialVersionUID = 1L;
 		} 
 		final EntityFalse entityFalse = new EntityFalse();	
-		this.repository.create(entityFalse);
+		this.repository.add(entityFalse);
 	}
 	
 	@Test(expected=EntityDataValidationException.class)
 	public void testCreateWithEntityThatHasRequierdFieldNull(){
 		final Company company = new Company();
-		this.repository.create(company);
+		this.repository.add(company);
 	}
 	
 	@Test(expected=EntityDataValidationException.class)
@@ -49,6 +49,6 @@ public class TestRepositoryWrapperHibernateCreate extends BaseRepositoryIntegrat
 		company.setName("Company");
 		company.setIdProductiveSector("MR");
 		company.setIdTypeCompany("PEQ");
-		this.repository.create(company);
+		this.repository.add(company);
 	}
 }

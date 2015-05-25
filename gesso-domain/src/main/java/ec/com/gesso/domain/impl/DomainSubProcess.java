@@ -25,9 +25,9 @@ public class DomainSubProcess extends BaseDomainEntity<SubProcess> {
 		
 		if (subProcess.getId() == null) {
 			subProcess.setState(Boolean.TRUE);
-			this.repositoryEntity.create(subProcess);
+			this.repositoryEntity.add(subProcess);
 		} else {
-			this.repositoryEntity.edit(subProcess);
+			this.repositoryEntity.update(subProcess);
 		}
 		
 		if(subProcess.getSubLevels() != null && !subProcess.getSubLevels().isEmpty()) {

@@ -25,14 +25,14 @@ public class TestRepositoryWrapperHibernateEdit extends BaseRepositoryIntegratio
 	
 	@Test(expected=EntityDataValidationException.class)
 	public void shouldNotEditWithEntityNull(){
-		this.repository.edit(null);
+		this.repository.update(null);
 	}
 	
 	@Test(expected=EntityDataValidationException.class)
 	public void shouldNotEditWithEntityFalse(){
 		class EntityFalse implements Serializable{} 
 		final EntityFalse entityFalse = new EntityFalse();
-		this.repository.edit(entityFalse);
+		this.repository.update(entityFalse);
 	}
 	
 	@Test(expected=EntityDataValidationException.class)
@@ -45,7 +45,7 @@ public class TestRepositoryWrapperHibernateEdit extends BaseRepositoryIntegratio
 		company.setRazonSocial("Prueba de persistencia");
 		company.setIdGeopoliticalDivision(66L);
 		company.setState(Boolean.FALSE);
-		this.repository.edit(company);
+		this.repository.update(company);
 	}
 	
 	@Test(expected=EntityDataValidationException.class)
@@ -57,6 +57,6 @@ public class TestRepositoryWrapperHibernateEdit extends BaseRepositoryIntegratio
 		company.setName("Prueba de persistencia");
 		company.setRazonSocial("Prueba de persistencia");
 		company.setState(Boolean.FALSE);
-		this.repository.edit(company);
+		this.repository.update(company);
 	}
 }

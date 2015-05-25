@@ -10,12 +10,11 @@ import java.io.Serializable;
  * @author Gabriel
  *
  */
-public interface IRepositoryEntity<Entity extends Serializable>{
+public interface IRepositoryEntity<Entity extends Serializable> {
 	
-	public Entity create(Entity entity);
+	Entity add(Entity entity);
 	
-	public void edit(Entity entity);
+	void update(Entity entity);
 	
-	public void saveOrUpdate(Entity entity);
-
+	void saveOrUpdate(Entity entity);
 }
