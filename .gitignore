@@ -1,3 +1,7 @@
 target
 *.iml
 .idea/workspace.xml
+*.epoch
+*.ipr
+*.iws
+*.log
