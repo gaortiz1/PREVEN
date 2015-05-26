@@ -1,0 +1,9 @@
+INSERT INTO probability_consequences(id_probability, id_consequences, estimate_risk, state_pro_con) VALUES ('LOW', 'LD', 'T', TRUE);
+INSERT INTO probability_consequences(id_probability, id_consequences, estimate_risk, state_pro_con) VALUES ('LOW', 'D', 'TO', TRUE);
+INSERT INTO probability_consequences(id_probability, id_consequences, estimate_risk, state_pro_con) VALUES ('LOW', 'ED', 'MO', TRUE);
+INSERT INTO probability_consequences(id_probability, id_consequences, estimate_risk, state_pro_con) VALUES ('MEDI', 'LD', 'TO', TRUE);
+INSERT INTO probability_consequences(id_probability, id_consequences, estimate_risk, state_pro_con) VALUES ('MEDI', 'D', 'MO', TRUE);
+INSERT INTO probability_consequences(id_probability, id_consequences, estimate_risk, state_pro_con) VALUES ('MEDI', 'ED', 'I', TRUE);
+INSERT INTO probability_consequences(id_probability, id_consequences, estimate_risk, state_pro_con) VALUES ('HIGH', 'LD', 'MO', TRUE);
+INSERT INTO probability_consequences(id_probability, id_consequences, estimate_risk, state_pro_con) VALUES ('HIGH', 'D', 'I', TRUE);
+INSERT INTO probability_consequences(id_probability, id_consequences, estimate_risk, state_pro_con) VALUES ('HIGH', 'ED', 'IN', TRUE);

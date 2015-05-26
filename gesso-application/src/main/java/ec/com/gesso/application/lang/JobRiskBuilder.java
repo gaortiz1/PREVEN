@@ -15,8 +15,8 @@ public class JobRiskBuilder implements IEntityBuilder<JobRisk> {
 	
 	private Long idJob;
 	private Long idRisk;
-	private Long idProbability;
-	private Long idConsequence;
+	private String idProbability;
+	private String idConsequence;
 	private Boolean state;
 	/**
 	 * @param idJob the idJob to add
@@ -35,14 +35,14 @@ public class JobRiskBuilder implements IEntityBuilder<JobRisk> {
 	/**
 	 * @param idProbability the idProbability to add
 	 */
-	public JobRiskBuilder addIdProbability(Long idProbability) {
+	public JobRiskBuilder addIdProbability(String idProbability) {
 		this.idProbability = idProbability;
 		return this;
 	}
 	/**
 	 * @param idConsequence the idConsequence to add
 	 */
-	public JobRiskBuilder addIdConsequence(Long idConsequence) {
+	public JobRiskBuilder addIdConsequence(String idConsequence) {
 		this.idConsequence = idConsequence;
 		return this;
 	}

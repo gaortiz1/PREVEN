@@ -131,9 +131,17 @@ public class ProbabilityConsequence implements Serializable {
 
 
 	/**
-	 * @return the serialversionuid
+	 * @return the jobRisks
 	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public Collection<JobRisk> getJobRisks() {
+		return jobRisks;
+	}
+
+
+	/**
+	 * @param jobRisks the jobRisks to set
+	 */
+	public void setJobRisks(Collection<JobRisk> jobRisks) {
+		this.jobRisks = jobRisks;
 	}
 }

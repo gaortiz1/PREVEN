@@ -27,6 +27,12 @@ INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catal
 INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
     VALUES ('NEDU', 'Nivel educacion', TRUE);
 
+INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
+    VALUES ('PROBA', 'Probabilidad', TRUE);
+	
+INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
+    VALUES ('CONSE', 'Consecuencia', TRUE);
+
 
 --CATALOG
 INSERT INTO CATALOG VALUES('BR','SP', 'BAJO RIESGO', 't');
@@ -78,6 +84,25 @@ INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
 
 INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
     VALUES ('UNI', 'NEDU', 'Universitaria', TRUE);
+	
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('LOW', 'PROBA', 'Baja', TRUE);
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('MEDI', 'PROBA', 'Media', TRUE);
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('HIGH', 'PROBA', 'Alta', TRUE);
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('LD', 'CONSE', 'Ligeramente dañino', TRUE);
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('D', 'CONSE', 'Dañino', TRUE);
+
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
+    VALUES ('ED', 'CONSE', 'Extremadamente dañino', TRUE);
+
 
 --Seguridades
 

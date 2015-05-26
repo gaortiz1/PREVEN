@@ -2,6 +2,7 @@ package ec.com.gesso.application.factory;
 
 import ec.com.gesso.application.service.IServiceEntity;
 import ec.com.gesso.model.entity.Company;
+import ec.com.gesso.model.entity.JobRisk;
 import ec.com.gesso.model.entity.Process;
 
 /**
@@ -32,6 +33,10 @@ public final class GessoServiceFactory extends BaseFactorySpringXML {
 
 	public IServiceEntity<Company> getServiceCompany() {
 		return this.getBean("serviceCompanyProxy", IServiceEntity.class);
+	}
+	
+	public IServiceEntity<JobRisk> getServiceJobRisk() {
+		return this.getBean("serviceJobRisk", IServiceEntity.class);
 	}
 
 	public IServiceEntity<Process> getServiceProcess() {
