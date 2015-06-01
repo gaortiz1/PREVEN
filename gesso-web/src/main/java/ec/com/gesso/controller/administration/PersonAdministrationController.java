@@ -184,7 +184,7 @@ public class PersonAdministrationController {
             lstJob = GessoSecurityFactory.getInstance().getProcessService().findJobs(idSubProcess);
             if(CollectionUtils.isNotEmpty(lstJob)) {
                 for (Job obj : lstJob) {
-                    System.out.println(obj);
+					obj.setJobRisks(null);
                 }
             }
 		} catch (GessoException e) {

@@ -3,7 +3,7 @@
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
 
-                    <div >
+                    <div ng-hide="ctrlPerEdt.personSelected !== undefined ">
                         <div>
                             <div ng-repeat=""></div>
                             <table st-table="ctrlPerEdt.lstPerson" class="table table-striped">
@@ -39,22 +39,8 @@
                         </div>
                     </div>
 
-                    <script type="text/javascript">
-                        $(document).ready(function() {
-                            $("#form").submit(function() {
-                                $.post($(this).attr("action"), $(this).serialize(), function(html) {
-
-                                });
-                                return false;
-                            });
-                        });
-                    </script>
-
                     <div class="hr hr-18 dotted hr-double"></div>
 
-
-
-                    <div class="hr hr-18 dotted hr-double"></div>
 
                     <div id="modal-form" class="modal" tabindex="-1">
                         <div class="modal-dialog">
@@ -100,12 +86,12 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button class="btn btn-sm" data-dismiss="modal">
+                                    <button class="btn btn-sm" ng-click="ctrlPerEdt.cancelUpdatePerson()">
                                         <i class="ace-icon fa fa-times"></i>
                                         Cancel
                                     </button>
 
-                                    <button class="btn btn-sm btn-primary" ng-click="updatePerson()">
+                                    <button class="btn btn-sm btn-primary" ng-click="ctrlPerEdt.updatePerson()">
                                         <i class="ace-icon fa fa-check"></i>
                                         Save
                                     </button>
