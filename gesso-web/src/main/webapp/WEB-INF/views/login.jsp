@@ -118,14 +118,11 @@
 	            </a>
 	        </p>
 	
-	        <h5 class="centered">Marcel Newman</h5>
+	        <h5 class="centered">
+				{{logedUser.nickName}}
+			</h5>
 	
-	        <li class="mt">
-	            <a >
-	                <i class="fa fa-dashboard"></i>
-	                <span>Dashboard</span>
-	            </a>
-	        </li>
+
 	        
 	        
             
