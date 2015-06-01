@@ -10,7 +10,7 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 id="panel-title" class="panel-title">
-            Listado de usuarios
+            Persona
         </h3>
     </div>
 
