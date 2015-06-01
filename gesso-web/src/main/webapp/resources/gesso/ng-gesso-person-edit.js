@@ -4,6 +4,9 @@ app.controller("app-gesso-person-edt", ['$http', '$scope', 'SweetAlert', functio
 
     controller.lstPerson = [];
     controller.personSelected = undefined;
+    controller.personAdministrationModel = {
+        person: undefined
+    };
 
 	this.loadPersonList = function(){
 		var response = $http.get('load-person-list.json');
@@ -19,6 +22,7 @@ app.controller("app-gesso-person-edt", ['$http', '$scope', 'SweetAlert', functio
 
     controller.selectPerson = function (dataObj){
         controller.personSelected = dataObj;
+        controller.personAdministrationModel.person = controller.personSelected;
         $('#modal-form').modal('show');
     }
 
