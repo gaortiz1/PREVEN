@@ -8,6 +8,7 @@ public class OptionDto {
     private Integer optionId;
     private String optionName;
     private String optionPath;
+    private String optionIcon;
 
     public OptionDto() {
     }
@@ -35,6 +36,12 @@ public class OptionDto {
 	public void setOptionPath(String optionPath) {
 		this.optionPath = optionPath;
 	}
-    
-    
+
+    public String getOptionIcon() {
+        return optionIcon;
+    }
+
+    public void setOptionIcon(String optionIcon) {
+        this.optionIcon = optionIcon;
+    }
 }

@@ -133,9 +133,10 @@
 		                <i class="fa fa-desktop"></i>
 		                <span>{{userProfileMenuDto.menu.menuName}}    </span>
 		            </a>
-		            
+
 		            <ul class="subNooooo" ng-repeat="option in userProfileMenuDto.menu.lstOption">
-		                <li><a href="{{option.optionPath}}">{{option.optionName}}</a></li>
+
+		                <li ><a class="{{option.optionIcon}}" href="{{option.optionPath}}">{{option.optionName}}</a></li>
 		            </ul>
 		        </li>
 	        </div>

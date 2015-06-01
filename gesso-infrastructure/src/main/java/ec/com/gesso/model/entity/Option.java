@@ -39,6 +39,9 @@ public class Option implements Serializable {
     
     @Column(name = "opt_path")
     private String optionPath;
+
+    @Column(name = "opt_icon")
+    private String optionIcon;
     
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "option", fetch = FetchType.LAZY)
@@ -98,6 +101,12 @@ public class Option implements Serializable {
 	public void setOptionPath(String optionPath) {
 		this.optionPath = optionPath;
 	}
-    
-    
+
+    public String getOptionIcon() {
+        return optionIcon;
+    }
+
+    public void setOptionIcon(String optionIcon) {
+        this.optionIcon = optionIcon;
+    }
 }
