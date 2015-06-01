@@ -2,7 +2,7 @@ function cargarCiudades(elemento){
 	$.ajax( "person-fill-ciudad/uno" )
 		.done(function(data) {
 			$.each( data, function( i, item ) {
-				alert( item.catalog_name);
+				alert( item.name);
 		   	});
 		})
 		.fail(function() {

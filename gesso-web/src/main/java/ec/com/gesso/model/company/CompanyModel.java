@@ -114,8 +114,7 @@ public class CompanyModel implements Serializable {
 	/**
 	 * @param actividadComercialSecuandaria the actividadComercialSecuandaria to set
 	 */
-	public void setActividadComercialSecuandaria(
-			String actividadComercialSecuandaria) {
+	public void setActividadComercialSecuandaria(String actividadComercialSecuandaria) {
 		this.actividadComercialSecuandaria = actividadComercialSecuandaria;
 	}
 
@@ -204,20 +203,6 @@ public class CompanyModel implements Serializable {
 	}
 
 	/**
-	 * @return the schedulesWork
-	 */
-	public String[] getSchedulesWork() {
-		return schedulesWork;
-	}
-
-	/**
-	 * @param schedulesWork the schedulesWork to set
-	 */
-	public void setSchedulesWork(String[] schedulesWork) {
-		this.schedulesWork = schedulesWork;
-	}
-
-	/**
 	 * @return the idGeopoliticalDivisionCountry
 	 */
 	public Long getIdGeopoliticalDivisionCountry() {
@@ -241,8 +226,7 @@ public class CompanyModel implements Serializable {
 	/**
 	 * @param idGeopoliticalDivisionProvince the idGeopoliticalDivisionProvince to set
 	 */
-	public void setIdGeopoliticalDivisionProvince(
-			Long idGeopoliticalDivisionProvince) {
+	public void setIdGeopoliticalDivisionProvince(Long idGeopoliticalDivisionProvince) {
 		this.idGeopoliticalDivisionProvince = idGeopoliticalDivisionProvince;
 	}
 
@@ -258,6 +242,20 @@ public class CompanyModel implements Serializable {
 	 */
 	public void setIdGeopoliticalDivisionCity(Long idGeopoliticalDivisionCity) {
 		this.idGeopoliticalDivisionCity = idGeopoliticalDivisionCity;
+	}
+
+	/**
+	 * @return the schedulesWork
+	 */
+	public String[] getSchedulesWork() {
+		return schedulesWork;
+	}
+
+	/**
+	 * @param schedulesWork the schedulesWork to set
+	 */
+	public void setSchedulesWork(String[] schedulesWork) {
+		this.schedulesWork = schedulesWork;
 	}
 	
 }

@@ -76,6 +76,8 @@ public final class ReadEntity<T extends Serializable> implements ReadableEntity 
 							break;
 						
 						case EMBEDDED:
+							final AttributeOperadoLogico<AttributeOneValue, ComparacionEnum> fieldFieldOneValueEmbedded = this.buildFieldWithOneValue(attribute.getName(), valueAttribute, And.andPredicate(criteriaBuilderWhere), valueAttribute instanceof CharSequence ? ComparacionEnum.LIKE : ComparacionEnum.EQUAL);
+							this.basicFields.add(fieldFieldOneValueEmbedded);
 							break;
 							
 						case MANY_TO_MANY : case ONE_TO_MANY : case MANY_TO_ONE:

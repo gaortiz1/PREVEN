@@ -3,117 +3,139 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="t"%>
 
-<div class="row" ng-controller="gesso-create-company">
+<h3>
+	<i class="fa fa-angle-right"></i> Creacion de compañia
+</h3>
 
-	<form:form class="form-horizontal" role="form">
-		<div class="row mt">
+<hr>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 id="panel-title" class="panel-title">Compañia</h3>
+	</div>
+
+	<div class="panel-body">
+		<div class="row" ng-controller="gesso-create-company">
 			<div class="col-lg-12">
-				<div class="form-panel">
-					<h4 class="mb">
-						<i class="fa fa-angle-right"></i>Nueva Compañia
-					</h4>
-
+				<form class="form-horizontal" role="form" name="formCreateCompny">
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> 
-							<spring:message code="page.label.company.razonSocial" />
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.company.razonSocial" />
 						</label>
 						<div class="col-sm-6">
-							<input type="text" ng-model="companyModel.razonSocial" placeholder="Razón Social" class="form-control" size="35" title="Razón Social" required/>
+							<input type="text" ng-model="companyModel.razonSocial"
+								placeholder="Razón Social" class="form-control" size="35"
+								title="Razón Social" required />
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> 
-							<spring:message code="page.label.ruc" />
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.ruc" />
 						</label>
 
 						<div class="col-sm-6">
-							<input type="text" ng-model="companyModel.ruc" placeholder="Ruc" class="form-control" size="35" title="Ruc" maxlength="13" required/>
+							<input type="text" ng-model="companyModel.ruc" placeholder="Ruc"
+								class="form-control" size="35" title="Ruc" maxlength="13"
+								required />
 						</div>
 					</div>
 
 
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> 
-							<spring:message code="page.label.company.nombreComercial" />
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.company.nombreComercial" />
 						</label>
 
 						<div class="col-sm-6">
-							<input type="text" ng-model="companyModel.nombreComercial" placeholder="Nombre Comercial" class="form-control" size="35" title="Nombre Comercial" required/>
+							<input type="text" ng-model="companyModel.nombreComercial"
+								placeholder="Nombre Comercial" class="form-control" size="35"
+								title="Nombre Comercial" required />
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> 
-							<spring:message code="page.label.company.actividad.economica.principal" />
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.company.actividad.economica.principal" />
 						</label>
 						<div class="col-sm-6">
-							<input type="text" ng-model="companyModel.actividadComercialPrincipal" placeholder="Actividad económica principal" class="form-control" size="255" title="Actividad económica principal" required/>
+							<input type="text"
+								ng-model="companyModel.actividadComercialPrincipal"
+								placeholder="Actividad económica principal" class="form-control"
+								size="255" title="Actividad económica principal" required />
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> 
-							<spring:message code="page.label.company.actividad.economica.secundaria" />
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.company.actividad.economica.secundaria" />
 						</label>
 						<div class="col-sm-6">
-							<input type="text" ng-model="companyModel.actividadComercialSecuandaria" placeholder="Actividad económica secundaria" class="form-control" size="255" title="Actividad económica secundaria" required/>
+							<input type="text"
+								ng-model="companyModel.actividadComercialSecuandaria"
+								placeholder="Actividad económica secundaria"
+								class="form-control" size="255"
+								title="Actividad económica secundaria" required />
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> 
-							<spring:message code="page.label.pais" />
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.pais" />
 						</label>
-						<div class="col-sm-6">							
-							<ui-select ng-model="companyModel.idGeopoliticalDivisionCountry" on-select="loadProvinces($item)">
-		                        <ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
-		                        <ui-select-choices repeat="country in countries | filter: $select.search track by country.id">
-		                            <div ng-bind-html="country.name | highlight: $select.search"></div>
-		                        </ui-select-choices>
-		                    </ui-select>
+						<div class="col-sm-6">
+							<ui-select ng-model="companyModel.idGeopoliticalDivisionCountry" on-select="loadProvinces($item)"> 
+								<ui-select-match placeholder="Escoga...">
+									{{$select.selected.name}}
+								</ui-select-match>
+								<ui-select-choices repeat="country.id as country in countries | filter: $select.search track by country.name">
+									<div ng-bind-html="country.name | highlight: $select.search"></div>
+								</ui-select-choices> 
+							</ui-select>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> 
-							<spring:message code="page.label.provincia" />
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.provincia" />
 						</label>
-						<div class="col-sm-6">							
-							<ui-select ng-model="companyModel.idGeopoliticalDivisionProvince" on-select="loadCities($item)">
-		                        <ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
-		                        <ui-select-choices repeat="province in provinces | filter: $select.search track by province.id">
-		                            <div ng-bind-html="province.name | highlight: $select.search"></div>
-		                        </ui-select-choices>
-		                    </ui-select>
+						<div class="col-sm-6">
+							<ui-select ng-model="companyModel.idGeopoliticalDivisionProvince" on-select="loadCities($item)"> 
+								<ui-select-match placeholder="Escoga...">
+									{{$select.selected.name}}
+								</ui-select-match>
+								<ui-select-choices repeat="province.id as province in provinces | filter: $select.search track by province.name">
+									<div ng-bind-html="province.name | highlight: $select.search"></div>
+								</ui-select-choices> 
+							</ui-select>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> 
-							<spring:message code="page.label.cuidad" />
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.cuidad" />
 						</label>
-						<div class="col-sm-6">							
+						<div class="col-sm-6">
 							<ui-select ng-model="companyModel.idGeopoliticalDivisionCity">
-		                        <ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
-		                        <ui-select-choices repeat="city in cities | filter: $select.search track by city.id">
-		                            <div ng-bind-html="city.name | highlight: $select.search"></div>
-		                        </ui-select-choices>
-		                    </ui-select>
+								<ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
+								<ui-select-choices repeat="city.id as city in cities | filter: $select.search track by city.name">
+									<div ng-bind-html="city.name | highlight: $select.search"></div>
+								</ui-select-choices> 
+							</ui-select>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> 
-							<spring:message code="page.label.company.type.company" />
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.company.type.company" />
 						</label>
-						<div class="col-sm-6">							
-							<ui-select ng-model="companyModel.typesCompanies">
-		                        <ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
-		                        <ui-select-choices repeat="company in typesCompanies | filter: $select.search track by company.id">
-		                            <div ng-bind-html="company.name | highlight: $select.search"></div>
-		                        </ui-select-choices>
-		                    </ui-select>
+						<div class="col-sm-6">
+							<ui-select ng-model="companyModel.typesCompanies"> 
+								<ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
+								<ui-select-choices repeat="company.id as company in typesCompanies | filter: $select.search track by company.name">
+									<div ng-bind-html="company.name | highlight: $select.search"></div>
+								</ui-select-choices> 
+							</ui-select>
 						</div>
 					</div>
 
@@ -121,20 +143,103 @@
 						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
 								code="page.label.company.sector.productor" />
 						</label>
-						<div class="col-sm-6">							
+						<div class="col-sm-6">
 							<ui-select ng-model="companyModel.typeProductiveSector">
-		                        <ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
-		                        <ui-select-choices repeat="sector in productivesSector | filter: $select.search track by sector.id">
-		                            <div ng-bind-html="sector.name | highlight: $select.search"></div>
-		                        </ui-select-choices>
-		                    </ui-select>
+							<ui-select-match placeholder="Escoga...">{{$select.selected.name}}</ui-select-match>
+								<ui-select-choices repeat="sector.id as sector in productivesSector | filter: $select.search track by sector.id">
+								<div ng-bind-html="sector.name | highlight: $select.search"></div>
+								</ui-select-choices> 
+							</ui-select>
 						</div>
-						
 					</div>
 
-				</div>
+					<div class="form-group">
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.company.work.hours" />
+						</label>
+						<div class="col-sm-6">
+							<label ng-repeat="workHour in worksHours"> 
+								<input type="checkbox" checklist-model="companyModel.schedulesWork" checklist-value="workHour.id"> {{workHour.name}}
+							</label>
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.local.phone" />
+						</label>
+
+						<div class="col-sm-9">
+							<span class="input-icon"> <input type="text"
+								ng-model="companyModel.telefono" class="input-mask-phone" required/> <i
+								class="ace-icon fa fa-phone"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.mobil.phone" />
+						</label>
+
+						<div class="col-sm-9">
+							<span class="input-icon"> <input type="text"
+								ng-model="companyModel.celular" class="input-mask-phone" required/> <i
+								class="ace-icon fa fa-phone"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.direccion" />
+						</label>
+						<div class="col-sm-6">
+							<input type="text" ng-model="companyModel.direccion"
+								placeholder="Dirección" class="form-control" size="255"
+								title="Dirección" required />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
+								code="page.label.email" />
+						</label>
+
+						<div class="col-sm-6">
+							<input type="email" ng-model="companyModel.email"
+								class="form-control" data-rel="tooltip"
+								placeholder="alguien@example.com" title="Email principal"
+								data-placement="bottom" maxlength="113" size="35" required /> <span
+								class="help-button" data-rel="popover" data-trigger="hover"
+								data-placement="left"
+								data-content="Este sera el mail al cual se notificaran las novedades"
+								title="Email principal">?</span>
+						</div>
+					</div>
+
+					<div class="clearfix form-actions">
+						<div class="col-md-offset-3 col-md-9">
+							<button class="btn btn-info" type="submit"
+								ng-click="formCreateCompny.$invalid || createCompany()">
+								<i class="ace-icon fa fa-check bigger-110"></i>
+								<spring:message code="gobal.label.save" />
+							</button>
+
+							&nbsp; &nbsp; &nbsp;
+							<button class="btn" type="reset">
+								<i class="ace-icon fa fa-undo bigger-110"></i>
+								<spring:message code="gobal.label.reset" />
+							</button>
+						</div>
+					</div>
+
+					<div class="hr hr-24"></div>
+
+				</form>
 			</div>
 		</div>
-	</form:form>
 
+	</div>
 </div>

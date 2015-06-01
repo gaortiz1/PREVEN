@@ -5,6 +5,8 @@ package ec.com.gesso.domain.impl;
 
 import java.util.Collection;
 
+import org.apache.commons.collections4.CollectionUtils;
+
 import ec.com.gesso.domain.IHandlerEntity;
 import ec.com.gesso.model.entity.ActivityEconomicCompany;
 import ec.com.gesso.model.entity.Company;
@@ -69,37 +71,49 @@ public class HandlerCompany extends BaseHandlerEntity<Company> {
 	}
 	
 	private void registerCollectionDocument(final Collection<Document> collectionDocuments, final Long idCompany) {
-		if(collectionDocuments != null) {
-			for(final Document documentTest : collectionDocuments){
-				documentTest.setIdCompany(idCompany);
-				this.handlerDocument.register(documentTest);
-			}
+		
+		if(CollectionUtils.isEmpty(collectionDocuments)){
+			throw new ValidationEntity("Debe tener asignado al menos un documento de indentidad");
+		}
+		
+		for(final Document documentTest : collectionDocuments){
+			documentTest.setIdCompany(idCompany);
+			this.handlerDocument.register(documentTest);
 		}
 	}
 	
 	private void registerCollectionScheduleWork(final Collection<ScheduleWork> collectionScheduleWorks, final Long idCompany) {
-		if(collectionScheduleWorks != null) {
-			for(final ScheduleWork scheduleWork : collectionScheduleWorks) {
-				
-				if(scheduleWork.getIdScheduleWork() != null) {
-					scheduleWork.getIdScheduleWork().setIdCompany(idCompany);
-				}
-				
-				this.handlerScheduleWork.register(scheduleWork);
+		
+		if(CollectionUtils.isEmpty(collectionScheduleWorks)){
+			throw new ValidationEntity("Debe tener asignado horarios de trabajo");
+		}
+		
+		for(final ScheduleWork scheduleWork : collectionScheduleWorks) {
+			
+			if(scheduleWork.getIdScheduleWork() != null) {
+				scheduleWork.getIdScheduleWork().setIdCompany(idCompany);
 			}
+			
+			this.handlerScheduleWork.register(scheduleWork);
 		}
 	}
 	
 	private void registerCollectionActivityEconomicCompany(final Collection<ActivityEconomicCompany> collectionActivityEconomicCompany, final Long idCompany) {
-		if(collectionActivityEconomicCompany != null) {
-			for(final ActivityEconomicCompany activityEconomicCompanyTest : collectionActivityEconomicCompany){
-				activityEconomicCompanyTest.setIdCompany(idCompany);
-				this.handlerActivityEconomicCompany.register(activityEconomicCompanyTest);	
-			}
+		if(CollectionUtils.isEmpty(collectionActivityEconomicCompany)){
+			throw new ValidationEntity("Debe tener asignado al menos un actividad economica");
+		}
+		for(final ActivityEconomicCompany activityEconomicCompanyTest : collectionActivityEconomicCompany){
+			activityEconomicCompanyTest.setIdCompany(idCompany);
+			this.handlerActivityEconomicCompany.register(activityEconomicCompanyTest);	
 		}
 	}
 	
 	private void registerCollectionContactData(final Collection<ContactData> collectionContactData, final Long idCompany) {
+		
+		if(CollectionUtils.isEmpty(collectionContactData)){
+			throw new ValidationEntity("Debe tener asignado al menos algun dato de contacto");
+		}
+		
 		if(collectionContactData != null){
 			for(final ContactData contactData : collectionContactData) {
 				contactData.setIdCompany(idCompany);

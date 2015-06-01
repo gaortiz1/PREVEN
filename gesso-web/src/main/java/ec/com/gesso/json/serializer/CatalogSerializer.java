@@ -16,10 +16,10 @@ import ec.com.gesso.model.entity.Catalog;
 public class CatalogSerializer implements JsonSerializer<Catalog> {
 
 	@Override
-	public JsonElement serialize(Catalog arg0, Type arg1, JsonSerializationContext arg2) {
+	public JsonElement serialize(Catalog catalog, Type type, JsonSerializationContext arg2) {
 		JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("catalog_id", arg0.getId());
-        jsonObject.addProperty("catalog_name", arg0.getName());
+        jsonObject.addProperty("id", catalog.getId());
+        jsonObject.addProperty("name", catalog.getName());
         return jsonObject; 
 	}
 }
