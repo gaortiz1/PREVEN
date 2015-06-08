@@ -1,28 +1,46 @@
 /**
  * 
  */
-app.controller("gesso-create-company", ['$http', '$scope', 'SweetAlert', function($http, $scope, SweetAlert){
+app.controller("gesso-register-company", ['$http', '$scope', 'SweetAlert', 'companyModelFactory', function($http, $scope, SweetAlert, companyModelFactory){
 	controller = this;
+	$scope.datacompany = {};
+	companyModelFactory.getCompanyModel().success(function(data){
+		$scope.companyModel.id = data.id != null ? data.id : null;
+		$scope.companyModel.razonSocial = data.razonSocial != null ? data.razonSocial : null;
+		$scope.companyModel.ruc = data.ruc != null ? data.ruc : null;
+		$scope.companyModel.nombreComercial = data.nombreComercial != null ? data.nombreComercial : null;
+		$scope.companyModel.actividadComercialPrincipal = data.actividadComercialPrincipal != null ? data.actividadComercialPrincipal : null;
+		$scope.companyModel.actividadComercialSecuandaria = data.actividadComercialSecuandaria != null ? data.actividadComercialSecuandaria : null;
+		$scope.companyModel.typesCompanies = data.typesCompanies != null ? data.typesCompanies : null;
+		$scope.companyModel.typeProductiveSector = data.typeProductiveSector != null ? data.typeProductiveSector : null;
+		$scope.companyModel.telefono = data.telefono != null ? data.telefono : null;
+		$scope.companyModel.celular = data.celular != null ? data.celular : null;
+		$scope.companyModel.direccion = data.direccion != null ? data.direccion : null;
+		$scope.companyModel.email = data.email != null ? data.email : null;
+		$scope.companyModel.idGeopoliticalDivisionCountry = data.idGeopoliticalDivisionCountry != null ? data.idGeopoliticalDivisionCountry : null;
+		$scope.companyModel.idGeopoliticalDivisionProvince = data.idGeopoliticalDivisionProvince != null ? data.idGeopoliticalDivisionProvince : null;
+		$scope.companyModel.idGeopoliticalDivisionCity = data.idGeopoliticalDivisionCity != null ? data.idGeopoliticalDivisionCity : null;
+		$scope.companyModel.schedulesWork = data.schedulesWork != null ? data.schedulesWork : null;
+	});
+	
 	$scope.companyModel = {
 			id : null,	
-			nombreGrupoEmpresarial : null,
 			razonSocial : null,
 			ruc : null,
 			nombreComercial : null,
-			actividadComercialPrincipal : null,
-			actividadComercialSecuandaria : null,
+			actividadComercialPrincipal:{id : null, name : null},
+			actividadComercialSecuandaria: {id : null, name : null},
 			typesCompanies : null,
 			typeProductiveSector : null,
-			telefono : null,
-			celular : null,
-			direccion : null,
-			email : null,
+			telefono: { id : null, number : null },
+			celular:{ id : null, number : null },
+			direccion: {id: null, nameAddress: null},
+			email: {id: null, emailaddess: null},
 			idGeopoliticalDivisionCountry : null,
 			idGeopoliticalDivisionProvince : null,
 			idGeopoliticalDivisionCity : null,
 			schedulesWork : []
 		}
-	
 	$scope.countries = [];
 	$scope.provinces = [];
 	$scope.cities = [];
@@ -48,6 +66,37 @@ app.controller("gesso-create-company", ['$http', '$scope', 'SweetAlert', functio
         });
     }
 	
+	
+	$scope.loadProvinces = function(id){
+		if (id != null) {
+			$scope.provinces = [];
+			$scope.cities = [];
+			
+			var response = $http.get('geopoliticaldivision/children/'+id);
+			response.success(function (data, status, headers, config) {
+				$scope.provinces = data;
+			});
+
+			response.error(function (data, status, headers, config) {
+				alert("Error.");
+			});
+		}
+    }
+	
+	$scope.loadCities = function(id){
+		if (id != null) {
+			$scope.cities = [];
+			var response = $http.get('geopoliticaldivision/children/'+id);
+			response.success(function (data, status, headers, config) {
+				$scope.cities = data;
+			});
+
+			response.error(function (data, status, headers, config) {
+				alert("Error.");
+			});
+		}
+    }
+	
 	function loadCatalogTypesCompanies(){
 		$http.get('catalog/group/TP')
 			.success(function(data) {
@@ -69,35 +118,6 @@ app.controller("gesso-create-company", ['$http', '$scope', 'SweetAlert', functio
 			$scope.productivesSector = data;
         });
 	};
-	
-	
-	$scope.loadProvinces = function(item){
-		
-		$scope.provinces = [];
-		$scope.cities = [];
-        
-		var response = $http.get('geopoliticaldivision/children/'+item.id);
-        response.success(function (data, status, headers, config) {
-        	$scope.provinces = data;
-        });
-
-        response.error(function (data, status, headers, config) {
-            alert("Error.");
-        });
-    }
-	
-	$scope.loadCities = function(item){
-		$scope.cities = [];
-        
-		var response = $http.get('geopoliticaldivision/children/'+item.id);
-        response.success(function (data, status, headers, config) {
-        	$scope.cities = data;
-        });
-
-        response.error(function (data, status, headers, config) {
-            alert("Error.");
-        });
-    }
 	
 	loadCatalogTypesCompanies();
 	loadCatalogWorksHours();

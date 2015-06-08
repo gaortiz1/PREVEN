@@ -3,11 +3,15 @@
  */
 package ec.com.gesso.application.lang;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+
+import org.apache.commons.collections4.CollectionUtils;
 
 import ec.com.gesso.model.entity.ActivityEconomicCompany;
 import ec.com.gesso.model.entity.Company;
@@ -28,7 +32,7 @@ public class CompanyBuilder {
 	private String typeCompany;
 	private String typeProductiveSector;
 	private Long idGeopoliticalDivision;
-	private Set<String> namesActivityEconomicCompany = new TreeSet<String>();
+	private Collection<ActivityEconomicCompany> activities = new ArrayList<ActivityEconomicCompany>();
 	private Set<String> idsBusinessHour = new TreeSet<String>();
 	private Map<String, String> documents = new HashMap<String, String>();
 	
@@ -45,8 +49,12 @@ public class CompanyBuilder {
 		return this;
 	}
 
-	public CompanyBuilder addActivityEconomic(String nameActivityEconomic) {
-		this.namesActivityEconomicCompany.add(nameActivityEconomic);
+	public CompanyBuilder addActivityEconomic(Integer id, String idTypeActivity, String nameActivityEconomic) {
+		final ActivityEconomicCompany activityEconomicCompany = new ActivityEconomicCompany();
+		activityEconomicCompany.setId(id);
+		activityEconomicCompany.setIdTypeActivity(idTypeActivity);
+		activityEconomicCompany.setName(nameActivityEconomic);
+		this.activities.add(activityEconomicCompany);
 		return this;
 	}
 
@@ -75,18 +83,18 @@ public class CompanyBuilder {
 		return this;
 	}
 	
-	public CompanyBuilder addEmail(String email) {
-		this.contactDataBuilder.addEmail(email);
+	public CompanyBuilder addEmail(Long id, String emailaddess) {
+		this.contactDataBuilder.addEmail(id, emailaddess);
 		return this;
 	}
 	
-	public CompanyBuilder addAddress(String address) {
-		this.contactDataBuilder.addAddress(address);
+	public CompanyBuilder addAddress(Long id, String nameAddress) {
+		this.contactDataBuilder.addAddress(id, nameAddress);
 		return this;
 	}
 
-	public CompanyBuilder addPhone(String number, String idtypePhone) {
-		this.contactDataBuilder.addPhone(number, idtypePhone);
+	public CompanyBuilder addPhone(Long id, String number, String idtypePhone) {
+		this.contactDataBuilder.addPhone(id, number, idtypePhone);
 		return this;
 	}
 	
@@ -98,38 +106,36 @@ public class CompanyBuilder {
 		company.setIdProductiveSector(this.typeProductiveSector);
 		company.setIdGeopoliticalDivision(this.idGeopoliticalDivision);
 		
-		if(!this.namesActivityEconomicCompany.isEmpty()){
-			company.setActivityEconomicCompanyCollection(new HashSet<ActivityEconomicCompany>());
-			for(final String activityEconomic : this.namesActivityEconomicCompany){
-				ActivityEconomicCompany activityEconomicCompany = new ActivityEconomicCompany();
-				activityEconomicCompany.setName(activityEconomic);
-				company.getActivityEconomicCompanyCollection().add(activityEconomicCompany);
+		if(CollectionUtils.isNotEmpty(this.activities)){
+			company.setActivitiesEconomic(new HashSet<ActivityEconomicCompany>());
+			for(final ActivityEconomicCompany activityEconomicCompany : this.activities){
+				company.getActivitiesEconomic().add(activityEconomicCompany);
 			}
 		}
 		
 		if(!this.idsBusinessHour.isEmpty()) {
-			company.setScheduleWorkCollection(new HashSet<ScheduleWork>());
+			company.setWorkSchedules(new HashSet<ScheduleWork>());
 			for(final String idBusinessHour: this.idsBusinessHour) {
 				final ScheduleWork scheduleWork = new ScheduleWork();
 				scheduleWork.setIdScheduleWork(new ScheduleWorkPK());
 				scheduleWork.getIdScheduleWork().setIdBusinessHour(idBusinessHour);
-				company.getScheduleWorkCollection().add(scheduleWork);
+				company.getWorkSchedules().add(scheduleWork);
 			}
 		}
 		
 		if(!this.documents.isEmpty()) {
-			company.setDocumentCollection(new HashSet<Document>());
+			company.setDocuments(new HashSet<Document>());
 			for (final Map.Entry<String,String> entryDocument : this.documents.entrySet()) {
 				final Document document = new Document();
 				document.setIdDocument(new DocumentPK());
 				document.getIdDocument().setIdTypeDocument(entryDocument.getKey());
 				document.setValue(entryDocument.getValue());
-				company.getDocumentCollection().add(document);
+				company.getDocuments().add(document);
 			}
 		}
 		
-		company.setContactDataCollection(new HashSet<ContactData>());
-		company.getContactDataCollection().add(contactDataBuilder.build());
+		company.setContactsData(new HashSet<ContactData>());
+		company.getContactsData().add(contactDataBuilder.build());
 		
 		return company;
 	}

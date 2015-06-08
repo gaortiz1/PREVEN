@@ -14,24 +14,13 @@ INSERT INTO GROUP_CATALOG VALUES('TD', 'TIPO DOCUMENTO', 't');
 INSERT INTO GROUP_CATALOG VALUES('HT', 'HORARIO DE TRABAJO', 't');
 INSERT INTO GROUP_CATALOG VALUES('TP', 'TIPO COMPAÑIA', 't');
 INSERT INTO GROUP_CATALOG VALUES('TT', 'TIPO TELEFONO', 't');
-
-INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
-    VALUES ('NVUL', 'Nivel vulnerabilidad', TRUE);
-
-INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
-    VALUES ('PRO', 'Profesion', TRUE);
-
-INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
-    VALUES ('SEX', 'Sexo', TRUE);
-
-INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
-    VALUES ('NEDU', 'Nivel educacion', TRUE);
-
-INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
-    VALUES ('PROBA', 'Probabilidad', TRUE);
-	
-INSERT INTO group_catalog(id_groupcatalog, name_groupcatalog, status_group_catalog)
-    VALUES ('CONSE', 'Consecuencia', TRUE);
+INSERT INTO GROUP_CATALOG(id_groupcatalog, name_groupcatalog, status_group_catalog) VALUES ('NVUL', 'Nivel vulnerabilidad', TRUE);
+INSERT INTO GROUP_CATALOG(id_groupcatalog, name_groupcatalog, status_group_catalog) VALUES ('PRO', 'Profesion', TRUE);
+INSERT INTO GROUP_CATALOG(id_groupcatalog, name_groupcatalog, status_group_catalog) VALUES ('SEX', 'Sexo', TRUE);
+INSERT INTO GROUP_CATALOG(id_groupcatalog, name_groupcatalog, status_group_catalog) VALUES ('NEDU', 'Nivel educacion', TRUE);
+INSERT INTO GROUP_CATALOG(id_groupcatalog, name_groupcatalog, status_group_catalog) VALUES ('PROBA', 'Probabilidad', TRUE);
+INSERT INTO GROUP_CATALOG(id_groupcatalog, name_groupcatalog, status_group_catalog) VALUES ('CONSE', 'Consecuencia', TRUE);
+INSERT INTO GROUP_CATALOG(id_groupcatalog, name_groupcatalog, status_group_catalog) VALUES ('ACTIV', 'Tipos de actividades', TRUE);
 
 
 --CATALOG
@@ -48,60 +37,25 @@ INSERT INTO CATALOG VALUES('MED','TP', 'MEDIANA[50-199]', 'T');
 INSERT INTO CATALOG VALUES('GRAN','TP', 'GRANDE[200 Y MAS]', 'T');
 INSERT INTO CATALOG VALUES('CEL','TT', 'CELULAR', 'T');
 INSERT INTO CATALOG VALUES('TEL','TT', 'TELEFONO', 'T');
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('NIG', 'NVUL', 'Ninguna', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('EMB', 'NVUL', 'Embarazada', TRUE);
-
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('DIS', 'NVUL', 'Discapacidad', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('3EDAD', 'NVUL', '3ra Edad', TRUE);
-
-    INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('SIS', 'PRO', 'Sistemas', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('LIC', 'PRO', 'Licenciado', TRUE);
-
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('M', 'SEX', 'Masculino', TRUE);
-
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('F', 'SEX', 'Femenino', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('PRI', 'NEDU', 'Primaria', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('SEC', 'NEDU', 'Secundaria', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('UNI', 'NEDU', 'Universitaria', TRUE);
-	
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('LOW', 'PROBA', 'Baja', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('MEDI', 'PROBA', 'Media', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('HIGH', 'PROBA', 'Alta', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('LD', 'CONSE', 'Ligeramente dañino', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('D', 'CONSE', 'Dañino', TRUE);
-
-INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog)
-    VALUES ('ED', 'CONSE', 'Extremadamente dañino', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('NIG', 'NVUL', 'Ninguna', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('EMB', 'NVUL', 'Embarazada', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('DIS', 'NVUL', 'Discapacidad', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('3EDAD', 'NVUL', '3ra Edad', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('SIS', 'PRO', 'Sistemas', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('LIC', 'PRO', 'Licenciado', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('M', 'SEX', 'Masculino', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('F', 'SEX', 'Femenino', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('PRI', 'NEDU', 'Primaria', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('SEC', 'NEDU', 'Secundaria', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('UNI', 'NEDU', 'Universitaria', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('LOW', 'PROBA', 'Baja', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('MEDI', 'PROBA', 'Media', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('HIGH', 'PROBA', 'Alta', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('LD', 'CONSE', 'Ligeramente dañino', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('D', 'CONSE', 'Dañino', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('ED', 'CONSE', 'Extremadamente dañino', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('PRINC', 'ACTIV', 'Actividad principal', TRUE);
+INSERT INTO catalog(id_catalog, id_groupcatalog, name_catalog, status_catalog) VALUES ('SECUN', 'ACTIV', 'Actividad secundaria', TRUE);
 
 
 --Seguridades

@@ -19,10 +19,8 @@ import com.google.gson.GsonBuilder;
 
 import ec.com.gesso.common.exception.GessoException;
 import ec.com.gesso.inmemory.CatalogCache;
-import ec.com.gesso.inmemory.GeopoliticalDivisionCache;
 import ec.com.gesso.json.serializer.CatalogSerializer;
 import ec.com.gesso.model.entity.Catalog;
-import ec.com.gesso.model.entity.GeopoliticalDivision;
 
 /**
  * @author Gabriel

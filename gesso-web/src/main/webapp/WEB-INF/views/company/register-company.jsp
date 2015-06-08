@@ -4,7 +4,7 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="t"%>
 
 <h3>
-	<i class="fa fa-angle-right"></i> Creacion de compañia
+	<i class="fa fa-angle-right"></i> Registrar compañia
 </h3>
 
 <hr>
@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="panel-body">
-		<div class="row" ng-controller="gesso-create-company">
+		<div class="row" ng-controller="gesso-register-company">
 			<div class="col-lg-12">
 				<form class="form-horizontal" role="form" name="formCreateCompny">
 					<div class="form-group">
@@ -60,7 +60,7 @@
 						</label>
 						<div class="col-sm-6">
 							<input type="text"
-								ng-model="companyModel.actividadComercialPrincipal"
+								ng-model="companyModel.actividadComercialPrincipal.name"
 								placeholder="Actividad económica principal" class="form-control"
 								size="255" title="Actividad económica principal" required />
 						</div>
@@ -72,7 +72,7 @@
 						</label>
 						<div class="col-sm-6">
 							<input type="text"
-								ng-model="companyModel.actividadComercialSecuandaria"
+								ng-model="companyModel.actividadComercialSecuandaria.name"
 								placeholder="Actividad económica secundaria"
 								class="form-control" size="255"
 								title="Actividad económica secundaria" required />
@@ -84,7 +84,7 @@
 								code="page.label.pais" />
 						</label>
 						<div class="col-sm-6">
-							<ui-select ng-model="companyModel.idGeopoliticalDivisionCountry" on-select="loadProvinces($item)"> 
+							<ui-select ng-model="companyModel.idGeopoliticalDivisionCountry" on-select="loadProvinces($item.id)"> 
 								<ui-select-match placeholder="Escoga...">
 									{{$select.selected.name}}
 								</ui-select-match>
@@ -100,7 +100,7 @@
 								code="page.label.provincia" />
 						</label>
 						<div class="col-sm-6">
-							<ui-select ng-model="companyModel.idGeopoliticalDivisionProvince" on-select="loadCities($item)"> 
+							<ui-select ng-model="companyModel.idGeopoliticalDivisionProvince" on-select="loadCities($item.id)"> 
 								<ui-select-match placeholder="Escoga...">
 									{{$select.selected.name}}
 								</ui-select-match>
@@ -166,49 +166,49 @@
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
-								code="page.label.local.phone" />
+						<label class="col-sm-3 col-sm-3 control-label"> 
+							<spring:message code="page.label.local.phone" />
 						</label>
 
 						<div class="col-sm-9">
 							<span class="input-icon"> <input type="text"
-								ng-model="companyModel.telefono" class="input-mask-phone" required/> <i
+								ng-model="companyModel.telefono.number" class="input-mask-phone" required/> <i
 								class="ace-icon fa fa-phone"></i>
 							</span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
-								code="page.label.mobil.phone" />
+						<label class="col-sm-3 col-sm-3 control-label"> 
+							<spring:message code="page.label.mobil.phone" />
 						</label>
 
 						<div class="col-sm-9">
 							<span class="input-icon"> <input type="text"
-								ng-model="companyModel.celular" class="input-mask-phone" required/> <i
+								ng-model="companyModel.celular.number" class="input-mask-phone" required/> <i
 								class="ace-icon fa fa-phone"></i>
 							</span>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
-								code="page.label.direccion" />
+						<label class="col-sm-3 col-sm-3 control-label"> 
+							<spring:message code="page.label.direccion" />
 						</label>
 						<div class="col-sm-6">
-							<input type="text" ng-model="companyModel.direccion"
+							<input type="text" ng-model="companyModel.direccion.nameAddress"
 								placeholder="Dirección" class="form-control" size="255"
 								title="Dirección" required />
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 col-sm-3 control-label"> <spring:message
-								code="page.label.email" />
+						<label class="col-sm-3 col-sm-3 control-label"> 
+							<spring:message code="page.label.email" />
 						</label>
 
 						<div class="col-sm-6">
-							<input type="email" ng-model="companyModel.email"
+							<input type="email" ng-model="companyModel.email.emailaddess"
 								class="form-control" data-rel="tooltip"
 								placeholder="alguien@example.com" title="Email principal"
 								data-placement="bottom" maxlength="113" size="35" required /> <span

@@ -38,6 +38,9 @@ public class ActivityEconomicCompany implements Serializable {
     @Column(name = "id_company")
     private Long idCompany;
     
+    @Column(name = "ID_TYPE_ACTIVITY")
+    private String idTypeActivity;
+    
     @Basic(optional = false)
     @Column(name = "name_activity_economic")
     private String name;
@@ -49,6 +52,10 @@ public class ActivityEconomicCompany implements Serializable {
     @JoinColumn(name = "id_company", referencedColumnName = "id_company", insertable=false, updatable=false)
     @ManyToOne(fetch = FetchType.LAZY)
     private Company company;
+    
+    @JoinColumn(name = "ID_TYPE_ACTIVITY", referencedColumnName = "id_catalog", insertable=false, updatable=false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Catalog typeActivityEconomic;
 
 	/**
 	 * @return the id
@@ -76,6 +83,20 @@ public class ActivityEconomicCompany implements Serializable {
 	 */
 	public void setIdCompany(Long idCompany) {
 		this.idCompany = idCompany;
+	}
+
+	/**
+	 * @return the idTypeActivity
+	 */
+	public String getIdTypeActivity() {
+		return idTypeActivity;
+	}
+
+	/**
+	 * @param idTypeActivity the idTypeActivity to set
+	 */
+	public void setIdTypeActivity(String idTypeActivity) {
+		this.idTypeActivity = idTypeActivity;
 	}
 
 	/**
@@ -118,5 +139,19 @@ public class ActivityEconomicCompany implements Serializable {
 	 */
 	public void setCompany(Company company) {
 		this.company = company;
+	}
+
+	/**
+	 * @return the typeActivityEconomic
+	 */
+	public Catalog getTypeActivityEconomic() {
+		return typeActivityEconomic;
+	}
+
+	/**
+	 * @param typeActivityEconomic the typeActivityEconomic to set
+	 */
+	public void setTypeActivityEconomic(Catalog typeActivityEconomic) {
+		this.typeActivityEconomic = typeActivityEconomic;
 	}
 }

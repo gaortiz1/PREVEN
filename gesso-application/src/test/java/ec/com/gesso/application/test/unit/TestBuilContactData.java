@@ -26,17 +26,17 @@ public class TestBuilContactData {
 	
 	@Test
 	public void testaddEmail(){
-		assertEquals(Integer.parseInt("1"),contactDataBuilder.addEmail("a").build().getCollectionEmails().size());
+		assertEquals(Integer.parseInt("1"),contactDataBuilder.addEmail(null, "a").build().getEmails().size());
 	}
 	
 	@Test
 	public void testaddAddress(){
-		assertEquals(Integer.parseInt("1"),contactDataBuilder.addAddress("a").build().getCollectionAddress().size());
+		assertEquals(Integer.parseInt("1"),contactDataBuilder.addAddress(null, "a").build().getAddresses().size());
 	}
 	
 	@Test
 	public void testaddPhone(){
-		assertEquals(Integer.parseInt("1"),contactDataBuilder.addPhone("a", "099990909").build().getCollectionPhones().size());
+		assertEquals(Integer.parseInt("1"),contactDataBuilder.addPhone(null, "a", "099990909").build().getPhones().size());
 	}
 	
 	@Test

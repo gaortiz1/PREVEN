@@ -23,7 +23,7 @@ public class TestBuildCompany {
 	
 	@Test
 	public void testaddActivityEconomic() {
-		assertEquals(Integer.parseInt("2"), this.companyBuilder.addActivityEconomic("1").addActivityEconomic("2").build().getActivityEconomicCompanyCollection().size());
+		assertEquals(Integer.parseInt("2"), this.companyBuilder.addActivityEconomic(null,"PRINC", "1").addActivityEconomic(null,"SECUN", "2").build().getActivitiesEconomic().size());
 	}
 	
 	@Test
@@ -33,7 +33,7 @@ public class TestBuildCompany {
 	
 	@Test
 	public void testaddIdsScheduleWork() {
-		assertEquals(Integer.parseInt("2"), this.companyBuilder.addScheduleWork("J8").addScheduleWork("J9").build().getScheduleWorkCollection().size());
+		assertEquals(Integer.parseInt("2"), this.companyBuilder.addScheduleWork("J8").addScheduleWork("J9").build().getWorkSchedules().size());
 	}
 	
 	@Test
@@ -43,7 +43,7 @@ public class TestBuildCompany {
 	
 	@Test
 	public void testaddDocument() {
-		assertEquals(Integer.parseInt("1"), this.companyBuilder.addDocument("CI", "1717189235").build().getDocumentCollection().size());
+		assertEquals(Integer.parseInt("1"), this.companyBuilder.addDocument("CI", "1717189235").build().getDocuments().size());
 	}
 	
 

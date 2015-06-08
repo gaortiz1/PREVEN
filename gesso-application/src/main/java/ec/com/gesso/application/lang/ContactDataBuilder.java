@@ -1,10 +1,10 @@
 package ec.com.gesso.application.lang;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.Collection;
+import java.util.HashSet;
+
+import org.apache.commons.collections4.CollectionUtils;
 
 import ec.com.gesso.model.entity.Address;
 import ec.com.gesso.model.entity.ContactData;
@@ -18,53 +18,56 @@ import ec.com.gesso.model.entity.Phone;
  */
 public class ContactDataBuilder {
 	
-	private Set<String> emails = new TreeSet<String>();
-	private Set<String> address = new TreeSet<String>();
-	private Map<String, String> phones = new HashMap<String, String>();
+	private Collection<Address> addresses = new ArrayList<Address>();
+	private Collection<Phone> phones = new ArrayList<Phone>();
+	private Collection<Email> emails = new ArrayList<Email>();
 
-	public ContactDataBuilder addEmail(String email) {
+	public ContactDataBuilder addEmail(Long id, String emailaddess) {
+		final Email email = new Email();
+		email.setId(id);
+		email.setEmailaddess(emailaddess);
 		this.emails.add(email);
 		return this;
 	}
 	
-	public ContactDataBuilder addAddress(String address) {
-		this.address.add(address);
+	public ContactDataBuilder addAddress(Long id, String nameAddress) {
+		final Address address = new Address();
+		address.setId(id);
+		address.setNameAddress(nameAddress);
+		this.addresses.add(address);
 		return this;
 	}
 
-	public ContactDataBuilder addPhone(String number, String idtypePhone) {
-		this.phones.put(number, idtypePhone);
+	public ContactDataBuilder addPhone(Long id, String number, String idtypePhone) {
+		final Phone phone = new Phone();
+		phone.setId(id);
+		phone.setNumber(number);
+		phone.setIdtypePhone(idtypePhone);
+		this.phones.add(phone);
 		return this;
 	}
 	
 	public ContactData build(){
 		final ContactData contactData = new ContactData();
 		
-		if (!this.emails.isEmpty()){
-			contactData.setCollectionEmails(new ArrayList<Email>());
-			for (final String nameEmail : this.emails) {
-				Email email = new Email();
-				email.setEmailaddess(nameEmail);
-				contactData.getCollectionEmails().add(email);
+		if (CollectionUtils.isNotEmpty(this.emails)){
+			contactData.setEmails(new HashSet<Email>());
+			for (final Email email : this.emails) {
+				contactData.getEmails().add(email);
 			}
 		}
 		
-		if (!this.address.isEmpty()) {
-			contactData.setCollectionAddress(new ArrayList<Address>());
-			for (final String nameAddress : this.address) {
-				Address address = new Address();
-				address.setNameAddress(nameAddress);
-				contactData.getCollectionAddress().add(address);
+		if (CollectionUtils.isNotEmpty(this.addresses)) {
+			contactData.setAddresses(new HashSet<Address>());
+			for (final Address address : this.addresses) {
+				contactData.getAddresses().add(address);
 			}
 		}
 		
-		if (!this.phones.isEmpty()) {
-			contactData.setCollectionPhones(new ArrayList<Phone>());
-			for (final Map.Entry<String,String> entryPhone : this.phones.entrySet()) {
-				final Phone phone = new Phone();
-				phone.setIdtypePhone(entryPhone.getValue());
-				phone.setNumber(entryPhone.getKey());
-				contactData.getCollectionPhones().add(phone);
+		if (CollectionUtils.isNotEmpty(this.phones)) {
+			contactData.setPhones(new HashSet<Phone>());
+			for (final Phone phone : this.phones) {
+				contactData.getPhones().add(phone);
 			}
 		}
 		

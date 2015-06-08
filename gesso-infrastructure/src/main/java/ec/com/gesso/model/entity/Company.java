@@ -73,20 +73,17 @@ public class Company implements Serializable {
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     private Set<Subcompany> subcompanyCollection;
     
-    @OneToMany( mappedBy = "company1", fetch = FetchType.LAZY)
-    private Set<Subcompany> subcompanyCollection1;
+    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
+    private Set<ActivityEconomicCompany> activitiesEconomic;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Set<ActivityEconomicCompany> activityEconomicCompanyCollection;
+    private Set<Document> documents;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Set<Document> documentCollection;
+    private Set<ScheduleWork> workSchedules;
     
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Set<ScheduleWork> scheduleWorkCollection;
-    
-    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Set<ContactData> contactDataCollection;
+    private Set<ContactData> contactsData;
 
 	/**
 	 * @return the id
@@ -243,73 +240,59 @@ public class Company implements Serializable {
 	}
 
 	/**
-	 * @return the subcompanyCollection1
+	 * @return the activitiesEconomic
 	 */
-	public Set<Subcompany> getSubcompanyCollection1() {
-		return subcompanyCollection1;
+	public Set<ActivityEconomicCompany> getActivitiesEconomic() {
+		return activitiesEconomic;
 	}
 
 	/**
-	 * @param subcompanyCollection1 the subcompanyCollection1 to set
+	 * @param activitiesEconomic the activitiesEconomic to set
 	 */
-	public void setSubcompanyCollection1(Set<Subcompany> subcompanyCollection1) {
-		this.subcompanyCollection1 = subcompanyCollection1;
+	public void setActivitiesEconomic(
+			Set<ActivityEconomicCompany> activitiesEconomic) {
+		this.activitiesEconomic = activitiesEconomic;
 	}
 
 	/**
-	 * @return the activityEconomicCompanyCollection
+	 * @return the documents
 	 */
-	public Set<ActivityEconomicCompany> getActivityEconomicCompanyCollection() {
-		return activityEconomicCompanyCollection;
+	public Set<Document> getDocuments() {
+		return documents;
 	}
 
 	/**
-	 * @param activityEconomicCompanyCollection the activityEconomicCompanyCollection to set
+	 * @param documents the documents to set
 	 */
-	public void setActivityEconomicCompanyCollection(
-			Set<ActivityEconomicCompany> activityEconomicCompanyCollection) {
-		this.activityEconomicCompanyCollection = activityEconomicCompanyCollection;
+	public void setDocuments(Set<Document> documents) {
+		this.documents = documents;
 	}
 
 	/**
-	 * @return the documentCollection
+	 * @return the workSchedules
 	 */
-	public Set<Document> getDocumentCollection() {
-		return documentCollection;
+	public Set<ScheduleWork> getWorkSchedules() {
+		return workSchedules;
 	}
 
 	/**
-	 * @param documentCollection the documentCollection to set
+	 * @param workSchedules the workSchedules to set
 	 */
-	public void setDocumentCollection(Set<Document> documentCollection) {
-		this.documentCollection = documentCollection;
+	public void setWorkSchedules(Set<ScheduleWork> workSchedules) {
+		this.workSchedules = workSchedules;
 	}
 
 	/**
-	 * @return the scheduleWorkCollection
+	 * @return the contactsData
 	 */
-	public Set<ScheduleWork> getScheduleWorkCollection() {
-		return scheduleWorkCollection;
+	public Set<ContactData> getContactsData() {
+		return contactsData;
 	}
 
 	/**
-	 * @param scheduleWorkCollection the scheduleWorkCollection to set
+	 * @param contactsData the contactsData to set
 	 */
-	public void setScheduleWorkCollection(Set<ScheduleWork> scheduleWorkCollection) {
-		this.scheduleWorkCollection = scheduleWorkCollection;
-	}
-
-	/**
-	 * @return the contactDataCollection
-	 */
-	public Set<ContactData> getContactDataCollection() {
-		return contactDataCollection;
-	}
-
-	/**
-	 * @param contactDataCollection the contactDataCollection to set
-	 */
-	public void setContactDataCollection(Set<ContactData> contactDataCollection) {
-		this.contactDataCollection = contactDataCollection;
+	public void setContactsData(Set<ContactData> contactsData) {
+		this.contactsData = contactsData;
 	}
 }

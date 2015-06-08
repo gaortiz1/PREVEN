@@ -28,7 +28,7 @@ public class ServiceCompanyMail implements IServiceMail<Company> {
 	public void send(final Company company) {
 		final EmailDefaultFrom email = new EmailDefaultFrom();
 		email.setSubject("Registró exitoso");
-		email.setTo(this.buildEmailaddess(company.getContactDataCollection()));
+		email.setTo(this.buildEmailaddess(company.getContactsData()));
 		
 		final StringBuilder builderMessageEmail = new StringBuilder();
 		builderMessageEmail.append("La compañia")
@@ -47,8 +47,8 @@ public class ServiceCompanyMail implements IServiceMail<Company> {
 		if (CollectionUtils.isNotEmpty(contactDatas)) {
 			final Collection<String> emailsAddresses = new ArrayList<String>();
 			for (ContactData contactData : contactDatas) {
-				if (CollectionUtils.isNotEmpty(contactData.getCollectionEmails())) {
-					for (ec.com.gesso.model.entity.Email entityMail : contactData.getCollectionEmails()) {
+				if (CollectionUtils.isNotEmpty(contactData.getEmails())) {
+					for (ec.com.gesso.model.entity.Email entityMail : contactData.getEmails()) {
 						emailsAddresses.add(entityMail.getEmailaddess());
 					}
 				}

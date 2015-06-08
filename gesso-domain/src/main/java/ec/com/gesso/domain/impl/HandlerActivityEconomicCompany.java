@@ -43,8 +43,8 @@ public class HandlerActivityEconomicCompany extends BaseHandlerEntity<ActivityEc
 			throw new ValidationEntity("El campo id company es null");
 		}
 		
-		if (null == activityEconomicCompany.getIdCompany()) {
-			throw new ValidationEntity("El campo id compania es null");
+		if (null == activityEconomicCompany.getIdTypeActivity()) {
+			throw new ValidationEntity("El campo id type activity es null");
 		}
 	}
 

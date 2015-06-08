@@ -31,26 +31,26 @@ public class HandlerContactData extends BaseHandlerEntity<ContactData> {
 			this.repositoryEntity.update(contactData);
 		}
 		
-		if(contactData.getCollectionEmails() != null){
+		if(contactData.getEmails() != null){
 			
-			for (final Email email : contactData.getCollectionEmails()){
+			for (final Email email : contactData.getEmails()){
 				email.setIdContactData(contactData.getId());
 				this.handlerEmail.register(email);
 			}
 			
 		}
 		
-		if(contactData.getCollectionAddress() != null){
+		if(contactData.getAddresses() != null){
 			
-			for (final Address address : contactData.getCollectionAddress()){
+			for (final Address address : contactData.getAddresses()){
 				address.setIdContactData(contactData.getId());
 				this.handlerAddress.register(address);
 			}
 		}
 		
-		if(contactData.getCollectionPhones() != null){
+		if(contactData.getPhones() != null){
 			
-			for (final Phone phone: contactData.getCollectionPhones()) {
+			for (final Phone phone: contactData.getPhones()) {
 				phone.setIdContactData(contactData.getId());
 				this.handlerPhone.register(phone);
 			}

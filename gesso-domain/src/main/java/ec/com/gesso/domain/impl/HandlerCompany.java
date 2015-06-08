@@ -41,13 +41,13 @@ public class HandlerCompany extends BaseHandlerEntity<Company> {
 			this.repositoryEntity.update(company);
 		}
 		
-		this.registerCollectionDocument(company.getDocumentCollection(), company.getId());
+		this.registerCollectionDocument(company.getDocuments(), company.getId());
 		
-		this.registerCollectionScheduleWork(company.getScheduleWorkCollection(), company.getId());
+		this.registerCollectionScheduleWork(company.getWorkSchedules(), company.getId());
 		
-		this.registerCollectionActivityEconomicCompany(company.getActivityEconomicCompanyCollection(), company.getId());
+		this.registerCollectionActivityEconomicCompany(company.getActivitiesEconomic(), company.getId());
 		
-		this.registerCollectionContactData(company.getContactDataCollection(), company.getId());
+		this.registerCollectionContactData(company.getContactsData(), company.getId());
 		
 		return company;
 	}

@@ -5,6 +5,11 @@ package ec.com.gesso.model.company;
 
 import java.io.Serializable;
 
+import ec.com.gesso.model.activity.ActivityEconomicModel;
+import ec.com.gesso.model.contactdata.AddressModel;
+import ec.com.gesso.model.contactdata.EmailModel;
+import ec.com.gesso.model.contactdata.PhoneModel;
+
 /**
  * @author Gabriel
  *
@@ -16,23 +21,41 @@ public class CompanyModel implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	private Long id;
 	private String nombreGrupoEmpresarial;
 	private String razonSocial;
 	private String ruc;
 	private String nombreComercial;
-	private String actividadComercialPrincipal;
-	private String actividadComercialSecuandaria;
+	
+	private ActivityEconomicModel actividadComercialPrincipal;
+	private ActivityEconomicModel actividadComercialSecuandaria;
 	private String typesCompanies;
 	private String typeProductiveSector;
-	private String telefono;
-	private String celular;
-	private String direccion;
-	private String email;
+	
+	private PhoneModel telefono;
+	private PhoneModel celular;
+	private AddressModel direccion;
+	private EmailModel email;
+	
 	private Long idGeopoliticalDivisionCountry;
 	private Long idGeopoliticalDivisionProvince;
 	private Long idGeopoliticalDivisionCity;
 	
 	private String[] schedulesWork;
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the nombreGrupoEmpresarial
@@ -93,28 +116,30 @@ public class CompanyModel implements Serializable {
 	/**
 	 * @return the actividadComercialPrincipal
 	 */
-	public String getActividadComercialPrincipal() {
+	public ActivityEconomicModel getActividadComercialPrincipal() {
 		return actividadComercialPrincipal;
 	}
 
 	/**
 	 * @param actividadComercialPrincipal the actividadComercialPrincipal to set
 	 */
-	public void setActividadComercialPrincipal(String actividadComercialPrincipal) {
+	public void setActividadComercialPrincipal(
+			ActivityEconomicModel actividadComercialPrincipal) {
 		this.actividadComercialPrincipal = actividadComercialPrincipal;
 	}
 
 	/**
 	 * @return the actividadComercialSecuandaria
 	 */
-	public String getActividadComercialSecuandaria() {
+	public ActivityEconomicModel getActividadComercialSecuandaria() {
 		return actividadComercialSecuandaria;
 	}
 
 	/**
 	 * @param actividadComercialSecuandaria the actividadComercialSecuandaria to set
 	 */
-	public void setActividadComercialSecuandaria(String actividadComercialSecuandaria) {
+	public void setActividadComercialSecuandaria(
+			ActivityEconomicModel actividadComercialSecuandaria) {
 		this.actividadComercialSecuandaria = actividadComercialSecuandaria;
 	}
 
@@ -149,56 +174,56 @@ public class CompanyModel implements Serializable {
 	/**
 	 * @return the telefono
 	 */
-	public String getTelefono() {
+	public PhoneModel getTelefono() {
 		return telefono;
 	}
 
 	/**
 	 * @param telefono the telefono to set
 	 */
-	public void setTelefono(String telefono) {
+	public void setTelefono(PhoneModel telefono) {
 		this.telefono = telefono;
 	}
 
 	/**
 	 * @return the celular
 	 */
-	public String getCelular() {
+	public PhoneModel getCelular() {
 		return celular;
 	}
 
 	/**
 	 * @param celular the celular to set
 	 */
-	public void setCelular(String celular) {
+	public void setCelular(PhoneModel celular) {
 		this.celular = celular;
 	}
 
 	/**
 	 * @return the direccion
 	 */
-	public String getDireccion() {
+	public AddressModel getDireccion() {
 		return direccion;
 	}
 
 	/**
 	 * @param direccion the direccion to set
 	 */
-	public void setDireccion(String direccion) {
+	public void setDireccion(AddressModel direccion) {
 		this.direccion = direccion;
 	}
 
 	/**
 	 * @return the email
 	 */
-	public String getEmail() {
+	public EmailModel getEmail() {
 		return email;
 	}
 
 	/**
 	 * @param email the email to set
 	 */
-	public void setEmail(String email) {
+	public void setEmail(EmailModel email) {
 		this.email = email;
 	}
 
@@ -226,7 +251,8 @@ public class CompanyModel implements Serializable {
 	/**
 	 * @param idGeopoliticalDivisionProvince the idGeopoliticalDivisionProvince to set
 	 */
-	public void setIdGeopoliticalDivisionProvince(Long idGeopoliticalDivisionProvince) {
+	public void setIdGeopoliticalDivisionProvince(
+			Long idGeopoliticalDivisionProvince) {
 		this.idGeopoliticalDivisionProvince = idGeopoliticalDivisionProvince;
 	}
 
@@ -257,5 +283,4 @@ public class CompanyModel implements Serializable {
 	public void setSchedulesWork(String[] schedulesWork) {
 		this.schedulesWork = schedulesWork;
 	}
-	
 }

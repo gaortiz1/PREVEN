@@ -6,7 +6,7 @@
 package ec.com.gesso.model.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.Set;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -56,13 +56,13 @@ public class ContactData implements Serializable {
     private Company company;
     
     @OneToMany(mappedBy = "contactData", fetch = FetchType.LAZY)
-    private Collection<Phone> collectionPhones;
+    private Set<Phone> phones;
     
     @OneToMany(mappedBy = "contactData", fetch = FetchType.LAZY)
-    private Collection<Email> collectionEmails;
+    private Set<Email> emails;
     
     @OneToMany(mappedBy = "contactData", fetch = FetchType.LAZY)
-    private Collection<Address> collectionAddress;
+    private Set<Address> addresses;
 
 	/**
 	 * @return the id
@@ -149,44 +149,44 @@ public class ContactData implements Serializable {
 	}
 
 	/**
-	 * @return the collectionPhones
+	 * @return the phones
 	 */
-	public Collection<Phone> getCollectionPhones() {
-		return collectionPhones;
+	public Set<Phone> getPhones() {
+		return phones;
 	}
 
 	/**
-	 * @param collectionPhones the collectionPhones to set
+	 * @param phones the phones to set
 	 */
-	public void setCollectionPhones(Collection<Phone> collectionPhones) {
-		this.collectionPhones = collectionPhones;
+	public void setPhones(Set<Phone> phones) {
+		this.phones = phones;
 	}
 
 	/**
-	 * @return the collectionEmails
+	 * @return the emails
 	 */
-	public Collection<Email> getCollectionEmails() {
-		return collectionEmails;
+	public Set<Email> getEmails() {
+		return emails;
 	}
 
 	/**
-	 * @param collectionEmails the collectionEmails to set
+	 * @param emails the emails to set
 	 */
-	public void setCollectionEmails(Collection<Email> collectionEmails) {
-		this.collectionEmails = collectionEmails;
+	public void setEmails(Set<Email> emails) {
+		this.emails = emails;
 	}
 
 	/**
-	 * @return the collectionAddress
+	 * @return the addresses
 	 */
-	public Collection<Address> getCollectionAddress() {
-		return collectionAddress;
+	public Set<Address> getAddresses() {
+		return addresses;
 	}
 
 	/**
-	 * @param collectionAddress the collectionAddress to set
+	 * @param addresses the addresses to set
 	 */
-	public void setCollectionAddress(Collection<Address> collectionAddress) {
-		this.collectionAddress = collectionAddress;
+	public void setAddresses(Set<Address> addresses) {
+		this.addresses = addresses;
 	}
 }

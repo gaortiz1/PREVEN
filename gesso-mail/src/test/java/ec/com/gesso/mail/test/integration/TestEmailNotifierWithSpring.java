@@ -52,7 +52,7 @@ public class TestEmailNotifierWithSpring {
 	public void shouldSendMailWithModelEmailWithArray() {
 		this.email = new Email();
 		this.email.setFrom("inforprueba@plasemco.com");
-		this.email.setTo("emailpruebas@hotmail.com", "bisbiridolfo@hotmail.com");
+		this.email.setTo("emailpruebas@hotmail.com", "emailpruebas@hotmail.com");
 		this.email.setBcc("a@a.com", "a@a.com");
 		this.email.setCc("a@a.com", "a@a.com");
 		this.email.setSubject("Test");
