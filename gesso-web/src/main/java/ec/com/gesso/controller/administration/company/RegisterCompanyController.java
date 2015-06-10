@@ -219,6 +219,6 @@ public class RegisterCompanyController {
 			throw new GessoException(e);
 		}
 		
-		return "redirect:/company-administration";
+		return "redirect:#/company-administration";
     }
 }

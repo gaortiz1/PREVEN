@@ -1,10 +1,10 @@
 /**
  * 
  */
-app.controller("gesso-register-company", ['$http', '$scope', 'SweetAlert', 'companyModelFactory', function($http, $scope, SweetAlert, companyModelFactory){
+app.controller("gesso-register-company", ['$http', '$scope', 'SweetAlert', 'companyModelFactory', '$routeParams', function($http, $scope, SweetAlert, companyModelFactory, $routeParams){
 	controller = this;
 	$scope.datacompany = {};
-	companyModelFactory.getCompanyModel().success(function(data){
+	companyModelFactory.getCompanyModel($routeParams.id).success(function(data){
 		$scope.companyModel.id = data.id != null ? data.id : null;
 		$scope.companyModel.razonSocial = data.razonSocial != null ? data.razonSocial : null;
 		$scope.companyModel.ruc = data.ruc != null ? data.ruc : null;
