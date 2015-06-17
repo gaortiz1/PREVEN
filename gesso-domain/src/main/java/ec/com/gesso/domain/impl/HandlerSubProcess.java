@@ -22,9 +22,9 @@ public class HandlerSubProcess extends BaseHandlerEntity<SubProcess> {
 	 */
 	public SubProcess register(SubProcess subProcess) {
 		this.validarSubProcess(subProcess);
+		subProcess.setState(Boolean.TRUE);
 		
 		if (subProcess.getId() == null) {
-			subProcess.setState(Boolean.TRUE);
 			this.repositoryEntity.add(subProcess);
 		} else {
 			this.repositoryEntity.update(subProcess);

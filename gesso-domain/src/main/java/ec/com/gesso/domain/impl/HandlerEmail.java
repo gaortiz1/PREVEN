@@ -19,9 +19,8 @@ public class HandlerEmail extends BaseHandlerEntity<Email> {
 	public Email register(final Email email) {
 		
 		this.validarEmail(email);
-		
+		email.setState(Boolean.TRUE);
 		if (email.getId() == null){
-			email.setState(Boolean.TRUE);
 			this.repositoryEntity.add(email);
 		} else {
 			this.repositoryEntity.update(email);

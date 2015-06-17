@@ -181,7 +181,7 @@ public class RegisterCompanyController {
 	}
 	
 	@RequestMapping(value = "/register-company", method = RequestMethod.POST)
-    public @ResponseBody String registerCompany(@RequestBody CompanyModel companyModel, BindingResult bindingResult) throws GessoException {
+    public @ResponseBody Company registerCompany(@RequestBody CompanyModel companyModel, BindingResult bindingResult) throws GessoException {
 		
 		try {
     		
@@ -212,13 +212,11 @@ public class RegisterCompanyController {
     		
     		final Company company = companyBuilder.build();
     		
-    		GessoServiceFactory.getInstance().getServiceCompany().register(company);
+    		return GessoServiceFactory.getInstance().getServiceCompany().register(company);
     		
 		} catch (Exception e) {
 			LOGGER.error("A courrido un error", e);
 			throw new GessoException(e);
 		}
-		
-		return "redirect:#/company-administration";
     }
 }

@@ -23,9 +23,8 @@ public class HandlerContactData extends BaseHandlerEntity<ContactData> {
 	public ContactData register(final ContactData contactData) {
 		
 		this.validarContactData(contactData);
-		
+		contactData.setState(Boolean.TRUE);
 		if (contactData.getId() == null) {
-			contactData.setState(Boolean.TRUE);
 			this.repositoryEntity.add(contactData);
 		} else {
 			this.repositoryEntity.update(contactData);

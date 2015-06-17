@@ -18,9 +18,8 @@ public class HandlerJob extends BaseHandlerEntity<Job> {
 	 */
 	public Job register(final Job job) {
 		this.validarJob(job);
-		
+		job.setState(Boolean.TRUE);
 		if (job.getId() == null) {
-			job.setState(Boolean.TRUE);
 			this.repositoryEntity.add(job);
 		} else {
 			this.repositoryEntity.update(job);

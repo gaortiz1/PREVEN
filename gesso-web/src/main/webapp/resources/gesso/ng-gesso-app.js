@@ -49,6 +49,11 @@ app.config([ '$routeProvider', '$locationProvider', '$compileProvider',
 				templateUrl : 'process-administration',
 
 			});
+			
+			$routeProvider.when('/create-risk', {
+				templateUrl : 'risk/register-risk'
+
+			});
 
 			$routeProvider.otherwise({
 				redirectTo : 'login'

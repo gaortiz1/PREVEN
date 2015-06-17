@@ -19,9 +19,8 @@ public class HandlerActivityEconomicCompany extends BaseHandlerEntity<ActivityEc
 	public ActivityEconomicCompany register(final ActivityEconomicCompany activityEconomicCompany) {
 		
 		this.validarActivityEconomicCompany(activityEconomicCompany);
-		
+		activityEconomicCompany.setState(Boolean.TRUE);
 		if (activityEconomicCompany.getId() == null){
-			activityEconomicCompany.setState(Boolean.TRUE);
 			this.repositoryEntity.add(activityEconomicCompany);
 		} else {
 			this.repositoryEntity.update(activityEconomicCompany);

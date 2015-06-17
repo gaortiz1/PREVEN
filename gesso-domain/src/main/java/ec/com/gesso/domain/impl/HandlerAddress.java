@@ -19,9 +19,8 @@ public class HandlerAddress extends BaseHandlerEntity<Address> {
 	public Address register(final Address address) {
 		
 		this.validarAddress(address);
-		
+		address.setState(Boolean.TRUE);
 		if (address.getId() == null) {
-			address.setState(Boolean.TRUE);
 			this.repositoryEntity.add(address);
 		} else{
 			this.repositoryEntity.update(address);

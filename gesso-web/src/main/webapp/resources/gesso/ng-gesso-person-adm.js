@@ -1,131 +1,128 @@
 /**
  * 
  */
-
-app.controller("gesso-person-adm", ['$http', '$scope', 'SweetAlert', function($http, $scope, SweetAlert){
+app.controller("gesso-register-company", ['$http', '$scope', 'SweetAlert', 'companyModelFactory', '$routeParams', '$location', function($http, $scope, SweetAlert, companyModelFactory, $routeParams, $location){
 	controller = this;
-	controller.selectedCountry = [];
-	controller.selectedCatVul = [];
-	controller.selectedProcess = [];
-    controller.selectedSubProcess = [];
-    controller.selectedJob = [];
-
-	controller.selectedProfesion = [];
-    controller.lstSubProcess = [];
-    controller.lstJob = [];
+	$scope.datacompany = {};
+	companyModelFactory.getCompanyModel($routeParams.id).success(function(data){
+		$scope.companyModel.id = data.id != null ? data.id : null;
+		$scope.companyModel.razonSocial = data.razonSocial != null ? data.razonSocial : null;
+		$scope.companyModel.ruc = data.ruc != null ? data.ruc : null;
+		$scope.companyModel.nombreComercial = data.nombreComercial != null ? data.nombreComercial : null;
+		$scope.companyModel.actividadComercialPrincipal = data.actividadComercialPrincipal != null ? data.actividadComercialPrincipal : null;
+		$scope.companyModel.actividadComercialSecuandaria = data.actividadComercialSecuandaria != null ? data.actividadComercialSecuandaria : null;
+		$scope.companyModel.typesCompanies = data.typesCompanies != null ? data.typesCompanies : null;
+		$scope.companyModel.typeProductiveSector = data.typeProductiveSector != null ? data.typeProductiveSector : null;
+		$scope.companyModel.telefono = data.telefono != null ? data.telefono : null;
+		$scope.companyModel.celular = data.celular != null ? data.celular : null;
+		$scope.companyModel.direccion = data.direccion != null ? data.direccion : null;
+		$scope.companyModel.email = data.email != null ? data.email : null;
+		$scope.companyModel.idGeopoliticalDivisionCountry = data.idGeopoliticalDivisionCountry != null ? data.idGeopoliticalDivisionCountry : null;
+		$scope.companyModel.idGeopoliticalDivisionProvince = data.idGeopoliticalDivisionProvince != null ? data.idGeopoliticalDivisionProvince : null;
+		$scope.companyModel.idGeopoliticalDivisionCity = data.idGeopoliticalDivisionCity != null ? data.idGeopoliticalDivisionCity : null;
+		$scope.companyModel.schedulesWork = data.schedulesWork != null ? data.schedulesWork : null;
+	});
 	
-	controller.personAdministrationModel = {
-		country : [],	
-		levelVulnerability: [],
-		lstProfesion : [],
-		lstProcess: [],
-		person:{
-			idPerson:null,
-		    userDto:null,
-		    personalEmail:null,
-		    firstName:null,
-		    lastName:null,
-		    documentNumber:null,
-			idDivgeoPol:null,
-		    idSexCatalog:null,
-		    idCatalogVulnerability:null,
-		    lactationPeriod:null,
-		    personalLocalPhone:null,
-		    personalMobilPhone:null,
-		    idCodeProfesion:null,
-		    middleName:null,
-		    secondLastName:null,
-		    dateOfBirth:null,
-		    statusPerson:null,
-		    disability:null,
-		    percentageDisability:null,
-		    occupationalAccident:null,
-		    occupationalAccidentDetail:null,
-		    userId:null,
-		    securityTrainingDetail:null,
-		    paiscodigo:null,
-		    dateJobStart:null,
-		    idEducaionLevelCatalog:null,
-		    workReview:null,
-		    lastCompany:null,
-		    securityUnitMember:null,
-		    securityCommitteeMember:null,
-		    idProcess:null,
-		    idSubProcess:null,
-		    idJob:null,
+	$scope.companyModel = {
+			id : null,	
+			razonSocial : null,
+			ruc : null,
+			nombreComercial : null,
+			actividadComercialPrincipal:{id : null, name : null},
+			actividadComercialSecuandaria: {id : null, name : null},
+			typesCompanies : null,
+			typeProductiveSector : null,
+			telefono: { id : null, number : null },
+			celular:{ id : null, number : null },
+			direccion: {id: null, nameAddress: null},
+			email: {id: null, emailaddess: null},
+			idGeopoliticalDivisionCountry : null,
+			idGeopoliticalDivisionProvince : null,
+			idGeopoliticalDivisionCity : null,
+			schedulesWork : []
 		}
-	}
+	$scope.countries = [];
+	$scope.provinces = [];
+	$scope.cities = [];
 	
-	controller.loadInitParameters = function(){
-		var response = $http.get('person-administration_json.json');
-        response.success(function (data, status, headers, config) {
-        	controller.personAdministrationModel = data;
-        });
-    
-        response.error(function (data, status, headers, config) {
-            alert("Error.");
-        });
-        
-        $('.date-picker').datepicker({
-        	format:'yyyy/MM/dd',
-			autoclose: true,
-			todayHighlight: true
-		}).next().on(ace.click_event, function(){
-			$(this).prev().focus();
-		});
-        
-        $.mask.definitions['~']='[+-]';
-        $('.input-mask-date').mask('99/99/9999');
-        $('.input-mask-phone').mask('(999) 999-9999');
-	}
-
-
-    controller.loadSubProcess = function (item, model){
-        controller.selectedSubProcess = [];
-        controller.selectedJob = [];
-        controller.lstSubProcess = [];
-        controller.lstJob = [];
-
-
-        var response = $http.get('person-load-sub-process/'+item.id);
-        response.success(function (data, status, headers, config) {
-            controller.lstSubProcess = data;
-        });
-
-        response.error(function (data, status, headers, config) {
-            alert("Error.");
-        });
-    };
-
-
-    controller.loadJob = function(item, model){
-        controller.selectedJob = [];
-        var response = $http.get('person-load-jobs/'+item.id);
-        response.success(function (data, status, headers, config) {
-            controller.lstJob = data;
-        });
-
-        response.error(function (data, status, headers, config) {
-            alert("Error.");
-        });
-    }
-
-    controller.createPerson = function(){
-    	if(controller.selectedJob){
-            controller.personAdministrationModel.person.idJob = controller.selectedJob.id;
-        }
-        var res = $http.post('create-person_json', controller.personAdministrationModel.person);
+	$scope.typesCompanies = [];
+	$scope.worksHours = [];
+	$scope.productivesSector = [];
+	
+	$http({
+		method : 'GET',
+		url : 'geopoliticaldivision/root',
+		}).success(function(result) {
+		$scope.countries = result;
+	});	
+	
+	$scope.createCompany = function(){
+		console.log($scope.companyModel);
+    	var res = $http.post('register-company', JSON.stringify($scope.companyModel));
         res.success(function(data, status, headers, config) {
-            controller.message = data;
             SweetAlert.swal("Ok","Registro creado", "success");
+			$location.path('/company-administration');
         });
         res.error(function(data, status, headers, config) {
             alert( "failure message: " + JSON.stringify({data: data}));
         });
     }
-    
-  
-    
-    controller.loadInitParameters();
-    
+	
+	
+	$scope.loadProvinces = function(id){
+		if (id != null) {
+			$scope.provinces = [];
+			$scope.cities = [];
+			
+			var response = $http.get('geopoliticaldivision/children/'+id);
+			response.success(function (data, status, headers, config) {
+				$scope.provinces = data;
+			});
+
+			response.error(function (data, status, headers, config) {
+				alert("Error.");
+			});
+		}
+    }
+	
+	$scope.loadCities = function(id){
+		if (id != null) {
+			$scope.cities = [];
+			var response = $http.get('geopoliticaldivision/children/'+id);
+			response.success(function (data, status, headers, config) {
+				$scope.cities = data;
+			});
+
+			response.error(function (data, status, headers, config) {
+				alert("Error.");
+			});
+		}
+    }
+	
+	function loadCatalogTypesCompanies(){
+		$http.get('catalog/group/TP')
+			.success(function(data) {
+			$scope.typesCompanies = data;
+        });
+	};
+	
+	function loadCatalogWorksHours(){
+		$http.get('catalog/group/HT')
+			.success(function(data) {
+			$scope.worksHours = data;
+        });
+	};
+
+	
+	function loadCatalogProductivesSector(){
+		$http.get('catalog/group/SP')
+			.success(function(data) {
+			$scope.productivesSector = data;
+        });
+	};
+	
+	loadCatalogTypesCompanies();
+	loadCatalogWorksHours();
+	loadCatalogProductivesSector();
+	
 }]);

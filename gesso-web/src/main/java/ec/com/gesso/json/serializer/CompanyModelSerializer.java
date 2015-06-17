@@ -5,8 +5,10 @@ package ec.com.gesso.json.serializer;
 
 import java.lang.reflect.Type;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
@@ -30,7 +32,15 @@ public class CompanyModelSerializer implements JsonSerializer<CompanyModel> {
         jsonCompanyModel.addProperty("idGeopoliticalDivisionCountry", companyModel.getIdGeopoliticalDivisionCountry());
         jsonCompanyModel.addProperty("idGeopoliticalDivisionProvince", companyModel.getIdGeopoliticalDivisionProvince());
         jsonCompanyModel.addProperty("idGeopoliticalDivisionCity", companyModel.getIdGeopoliticalDivisionCity());
-        jsonCompanyModel.addProperty("schedulesWork", companyModel.getSchedulesWork().toString());
+        
+        JsonArray jsonIntList=new JsonArray();
+        
+        for (String idSchedulesWork : companyModel.getSchedulesWork()) {
+        	jsonIntList.add(new JsonPrimitive(idSchedulesWork));
+		}
+        
+        jsonCompanyModel.add("schedulesWork", jsonIntList);
+        
         
         JsonObject jsonActivityEconomicModelPrincipal = new JsonObject();
         jsonActivityEconomicModelPrincipal.addProperty("id", companyModel.getActividadComercialPrincipal().getId());

@@ -158,8 +158,8 @@
 								code="page.label.company.work.hours" />
 						</label>
 						<div class="col-sm-6">
-							<label ng-repeat="workHour in worksHours"> 
-								<input type="checkbox" checklist-model="companyModel.schedulesWork" checklist-value="workHour.id"> {{workHour.name}}
+							<label ng-repeat="(key, workHour) in worksHours"> 
+								<input type="checkbox" ng-model="companyModel.schedulesWork[key]" ng-true-value="'{{workHour.id}}'" ng-false-value="undefined"> {{workHour.name}}
 							</label>
 
 						</div>

@@ -19,9 +19,8 @@ public class HandlerPhone extends BaseHandlerEntity<Phone> {
 	public Phone register(final Phone phone) {
 		
 		this.validarPhone(phone);
-		
+		phone.setState(Boolean.TRUE);
 		if (phone.getId() == null) {
-			phone.setState(Boolean.TRUE);
 			this.repositoryEntity.add(phone);
 		} else{
 			this.repositoryEntity.update(phone);

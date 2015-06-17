@@ -33,9 +33,8 @@ public class HandlerCompany extends BaseHandlerEntity<Company> {
 	public Company register(final Company company) {
 		
 		this.validarCompany(company);
-		
+		company.setState(Boolean.TRUE);
 		if (company.getId() == null) {
-			company.setState(Boolean.TRUE);
 			this.repositoryEntity.add(company);
 		} else{
 			this.repositoryEntity.update(company);

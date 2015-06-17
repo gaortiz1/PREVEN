@@ -28,8 +28,8 @@ public class HandlerProcess extends BaseHandlerEntity<Process> {
 			throw new ValidationEntity("El campo Description es null");
 		}
 		
+		process.setStatus(Boolean.TRUE);
 		if (process.getId() == null) {
-			process.setStatus(Boolean.TRUE);
 			this.repositoryEntity.add(process);
 		} else {
 			this.repositoryEntity.update(process);

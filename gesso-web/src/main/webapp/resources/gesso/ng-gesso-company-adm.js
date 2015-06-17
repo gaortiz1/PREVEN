@@ -1,7 +1,7 @@
 /**
  * 
  */
-app.controller("gesso-register-company", ['$http', '$scope', 'SweetAlert', 'companyModelFactory', '$routeParams', function($http, $scope, SweetAlert, companyModelFactory, $routeParams){
+app.controller("gesso-register-company", ['$http', '$scope', 'SweetAlert', 'companyModelFactory', '$routeParams', '$location', function($http, $scope, SweetAlert, companyModelFactory, $routeParams, $location){
 	controller = this;
 	$scope.datacompany = {};
 	companyModelFactory.getCompanyModel($routeParams.id).success(function(data){
@@ -60,6 +60,7 @@ app.controller("gesso-register-company", ['$http', '$scope', 'SweetAlert', 'comp
     	var res = $http.post('register-company', JSON.stringify($scope.companyModel));
         res.success(function(data, status, headers, config) {
             SweetAlert.swal("Ok","Registro creado", "success");
+			$location.path('/company-administration');
         });
         res.error(function(data, status, headers, config) {
             alert( "failure message: " + JSON.stringify({data: data}));
