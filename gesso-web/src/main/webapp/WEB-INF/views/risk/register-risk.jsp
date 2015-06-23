@@ -2,108 +2,88 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="t"%>
-<div class="container">
-<div class="stepwizard">
-    <div class="stepwizard-row setup-panel">
-        <div class="stepwizard-step">
-            <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-            <p>Step 1</p>
-        </div>
-        <div class="stepwizard-step">
-            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-            <p>Step 2</p>
-        </div>
-        <div class="stepwizard-step">
-            <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-            <p>Step 3</p>
-        </div>
-    </div>
+<div id="content" style="margin: 20px">
+    <stepset next-text="Next" previous-text="Previous" submit-text="Submit" submit-action="testSubmit">
+        <form>
+            <step title="Select your size">
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="radio" for="size-0">
+                            <input name="size" id="size-0" value="Small" checked="checked" type="radio">Small</label>
+                        <label class="radio" for="size-1">
+                            <input name="size" id="size-1" value="Medium" type="radio">Medium</label>
+                        <label class="radio" for="size-2">
+                            <input name="size" id="size-2" value="Large" type="radio">Large</label>
+                        <label class="radio" for="size-3">
+                            <input name="size" id="size-3" value="Extra Large" type="radio">Extra Large</label>
+                    </div>
+                </div>
+            </step>
+            <step title="Select your toppings">
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="checkbox" for="toppings-0">
+                            <input name="toppings" id="toppings-0" value="Pepperoni" type="checkbox">Pepperoni</label>
+                        <label class="checkbox" for="toppings-1">
+                            <input name="toppings" id="toppings-1" value="Extra Cheese" type="checkbox">Extra Cheese</label>
+                        <label class="checkbox" for="toppings-2">
+                            <input name="toppings" id="toppings-2" value="Mushrooms" type="checkbox">Mushrooms</label>
+                        <label class="checkbox" for="toppings-3">
+                            <input name="toppings" id="toppings-3" value="Green Pepper" type="checkbox">Green Pepper</label>
+                        <label class="checkbox" for="toppings-4">
+                            <input name="toppings" id="toppings-4" value="Pineapple" type="checkbox">Pineapple</label>
+                        <label class="checkbox" for="toppings-5">
+                            <input name="toppings" id="toppings-5" value="Ham" type="checkbox">Ham</label>
+                        <label class="checkbox" for="toppings-6">
+                            <input name="toppings" id="toppings-6" value="Bacon" type="checkbox">Bacon</label>
+                    </div>
+                </div>
+            </step>
+            <step title="Delivery Info" description="Who are we sending this to?">
+                <div class="control-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input id="name" name="name" placeholder="Austin Keeley" class="input-xlarge" required="" type="text" ng-model="name">
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="control-group">
+                    <label class="control-label" for="address">Address</label>
+                    <div class="controls">
+                        <input id="address" name="address" placeholder="123 Fake Street." class="input-xlarge" required="" type="text" ng-model="address">
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="control-group">
+                    <label class="control-label" for="phoneNumber">Phone Number</label>
+                    <div class="controls">
+                        <input id="phoneNumber" name="phoneNumber" placeholder="555-555-5555" class="input-xlarge" required="" type="text" ng-model="phoneNumber">
+                    </div>
+                </div>
+            </step>
+        </form>
+    </stepset>
 </div>
-<form role="form">
-    <div class="row setup-content" id="step-1">
-        <div class="col-xs-12">
-            <div class="col-md-12">
-                <h3> Step 1</h3>
-                <div class="form-group">
-                    <label class="control-label">First Name</label>
-                    <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name"  />
-                </div>
-                <div class="form-group">
-                    <label class="control-label">Last Name</label>
-                    <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name" />
-                </div>
-                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
-            </div>
-        </div>
+<script type="text/ng-template" id="partials/stepset.html">
+<div>
+  <form name="stepForm">
+    <div id="steps" ng-transclude>
     </div>
-    <div class="row setup-content" id="step-2">
-        <div class="col-xs-12">
-            <div class="col-md-12">
-                <h3> Step 2</h3>
-                <div class="form-group">
-                    <label class="control-label">Company Name</label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
-                </div>
-                <div class="form-group">
-                    <label class="control-label">Company Address</label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address"  />
-                </div>
-                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
-            </div>
-        </div>
+
+    <div id="navBar">
+      <span>
+        <button class="btn" ng-click="previous()" ng-disabled="!previousEnabled">{{previousText}}</button>
+        <button class="btn" ng-click="next()" ng-disabled="!nextEnabled">{{nextText}}</button>
+        <button class="btn btn-success" ng-click="submit()" ng-disabled="stepForm.$invalid || !submitEnabled">{{submitText}}</button>
+      </span>
     </div>
-    <div class="row setup-content" id="step-3">
-        <div class="col-xs-12">
-            <div class="col-md-12">
-                <h3> Step 3</h3>
-                <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
-            </div>
-        </div>
-    </div>
-</form>
+  </form>
 </div>
-<script>
-$(document).ready(function () {
-
-    var navListItems = $('div.setup-panel div a'),
-            allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
-
-    allWells.hide();
-
-    navListItems.click(function (e) {
-        e.preventDefault();
-        var $target = $($(this).attr('href')),
-                $item = $(this);
-
-        if (!$item.hasClass('disabled')) {
-            navListItems.removeClass('btn-primary').addClass('btn-default');
-            $item.addClass('btn-primary');
-            allWells.hide();
-            $target.show();
-            $target.find('input:eq(0)').focus();
-        }
-    });
-
-    allNextBtn.click(function(){
-        var curStep = $(this).closest(".setup-content"),
-            curStepBtn = curStep.attr("id"),
-            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='text'],input[type='url']"),
-            isValid = true;
-
-        $(".form-group").removeClass("has-error");
-        for(var i=0; i<curInputs.length; i++){
-            if (!curInputs[i].validity.valid){
-                isValid = false;
-                $(curInputs[i]).closest(".form-group").addClass("has-error");
-            }
-        }
-
-        if (isValid)
-            nextStepWizard.removeAttr('disabled').trigger('click');
-    });
-
-    $('div.setup-panel div a.btn-primary').trigger('click');
-});
+</script>
+<script type="text/ng-template" id="partials/step.html">
+<div ng-show="isDisplayed">
+    <h1>{{title}}</h1>
+    <p>{{description}}</p>
+    <div ng-transclude></div>
+</div>
 </script>
