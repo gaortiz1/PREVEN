@@ -1,6 +1,7 @@
 package ec.com.gesso.inmemory;
 
 import java.util.Collection;
+import java.util.Collections;
 
 import org.apache.commons.collections4.CollectionUtils;
 
@@ -41,7 +42,7 @@ public class CatalogCache extends AbstracCache  {
 			if (CollectionUtils.isNotEmpty(catalogs)) {
 				this.cache.put(idGroupCatalog, catalogs);
 			} else {
-				return CollectionUtils.EMPTY_COLLECTION;
+				return Collections.emptyList();
 			}
 			
 		}
@@ -56,7 +57,7 @@ public class CatalogCache extends AbstracCache  {
 			if (CollectionUtils.isNotEmpty(catalogs)) {
 				this.cache.put("sex", this.catalogService.findSexCatalog());
 			} else {
-				return CollectionUtils.EMPTY_COLLECTION;
+				return Collections.emptyList();
 			}
 			
 		}
@@ -71,7 +72,7 @@ public class CatalogCache extends AbstracCache  {
 			if (CollectionUtils.isNotEmpty(catalogs)) {
 				this.cache.put("vul", catalogs);
 			} else {
-				return CollectionUtils.EMPTY_COLLECTION;
+				return Collections.emptyList();
 			}
 		}
 		return (Collection<Catalog>) this.cache.get("vul");
@@ -85,7 +86,7 @@ public class CatalogCache extends AbstracCache  {
 			if (CollectionUtils.isNotEmpty(catalogs)) {
 				this.cache.put("prof", this.catalogService.findProfesionCatalog());
 			} else {
-				return CollectionUtils.EMPTY_COLLECTION;
+				return Collections.emptyList();
 			}
 		}
 		return (Collection<Catalog>) this.cache.get("prof");

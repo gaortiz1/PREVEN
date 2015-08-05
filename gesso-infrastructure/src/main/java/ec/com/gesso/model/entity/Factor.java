@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * @author Gabriel
  *
@@ -35,13 +37,14 @@ public class Factor implements Serializable {
 	@Column(name = "NAME_FACTOR")
 	private String name;
 	
-	@Column(name = "ORDER")
+	@Column(name = "ORDER_FACTOR")
 	private Integer order;
 	
 	@Column(name = "STATE_FACTOR")
 	private Boolean state;
 	
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="factor")
+	@JsonManagedReference
 	private Collection<Risk> risks;
 
 	/**

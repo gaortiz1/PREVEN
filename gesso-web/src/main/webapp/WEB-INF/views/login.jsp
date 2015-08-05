@@ -55,6 +55,7 @@
 	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-person-adm.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-company-adm.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-factory.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/resources/gesso/ng-gesso-risk-adm.js" type="text/javascript"></script>
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

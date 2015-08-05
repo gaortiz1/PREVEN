@@ -16,6 +16,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+
 /**
  * @author Gabriel
  *
@@ -45,6 +48,7 @@ public class Risk implements Serializable {
 	
 	@JoinColumn(name = "ID_FACTOR", referencedColumnName = "ID_FACTOR", insertable=false, updatable=false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
+	@JsonBackReference
 	private Factor factor;
 	
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="risk")

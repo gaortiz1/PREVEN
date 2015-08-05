@@ -1,10 +1,10 @@
-INSERT INTO factor(id_factor, name_factor, "ORDER", state_factor) VALUES (1, 'Riesgos Mecánicos', 1, TRUE);
-INSERT INTO factor(id_factor, name_factor, "ORDER", state_factor) VALUES (2, 'Riesgos Físicos', 2, TRUE);
-INSERT INTO factor(id_factor, name_factor, "ORDER", state_factor) VALUES (3, 'Riesgos Químicos', 3, TRUE);
-INSERT INTO factor(id_factor, name_factor, "ORDER", state_factor) VALUES (4, 'Riesgos Biológicos', 4, TRUE);
-INSERT INTO factor(id_factor, name_factor, "ORDER", state_factor) VALUES (5, 'Riesgos Ergonómicos', 4, TRUE);
-INSERT INTO factor(id_factor, name_factor, "ORDER", state_factor) VALUES (6, 'Riesgos Psicosociales', 5, TRUE);
-INSERT INTO factor(id_factor, name_factor, "ORDER", state_factor) VALUES (7, 'Accidentes mayores', 6, TRUE);
+INSERT INTO factor(id_factor, name_factor, ORDER_FACTOR, state_factor) VALUES (1, 'Riesgos Mecánicos', 1, TRUE);
+INSERT INTO factor(id_factor, name_factor, ORDER_FACTOR, state_factor) VALUES (2, 'Riesgos Físicos', 2, TRUE);
+INSERT INTO factor(id_factor, name_factor, ORDER_FACTOR, state_factor) VALUES (3, 'Riesgos Químicos', 3, TRUE);
+INSERT INTO factor(id_factor, name_factor, ORDER_FACTOR, state_factor) VALUES (4, 'Riesgos Biológicos', 4, TRUE);
+INSERT INTO factor(id_factor, name_factor, ORDER_FACTOR, state_factor) VALUES (5, 'Riesgos Ergonómicos', 4, TRUE);
+INSERT INTO factor(id_factor, name_factor, ORDER_FACTOR, state_factor) VALUES (6, 'Riesgos Psicosociales', 5, TRUE);
+INSERT INTO factor(id_factor, name_factor, ORDER_FACTOR, state_factor) VALUES (7, 'Accidentes mayores', 6, TRUE);
 
 INSERT INTO risk(id_risk, id_factor, name_risk, state_risk) VALUES (1, 1, 'Caída de personas a distinto nivel', TRUE);
 INSERT INTO risk(id_risk, id_factor, name_risk, state_risk) VALUES (2, 1, 'Trabajo en altura', TRUE);

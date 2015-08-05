@@ -18,6 +18,8 @@ import ec.com.gesso.criteria.test.entity.ActivityEconomicCompany;
 import ec.com.gesso.criteria.test.entity.Catalog;
 import ec.com.gesso.criteria.test.entity.Company;
 import ec.com.gesso.criteria.test.entity.GroupCatalog;
+import ec.com.gesso.criteria.test.entity.JobRisk;
+import ec.com.gesso.criteria.test.entity.Risk;
 
 /**
  * @author Gabriel
@@ -73,6 +75,19 @@ public class TestIntegracionCriteriaJPA {
 		company.getActivityEconomicCompanyCollection().add(activityEconomicCompany);
 		
 		this.queryCriteria.findAll(company);
+	}
+	
+	@Test
+	public void testFactor(){
+		final Risk riskTemplate = new Risk();
+		riskTemplate.setId(1l);
+		riskTemplate.setState(Boolean.TRUE);
+		riskTemplate.setJobRisks(new ArrayList<JobRisk>());
+		final JobRisk jobRisk = new JobRisk();
+		jobRisk.setState(Boolean.TRUE);
+		riskTemplate.getJobRisks().add(jobRisk);
+		
+		final Risk risk = this.queryCriteria.find(riskTemplate);
 	}
 
 }
